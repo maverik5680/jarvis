@@ -126,3 +126,4 @@ cat: /sys/class/dmi/id/product_uuid: Permission denied
 2026-01-04 18:20:36 info: Current extension version: 0.3.4
 2026-01-04 18:20:36 info: Stored extension version: 0.3.4
 2026-01-04 18:20:36 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-05 22:24:35 info: Row(s) deleted
