@@ -1,0 +1,71 @@
+/* ============================
+   GLOBAL BASE STYLES
+   ============================ */
+
+/* Root defaults */
+:root {
+  color-scheme: dark; /* enables proper dark-mode form controls */
+}
+
+/* Global background + text */
+html, body {
+  background-color: var(--background-dark, #0A0A0A);
+  color: var(--color-light, #F5F5F5);
+  font-family: 'RedHatDisplay', sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100%;
+}
+
+/* Remove default body margin */
+body {
+  margin: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global link behavior */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+a:hover {
+  color: var(--color-primary-light, #8FA2FF);
+  text-decoration: underline;
+}
+
+/* Images behave consistently */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons inherit font + remove browser quirks */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+/* Inputs + forms inherit dark theme */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--color-light);
+  background: var(--background-dark);
+  border: 1px solid var(--color-gray);
+}
+
+/* Remove outlines but keep accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+

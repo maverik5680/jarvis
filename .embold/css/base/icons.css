@@ -1,0 +1,33 @@
+/* Base icon styling */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor; /* inherit text color */
+  stroke-width: 1;       /* <-- your 1.0 stroke width */
+}
+
+/* Icon sizes */
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-md {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-lg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Optional: rotation for accordions */
+.icon-rotate {
+  transition: transform 0.25s ease;
+}
+
+.icon-rotate.open {
+  transform: rotate(180deg);
+}
+

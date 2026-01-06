@@ -1,0 +1,83 @@
+/* ============================================================
+   SPACING TOKENS — MOBILE FIRST (XS 320–374)
+   These values apply by default unless overridden at breakpoints
+   ============================================================ */
+
+:root {
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 24px;
+
+  /* Responsive spacers (mobile defaults) */
+  --space-xl: 28px;
+  --space-xxl: 36px;
+  --space-xxxl: 40px;
+}
+
+/* ============================================================
+   BREAKPOINT: S (375–767)
+   Spacing values remain the same as XS
+   ============================================================ */
+
+@media (min-width: 375px) {
+  :root {
+    --space-xl: 28px;
+    --space-xxl: 36px;
+    --space-xxxl: 40px;
+  }
+}
+
+/* ============================================================
+   BREAKPOINT: M (768–1023)
+   Only responsive spacers change
+   ============================================================ */
+
+@media (min-width: 768px) {
+  :root {
+    --space-xl: 28px;
+    --space-xxl: 36px;
+    --space-xxxl: 48px;
+  }
+}
+
+/* ============================================================
+   BREAKPOINT: L (1024–1339)
+   Larger screens → more breathing room
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  :root {
+    --space-xl: 28px;
+    --space-xxl: 40px;
+    --space-xxxl: 60px;
+  }
+}
+
+/* ============================================================
+   BREAKPOINT: XL (1440–1919)
+   Significant spacing expansion
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  :root {
+    --space-xl: 32px;
+    --space-xxl: 52px;
+    --space-xxxl: 80px;
+  }
+}
+
+/* ============================================================
+   BREAKPOINT: XXL (1920+)
+   Maximum spacing for ultra-wide layouts
+   ============================================================ */
+
+@media (min-width: 1920px) {
+  :root {
+    --space-xl: 44px;
+    --space-xxl: 68px;
+    --space-xxxl: 100px;
+  }
+}
+

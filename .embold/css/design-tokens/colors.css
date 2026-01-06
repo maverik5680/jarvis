@@ -1,0 +1,22 @@
+:root {
+  /* Brand colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-primary:#6680FF; /* brand soft blue */
+  --color-secondary: #F50471;   /* brand red */
+
+  /* Neutrals */
+  --color-dark: #333333;
+  --color-gray: #666666;
+  --color-light-gray: #D9D9D9;
+
+  /* Non-brand accent colors */
+  --color-red: #EB0D3F;       /* vivid red */
+  --color-green: #0DA20D;     /* strong green */
+  --color-yellow: #FFAA00;    /* warm yellow */
+  --color-blue: #2526FE;      /* bright blue */
+  --color-pink: #FD2C4E;      /* pinkish red */
+  --color-indigo: #556EFE;    /* deep indigo blue */
+}
+
+

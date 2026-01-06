@@ -1,0 +1,30 @@
+/* ============================
+   SHADOW TOKENS
+   ============================ */
+
+:root {
+  /* Subtle UI shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+
+  /* Small components (inputs, small cards) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+  /* Medium components (cards, dropdowns) */
+  --shadow-md: 
+    0 4px 6px rgba(0, 0, 0, 0.10),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* Large components (modals, floating panels) */
+  --shadow-lg: 
+    0 10px 15px rgba(0, 0, 0, 0.12),
+    0 4px 6px rgba(0, 0, 0, 0.10);
+
+  /* Extra depth (menus, overlays) */
+  --shadow-xl: 
+    0 20px 25px rgba(0, 0, 0, 0.15),
+    0 10px 10px rgba(0, 0, 0, 0.12);
+
+  /* Maximum depth (drawers, modals, toasts) */
+  --shadow-xxl:
+    0 25px 50px rgba(0, 0, 0, 0.25);
+}
