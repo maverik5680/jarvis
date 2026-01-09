@@ -1,0 +1,25 @@
+/* styles.css */
+
+/* 1. Design Tokens */
+@import "css/design-tokens/colors.css";
+@import "css/design-tokens/background.css";
+@import "css/design-tokens/typography.css";
+@import "css/design-tokens/spacing.css";
+@import "css/design-tokens/radius.css";
+
+/* 2. Base (optional but recommended) */
+/* @import "css/base/reset.css"; */
+
+/* 3. Components */
+@import "css/components/buttons.css";
+
+/* 4. Utilities (these must come AFTER components) */
+@import "css/utilities/padding.css";
+@import "css/utilities/margin.css";
+
+/* 5. Layout */
+@import "css/layout/containers.css";
+@import "css/layout/page-margin.css";
+
+/* 6. BREAKPOINTS — MUST BE LAST */
+@import "css/layout/breakpoints.css";

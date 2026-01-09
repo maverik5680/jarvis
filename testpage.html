@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Page</title>
+
+<link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background: var(--color-black);
+      margin: 0;
+      padding: 0;
+    }
+
+    .demo-block {
+      background: var(--color-dark);
+      padding: 40px;
+      border-radius: 8px;
+      margin: 40px 0;
+    }
+
+    h2 {
+      color: var(--color-white);
+      margin-top: 0;
+    }
+
+    p {
+      color: var(--color-light);
+      max-width: 600px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="demo-block">
+      <h2>Welcome to the Container</h2>
+      <p>
+        This text is styled using your typography design tokens. Resize the browser window to see the container respond.
+      </p>
+
+      <button class="btn btn-primary-outline" style="margin-top: 20px;">
+        Learn More
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="demo-block">
+      <h2>Another Section</h2>
+      <p>
+        Each container now includes one outline button, styled using your button component system.
+      </p>
+
+      <button class="btn btn-primary-outline" style="margin-top: 20px;">
+        Continue
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,337 @@
+2025-12-16 21:17:00 info: Congratulations, your extension "Embold" is now active!
+2025-12-16 21:17:00 info: ************* init ****************
+2025-12-16 21:17:00 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2025-12-16 21:17:01 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2025-12-16 21:17:01 info: Extension installed on machine OS : linux
+2025-12-16 21:17:01 info: Loading issues from local database on startup (checkbox unchecked)
+2025-12-16 21:17:01 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2025-12-16 21:17:01 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2025-12-16 21:17:01 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2025-12-16 21:17:01 info: Java installed on machine.
+2025-12-16 21:17:01 info: [STARTUP] Processing 0 total issues from database
+2025-12-16 21:17:01 info: [STARTUP] Issues sorted by file path
+2025-12-16 21:17:01 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2025-12-16 21:17:01 info: Fetched the issues from DB
+2025-12-16 21:17:02 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2025-12-16 21:17:02 info: Current installed embold extension version : 0.3.4
+2025-12-16 21:17:02 info: Latest embold extension version on marketplace : 0.2.1
+2025-12-16 21:17:02 info: Current extension version: 0.3.4
+2025-12-16 21:17:02 info: Stored extension version: 
+2025-12-16 21:17:02 info: New installation or upgrade detected. Tracking plugin activation.
+2025-12-16 21:17:02 error: Error executing command: cat /sys/class/dmi/id/product_uuid Command failed: cat /sys/class/dmi/id/product_uuid
+cat: /sys/class/dmi/id/product_uuid: Permission denied
+
+2025-12-16 21:17:02 warn: Unable to fetch hardware UUID on Linux. Falling back to persistent UUID.
+2025-12-16 21:17:02 info: Generated and stored a new persistent UUID:
+2025-12-16 21:17:02 info: Plugin activation activity tracked successfully.
+2025-12-16 21:17:02 info: Stored version updated to the current version.
+2025-12-16 21:17:02 info: ******************* Activity tracked successfully: Activity tracked successfully
+2025-12-16 23:28:55 info: Congratulations, your extension "Embold" is now active!
+2025-12-16 23:28:55 info: ************* init ****************
+2025-12-16 23:28:55 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2025-12-16 23:28:56 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2025-12-16 23:28:56 info: Extension installed on machine OS : linux
+2025-12-16 23:28:56 info: Loading issues from local database on startup (checkbox unchecked)
+2025-12-16 23:28:56 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2025-12-16 23:28:56 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2025-12-16 23:28:56 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2025-12-16 23:28:56 info: Java installed on machine.
+2025-12-16 23:28:56 info: [STARTUP] Processing 0 total issues from database
+2025-12-16 23:28:56 info: [STARTUP] Issues sorted by file path
+2025-12-16 23:28:56 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2025-12-16 23:28:56 info: Fetched the issues from DB
+2025-12-16 23:28:57 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2025-12-16 23:28:57 info: Current installed embold extension version : 0.3.4
+2025-12-16 23:28:57 info: Latest embold extension version on marketplace : 0.2.1
+2025-12-16 23:28:57 info: Current extension version: 0.3.4
+2025-12-16 23:28:57 info: Stored extension version: 0.3.4
+2025-12-16 23:28:57 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-03 15:23:19 info: Congratulations, your extension "Embold" is now active!
+2026-01-03 15:23:19 info: ************* init ****************
+2026-01-03 15:23:19 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-03 15:23:20 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-03 15:23:20 info: Extension installed on machine OS : linux
+2026-01-03 15:23:20 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-03 15:23:20 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-03 15:23:20 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-03 15:23:20 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-03 15:23:20 info: Java installed on machine.
+2026-01-03 15:23:20 info: [STARTUP] Processing 0 total issues from database
+2026-01-03 15:23:20 info: [STARTUP] Issues sorted by file path
+2026-01-03 15:23:20 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-03 15:23:20 info: Fetched the issues from DB
+2026-01-03 15:23:21 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-03 15:23:21 info: Current installed embold extension version : 0.3.4
+2026-01-03 15:23:21 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-03 15:23:21 info: Current extension version: 0.3.4
+2026-01-03 15:23:21 info: Stored extension version: 0.3.4
+2026-01-03 15:23:21 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-04 18:18:16 info: Congratulations, your extension "Embold" is now active!
+2026-01-04 18:18:16 info: ************* init ****************
+2026-01-04 18:18:16 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-04 18:18:17 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-04 18:18:17 info: Extension installed on machine OS : linux
+2026-01-04 18:18:17 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-04 18:18:17 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-04 18:18:17 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-04 18:18:17 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-04 18:18:17 info: Java installed on machine.
+2026-01-04 18:18:17 info: [STARTUP] Processing 0 total issues from database
+2026-01-04 18:18:17 info: [STARTUP] Issues sorted by file path
+2026-01-04 18:18:17 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-04 18:18:17 info: Fetched the issues from DB
+2026-01-04 18:18:18 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-04 18:18:18 info: Current installed embold extension version : 0.3.4
+2026-01-04 18:18:18 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-04 18:18:18 info: Current extension version: 0.3.4
+2026-01-04 18:18:18 info: Stored extension version: 0.3.4
+2026-01-04 18:18:18 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-04 18:20:34 info: Congratulations, your extension "Embold" is now active!
+2026-01-04 18:20:34 info: ************* init ****************
+2026-01-04 18:20:34 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-04 18:20:35 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-04 18:20:35 info: Extension installed on machine OS : linux
+2026-01-04 18:20:35 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-04 18:20:35 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-04 18:20:35 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-04 18:20:35 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-04 18:20:35 info: Java installed on machine.
+2026-01-04 18:20:35 info: [STARTUP] Processing 0 total issues from database
+2026-01-04 18:20:35 info: [STARTUP] Issues sorted by file path
+2026-01-04 18:20:35 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-04 18:20:35 info: Fetched the issues from DB
+2026-01-04 18:20:36 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-04 18:20:36 info: Current installed embold extension version : 0.3.4
+2026-01-04 18:20:36 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-04 18:20:36 info: Current extension version: 0.3.4
+2026-01-04 18:20:36 info: Stored extension version: 0.3.4
+2026-01-04 18:20:36 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-05 22:24:35 info: Row(s) deleted
+2026-01-06 09:43:00 info: Row(s) deleted
+2026-01-06 09:43:00 info: Row(s) deleted
+2026-01-06 09:43:00 info: Row(s) deleted
+2026-01-06 09:43:00 info: Row(s) deleted
+2026-01-06 09:43:00 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 11:53:13 info: Row(s) deleted
+2026-01-06 12:03:45 info: Row(s) deleted
+2026-01-06 12:04:18 info: Row(s) deleted
+2026-01-06 12:16:35 info: Congratulations, your extension "Embold" is now active!
+2026-01-06 12:16:35 info: ************* init ****************
+2026-01-06 12:16:35 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 12:16:37 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 12:16:37 info: Extension installed on machine OS : linux
+2026-01-06 12:16:37 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-06 12:16:37 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-06 12:16:37 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-06 12:16:38 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-06 12:16:38 info: Java installed on machine.
+2026-01-06 12:16:38 info: [STARTUP] Processing 0 total issues from database
+2026-01-06 12:16:38 info: [STARTUP] Issues sorted by file path
+2026-01-06 12:16:38 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-06 12:16:38 info: Fetched the issues from DB
+2026-01-06 12:16:44 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-06 12:16:44 info: Current installed embold extension version : 0.3.4
+2026-01-06 12:16:44 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-06 12:16:44 info: Current extension version: 0.3.4
+2026-01-06 12:16:44 info: Stored extension version: 0.3.4
+2026-01-06 12:16:44 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-06 12:21:17 info: Row(s) deleted
+2026-01-06 13:14:14 info: Row(s) deleted
+2026-01-06 13:36:19 info: Row(s) deleted
+2026-01-06 13:36:19 info: Row(s) deleted
+2026-01-06 13:44:23 info: Congratulations, your extension "Embold" is now active!
+2026-01-06 13:44:23 info: ************* init ****************
+2026-01-06 13:44:23 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 13:44:26 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 13:44:26 info: Extension installed on machine OS : linux
+2026-01-06 13:44:26 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-06 13:44:26 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-06 13:44:26 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-06 13:44:26 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-06 13:44:26 info: Java installed on machine.
+2026-01-06 13:44:26 info: [STARTUP] Processing 0 total issues from database
+2026-01-06 13:44:26 info: [STARTUP] Issues sorted by file path
+2026-01-06 13:44:26 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-06 13:44:26 info: Fetched the issues from DB
+2026-01-06 13:44:27 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-06 13:44:27 info: Current installed embold extension version : 0.3.4
+2026-01-06 13:44:27 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-06 13:44:27 info: Current extension version: 0.3.4
+2026-01-06 13:44:27 info: Stored extension version: 0.3.4
+2026-01-06 13:44:27 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-06 14:58:09 info: Congratulations, your extension "Embold" is now active!
+2026-01-06 14:58:09 info: ************* init ****************
+2026-01-06 14:58:09 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 14:58:17 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 14:58:17 info: Extension installed on machine OS : linux
+2026-01-06 14:58:17 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-06 14:58:17 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-06 14:58:17 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-06 14:58:17 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-06 14:58:17 info: Java installed on machine.
+2026-01-06 14:58:17 info: [STARTUP] Processing 0 total issues from database
+2026-01-06 14:58:17 info: [STARTUP] Issues sorted by file path
+2026-01-06 14:58:17 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-06 14:58:17 info: Fetched the issues from DB
+2026-01-06 14:58:18 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-06 14:58:18 info: Current installed embold extension version : 0.3.4
+2026-01-06 14:58:18 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-06 14:58:18 info: Current extension version: 0.3.4
+2026-01-06 14:58:18 info: Stored extension version: 0.3.4
+2026-01-06 14:58:18 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-06 15:23:03 info: Congratulations, your extension "Embold" is now active!
+2026-01-06 15:23:03 info: ************* init ****************
+2026-01-06 15:23:03 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 15:23:12 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 15:23:12 info: Extension installed on machine OS : linux
+2026-01-06 15:23:12 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-06 15:23:12 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-06 15:23:12 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-06 15:23:12 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-06 15:23:12 info: Java installed on machine.
+2026-01-06 15:23:13 info: [STARTUP] Processing 0 total issues from database
+2026-01-06 15:23:13 info: [STARTUP] Issues sorted by file path
+2026-01-06 15:23:13 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-06 15:23:13 info: Fetched the issues from DB
+2026-01-06 15:23:14 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-06 15:23:14 info: Current installed embold extension version : 0.3.4
+2026-01-06 15:23:14 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-06 15:23:14 info: Current extension version: 0.3.4
+2026-01-06 15:23:14 info: Stored extension version: 0.3.4
+2026-01-06 15:23:14 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-06 15:39:16 info: Congratulations, your extension "Embold" is now active!
+2026-01-06 15:39:16 info: ************* init ****************
+2026-01-06 15:39:16 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 15:39:22 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 15:39:22 info: Extension installed on machine OS : linux
+2026-01-06 15:39:22 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-06 15:39:22 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-06 15:39:22 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-06 15:39:22 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-06 15:39:22 info: Java installed on machine.
+2026-01-06 15:39:22 info: [STARTUP] Processing 0 total issues from database
+2026-01-06 15:39:22 info: [STARTUP] Issues sorted by file path
+2026-01-06 15:39:22 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-06 15:39:22 info: Fetched the issues from DB
+2026-01-06 15:39:23 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-06 15:39:23 info: Current installed embold extension version : 0.3.4
+2026-01-06 15:39:23 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-06 15:39:23 info: Current extension version: 0.3.4
+2026-01-06 15:39:23 info: Stored extension version: 0.3.4
+2026-01-06 15:39:23 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-06 18:30:39 info: Congratulations, your extension "Embold" is now active!
+2026-01-06 18:30:39 info: ************* init ****************
+2026-01-06 18:30:39 info: tempDirectory : /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 18:30:46 info: Extraction complete for source: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/resources/embold-scanner-archive.zip, destination: /home/jarvis/.vscode/extensions/embold-vscode.embold-0.3.4/temp
+2026-01-06 18:30:46 info: Extension installed on machine OS : linux
+2026-01-06 18:30:46 info: Loading issues from local database on startup (checkbox unchecked)
+2026-01-06 18:30:46 info: Using emboldDBDir: /home/jarvis/Desktop/mywebsite/.embold
+2026-01-06 18:30:46 error: ERROR checking java version : Error: Command failed: java -version
+/bin/sh: 1: java: not found
+
+2026-01-06 18:30:46 info: Java version installed on machine : 
+/bin/sh: 1: java: not found
+
+2026-01-06 18:30:46 info: Java installed on machine.
+2026-01-06 18:30:46 info: [STARTUP] Processing 0 total issues from database
+2026-01-06 18:30:46 info: [STARTUP] Issues sorted by file path
+2026-01-06 18:30:46 info: [STARTUP] Complete - Processed: 0, Skipped: 0
+2026-01-06 18:30:46 info: Fetched the issues from DB
+2026-01-06 18:30:47 info: Embold extension version response:{"hasSupport":false,"version":"0.2.1","changeNotes":"<div> <p>Release Date: 30 Apr, 2025 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2026-01-06 18:30:47 info: Current installed embold extension version : 0.3.4
+2026-01-06 18:30:47 info: Latest embold extension version on marketplace : 0.2.1
+2026-01-06 18:30:47 info: Current extension version: 0.3.4
+2026-01-06 18:30:47 info: Stored extension version: 0.3.4
+2026-01-06 18:30:47 info: No new installation or upgrade detected. Skipping plugin activation tracking.
+2026-01-06 20:25:02 error: SQLITE_ERROR: no such table: issues
+2026-01-06 20:25:50 error: SQLITE_ERROR: no such table: issues

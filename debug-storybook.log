@@ -1,0 +1,31 @@
+[11:49:49.234] [INFO] [36mInitializing Storybook[39m
+[11:49:49.412] [DEBUG] Getting package.json info for /home/jarvis/Desktop/mywebsite/package.json...
+[11:49:49.413] [DEBUG] Getting CLI versions from NPM for storybook...
+[11:49:49.413] [DEBUG] Executing command: npm info storybook version
+[11:49:50.795] [INFO] Adding Storybook version 10.1.11 to your project
+[11:49:50.796] [INFO] Installing Storybook for user specified project type: html
+[11:50:26.803] [PROMPT] We were not able to detect the right builder for your project. Please select one: {"choice":"vite"}
+[11:50:26.803] [INFO] Framework detected: html-vite
+[11:50:26.804] [DEBUG] Getting installed version for vitest...
+[11:50:26.804] [DEBUG] Executing command: npm ls --json --depth=99 2>/dev/null
+[11:50:27.044] [DEBUG] Executing command: npm ls --json --depth=0 2>/dev/null
+[11:50:27.266] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm ls --json --depth=0 2>/dev/null
+{}
+[11:50:27.266] [DEBUG] Getting installed version for msw...
+[11:50:27.266] [DEBUG] Executing command: npm ls --json --depth=99 2>/dev/null
+[11:50:27.490] [DEBUG] Executing command: npm ls --json --depth=0 2>/dev/null
+[11:50:27.713] [DEBUG] An issue occurred while trying to find dependencies metadata using npm: Error: Command failed with exit code 1: npm ls --json --depth=0 2>/dev/null
+{}
+[11:51:00.187] [PROMPT] New to Storybook? {"choice":true}
+[11:51:00.940] [INFO] base-generator-task-start: Generating Storybook configuration
+[11:51:00.943] [ERROR] [38;2;241;97;97mError: ENOENT: no such file or directory, open './package.json'[39m
+    at readFileSync (node:fs:441:20)
+    at _JsPackageManager.getPackageJson (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:11281:23)
+    at get packageJson (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/storybook/dist/_node-chunks/chunk-Q4DOC7HF.js:11619:34)
+    at baseGenerator (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/create-storybook/dist/_node-chunks/chunk-C75MJVFW.js:1209:8)
+    at GeneratorExecutionCommand.executeProjectGenerator (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/create-storybook/dist/_node-chunks/chunk-C75MJVFW.js:1345:107)
+    at async GeneratorExecutionCommand.execute (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/create-storybook/dist/_node-chunks/chunk-C75MJVFW.js:1367:27)
+    at async doInitiate (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/create-storybook/dist/_node-chunks/chunk-C75MJVFW.js:2279:68)
+    at async file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/create-storybook/dist/_node-chunks/chunk-C75MJVFW.js:2322:20
+    at async withTelemetry (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/storybook/dist/_node-chunks/chunk-2372JZ52.js:209:12)
+    at async initiate (file:///home/jarvis/.npm/_npx/96f9239703459233/node_modules/create-storybook/dist/_node-chunks/chunk-C75MJVFW.js:2315:24)
