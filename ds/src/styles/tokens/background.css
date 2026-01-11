@@ -1,0 +1,44 @@
+/* ============================================================
+   BACKGROUND UTILITIES
+   Token‑driven background helpers
+   ============================================================ */
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-alt {
+  background-color: var(--color-surface-alt);
+}
+
+.bg-surface-dark {
+  background-color: var(--color-surface-dark);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-success {
+  background-color: var(--color-success);
+}
+
+.bg-danger {
+  background-color: var(--color-danger);
+}
+
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+.bg-info {
+  background-color: var(--color-info);
+}
+
+.bg-transparent {
+  background-color: var(--color-transparent);
+}

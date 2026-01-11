@@ -1,166 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your AppSheet SaaS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System</title>
 
-    <!-- DESIGN TOKENS -->
-<link rel="stylesheet" href="../css/design-tokens/colors.css">
-<link rel="stylesheet" href="../css/design-tokens/background.css">
-<link rel="stylesheet" href="../css/design-tokens/typography.css">
-<link rel="stylesheet" href="../css/design-tokens/space.css">
-<link rel="stylesheet" href="../css/design-tokens/radius.css">
-
-<!-- LAYOUT -->
-<link rel="stylesheet" href="../css/layout/padding.css">
-<link rel="stylesheet" href="../css/layout/containers.css">
-<link rel="stylesheet" href="../css/layout/breakpoints.css">
-<link rel="stylesheet" href="../css/layout/page-margin.css">
-<link rel="stylesheet" href="../css/layout/page-layout.css">
-
-<!-- COMPONENTS -->
-<link rel="stylesheet" href="../css/components/buttons.css">
-
+  <!-- Load your compiled DS stylesheet -->
+  <link rel="stylesheet" href="../dist/style.css" />
 </head>
 
 <body>
+  <div class="page">
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="container flex-between">
-            <div class="logo">MyAppSheet SaaS</div>
-
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#how">How It Works</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-                <a href="#" class="btn btn-primary btn-sm">Login</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="hero hero-card">
-        <div class="hero-card-wrapper">
-
-            <div class="hero-card-bg" style="background-image: url('images/hero-card.jpg');"></div>
-
-            <div class="hero-card-content">
-                <h1 class="hero-title">Automate Your Business With AppSheet</h1>
-                <p class="hero-subtitle">
-                    Build powerful workflows, manage data, and streamline operations — all without writing code.
-                </p>
-
-                <div class="hero-cta">
-                    <a href="#" class="btn btn-primary btn-lg">Get Started</a>
-                    <a href="#features" class="btn btn-secondary btn-lg">Learn More</a>
-                </div>
-            </div>
-
-        </div>
+    <!-- HEADER -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Design System</h1>
+      </div>
     </header>
 
-    <!-- FEATURES -->
-    <section id="features" class="section">
+    <!-- MAIN CONTENT -->
+    <main class="page-content">
+
+      <!-- ============================
+           BUTTONS
+      ============================= -->
+      <section class="page-section">
         <div class="container">
+          <h2>Buttons</h2>
 
-            <h2 class="section-title center">Powerful Features</h2>
-            <p class="section-subtitle center">Everything you need to run your business efficiently</p>
+          <div class="component-demo">
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-secondary">Secondary Button</button>
+            <button class="btn btn-outline">Outline Button</button>
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
 
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Automated Workflows</h3>
-                    <p>Create triggers, actions, and notifications that run automatically.</p>
-                </div>
+      <!-- ============================
+           CARDS
+      ============================= -->
+      <section class="page-section">
+        <div class="container">
+          <h2>Cards</h2>
 
-                <div class="card">
-                    <h3>Data Management</h3>
-                    <p>Connect Google Sheets, Excel, SQL, and more — instantly.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Custom Dashboards</h3>
-                    <p>Visualize your data with charts, tables, and interactive views.</p>
-                </div>
+          <div class="component-demo">
+            <div class="card">
+              <h3>Card Title</h3>
+              <p>This is a card example using your design system.</p>
             </div>
-
+          </div>
         </div>
-    </section>
+      </section>
+      <div class="divider"></div>
 
-    <!-- HOW IT WORKS -->
-    <section id="how" class="section">
+      <!-- ============================
+           INPUTS
+      ============================= -->
+      <section class="page-section">
         <div class="container">
+          <h2>Inputs</h2>
 
-            <h2 class="section-title center">How It Works</h2>
-
-            <div class="grid-3">
-                <div class="card">
-                    <h3>1. Connect Your Data</h3>
-                    <p>Start by linking your spreadsheets or databases.</p>
-                </div>
-
-                <div class="card">
-                    <h3>2. Build Your App</h3>
-                    <p>Use AppSheet’s no-code builder to create views and workflows.</p>
-                </div>
-
-                <div class="card">
-                    <h3>3. Deploy & Automate</h3>
-                    <p>Launch your app and let automation handle the rest.</p>
-                </div>
-            </div>
-
+          <div class="component-demo">
+            <input class="input" placeholder="Text input" />
+            <textarea class="textarea" placeholder="Textarea"></textarea>
+            <select class="select">
+              <option>Select option</option>
+            </select>
+          </div>
         </div>
-    </section>
+      </section>
+      <div class="divider"></div>
 
-    <!-- PRICING -->
-    <section id="pricing" class="section">
+      <!-- ============================
+           ALERTS
+      ============================= -->
+      <section class="page-section">
         <div class="container">
+          <h2>Alerts</h2>
 
-            <h2 class="section-title center">Simple Pricing</h2>
-
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Starter</h3>
-                    <p>$9 / month</p>
-                    <a href="#" class="btn btn-primary btn-block">Choose Plan</a>
-                </div>
-
-                <div class="card">
-                    <h3>Pro</h3>
-                    <p>$29 / month</p>
-                    <a href="#" class="btn btn-primary btn-block">Choose Plan</a>
-                </div>
-
-                <div class="card">
-                    <h3>Enterprise</h3>
-                    <p>Custom</p>
-                    <a href="#" class="btn btn-primary btn-block">Contact Us</a>
-                </div>
-            </div>
-
+          <div class="component-demo">
+            <div class="alert alert-success">Success alert</div>
+            <div class="alert alert-danger">Danger alert</div>
+            <div class="alert alert-warning">Warning alert</div>
+            <div class="alert alert-info">Info alert</div>
+          </div>
         </div>
-    </section>
+      </section>
+      <div class="divider"></div>
 
-    <!-- CTA -->
-    <section class="section-lg center">
+      <!-- ============================
+           BADGES & TAGS
+      ============================= -->
+      <section class="page-section">
         <div class="container">
-            <h2>Ready to Automate Your Business?</h2>
-            <p>Start building your AppSheet solution today.</p>
-            <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+          <h2>Badges & Tags</h2>
+
+          <div class="component-demo">
+            <span class="badge badge-primary">Primary Badge</span>
+            <span class="badge badge-secondary">Secondary Badge</span>
+
+            <span class="tag tag-primary">Primary Tag</span>
+            <span class="tag tag-secondary">Secondary Tag</span>
+          </div>
         </div>
-    </section>
+      </section>
+      <div class="divider"></div>
+
+      <!-- ============================
+           TABLE
+      ============================= -->
+      <section class="page-section">
+        <div class="container">
+          <h2>Table</h2>
+
+          <div class="component-demo">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alice</td>
+                  <td><span class="badge badge-success">Active</span></td>
+                  <td>Admin</td>
+                </tr>
+                <tr>
+                  <td>Bob</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                  <td>User</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
+
+      <!-- ============================
+           MODALS
+      ============================= -->
+      <section class="page-section">
+        <div class="container">
+          <h2>Modal</h2>
+
+          <div class="component-demo">
+            <button class="btn btn-primary">Open Modal</button>
+            <!-- Modal markup would go here -->
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
+
+      <!-- ============================
+           SPINNER
+      ============================= -->
+      <section class="page-section">
+        <div class="container">
+          <h2>Spinner</h2>
+
+          <div class="component-demo">
+            <div class="spinner"></div>
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
+
+    </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container flex-between">
-            <p>© 2026 MyAppSheet SaaS</p>
-            <p>Built with ❤️ in VS Code</p>
-        </div>
+    <footer class="page-footer">
+      <div class="container">
+        <p>Design System © 2026</p>
+      </div>
     </footer>
 
+  </div>
 </body>
 </html>
-

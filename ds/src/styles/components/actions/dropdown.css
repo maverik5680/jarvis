@@ -1,0 +1,85 @@
+/* ============================================================
+   DROPDOWN — BASE STRUCTURE
+   ============================================================ */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger button (usually your .btn component) */
+.dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ============================================================
+   DROPDOWN MENU PANEL
+   ============================================================ */
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 180px;
+  padding: var(--space-xs) 0;
+
+  background: var(--background-surface);
+  border: var(--border-width-1) solid var(--border-color-default);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-m);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    visibility 0.15s;
+  z-index: 1000;
+}
+
+/* Open state */
+.dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   DROPDOWN ITEMS
+   ============================================================ */
+
+.dropdown-item {
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--font-size-s);
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background: var(--background-hover);
+}
+
+.dropdown-item:active {
+  background: var(--background-active);
+}
+
+/* Disabled state */
+.dropdown-item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ============================================================
+   DROPDOWN DIVIDER
+   ============================================================ */
+
+.dropdown-divider {
+  height: 1px;
+  margin: var(--space-xs) 0;
+  background: var(--border-color-default);
+}

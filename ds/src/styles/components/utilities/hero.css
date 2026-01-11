@@ -1,0 +1,149 @@
+/* ============================================================
+   HERO COMPONENT
+   Token-driven, responsive, theme-ready
+   ============================================================ */
+
+.hero {
+  width: 100%;
+  padding: var(--spacing-10) var(--spacing-6);
+  background: var(--color-surface);
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
+   HERO CONTENT
+   ============================================================ */
+
+.hero__title {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+
+.hero__subtitle {
+  font-size: var(--font-size-l);
+  color: var(--color-gray);
+  max-width: 60ch;
+}
+
+.hero__body {
+  font-size: var(--font-size-m);
+  color: var(--color-dark);
+  max-width: 60ch;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-2);
+}
+
+/* ============================================================
+   CENTERED HERO
+   ============================================================ */
+
+.hero--center {
+  text-align: center;
+  align-items: center;
+}
+
+.hero--center .hero__subtitle,
+.hero--center .hero__body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   HERO WITH BACKGROUND IMAGE
+   ============================================================ */
+
+.hero--background {
+  color: var(--color-white);
+  padding: var(--spacing-16) var(--spacing-6);
+}
+
+.hero--background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.hero--background .hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   HERO WITH OVERLAY GRADIENT
+   ============================================================ */
+
+.hero--gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 0;
+}
+
+/* ============================================================
+   SPLIT HERO (text + image side by side)
+   ============================================================ */
+
+.hero--split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+.hero__media {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .hero--split {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   FULL HEIGHT HERO
+   ============================================================ */
+
+.hero--full {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HERO SPACING VARIANTS
+   ============================================================ */
+
+.hero--tight {
+  padding: var(--spacing-6) var(--spacing-4);
+}
+
+.hero--loose {
+  padding: var(--spacing-20) var(--spacing-8);
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+   DIVIDER COMPONENT
+   Horizontal, vertical, inset, spaced, and content dividers
+   ============================================================ */
+
+/* Base divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-light-gray);
+  margin: var(--spacing-4) 0;
+}
+
+/* ============================================================
+   ORIENTATION
+   ============================================================ */
+
+/* Vertical divider */
+.divider--vertical {
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-light-gray);
+  margin: 0 var(--spacing-4);
+}
+
+/* ============================================================
+   INSET VARIANTS
+   ============================================================ */
+
+.divider--inset {
+  margin-left: var(--spacing-6);
+  margin-right: var(--spacing-6);
+}
+
+.divider--inset-left {
+  margin-left: var(--spacing-6);
+}
+
+.divider--inset-right {
+  margin-right: var(--spacing-6);
+}
+
+/* ============================================================
+   SPACING VARIANTS
+   ============================================================ */
+
+.divider--tight {
+  margin: var(--spacing-2) 0;
+}
+
+.divider--loose {
+  margin: var(--spacing-6) 0;
+}
+
+/* ============================================================
+   CONTENT DIVIDER (text inside divider)
+   ============================================================ */
+
+.divider--with-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--color-gray);
+  font-size: var(--font-size-s);
+  margin: var(--spacing-4) 0;
+}
+
+.divider--with-content::before,
+.divider--with-content::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-light-gray);
+}
+
+.divider--with-content span {
+  padding: 0 var(--spacing-3);
+  color: var(--color-gray);
+}
+
+/* ============================================================
+   COLOR VARIANTS
+   ============================================================ */
+
+.divider--primary {
+  background-color: var(--color-primary);
+}
+
+.divider--danger {
+  background-color: var(--color-danger);
+}
+
+.divider--success {
+  background-color: var(--color-success);
+}
+
+.divider--warning {
+  background-color: var(--color-warning);
+}
+
+.divider--info {
+  background-color: var(--color-info);
+}

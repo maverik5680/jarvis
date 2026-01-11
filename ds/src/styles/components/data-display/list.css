@@ -1,0 +1,114 @@
+/* ============================================================
+   LIST COMPONENT
+   Token-driven, flexible, theme-ready
+   ============================================================ */
+
+/* Base list reset */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+/* List item */
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* ============================================================
+   INTERACTIVE LIST ITEMS
+   ============================================================ */
+
+.list__item--interactive {
+  cursor: pointer;
+}
+
+.list__item--interactive:hover {
+  background: var(--color-surface-alt);
+}
+
+.list__item--active {
+  background: var(--color-primary-light);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   LIST WITH DIVIDERS
+   ============================================================ */
+
+.list--divided .list__item {
+  border-bottom: 1px solid var(--color-light-gray);
+  border-radius: 0;
+  padding: var(--spacing-3) 0;
+}
+
+.list--divided .list__item:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   HORIZONTAL LIST
+   ============================================================ */
+
+.list--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.list--horizontal .list__item {
+  padding: 0;
+  border: none;
+}
+
+/* ============================================================
+   ICON SUPPORT
+   ============================================================ */
+
+.list__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-gray);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__item--active .list__icon {
+  color: var(--color-white);
+}
+
+/* ============================================================
+   DENSITY VARIANTS
+   ============================================================ */
+
+.list--compact .list__item {
+  padding: var(--spacing-1) var(--spacing-2);
+  gap: var(--spacing-2);
+}
+
+.list--loose .list__item {
+  padding: var(--spacing-3) var(--spacing-4);
+  gap: var(--spacing-4);
+}
+
+/* ============================================================
+   LIST GROUP TITLE
+   ============================================================ */
+
+.list__title {
+  font-size: var(--font-size-s);
+  font-weight: 600;
+  color: var(--color-gray);
+  padding: var(--spacing-2) var(--spacing-3);
+  text-transform: uppercase;
+}

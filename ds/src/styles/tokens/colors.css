@@ -1,0 +1,65 @@
+:root {
+  /* ============================================================
+     BRAND COLORS
+     ============================================================ */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  --color-primary: #6680FF;        /* brand soft blue */
+  --color-primary-light: #8FA2FF;  /* lighter shade */
+  --color-primary-dark: #4A63D6;   /* darker shade */
+
+  --color-secondary: #F50471;      /* brand red */
+  --color-secondary-light: #FF4A9A;
+  --color-secondary-dark: #C40059;
+
+  /* ============================================================
+     NEUTRALS
+     ============================================================ */
+  --color-dark: #333333;
+  --color-gray: #666666;
+  --color-light-gray: #D9D9D9;
+  --color-light: var(--color-light-gray);
+
+  /* ============================================================
+     SEMANTIC COLORS (UI STATES)
+     ============================================================ */
+  --color-success: #0DA20D;
+  --color-success-light: #4CC94C;
+  --color-success-dark: #087508;
+
+  --color-danger: #EB0D3F;
+  --color-danger-light: #FF4F73;
+  --color-danger-dark: #B8002C;
+
+  --color-warning: #FFAA00;
+  --color-warning-light: #FFCC66;
+  --color-warning-dark: #CC8800;
+
+  --color-info: #556EFE;
+  --color-info-light: #8A9BFF;
+  --color-info-dark: #2F45C7;
+
+  /* ============================================================
+     ACCENT COLORS (non-semantic)
+     ============================================================ */
+  --color-red: #EB0D3F;
+  --color-green: #0DA20D;
+  --color-yellow: #FFAA00;
+  --color-blue: #2526FE;
+  --color-pink: #FD2C4E;
+  --color-indigo: #556EFE;
+
+  /* ============================================================
+     UTILITY COLORS
+     ============================================================ */
+  --color-transparent: transparent;
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F7F7F7;
+  --color-surface-dark: #1A1A1A;
+}
+
+
+
