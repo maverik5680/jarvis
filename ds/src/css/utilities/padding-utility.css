@@ -1,0 +1,43 @@
+/* ============================================================
+   PADDING-UTILITY.CSS
+   Token-driven inner spacing helpers
+   ============================================================ */
+
+/* 1. PADDING ALL SIDES */
+.p-xxs-utility   { padding: var(--space-xxs) !important; }
+.p-xs-utility    { padding: var(--space-xs) !important; }
+.p-s-utility     { padding: var(--space-s) !important; }
+.p-m-utility     { padding: var(--space-m) !important; }
+.p-l-utility     { padding: var(--space-l) !important; }
+.p-xl-utility    { padding: var(--space-xl) !important; }
+.p-xxl-utility   { padding: var(--space-xxl) !important; }
+.p-xxxl-utility  { padding: var(--space-xxxl) !important; }
+
+/* 2. PADDING VERTICAL (Top & Bottom) */
+.py-xxs-utility  { padding-block: var(--space-xxs) !important; }
+.py-xs-utility   { padding-block: var(--space-xs) !important; }
+.py-s-utility    { padding-block: var(--space-s) !important; }
+.py-m-utility    { padding-block: var(--space-m) !important; }
+.py-l-utility    { padding-block: var(--space-l) !important; }
+.py-xl-utility   { padding-block: var(--space-xl) !important; }
+.py-xxl-utility  { padding-block: var(--space-xxl) !important; }
+.py-xxxl-utility { padding-block: var(--space-xxxl) !important; }
+
+/* 3. PADDING HORIZONTAL (Left & Right) */
+.px-xxs-utility  { padding-inline: var(--space-xxs) !important; }
+.px-xs-utility   { padding-inline: var(--space-xs) !important; }
+.px-s-utility    { padding-inline: var(--space-s) !important; }
+.px-m-utility    { padding-inline: var(--space-m) !important; }
+.px-l-utility    { padding-inline: var(--space-l) !important; }
+.px-xl-utility   { padding-inline: var(--space-xl) !important; }
+.px-xxl-utility  { padding-inline: var(--space-xxl) !important; }
+.px-xxxl-utility { padding-inline: var(--space-xxxl) !important; }
+
+/* 4. PADDING INDIVIDUAL SIDES */
+.pt-m-utility    { padding-top: var(--space-m) !important; }
+.pb-m-utility    { padding-bottom: var(--space-m) !important; }
+.pl-m-utility    { padding-left: var(--space-m) !important; }
+.pr-m-utility    { padding-right: var(--space-m) !important; }
+
+/* 5. RESET */
+.no-padding-utility { padding: 0 !important; }

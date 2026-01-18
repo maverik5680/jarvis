@@ -1,0 +1,34 @@
+/* ============================================================
+   SIZING-UTILITY.CSS
+   Controls width and height constraints
+   ============================================================ */
+
+/* 1. WIDTHS (Percentages) */
+.w-25-utility       { width: 25% !important; }
+.w-33-utility       { width: 33.33% !important; }
+.w-50-utility       { width: 50% !important; }
+.w-75-utility       { width: 75% !important; }
+.w-100-utility      { width: 100% !important; }
+.w-auto-utility     { width: auto !important; }
+
+/* 2. HEIGHTS (Percentages & Viewport) */
+.h-50-utility       { height: 50% !important; }
+.h-100-utility      { height: 100% !important; }
+.h-screen-utility   { height: 100vh !important; }
+.h-auto-utility     { height: auto !important; }
+
+/* 3. MAX-WIDTHS (Standard UI Constraints) */
+/* Used for keeping text readable or centering content blocks */
+.max-w-xs-utility   { max-width: 320px !important; }
+.max-w-sm-utility   { max-width: 480px !important; }
+.max-w-md-utility   { max-width: 768px !important; }
+.max-w-lg-utility   { max-width: 1024px !important; }
+.max-w-xl-utility   { max-width: 1280px !important; }
+.max-w-full-utility { max-width: 100% !important; }
+
+/* 4. MIN-HEIGHTS (Hero sections and Dashboards) */
+.min-h-screen-utility { min-height: 100vh !important; }
+.min-h-0-utility      { min-height: 0 !important; }
+
+/* 5. VIEWPORT WIDTHS */
+.vw-100-utility     { width: 100vw !important; }

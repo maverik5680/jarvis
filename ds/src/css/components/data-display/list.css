@@ -1,0 +1,171 @@
+/* ============================================================
+   LIST CONTAINER
+   ============================================================ */
+.list-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 4px;
+  /* Slight softening */
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+}
+
+/* ============================================================
+   VARIANTS: CONTAINER
+   ============================================================ */
+
+/* Flush: No borders or border-radius, sits perfectly in cards/flyovers */
+.list-group--flush {
+  border: none;
+  border-radius: 0;
+}
+
+/* No Dividers: Removes internal dividers between items */
+.list-group--no-dividers .list-item {
+  border-bottom: none;
+}
+
+/* Bullet List: Adds a bullet before the title */
+.list-group--bullets .list-item__title::before {
+  content: "•";
+  margin-right: 8px;
+  color: var(--color-gray-400);
+}
+
+/* Dash List: Adds a dash before the title */
+.list-group--dashes .list-item__title::before {
+  content: "—";
+  margin-right: 8px;
+  color: var(--color-gray-400);
+}
+
+/* ============================================================
+   LIST ITEM ATOM
+   ============================================================ */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  min-height: 72px;
+  /* Extra "breath" for field use */
+  border-bottom: 1px solid var(--color-gray-200);
+  /* Thin, precise line */
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item:hover:not(.list-item--static):not(.list-item--disabled) {
+  background-color: var(--color-gray-50);
+  /* Subtle Audi hover effect */
+}
+
+/* ============================================================
+   VARIANTS: ITEM
+   ============================================================ */
+
+/* Dense: Compact spacing */
+.list-group--dense .list-item {
+  padding: 10px 16px;
+  min-height: 48px;
+}
+
+/* Static: Non-interactive item */
+.list-item--static {
+  cursor: default;
+}
+
+/* Disabled: Faded out and non-interactive */
+.list-item--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected: Active/Chosen state */
+.list-item--selected {
+  background-color: var(--color-gray-100);
+}
+
+.list-item--selected .list-item__title {
+  color: var(--color-brand-primary, #000);
+}
+
+/* ============================================================
+   STRUCTURE
+   ============================================================ */
+
+/* Leading Element (Icon/Avatar) */
+.list-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-gray-600);
+}
+
+.list-group--dense .list-item__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* TEXT HIERARCHY (The "Prompt" Logic) */
+.list-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.list-item__title {
+  font-family: 'Prompt', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  /* High contrast */
+  color: var(--color-brand-black);
+  line-height: 1.2;
+}
+
+.list-group--dense .list-item__title {
+  font-size: 14px;
+}
+
+.list-item__subtitle {
+  font-family: 'Prompt', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gray-600);
+  /* Muted for breath */
+}
+
+.list-group--dense .list-item__subtitle {
+  font-size: 12px;
+}
+
+/* ACTIONS AREA */
+.list-item__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+/* Trailing Chevron */
+.list-item__chevron {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-400);
+  margin-left: 4px;
+}

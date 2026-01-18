@@ -1,0 +1,42 @@
+/* ============================================================
+   TYPOGRAPHY-UTILITY.CSS
+   Text-specific overrides (Weight, Alignment, Style)
+   ============================================================ */
+
+/* 1. FONT WEIGHTS */
+.font-light-utility    { font-weight: var(--fw-light) !important; }
+.font-regular-utility  { font-weight: var(--fw-regular) !important; }
+.font-medium-utility   { font-weight: var(--fw-medium) !important; }
+.font-bold-utility     { font-weight: var(--fw-bold) !important; }
+
+/* 2. TEXT ALIGNMENT */
+.text-left-utility     { text-align: left !important; }
+.text-center-utility    { text-align: center !important; }
+.text-right-utility     { text-align: right !important; }
+.text-justify-utility   { text-align: justify !important; }
+
+/* 3. TEXT TRANSFORMATION */
+.text-upper-utility     { text-transform: uppercase !important; letter-spacing: 0.05em; }
+.text-lower-utility     { text-transform: lowercase !important; }
+.text-cap-utility       { text-transform: capitalize !important; }
+.text-normal-utility    { text-transform: none !important; }
+
+/* 4. TEXT COLOR (Brand & Feedback) */
+.text-brand-utility     { color: var(--color-brand-blue) !important; }
+.text-white-utility     { color: var(--color-white) !important; }
+.text-muted-utility     { color: var(--color-gray-500) !important; }
+.text-error-utility     { color: var(--color-error) !important; }
+.text-success-utility   { color: var(--color-success) !important; }
+
+/* 5. WRAPPING & TRUNCATION */
+/* Prevents long text from breaking layouts (e.g., long email addresses) */
+.text-truncate-utility {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.text-nowrap-utility   { white-space: nowrap !important; }
+
+/* 6. FONT STYLE */
+.text-italic-utility    { font-style: italic !important; }

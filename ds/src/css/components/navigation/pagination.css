@@ -1,0 +1,92 @@
+/* ============================================================
+   PAGINATION COMPONENT
+   ============================================================ */
+
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* Spacious Audi layout */
+  font-family: var(--font-family-main);
+  user-select: none;
+}
+
+/* Base button / item style */
+.pagination__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.pagination__item:hover:not(:disabled) {
+  opacity: 0.7;
+}
+
+.pagination__item:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* 1. Step-based Pagination (Numbered) */
+.pagination--steps .pagination__item {
+  min-width: 2rem;
+  font-weight: 400;
+}
+
+.pagination--steps .pagination__item.is-active {
+  font-weight: 700;
+}
+
+.pagination--steps .pagination__item.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background-color: currentColor;
+}
+
+/* 2. Stepless Pagination (Linear) */
+.pagination--linear .pagination__counter {
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.pagination--linear .pagination__total {
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+/* 3. Arrows (Standard for both) */
+.pagination__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* 4. Themes */
+.pagination--light {
+  color: var(--color-brand-black);
+}
+
+.pagination--dark {
+  color: var(--color-white);
+}
+
+/* Optional: Subtle divider for linear */
+.pagination__divider {
+  margin: 0 0.25rem;
+  opacity: 0.5;
+}

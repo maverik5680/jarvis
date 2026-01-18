@@ -1,0 +1,28 @@
+/* ============================================================
+   BUTTON GROUP
+   ============================================================ */
+.btn-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    /* Specification: 1/4 of basic type size (16px * 0.25 = 4px) */
+    align-items: center;
+}
+
+/* Vertical stacking for small screens / specific contexts */
+.btn-group--vertical {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Mixed Groups Hierarchy Rules */
+/* Placeholder for future specific overrides if needed */
+
+/* Mobile-first full width groups */
+@media (max-width: 600px) {
+    .btn-group--responsive {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

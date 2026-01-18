@@ -1,0 +1,40 @@
+/* ============================================================
+   DISPLAY-UTILITY.CSS
+   Controls box type and visibility across breakpoints
+   ============================================================ */
+
+/* ------------------------------
+   STANDARD DISPLAY TYPES
+   ------------------------------ */
+.block-utility           { display: block !important; }
+.inline-block-utility    { display: inline-block !important; }
+.inline-utility          { display: inline !important; }
+.flex-utility            { display: flex !important; }
+.inline-flex-utility     { display: inline-flex !important; }
+.grid-utility            { display: grid !important; }
+.none-utility            { display: none !important; }
+
+/* ------------------------------
+   RESPONSIVE DISPLAY (Mobile First)
+   ------------------------------ */
+
+/* Hide on mobile, show block on desktop */
+@media (min-width: 769px) {
+  .block-desktop-utility { display: block !important; }
+  .flex-desktop-utility  { display: flex !important; }
+}
+
+/* Hide on desktop, show block on mobile */
+@media (max-width: 768px) {
+  .block-mobile-utility  { display: block !important; }
+  .flex-mobile-utility   { display: flex !important; }
+}
+
+/* ------------------------------
+   PRINT DISPLAY
+   ------------------------------ */
+/* Essential for medical/construction reports: hide nav/buttons when printing */
+@media print {
+  .hide-print-utility    { display: none !important; }
+  .block-print-utility   { display: block !important; }
+}

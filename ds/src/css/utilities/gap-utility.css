@@ -1,0 +1,24 @@
+/* ============================================================
+   GAP-UTILITY.CSS
+   Controls spacing between flex and grid items
+   ============================================================ */
+
+/* Uniform Gap (All sides) */
+.gap-none-utility { gap: 0 !important; }
+.gap-xxs-utility  { gap: var(--space-xxs) !important; }
+.gap-xs-utility   { gap: var(--space-xs) !important; }
+.gap-s-utility    { gap: var(--space-s) !important; }
+.gap-m-utility    { gap: var(--space-m) !important; }
+.gap-l-utility    { gap: var(--space-l) !important; }
+.gap-xl-utility   { gap: var(--space-xl) !important; }
+.gap-xxl-utility  { gap: var(--space-xxl) !important; }
+
+/* Row Gap (Vertical spacing only) */
+.gap-row-s-utility { row-gap: var(--space-s) !important; }
+.gap-row-m-utility { row-gap: var(--space-m) !important; }
+.gap-row-l-utility { row-gap: var(--space-l) !important; }
+
+/* Column Gap (Horizontal spacing only) */
+.gap-col-s-utility { column-gap: var(--space-s) !important; }
+.gap-col-m-utility { column-gap: var(--space-m) !important; }
+.gap-col-l-utility { column-gap: var(--space-l) !important; }

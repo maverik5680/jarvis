@@ -1,0 +1,21 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  /* The "Audi" premium touch */
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.backdrop--modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: none;
+}

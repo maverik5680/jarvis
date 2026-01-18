@@ -1,0 +1,84 @@
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  font-family: var(--font-family-main, inherit);
+  font-size: var(--fs-base, 1rem);
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Global Alert: Viewport-wide */
+.alert--global {
+  width: 100%;
+  border: none;
+}
+
+.alert--fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4000;
+}
+
+.alert--fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 4000;
+}
+
+/* Container Alert: Within a section or card */
+.alert--container {
+  border-radius: 2px;
+  margin: 16px 0;
+}
+
+/* Color Variants: Brand Palette Only (No Signal Colors for wide areas) */
+.alert--black {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+}
+
+.alert--blue {
+  background-color: var(--color-brand-blue);
+  color: var(--color-white);
+}
+
+.alert--white {
+  background-color: var(--color-white);
+  color: var(--color-brand-black);
+  border: 1px solid var(--color-gray-200);
+}
+
+.alert--gray {
+  background-color: var(--color-gray-100);
+  color: var(--color-brand-black);
+}
+
+.alert__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.alert__icon {
+  flex-shrink: 0;
+}
+
+.alert__actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+/* Adaptation for slim buttons in alerts */
+.alert .btn {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: auto;
+  font-size: 0.875rem;
+}

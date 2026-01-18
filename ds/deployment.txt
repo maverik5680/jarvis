@@ -1,0 +1,54 @@
+Stage 1: The Foundations (Atoms)
+
+
+ This is the "DNA" stage. You build these pieces in isolation so they are perfect before they ever touch a real page.
+
+[x] Colors: Monochrome palette (Grays/Blacks) + Electric Blue.
+
+[x] Typography: The Prompt font scale (H1, H2, Body, Small Caption).
+
+[x] Buttons: The "Filled" primary and "Outline" secondary styles.
+
+[x] inputs: Clean, minimalist text boxes with thin 
+borders.
+
+[x] List Item Base: The "row" container—setting the height, padding, and the subtle divider line.
+
+[x] Icons: Simple, "Linear" icons (Wrenches, Trucks, Documents) that feel engineered.
+
+Stage 2:
+
+ The Interactions (Molecules)
+This is where we combine the atoms to create functional pieces for the construction field.
+
+[] Search Bar: A text input with a magnifying glass icon.
+
+[] Field Labeling: A Prompt label paired with an input (e.g., "Site Address").
+
+[] Status Badges: Small, colored pills (e.g., "In Progress" or "Completed").
+
+[] File Uploader: A simple box to drag and drop job-site photos.
+
+Stage 3: 
+
+The Workflows (Organisms)
+These are the heavy-duty sections that handle your complex on-field data.
+
+[] The Data Table: Your most important piece—clean rows of text with a high-contrast "View" button.
+
+[] The Navigation Bar: A sleek, dark side-menu or top-header (Audi-style).
+
+[] The Inspection Card: A container holding a title, a description, and a "Sign Off" button.
+
+[] The Modal: An "overlay" window that pops up when a user needs to confirm an action.
+
+Stage 4: 
+
+The Interface (Templates & Pages)
+This is the final assembly where you connect the system to your data.
+
+[] Project Dashboard: An overview of all active job sites.
+
+[] Daily Log Page: The screen where the foreman enters their daily progress.
+
+[] Settings/Profile: A clean space to manage user details.

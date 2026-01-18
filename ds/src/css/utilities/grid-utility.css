@@ -1,0 +1,45 @@
+/* ============================================================
+   GRID UTILITIES
+   Location: ds/src/css/utilities/grid-utility.css
+   ============================================================ */
+
+/* 1. Display */
+.u-grid {
+    display: grid !important;
+}
+
+.u-inline-grid {
+    display: inline-grid !important;
+}
+
+/* 2. Columns (Standard 12-column system) */
+.u-grid-cols-1  { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+.u-grid-cols-2  { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.u-grid-cols-3  { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.u-grid-cols-4  { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+.u-grid-cols-6  { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+.u-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+
+/* 3. Column Spanning */
+.u-col-span-full { grid-column: 1 / -1 !important; }
+.u-col-span-1   { grid-column: span 1 / span 1 !important; }
+.u-col-span-2   { grid-column: span 2 / span 2 !important; }
+
+/* 4. Gaps (Uses tokens with 1rem fallback) */
+.u-gap-0  { gap: 0 !important; }
+.u-gap-xs { gap: var(--spacing-xs, 0.25rem) !important; }
+.u-gap-sm { gap: var(--spacing-sm, 0.5rem) !important; }
+.u-gap-md { gap: var(--spacing-md, 1rem) !important; }
+.u-gap-lg { gap: var(--spacing-lg, 1.5rem) !important; }
+.u-gap-xl { gap: var(--spacing-xl, 2rem) !important; }
+
+/* 5. Alignment Utilities */
+.u-items-start   { align-items: start !important; }
+.u-items-center  { align-items: center !important; }
+.u-items-end     { align-items: end !important; }
+.u-items-stretch { align-items: stretch !important; }
+
+.u-justify-start  { justify-content: start !important; }
+.u-justify-center { justify-content: center !important; }
+.u-justify-end    { justify-content: end !important; }
+.u-justify-between { justify-content: space-between !important; }

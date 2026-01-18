@@ -1,0 +1,47 @@
+/* ============================================================
+   ASPECT-RATIO-UTILITY.CSS
+   Handles consistent sizing for media and cards
+   ============================================================ */
+
+/* 1:1 Square (Avatars, Icons) */
+.aspect-square-utility {
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover;
+}
+
+/* 16:9 Widescreen (Video Players, Hero Images) */
+.aspect-video-utility {
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover;
+}
+
+/* 4:3 Standard (Classic Photo Gallery, Document Previews) */
+.aspect-photo-utility {
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover;
+}
+
+/* 21:9 Ultra-wide (Cinematic Banners) */
+.aspect-cinema-utility {
+  aspect-ratio: 21 / 9 !important;
+  object-fit: cover;
+}
+
+/* 3:2 Professional Photography (Portfolio Grids) */
+.aspect-classic-utility {
+  aspect-ratio: 3 / 2 !important;
+  object-fit: cover;
+}
+
+/* Vertical / Portrait (Mobile-first stories or Team Cards) */
+.aspect-portrait-utility {
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover;
+}
+
+/* Utility to ensure children fill the ratio (especially for iframes) */
+.aspect-fill-utility > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

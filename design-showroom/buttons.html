@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../ds/src/css/main.css">
+    <style>
+        /* Emergency debug styles if main.css fails */
+        body {
+            background: #000;
+            color: #fff;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="u-page-layout">
+
+    <!-- Backdrop -->
+    <div class="u-backdrop" id="backdrop"></div>
+
+    <aside class="u-sidebar">
+        <div style="padding: 20px;">
+            <h2><a href="showroom.html" style="color: inherit; text-decoration: none;">JARVIS</a></h2>
+            <nav>
+                <details>
+                    <summary>Tokens</summary>
+                    <ul>
+                        <li><a href="border.html">Border</a></li>
+                        <li><a href="breakpoint.html">Breakpoint</a></li>
+                        <li><a href="colors.html">Colors</a></li>
+                        <li><a href="elevations.html">Elevations</a></li>
+                        <li><a href="motion.html">Motion</a></li>
+                        <li><a href="opacity.html">Opacity</a></li>
+                        <li><a href="radius.html">Radius</a></li>
+                        <li><a href="ratios.html">Ratios</a></li>
+                        <li><a href="shadow.html">Shadow</a></li>
+                        <li><a href="sizing.html">Sizing</a></li>
+                        <li><a href="spacing.html">Spacing</a></li>
+                        <li><a href="variables.html">Variables</a></li>
+                        <li><a href="z-index.html">Z-Index</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Base</summary>
+                    <ul>
+                        <li><a href="typography.html">Typography</a></li>
+                    </ul>
+                </details>
+
+                <details open>
+                    <summary>Actions</summary>
+                    <ul>
+                        <li><a href="buttons.html" class="active">Buttons</a></li>
+                        <li><a href="dropdowns.html">Dropdowns</a></li>
+                        <li><a href="icon-buttons.html">Icon Buttons</a></li>
+                        <li><a href="menus.html">Menus</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Data Display</summary>
+                    <ul>
+                        <li><a href="avatars.html">Avatars</a></li>
+                        <li><a href="badges.html">Badges</a></li>
+                        <li><a href="cards.html">Cards</a></li>
+                        <li><a href="lists.html">Lists</a></li>
+                        <li><a href="skeletons.html">Skeletons</a></li>
+                        <li><a href="tables.html">Tables</a></li>
+                        <li><a href="tags.html">Tags</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Feedback</summary>
+                    <ul>
+                        <li><a href="alerts.html">Alerts</a></li>
+                        <li><a href="popovers.html">Popovers</a></li>
+                        <li><a href="progress.html">Progress</a></li>
+                        <li><a href="spinners.html">Spinners</a></li>
+                        <li><a href="toasts.html">Toasts</a></li>
+                        <li><a href="tooltips.html">Tooltips</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Forms</summary>
+                    <ul>
+                        <li><a href="form-groups.html">Form Groups</a></li>
+                        <li><a href="form-layouts.html">Form Layouts</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Inputs</summary>
+                    <ul>
+                        <li><a href="inputs.html">Inputs</a></li>
+                        <li><a href="select-menus.html">Select Menus</a></li>
+                        <li><a href="selections.html">Selections</a></li>
+                        <li><a href="textfields.html">Textfields</a></li>
+                        <li><a href="toggles.html">Toggles</a></li>
+                        <li><a href="validation.html">Validation</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Interaction</summary>
+                    <ul>
+                        <li><a href="accordions.html">Accordions</a></li>
+                        <li><a href="modals.html">Modals</a></li>
+                        <li><a href="sliders.html">Sliders</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Layout Shell</summary>
+                    <ul>
+                        <li><a href="footers.html">Footers</a></li>
+                        <li><a href="grids.html">Grids</a></li>
+                        <li><a href="headers.html">Headers</a></li>
+                        <li><a href="layout-structure.html">Layout Structure</a></li>
+                        <li><a href="page-layouts.html">Page Layouts</a></li>
+                        <li><a href="page-margins.html">Page Margins</a></li>
+                        <li><a href="sidebars.html">Sidebars</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Navigation</summary>
+                    <ul>
+                        <li><a href="backdrops.html">Backdrops</a></li>
+                        <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+                        <li><a href="flyover.html">Flyover</a></li>
+                        <li><a href="links.html">Links</a></li>
+                        <li><a href="list-navigation.html">List Navigation</a></li>
+                        <li><a href="navbars.html">Navbars</a></li>
+                        <li><a href="navmenus.html">Navmenus</a></li>
+                        <li><a href="pagination.html">Pagination</a></li>
+                        <li><a href="tabs.html">Tabs</a></li>
+                        <li><a href="tab-bar.html">Tab Bar</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Sections</summary>
+                    <ul>
+                        <li><a href="ctas.html">CTAs</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="heroes.html">Heroes</a></li>
+                        <li><a href="sections.html">Sections</a></li>
+                        <li><a href="stats.html">Stats</a></li>
+                    </ul>
+                </details>
+
+            </nav>
+        </div>
+    </aside>
+
+    <div class="u-main-area">
+        <header class="u-header"
+            style="padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
+            <span>Buttons</span>
+            <button class="u-menu-btn" id="menuBtn">Menu</button>
+        </header>
+
+        <main style="padding: 40px;">
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Primary Buttons</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">The filled-out primary button is used for the most
+                    important action on a page.</p>
+
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                    <button class="btn btn--primary-black">Primary Black</button>
+                    <div style="background: #333; padding: 20px; border-radius: 4px;">
+                        <button class="btn btn--primary-white">Primary White</button>
+                    </div>
+                </div>
+
+                <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">&lt;button class="btn btn--primary-black"&gt;Primary Black&lt;/button&gt;
+&lt;button class="btn btn--primary-white"&gt;Primary White&lt;/button&gt;</code></pre>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Secondary Buttons</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">The transparent secondary button with a thin frame is used
+                    for subordinate actions.</p>
+
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                    <button class="btn btn--secondary-black">Secondary Black</button>
+                    <div style="background: #333; padding: 20px; border-radius: 4px;">
+                        <button class="btn btn--secondary-white">Secondary White</button>
+                    </div>
+                </div>
+
+                <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">&lt;button class="btn btn--secondary-black"&gt;Secondary Black&lt;/button&gt;
+&lt;button class="btn btn--secondary-white"&gt;Secondary White&lt;/button&gt;</code></pre>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Text Buttons</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">Subtle call to action, typically combined with an arrow.
+                </p>
+
+                <div style="display: flex; gap: 40px; align-items: center; margin-bottom: 20px;">
+                    <button class="btn btn--text">
+                        Standard Variant
+                        <span class="btn__arrow">→</span>
+                    </button>
+                    <button class="btn btn--text">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16v-4m0-4h.01" />
+                        </svg>
+                        Icon Variant
+                    </button>
+                    <button class="btn btn--text">Plain Variant</button>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Size Specification</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">Buttons are scaled based on font size with a minimum width
+                    of <strong>9x</strong> the base font size.</p>
+
+                <div style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 40px;">
+                    <!-- Small -->
+                    <div>
+                        <span
+                            style="display: block; margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase;">Small
+                            (Base 16px, Min-width 144px)</span>
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <button class="btn btn--primary btn--sm">Small Button</button>
+                            <button class="btn btn--black btn--sm">Action</button>
+                        </div>
+                    </div>
+
+                    <!-- Medium -->
+                    <div>
+                        <span
+                            style="display: block; margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase;">Medium
+                            (Base 18px, Min-width 162px)</span>
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <button class="btn btn--primary btn--md">Medium Button</button>
+                            <button class="btn btn--black btn--md">Processing</button>
+                        </div>
+                    </div>
+
+                    <!-- Large -->
+                    <div>
+                        <span
+                            style="display: block; margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase;">Large
+                            (Base 20px, Min-width 180px)</span>
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <button class="btn btn--primary btn--lg">Large Button</button>
+                            <button class="btn btn--black btn--lg">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">&lt;!-- Small: 16px / 144px min-width --&gt;
+&lt;button class="btn btn--sm"&gt;...&lt;/button&gt;
+
+&lt;!-- Medium: 18px / 162px min-width --&gt;
+&lt;button class="btn btn--md"&gt;...&lt;/button&gt;
+
+&lt;!-- Large: 20px / 180px min-width --&gt;
+&lt;button class="btn btn--lg"&gt;...&lt;/button&gt;</code></pre>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">System Icon Buttons</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">Transparent buttons for classic interactions (save, print,
+                    download).</p>
+
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                    <button class="btn btn--system-icon btn--sm">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                            <polyline points="17 21 17 13 7 13 7 21" />
+                            <polyline points="7 3 7 8 15 8" />
+                        </svg>
+                    </button>
+                    <button class="btn btn--system-icon btn--md">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Button Groups</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">Grouped actions with a specification gap of 0.25rem (4px).
+                </p>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 10px; font-size: 14px; color: #888;">Primary & Secondary Group</h3>
+                    <div class="btn-group">
+                        <button class="btn btn--primary-black">Save Changes</button>
+                        <button class="btn btn--secondary-black">Cancel</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="margin-bottom: 10px; font-size: 14px; color: #888;">Secondary Group</h3>
+                    <div class="btn-group">
+                        <button class="btn btn--secondary-black">Filter</button>
+                        <button class="btn btn--secondary-black">Sort</button>
+                        <button class="btn btn--secondary-black">Export</button>
+                    </div>
+                </div>
+
+                <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">&lt;div class="btn-group"&gt;
+  &lt;button class="btn btn--primary-black"&gt;Action 1&lt;/button&gt;
+  &lt;button class="btn btn--secondary-black"&gt;Action 2&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Floating & Sticky</h1>
+                <p style="margin-bottom: 20px; color: #ccc;">Highlight actions in a level above the layout or stick them
+                    to the bottom on mobile.</p>
+
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 40px;">
+                    <button class="btn btn--primary-black btn--floating"
+                        style="position: static; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <span style="font-size: 14px; color: #888;">&larr; Floating Action (Shadow + Elevation)</span>
+                </div>
+
+                <div style="border: 1px solid #333; border-radius: 8px; overflow: hidden; max-width: 375px;">
+                    <div style="background: #222; padding: 10px; text-align: center; font-size: 12px; color: #888;">
+                        Smartphone Preview (Breakpoint S)</div>
+                    <div style="height: 200px; padding: 20px; position: relative;">
+                        <p style="font-size: 13px; color: #aaa;">Scrollable content area...</p>
+                        <button class="btn btn--primary-black btn--sticky-bottom" style="position: absolute;">Sticky
+                            Primary Button</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Full Width</h1>
+                <div style="margin-bottom: 20px;">
+                    <a href="#" class="btn btn--primary btn--block">Block Level Button</a>
+                </div>
+
+                <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">&lt;a href="#" class="btn btn--primary btn--block"&gt;Block Level Button&lt;/a&gt;</code></pre>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.querySelector('.u-sidebar');
+        const backdrop = document.getElementById('backdrop');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('is-open');
+            backdrop.classList.toggle('is-active');
+            menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
+        }
+
+        if (menuBtn && backdrop) {
+            menuBtn.addEventListener('click', toggleMenu);
+            backdrop.addEventListener('click', toggleMenu);
+        }
+    </script>
+</body>
+
+</html>

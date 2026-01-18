@@ -1,0 +1,74 @@
+/* ============================================================
+   ICON-BUTTONS.CSS
+   Square/Circular action triggers for icons only
+   ============================================================ */
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  /* Reset standard button padding */
+  cursor: pointer;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: all var(--ms-base) var(--ease-standard);
+  border-radius: var(--radius-sm);
+  /* Audi-style sharp precision */
+  color: var(--color-gray-700);
+}
+
+/* 1. SIZING (Linked to your spacing/sizing tokens) */
+.icon-button-sm {
+  width: var(--space-m);
+  height: var(--space-m);
+}
+
+.icon-button-md {
+  width: var(--space-l);
+  height: var(--space-l);
+}
+
+.icon-button-lg {
+  width: var(--space-xl);
+  height: var(--space-xl);
+}
+
+/* 2. VARIANTS */
+.icon-button-ghost:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-brand-black);
+}
+
+.icon-button-filled {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+}
+
+.icon-button-filled:hover {
+  background-color: var(--color-brand-black-hover);
+}
+
+.icon-button-outline {
+  border-color: var(--color-gray-300);
+}
+
+.icon-button-outline:hover {
+  border-color: var(--color-brand-black);
+  color: var(--color-brand-black);
+}
+
+/* BRAND ACCENT VARIANTS */
+.icon-button-filled--brand {
+  background-color: var(--color-brand-blue);
+  color: var(--color-white);
+}
+
+.icon-button-filled--brand:hover {
+  background-color: var(--color-brand-blue-hover);
+}
+
+/* 3. SHAPE OVERRIDE */
+.icon-button-circle {
+  border-radius: 50% !important;
+}

@@ -1,0 +1,105 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip__content {
+  position: absolute;
+  background: var(--color-brand-black);
+  color: var(--color-white);
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  border-radius: 2px;
+  white-space: nowrap;
+  z-index: 100;
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Arrow Base */
+.tooltip__content::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Directions */
+.tooltip--top .tooltip__content {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  margin-bottom: 8px;
+}
+
+.tooltip--top .tooltip__content::after {
+  border-width: 6px 6px 0 6px;
+  border-color: var(--color-brand-black) transparent transparent transparent;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip--bottom .tooltip__content {
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  margin-top: 8px;
+}
+
+.tooltip--bottom .tooltip__content::after {
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent var(--color-brand-black) transparent;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip--left .tooltip__content {
+  right: 100%;
+  top: 50%;
+  transform: translate(-10px, -50%);
+  margin-right: 8px;
+}
+
+.tooltip--left .tooltip__content::after {
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent var(--color-brand-black);
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip--right .tooltip__content {
+  left: 100%;
+  top: 50%;
+  transform: translate(10px, -50%);
+  margin-left: 8px;
+}
+
+.tooltip--right .tooltip__content::after {
+  border-width: 6px 6px 6px 0;
+  border-color: transparent var(--color-brand-black) transparent transparent;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip:hover .tooltip__content {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+  /* Transition to neutral position */
+}
+
+.tooltip--left:hover .tooltip__content,
+.tooltip--right:hover .tooltip__content {
+  transform: translate(0, -50%);
+}

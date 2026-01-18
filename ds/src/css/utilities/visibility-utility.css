@@ -1,0 +1,51 @@
+/* ============================================================
+   VISIBILITY-UTILITY.CSS
+   Handles responsive toggles and accessibility visibility
+   ============================================================ */
+
+/* 1. VISUAL VISIBILITY 
+   (Hidden from view but still occupies space) 
+*/
+.v-hidden-utility {
+  visibility: hidden !important;
+}
+
+.v-visible-utility {
+  visibility: visible !important;
+}
+
+/* 2. ACCESSIBILITY (Screen Reader Only)
+   (Hidden visually but readable by assistive technology)
+*/
+.sr-only-utility {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 3. RESPONSIVE HIDING (Mobile First) */
+
+/* Hide only on Mobile (768px and below) */
+@media (max-width: 768px) {
+  .hide-mobile-utility {
+    display: none !important;
+  }
+}
+
+/* Hide only on Desktop (769px and above) */
+@media (min-width: 769px) {
+  .hide-desktop-utility {
+    display: none !important;
+  }
+}
+
+/* 4. OPACITY HELPERS */
+.opacity-0-utility   { opacity: 0 !important; }
+.opacity-50-utility  { opacity: 0.5 !important; }
+.opacity-100-utility { opacity: 1 !important; }

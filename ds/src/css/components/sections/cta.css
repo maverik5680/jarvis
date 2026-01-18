@@ -1,0 +1,69 @@
+/* ============================================================
+   SECTION: CTA (Call to Action)
+   ============================================================ */
+
+.cta {
+  text-align: center;
+  border-radius: 2px; /* Precision Audi-style edge */
+}
+
+/* 1. Layout Structure */
+.cta__content {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* 2. Typography Hierarchy */
+.cta__title {
+  font-family: var(--font-family-main);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+}
+
+.cta__description {
+  font-family: var(--font-family-main);
+  font-size: var(--fs-body);
+  color: inherit; /* Allows text to adapt to light/dark backgrounds */
+  opacity: 0.9;
+  max-width: 540px;
+}
+
+/* 3. Style Variants for Different Clients */
+
+/* The "Bold Brand" Variant (Current Construction Client) */
+.cta--brand {
+  background-color: var(--color-brand-blue);
+  color: var(--color-white);
+}
+
+/* The "Sophisticated Dark" Variant (Architecture/Finance) */
+.cta--dark {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+}
+
+/* The "Minimalist" Variant (Medical/Tech) */
+.cta--outline {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-brand-black);
+}
+
+/* 4. Action Group */
+.cta__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}

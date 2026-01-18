@@ -1,0 +1,165 @@
+/* ============================================================
+   TABLE COMPONENT
+   Minimalist design with interrupted horizontal lines
+   ============================================================ */
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  /* Required for interrupted lines gap */
+  border-spacing: 0;
+  font-size: var(--fs-base, 1rem);
+  color: var(--color-brand-black);
+}
+
+/* Header Styling */
+.table thead th {
+  text-align: left;
+  font-family: var(--font-family-extended, inherit);
+  font-weight: var(--fw-bold, 700);
+  padding: 16px 12px;
+  border-top: 2px solid var(--color-brand-black);
+  border-bottom: 2px solid var(--color-brand-black);
+  white-space: nowrap;
+}
+
+/* Body Styling - Interrupted Lines */
+.table td {
+  padding: 16px 12px;
+  vertical-align: middle;
+  position: relative;
+  border-bottom: none;
+  /* Removed standard border */
+}
+
+/* The interrupted line: restricted by left/right offsets */
+.table td::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  /* Offset to create gap between columns */
+  right: 12px;
+  /* Offset to create gap between columns */
+  height: 1px;
+  background-color: var(--color-gray-200);
+}
+
+.table tr:last-child td::after {
+  display: none;
+  /* No line under the last row */
+}
+
+/* Creating the "interrupted" look: borders don't touch the very edges of the row */
+/* We simulate this by having no border on the table itself and using internal cell padding */
+/* Specifically, the brand often means the line is only under the content or has gaps at gutters */
+
+/* Highlighting */
+.table__cell--highlight-1 {
+  background-color: var(--color-gray-100);
+}
+
+.table__cell--highlight-2 {
+  background-color: var(--color-gray-200);
+}
+
+.table__row--highlight td {
+  background-color: var(--color-gray-100);
+}
+
+.table__col--highlight {
+  background-color: var(--color-gray-50);
+}
+
+/* Sorting Capability */
+.table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.table__sort::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--color-gray-400);
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.table__sort--desc::after {
+  transform: rotate(180deg);
+  border-bottom-color: var(--color-brand-black);
+}
+
+.table__sort--asc::after {
+  border-bottom-color: var(--color-brand-black);
+}
+
+/* Stacked Table for Mobile */
+@media (max-width: 768px) {
+
+  .table--stacked,
+  .table--stacked thead,
+  .table--stacked tbody,
+  .table--stacked th,
+  .table--stacked td,
+  .table--stacked tr {
+    display: block;
+    width: 100%;
+  }
+
+  .table--stacked thead {
+    display: none;
+    /* Hide headers in stacked mode, labels used in cells */
+  }
+
+  .table--stacked tr {
+    margin-bottom: 24px;
+    border: 1px solid var(--color-gray-200);
+    padding: 16px;
+  }
+
+  .table--stacked td {
+    border: none;
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .table--stacked td:last-child {
+    border-bottom: none;
+  }
+
+  /* Data label for stacked mode */
+  .table--stacked td::before {
+    content: attr(data-label);
+    font-weight: var(--fw-bold);
+    color: var(--color-gray-600);
+    font-size: 0.85rem;
+  }
+}
+
+/* Density Variants */
+.table--compact td,
+.table--compact th {
+  padding: 8px 12px;
+}
+
+.table--loose td,
+.table--loose th {
+  padding: 24px 12px;
+}

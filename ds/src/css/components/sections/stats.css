@@ -1,0 +1,43 @@
+/* ============================================================
+   SECTION-NAME: STATS
+   ============================================================ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* The Big Number */
+.stat-item__number {
+  font-family: var(--font-family-main);
+  font-size: var(--fs-h2); /* Large and impactful */
+  font-weight: var(--fw-bold);
+  color: var(--color-brand-blue); /* Electric Blue for the win */
+  line-height: 1;
+}
+
+/* The Label */
+.stat-item__label {
+  font-family: var(--font-family-main);
+  font-size: var(--fs-tiny);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gray-500);
+}
+
+/* Optional: Subtext for more detail */
+.stat-item__detail {
+  font-size: var(--fs-small);
+  color: var(--color-gray-400);
+  max-width: 180px;
+  margin: 0 auto;
+}

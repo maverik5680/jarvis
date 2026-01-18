@@ -1,0 +1,56 @@
+/* ============================================================
+   INPUT ATOM
+   ============================================================ */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  /* Layout & Sizing */
+  width: 100%;
+  padding: 12px 16px;
+  min-height: 48px;
+  /* Field-ready touch target */
+
+  /* Typography (Prompt) */
+  font-family: var(--font-family-main);
+  font-size: 16px;
+  /* 16px is mandatory to prevent iOS auto-zoom */
+  color: var(--color-brand-black);
+
+  /* Styling (The Audi Aesthetic) */
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 2px;
+  /* Precision sharp corners */
+
+  /* Interaction */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  appearance: none;
+  /* Removes default browser styling */
+}
+
+/* THE FOCUS STATE (Electric Blue) */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-brand-black);
+  /* A subtle "glow" using black at low opacity */
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* THE PLACEHOLDER */
+::placeholder {
+  color: var(--color-gray-400);
+  font-weight: 300;
+  /* Prompt Light for placeholders */
+}
+
+/* DISABLED STATE */
+input:disabled {
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+  color: var(--color-gray-500);
+}

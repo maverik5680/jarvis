@@ -1,0 +1,129 @@
+/* ============================================================
+   CARD COMPONENT
+   ============================================================ */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 2px;
+  /* Audi CI: Precision corners */
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--color-brand-black);
+}
+
+/* 1. Interactive Block (Whole card is clickable) */
+.card--interactive {
+  cursor: pointer;
+}
+
+.card--interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+  border-color: var(--color-gray-300);
+}
+
+/* Note: Visual feedback is removed if internal interactive elements exist */
+.card:has(button):hover,
+.card:has(a:not(.card__link-overlay)):hover {
+  transform: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* 2. Card with Background Image */
+.card--background {
+  border: none;
+  min-height: 240px;
+}
+
+.card__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  /* Spec: Up to 30% darkening */
+  z-index: 2;
+}
+
+.card--background .card-body,
+.card--background .card-header,
+.card--background .card-footer {
+  position: relative;
+  z-index: 3;
+  color: var(--color-white);
+}
+
+/* 3. Layout Variations */
+.card--horizontal {
+  flex-direction: row;
+}
+
+.card--horizontal .card-image,
+.card--horizontal .card__media-container {
+  width: 40%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .card--horizontal {
+    flex-direction: column;
+  }
+
+  .card--horizontal .card-image {
+    width: 100%;
+  }
+}
+
+/* 4. Internal Layout Sections */
+.card-header,
+.card-body,
+.card-footer {
+  padding: 24px;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+/* 5. Card Grid Utility */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.25rem;
+  /* Spec: 0.25 rem spacing */
+}
+
+/* 6. Brand Variants */
+.card--brand {
+  background-color: var(--color-brand-blue);
+  color: var(--color-white);
+  border: none;
+}
+
+.card--black {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+  border: none;
+}

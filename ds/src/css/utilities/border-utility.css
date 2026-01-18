@@ -1,0 +1,36 @@
+/* ============================================================
+   BORDER-UTILITY.CSS
+   Controls stroke, radius, and style
+   ============================================================ */
+
+/* ------------------------------
+   BORDER RADIUS (Corners)
+   ------------------------------ */
+.radius-none-utility   { border-radius: 0 !important; }
+.radius-sm-utility     { border-radius: 2px !important; } /* Precision look */
+.radius-md-utility     { border-radius: 4px !important; }
+.radius-lg-utility     { border-radius: 8px !important; }
+.radius-xl-utility     { border-radius: 16px !important; }
+.radius-full-utility   { border-radius: 9999px !important; } /* Pills/Circles */
+
+/* ------------------------------
+   BORDER WIDTH (Stroke)
+   ------------------------------ */
+.border-none-utility   { border-width: 0 !important; }
+.border-1-utility      { border: 1px solid var(--color-gray-200) !important; }
+.border-2-utility      { border: 2px solid var(--color-gray-200) !important; }
+
+/* ------------------------------
+   BORDER SIDES
+   ------------------------------ */
+.border-t-1-utility    { border-top: 1px solid var(--color-gray-200) !important; }
+.border-b-1-utility    { border-bottom: 1px solid var(--color-gray-200) !important; }
+.border-l-1-utility    { border-left: 1px solid var(--color-gray-200) !important; }
+.border-r-1-utility    { border-right: 1px solid var(--color-gray-200) !important; }
+
+/* ------------------------------
+   BORDER COLORS (Themed)
+   ------------------------------ */
+.border-brand-utility  { border-color: var(--color-brand-blue) !important; }
+.border-white-utility  { border-color: var(--color-white) !important; }
+.border-error-utility  { border-color: #D32F2F !important; }

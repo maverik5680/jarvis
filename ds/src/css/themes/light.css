@@ -1,0 +1,20 @@
+/* ds/src/css/themes/light.css */
+:root,
+.light {
+    /* Reduced color palette for light theme */
+    --color-bg: #FFFFFF;
+    --color-surface: #F3F4F6;
+    /* Grey 100 */
+    --color-text: #1A1A1B;
+    /* Brand Black-ish */
+    --color-border: #E5E7EB;
+    /* Grey 200 */
+
+    /* Elevation mapping for light theme */
+    --elevation-l1: var(--shadow-sm);
+    --elevation-l2: var(--shadow-md);
+    --elevation-l3: var(--shadow-lg);
+
+    /* Illustration adaptation */
+    --illustration-opacity: 1;
+}

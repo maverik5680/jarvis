@@ -1,0 +1,75 @@
+/* ============================================================
+   1. FONT DECLARATIONS (Unchanged)
+   ============================================================ */
+@font-face {
+  font-family: 'Prompt';
+  src: url('../../assets/fonts/Prompt-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ... include your other Prompt @font-face weights here ... */
+
+/* ============================================================
+   2. TYPOGRAPHY TOKENS
+   ============================================================ */
+:root {
+  --font-family-main: 'Prompt', sans-serif;
+  --fs-h1: 3.00rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.50rem;
+  --fs-h4: 1.25rem;
+  --fs-body: 1.00rem;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+  --lh-tight: 1.1;
+  --lh-base: 1.6;
+}
+
+/* ============================================================
+   3. THEME-AWARE BASE STYLES
+   ============================================================ */
+body {
+  font-family: var(--font-family-main);
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+  /* FIX: Use theme variable instead of hardcoded gray/white */
+  color: var(--color-text, #ffffff);
+  background-color: var(--color-bg, #000000);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   4. HEADINGS (The "Audi" Look + White Text Fix)
+   ============================================================ */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-main);
+  /* FIX: Ensure headings use the theme text color (White) */
+  color: var(--color-text, #ffffff);
+  margin: 0 0 1rem 0;
+  line-height: var(--lh-tight);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-light);
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+}
+
+/* The element you mentioned: <h2 class="u-text-lg"> */
+.u-text-lg {
+  font-size: var(--fs-h2);
+  /* Or map to your specific LG token */
+}

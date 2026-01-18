@@ -1,0 +1,54 @@
+/* ============================================================
+   NAVIGATION: LINKS (The Base Atom)
+   ============================================================ */
+
+.link {
+  color: var(--color-brand-black);
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  transition: color 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  /* Space for an icon if added */
+}
+
+.link:hover {
+  color: var(--color-brand-blue);
+  text-decoration: none;
+}
+
+/* Subtle Link: Used in footers or secondary text */
+.link--subtle {
+  color: var(--color-gray-500);
+  font-weight: var(--fw-regular);
+}
+
+.link--subtle:hover {
+  color: var(--color-brand-blue);
+}
+
+/* Underline Animation: Premium "White-Label" feel */
+.link--animated {
+  position: relative;
+  color: var(--color-brand-black);
+}
+
+.link--animated::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-brand-blue);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link--animated:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

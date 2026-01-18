@@ -1,0 +1,87 @@
+/* ============================================================
+   SECTION-NAME: HERO
+   ============================================================ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 80vh; /* Dynamic height based on screen size */
+  background-color: var(--color-white);
+  padding: 100px 0; /* Base vertical padding */
+}
+
+/* 1. Layout Variants */
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Default side-by-side */
+  align-items: center;
+  gap: 64px;
+}
+
+.hero--centered .hero__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* 2. Content Elements */
+.hero__content {
+  max-width: 620px;
+}
+
+.hero__title {
+  /* Using your Prompt weights */
+  font-family: var(--font-family-main);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--color-brand-black);
+  margin-bottom: 24px;
+}
+
+.hero__title span {
+  /* Highlight effect using Electric Blue */
+  color: var(--color-brand-blue);
+  font-weight: var(--fw-light); /* Mix of bold/light for that premium look */
+}
+
+.hero__subtitle {
+  font-family: var(--font-family-main);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-regular);
+  color: var(--color-gray-500);
+  line-height: var(--lh-base);
+  margin-bottom: 40px;
+}
+
+/* 3. Media (The Image/Graphic Slot) */
+.hero__media {
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 20px 20px 0px var(--color-gray-100); /* Offset geometric shadow */
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 4. Actions Cluster */
+.hero__actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* 5. Mobile Adjustments */
+@media (max-width: 992px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero__actions {
+    justify-content: center;
+  }
+}

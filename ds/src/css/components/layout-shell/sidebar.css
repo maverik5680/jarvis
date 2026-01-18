@@ -1,0 +1,185 @@
+/* ds/src/css/components/layout-shell/sidebar.css */
+
+/* --- BASE SIDEBAR STYLES (Common to all viewports) --- */
+
+.u-sidebar {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-brand-black, #000);
+  color: #fff;
+  border-right: 1px solid var(--color-border, #333);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: transform 0.3s ease;
+}
+
+.u-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Accordion Sections */
+.u-sidebar details {
+  width: 100%;
+  border-bottom: 1px solid var(--color-border, #222);
+}
+
+.u-sidebar summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-gray-300, #D1D5DB);
+}
+
+.u-sidebar summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron indicator */
+.u-sidebar summary::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='9 5l7 7-7 7'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s ease;
+  opacity: 0.5;
+}
+
+.u-sidebar details[open] summary::after {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.u-sidebar summary:hover {
+  color: #fff;
+}
+
+.u-sidebar summary:hover::after {
+  opacity: 1;
+}
+
+/* Navigation Links */
+.u-sidebar ul {
+  padding: 0 1.25rem 1rem 1.25rem;
+  margin: 0;
+  list-style: none;
+}
+
+.u-sidebar ul li {
+  margin-bottom: 0.4rem;
+}
+
+.u-sidebar a {
+  color: var(--color-gray-400, #9CA3AF);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.u-sidebar a:hover {
+  color: #fff;
+}
+
+.u-sidebar a.active {
+  color: var(--color-brand-blue, #3B82F6);
+  font-weight: 500;
+}
+
+/* --- DESKTOP LAYOUT --- */
+@media (min-width: 993px) {
+  .u-page-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .u-sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transform: none;
+    /* Always visible on desktop */
+  }
+
+  .u-main-area {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+  }
+
+  .u-menu-btn,
+  .u-backdrop {
+    display: none !important;
+  }
+}
+
+/* --- MOBILE LAYOUT --- */
+@media (max-width: 992px) {
+  .u-page-layout {
+    display: block;
+  }
+
+  .u-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    /* Occupies entire screen on mobile */
+    z-index: 1500;
+    transform: translateX(-100%);
+    /* Slide out hidden */
+  }
+
+  .u-sidebar.is-open {
+    transform: translateX(0);
+    /* Slide in visible */
+  }
+
+  /* Mobile menu button logic */
+  .u-menu-btn {
+    display: block;
+    background: var(--color-gray-600, #4B5563);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+
+  .u-menu-btn:hover {
+    background: var(--color-gray-700, #374151);
+  }
+
+  /* Backdrop overlay */
+  .u-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1400;
+    backdrop-filter: blur(4px);
+  }
+
+  .u-backdrop.is-active {
+    display: block;
+  }
+}

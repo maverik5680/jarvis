@@ -1,0 +1,49 @@
+/* ============================================================
+   MODERN RESET
+   The "Blank Slate" for your Design System.
+   ============================================================ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margins and padding from everything */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+  height: 100%;
+}
+
+/* 4. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Remove built-in form typography inheritance */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 6. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Remove list styles (we handle these in components/data-display/list.css) */
+ol, ul {
+  list-style: none;
+}
+
+/* 8. Improve button defaults (removes the "ugly" browser look) */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}

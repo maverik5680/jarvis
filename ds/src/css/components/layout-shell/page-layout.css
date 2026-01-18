@@ -1,0 +1,71 @@
+/* ============================================================
+   PAGE LAYOUT SYSTEM
+   ============================================================ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-black);
+  color: var(--color-dark);
+}
+
+/* Header */
+.page-header {
+  padding: var(--space-m) var(--space-l);
+  background: var(--color-black);
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+/* Main content */
+.page-content {
+  flex: 1;
+  padding: var(--space-l) 0;
+}
+
+/* Footer */
+.page-footer {
+  padding: var(--space-m) var(--space-l);
+  background: var(--color-black);
+  border-top: 1px solid var(--color-light-gray);
+}
+
+/* Sections */
+.page-section {
+  padding: var(--space-l) 0;
+}
+
+/* Responsive container inside page layout */
+.page .container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--space-m);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .page .container {
+    max-width: 90%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .page .container {
+    max-width: 1100px;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .page .container {
+    max-width: 1400px;
+  }
+}
+
+/* Ultra-wide */
+@media (min-width: 1920px) {
+  .page .container {
+    max-width: 1800px;
+  }
+}

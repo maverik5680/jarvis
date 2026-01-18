@@ -1,0 +1,145 @@
+/* ds/src/css/components/layout-shell/subdivisions.css */
+
+/* ============================================================
+   SUBDIVISION SYSTEM
+   ============================================================ */
+
+.l-subdivision-container {
+    display: flex;
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+/* Base subdivision */
+.l-subdivision {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl, 4rem);
+    box-sizing: border-box;
+}
+
+/* Direction Modifiers */
+.l-subdivision-container--v {
+    flex-direction: column;
+}
+
+.l-subdivision-container--h {
+    flex-direction: row;
+}
+
+/* Color Modifiers (Full-tone) */
+.l-subdivision--black {
+    background-color: var(--color-brand-black, #000);
+    color: #fff;
+}
+
+.l-subdivision--blue {
+    background-color: var(--color-brand-blue, #001E50);
+    color: #fff;
+}
+
+.l-subdivision--white {
+    background-color: #fff;
+    color: var(--color-brand-black, #000);
+}
+
+/* Asymmetrical Modifiers */
+.l-subdivision--2-3 {
+    flex: 2;
+}
+
+.l-subdivision--1-3 {
+    flex: 1;
+}
+
+/* Imagery */
+.l-subdivision--image {
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+}
+
+.l-subdivision--bleed {
+    margin: 0;
+    border-radius: 0;
+}
+
+/* Optical Connection (Simulated overlay for documentation) */
+.l-optical-connect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .l-subdivision-container {
+        flex-direction: column;
+    }
+
+    .l-subdivision {
+        padding: var(--space-l, 2rem);
+        min-height: 300px;
+    }
+}
+
+/* Tiles (Rectangular blocks) */
+.l-tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xs, 0.5rem);
+    /* Narrow padding (gap) */
+    width: 100%;
+}
+
+.l-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    background-color: var(--color-white);
+    color: var(--color-brand-black, #000);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Color Modifiers for Tiles */
+.l-tile--black {
+    background-color: var(--color-brand-black, #000);
+    color: #fff;
+}
+
+.l-tile--blue {
+    background-color: var(--color-brand-blue, #001E50);
+    color: #fff;
+}
+
+.l-tile--gray {
+    background-color: var(--color-gray-200, #f5f5f5);
+    color: var(--color-brand-black, #000);
+}
+
+/* Imagery in Tiles */
+.l-tile--image {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Tile Subdivisions (Internal) */
+.l-tile .l-subdivision-container {
+    min-height: initial;
+    flex: 1;
+}
+
+/* Mobile adjustments for Tiles */
+@media (max-width: 768px) {
+    .l-tile-grid {
+        grid-template-columns: 1fr;
+    }
+}

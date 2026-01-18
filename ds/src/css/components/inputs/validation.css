@@ -1,0 +1,33 @@
+/* ============================================================
+   VALIDATION STATES (Global)
+   ============================================================ */
+
+/* 1. Error State - Urgent/Critical */
+.is-invalid {
+  --state-color: #D32F2F;
+  --state-bg: rgba(211, 47, 47, 0.05);
+  border-color: var(--state-color) !important;
+}
+
+/* 2. Success State - Completed/Verified */
+.is-valid {
+  --state-color: var(--color-brand-blue);
+  --state-bg: rgba(0, 70, 255, 0.05);
+  border-color: var(--state-color) !important;
+}
+
+/* 3. Warning State - Caution (e.g., Low Stock or Site Delay) */
+.is-warning {
+  --state-color: #ED6C02;
+  --state-bg: rgba(237, 108, 2, 0.05);
+  border-color: var(--state-color) !important;
+}
+
+/* 4. Feedback Icons (Optional) */
+/* This adds an icon inside the input automatically when valid/invalid */
+.is-invalid-icon {
+  background-image: url('../../assets/icons/alert-circle.svg');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}

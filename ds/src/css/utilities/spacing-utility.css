@@ -1,0 +1,19 @@
+/* ============================================================
+   SPACING-UTILITY.CSS
+   Combined Margin and Padding Helpers
+   ============================================================ */
+
+/* --- MARGINS --- */
+.m-m-utility    { margin: var(--space-m) !important; }
+.mt-m-utility   { margin-top: var(--space-m) !important; }
+.mb-m-utility   { margin-bottom: var(--space-m) !important; }
+.mx-auto-utility { margin-inline: auto !important; }
+
+/* --- PADDINGS --- */
+.p-m-utility    { padding: var(--space-m) !important; }
+.pt-m-utility   { padding-top: var(--space-m) !important; }
+.pb-m-utility   { padding-bottom: var(--space-m) !important; }
+.py-l-utility   { padding-block: var(--space-l) !important; }
+
+/* --- RESET --- */
+.no-spacing-utility { margin: 0 !important; padding: 0 !important; }

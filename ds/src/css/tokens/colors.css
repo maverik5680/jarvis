@@ -1,0 +1,40 @@
+:root {
+   /* ============================================================
+     BRAND COLORS (The Power Duo)
+     ============================================================ */
+   --color-brand-black: #000000;
+   --color-brand-black-hover: #333333;
+   /* Structural Power */
+   --color-brand-blue: #0046FF;
+   /* Action Power (Electric) */
+   --color-brand-blue-hover: #0036C7;
+
+   /* ============================================================
+     NEUTRALS (The Canvas)
+     ============================================================ */
+   --color-white: #FFFFFF;
+   --color-gray-100: #F3F4F6;
+   /* Light surface for contrast */
+   --color-gray-200: #E5E7EB;
+   /* Subtle dividers for your List Item */
+   --color-gray-300: #D1D5DB;
+   /* Distinct gray for secondary backgrounds */
+   --color-gray-400: #9CA3AF;
+   /* Interaction state for gray-300 */
+   --color-gray-500: #6B7280;
+   /* Muted text for less important info */
+   --color-gray-600: #4B5563;
+   --color-gray-700: #374151;
+   --color-gray-800: #1F2937;
+   --color-gray-900: #111827;
+   /* Muted text for less important info */
+
+   /* ============================================================
+     UI MAPPING (How the brand hits the screen)
+     ============================================================ */
+   --color-text-header: var(--color-brand-black);
+   --color-text-body: #1A1A1B;
+   /* Slightly off-black for long reading (Prompt) */
+   --color-bg-sidebar: var(--color-brand-black);
+   --color-btn-primary: var(--color-brand-black);
+}

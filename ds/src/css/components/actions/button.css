@@ -1,0 +1,237 @@
+/* ============================================================
+   BASE BUTTON 
+   ============================================================ */
+:root {
+  --btn-base-font-size: 16px;
+}
+
+.btn {
+  --btn-font-size: var(--btn-base-font-size);
+  --btn-min-width: calc(var(--btn-font-size) * 9);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  /* Field-ready touch target */
+  padding: 12px 24px;
+  min-height: 48px;
+  min-width: var(--btn-min-width);
+
+  /* Typography: Prompt */
+  font-family: 'Prompt', sans-serif;
+  font-size: var(--btn-font-size);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1;
+
+  /* Precision Corners (Default) */
+  border-radius: 2px;
+  border: 1px solid transparent;
+  /* Balanced 1px edge for premium feel */
+
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+/* Response effect / Visual feedback */
+.btn:active:not(.btn--disabled) {
+  transform: scale(0.98);
+  filter: brightness(0.9);
+}
+
+.btn:visited {
+  color: inherit;
+}
+
+/* ============================================================
+   SIZES (Specification based)
+   ============================================================ */
+
+/* Small (Default/Explicit) - 16px base */
+.btn--sm {
+  --btn-font-size: 16px;
+  padding: 8px 16px;
+  min-height: 40px;
+}
+
+/* Medium - 18px base */
+.btn--md {
+  --btn-font-size: 18px;
+  padding: 12px 24px;
+  min-height: 48px;
+}
+
+/* Large - 20px base */
+.btn--lg {
+  --btn-font-size: 20px;
+  padding: 16px 32px;
+  min-height: 56px;
+}
+
+/* Responsive adjustment for small viewports */
+@media (max-width: 600px) {
+  .btn {
+    padding-left: 16px;
+    padding-right: 16px;
+    min-width: 0;
+    /* Allow buttons to shrink on mobile if needed */
+  }
+}
+
+/* ============================================================
+   SHAPE MODIFIERS
+   ============================================================ */
+.btn--pill {
+  border-radius: 999px;
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* ============================================================
+   BRAND VARIANTS
+   ============================================================ */
+
+/* ============================================================
+   BRAND VARIANTS (Core Specification)
+   ============================================================ */
+
+/* PRIMARY (The Most Important) */
+.btn--primary-black {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+  border-color: var(--color-brand-black);
+}
+
+.btn--primary-black:hover:not(.btn--disabled) {
+  background-color: #333;
+  border-color: #333;
+}
+
+.btn--primary-white {
+  background-color: var(--color-white);
+  color: var(--color-brand-black);
+  border-color: var(--color-white);
+}
+
+.btn--primary-white:hover:not(.btn--disabled) {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-100);
+}
+
+/* SECONDARY (Subordinate Actions) */
+.btn--secondary-black {
+  background-color: transparent;
+  color: var(--color-brand-black);
+  border-color: var(--color-brand-black);
+}
+
+.btn--secondary-black:hover:not(.btn--disabled) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn--secondary-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--secondary-white:hover:not(.btn--disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* TEXT BUTTON (Subtle Call to Action) */
+.btn--text {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  min-width: 0;
+  border: none;
+  color: var(--color-brand-black);
+  gap: 8px;
+}
+
+.btn--text .btn__arrow {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+
+.btn--text:hover:not(.btn--disabled) .btn__arrow {
+  transform: translateX(4px);
+}
+
+/* SYSTEM ICON BUTTON (Classic interactions) */
+.btn--system-icon {
+  background-color: transparent;
+  color: var(--color-brand-black);
+  border: none;
+  min-width: unset;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.btn--system-icon:hover:not(.btn--disabled) {
+  background-color: var(--color-gray-100);
+}
+
+/* FLOATING BUTTON (Highlighted in a level above) */
+.btn--floating {
+  position: fixed;
+  z-index: var(--z-index-sticky, 100);
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.15));
+  border-radius: 999px;
+  min-width: auto;
+  padding: 16px;
+  bottom: 32px;
+  right: 32px;
+}
+
+/* STRETCHED AND STICKY PRIMARY (Breakpoint S) */
+@media (max-width: 767px) {
+  .btn--sticky-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    z-index: var(--z-index-fixed, 200);
+    min-height: 60px;
+    display: flex;
+  }
+}
+
+/* Brand variants for intentional accent usage */
+.btn--brand-blue {
+  background-color: var(--color-brand-blue);
+  color: var(--color-white);
+}
+
+.btn--brand-blue:hover:not(.btn--disabled) {
+  background-color: var(--color-brand-blue-hover);
+}
+
+.btn--brand-outline {
+  background-color: transparent;
+  border-color: var(--color-brand-blue);
+  color: var(--color-brand-blue);
+}
+
+.btn--brand-outline:hover:not(.btn--disabled) {
+  background-color: rgba(0, 70, 255, 0.05);
+}
+
+.btn--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,33 @@
+/* ============================================================
+   Z-INDEX-UTILITY.CSS
+   Manages the vertical stacking order of elements
+   ============================================================ */
+
+/* 1. BELOW CONTENT (Backgrounds/Watermarks) */
+.z-negative-utility { z-index: -1 !important; }
+
+/* 2. BASE LEVELS */
+.z-0-utility    { z-index: 0 !important; }
+.z-10-utility   { z-index: 10 !important; }
+.z-20-utility   { z-index: 20 !important; }
+
+/* 3. UI COMPONENTS (Above standard content) */
+/* Elements that should sit just above the fold like active cards */
+.z-30-utility   { z-index: 30 !important; }
+
+/* 4. NAVIGATION & OVERLAYS */
+/* Standard for sticky headers and sidebars */
+.z-100-utility  { z-index: 100 !important; }
+
+/* Dropdowns, tooltips, and popovers */
+.z-200-utility  { z-index: 200 !important; }
+
+/* 5. SYSTEM LAYERS (Top level) */
+/* Modals and Dialogs */
+.z-1000-utility { z-index: 1000 !important; }
+
+/* Toasts, Alerts, and Loaders (Must be on top of everything) */
+.z-max-utility  { z-index: 9999 !important; }
+
+/* 6. RESET */
+.z-auto-utility { z-index: auto !important; }

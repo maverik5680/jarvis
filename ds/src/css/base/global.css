@@ -1,0 +1,14 @@
+/* ds/src/css/base/global.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--color-bg); /* Brand Black */
+    color: var(--color-text); /* Prompt White */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure boxes calculate size correctly */
+*, *::before, *::after {
+    box-sizing: border-box;
+}

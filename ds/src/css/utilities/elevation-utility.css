@@ -1,0 +1,38 @@
+/* ============================================================
+   ELEVATION-UTILITY.CSS
+   Controls depth and shadows (The "Audi" layered look)
+   ============================================================ */
+
+/* Elevation 0: Flat (Default - for sections and background areas) */
+.elevation-0-utility {
+  box-shadow: none !important;
+}
+
+/* Elevation 1: Subtle (For Cards or Buttons) */
+.elevation-1-utility {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Elevation 2: Moderate (For Dropdowns or Hover states on cards) */
+.elevation-2-utility {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Elevation 3: High (For Modals, Toasts, and floating navigation) */
+.elevation-3-utility {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Elevation 4: Extreme (For critical overlays or Large Image Lightboxes) */
+.elevation-4-utility {
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Interactive Shadow: Smooth lift on hover */
+.elevation-hover-utility {
+  transition: box-shadow var(--ms-base) var(--ease-standard);
+}
+
+.elevation-hover-utility:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+}

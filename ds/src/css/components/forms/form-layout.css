@@ -1,0 +1,21 @@
+/* ============================================================
+   FORM LAYOUT SYSTEM
+   ============================================================ */
+
+.form-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px 24px;
+}
+
+/* Utility classes for field widths */
+.form-col-12 { grid-column: span 12; } /* Full width */
+.form-col-6  { grid-column: span 6; }  /* Half width */
+.form-col-4  { grid-column: span 4; }  /* One-third width */
+
+/* Mobile fallback */
+@media (max-width: 600px) {
+  .form-col-6, .form-col-4 {
+    grid-column: span 12;
+  }
+}

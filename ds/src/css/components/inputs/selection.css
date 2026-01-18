@@ -1,0 +1,80 @@
+/* ============================================================
+   SELECTION ATOMS (Checkboxes & Radios)
+   ============================================================ */
+
+/* 1. Hide the browser default but keep it accessible for screen readers */
+.input-selection {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* 2. The Custom Box/Circle Base */
+.selection-control {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+  /* Prevents shrinking in tight lists */
+}
+
+/* Checkbox = Precision Square */
+.input-selection[type="checkbox"]+.selection-control {
+  border-radius: 2px;
+}
+
+/* Radio = Precision Circle */
+.input-selection[type="radio"]+.selection-control {
+  border-radius: 50%;
+}
+
+/* 3. HOVER & FOCUS (The Audi Glow) */
+.input-selection:hover+.selection-control {
+  border-color: var(--color-brand-black);
+}
+
+.input-selection:focus+.selection-control {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-brand-black);
+}
+
+/* 4. THE CHECKED STATE (Electric Blue) */
+.input-selection:checked+.selection-control {
+  background-color: var(--color-brand-black);
+  border-color: var(--color-brand-black);
+}
+
+/* The White "Check" or "Dot" */
+.input-selection:checked+.selection-control::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+/* Checkmark logic */
+.input-selection[type="checkbox"]:checked+.selection-control::after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Radio dot logic */
+.input-selection[type="radio"]:checked+.selection-control::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}

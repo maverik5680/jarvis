@@ -1,0 +1,48 @@
+/* ============================================================
+   POSITION-UTILITY.CSS
+   Controls the stacking and placement of elements
+   ============================================================ */
+
+/* 1. POSITION TYPES */
+.pos-relative-utility { position: relative !important; }
+.pos-absolute-utility { position: absolute !important; }
+.pos-fixed-utility    { position: fixed !important; }
+.pos-sticky-utility   { position: sticky !important; }
+.pos-static-utility   { position: static !important; }
+
+/* 2. PLACEMENT (The "Inset" Helpers) */
+.top-0-utility    { top: 0 !important; }
+.bottom-0-utility { bottom: 0 !important; }
+.left-0-utility   { left: 0 !important; }
+.right-0-utility  { right: 0 !important; }
+
+/* 3. CENTER OVERLAY (Common pattern for modals/spinners) */
+.pos-center-utility {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* 4. STICKY TOP (Essential for Table Headers / Navbars) */
+.sticky-top-utility {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* 5. Z-INDEX (The "Stacking" Logic) */
+.z-0-utility      { z-index: 0 !important; }
+.z-10-utility     { z-index: 10 !important; }   /* Behind content */
+.z-100-utility    { z-index: 100 !important; }  /* Above content */
+.z-1000-utility   { z-index: 1000 !important; } /* Navbars/Stickies */
+.z-top-utility    { z-index: 9999 !important; } /* Modals/Toasts */
+
+/* 6. FULL FILL (Make absolute child fill relative parent) */
+.pos-fill-utility {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}

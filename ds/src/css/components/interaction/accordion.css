@@ -1,0 +1,56 @@
+/* ============================================================
+   INTERACTION: ACCORDION
+   ============================================================ */
+
+.accordion {
+  border-top: 1px solid var(--color-gray-200);
+  width: 100%;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.accordion__trigger {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.accordion__title {
+  font-family: var(--font-family-main);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  color: var(--color-brand-black);
+}
+
+.accordion__icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Open State */
+.accordion__item[data-state="open"] .accordion__icon {
+  transform: rotate(180deg);
+  color: var(--color-brand-black);
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  color: var(--color-gray-500);
+  line-height: var(--lh-base);
+}
+
+.accordion__item[data-state="open"] .accordion__content {
+  max-height: 500px;
+  /* Adjust based on content */
+  padding-bottom: 24px;
+}
