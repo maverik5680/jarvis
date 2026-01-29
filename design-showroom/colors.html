@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../ds/src/css/main.css">
+    <script src="./sidebar.js" type="module" defer></script>
     <style>
         /* Emergency debug styles if main.css fails */
         body {
@@ -29,7 +30,7 @@
             height: 120px;
             width: 100%;
             margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 2px;
         }
 
@@ -39,7 +40,8 @@
             padding: 4px;
             font-size: 0.8rem;
             margin-top: 8px;
-            color: #FF5F00; /* Electric Orange accent */
+            color: #FF5F00;
+            /* Electric Orange accent */
         }
     </style>
 </head>
@@ -48,34 +50,11 @@
 
     <div class="u-backdrop" id="backdrop"></div>
 
-    <aside class="u-sidebar">
-        <div style="padding: 20px;">
-            <h2><a href="index.html" style="color: inherit; text-decoration: none;">JARVIS</a></h2>
-            <nav>
-                <details open>
-                    <summary>Tokens</summary>
-                    <ul>
-                        <li><a href="borderUtility.html">Border</a></li>
-                        <li><a href="breakpoint.html">Breakpoint</a></li>
-                        <li><a href="colors.html" class="active">Colors</a></li>
-                        <li><a href="elevations.html">Elevations</a></li>
-                        <li><a href="motion.html">Motion</a></li>
-                        <li><a href="opacity.html">Opacity</a></li>
-                        <li><a href="radius.html">Radius</a></li>
-                        <li><a href="ratios.html">Ratios</a></li>
-                        <li><a href="shadow.html">Shadow</a></li>
-                        <li><a href="sizing.html">Sizing</a></li>
-                        <li><a href="spacing.html">Spacing</a></li>
-                        <li><a href="variables.html">Variables</a></li>
-                        <li><a href="z-index.html">Z-Index</a></li>
-                    </ul>
-                </details>
-                </nav>
-        </div>
-    </aside>
+    <aside class="u-sidebar"></aside>
 
     <div class="u-main-area">
-        <header class="u-header" style="padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
+        <header class="u-header"
+            style="padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
             <span>Tokens / Colors</span>
             <button class="u-menu-btn" id="menuBtn">Menu</button>
         </header>
@@ -90,11 +69,13 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
                     <div style="background: #111; padding: 30px; border: 1px solid #333;">
                         <h3 style="color: var(--color-brand-orange); margin-bottom: 12px;">Action Power</h3>
-                        <p style="color: #888;">Electric Orange (#FF5F00) is used sparingly for primary interactions, notifications, and critical brand moments.</p>
+                        <p style="color: #888;">Electric Orange (#FF5F00) is used sparingly for primary interactions,
+                            notifications, and critical brand moments.</p>
                     </div>
                     <div style="background: #111; padding: 30px; border: 1px solid #333;">
                         <h3 style="color: #fff; margin-bottom: 12px;">Structural Power</h3>
-                        <p style="color: #888;">Brand Black (#000000) provides the professional foundation and high-contrast environment for our interface.</p>
+                        <p style="color: #888;">Brand Black (#000000) provides the professional foundation and
+                            high-contrast environment for our interface.</p>
                     </div>
                 </div>
             </section>
@@ -177,17 +158,29 @@
                             <tr style="border-top: 1px solid #333;">
                                 <td style="padding: 15px;"><code>--color-text-header</code></td>
                                 <td style="padding: 15px;">Brand Black</td>
-                                <td style="padding: 15px;"><div style="width: 20px; height: 20px; background: var(--color-brand-black); border-radius: 2px;"></div></td>
+                                <td style="padding: 15px;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: var(--color-brand-black); border-radius: 2px;">
+                                    </div>
+                                </td>
                             </tr>
                             <tr style="border-top: 1px solid #333;">
                                 <td style="padding: 15px;"><code>--color-btn-primary</code></td>
                                 <td style="padding: 15px;">Brand Black</td>
-                                <td style="padding: 15px;"><div style="width: 20px; height: 20px; background: var(--color-brand-black); border-radius: 2px;"></div></td>
+                                <td style="padding: 15px;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: var(--color-brand-black); border-radius: 2px;">
+                                    </div>
+                                </td>
                             </tr>
                             <tr style="border-top: 1px solid #333;">
                                 <td style="padding: 15px;"><code>--color-bg-sidebar</code></td>
                                 <td style="padding: 15px;">Brand Black</td>
-                                <td style="padding: 15px;"><div style="width: 20px; height: 20px; background: var(--color-brand-black); border-radius: 2px;"></div></td>
+                                <td style="padding: 15px;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: var(--color-brand-black); border-radius: 2px;">
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -196,21 +189,7 @@
         </main>
     </div>
 
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const sidebar = document.querySelector('.u-sidebar');
-        const backdrop = document.getElementById('backdrop');
 
-        function toggleMenu() {
-            sidebar.classList.toggle('is-open');
-            backdrop.classList.toggle('is-active');
-            if(menuBtn) menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
-        }
-
-        if (menuBtn && backdrop) {
-            menuBtn.addEventListener('click', toggleMenu);
-            backdrop.addEventListener('click', toggleMenu);
-        }
-    </script>
 </body>
+
 </html>
