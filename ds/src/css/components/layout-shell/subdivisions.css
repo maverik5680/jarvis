@@ -84,7 +84,7 @@
     }
 
     .l-subdivision {
-        padding: var(--space-l, 2rem);
+        padding: var(--space-m, 1rem);
         min-height: 300px;
     }
 }

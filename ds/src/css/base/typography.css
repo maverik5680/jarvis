@@ -16,10 +16,14 @@
    ============================================================ */
 :root {
   --font-family-main: 'Prompt', sans-serif;
-  --fs-h1: 3.00rem;
-  --fs-h2: 2.25rem;
-  --fs-h3: 1.50rem;
-  --fs-h4: 1.25rem;
+  --fs-h1: 2.25rem;
+  /* Scaled down for mobile */
+  --fs-h2: 1.75rem;
+  /* Scaled down for mobile */
+  --fs-h3: 1.35rem;
+  /* Scaled down for mobile */
+  --fs-h4: 1.15rem;
+  /* Scaled down for mobile */
   --fs-body: 1.00rem;
   --fw-light: 300;
   --fw-regular: 400;
@@ -72,4 +76,16 @@ h2 {
 .u-text-lg {
   font-size: var(--fs-h2);
   /* Or map to your specific LG token */
+}
+
+/* ============================================================
+   5. RESPONSIVE OVERRIDES
+   ============================================================ */
+@media (min-width: 768px) {
+  :root {
+    --fs-h1: 3.00rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.50rem;
+    --fs-h4: 1.25rem;
+  }
 }
