@@ -1,13 +1,19 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig({
-  // Use an empty string or './' to ensure all links are relative
-  base: '', 
+  base: './', 
   publicDir: '../ds/public',
   build: {
-    // This ensures Vite handles the subfolder structure correctly
-    outDir: 'dist',
-    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        colors: resolve(__dirname, 'colors.html'),
+        buttons: resolve(__dirname, 'buttons.html'),
+        // ADD EVERY OTHER HTML FILE HERE LIKE THIS:
+        // typography: resolve(__dirname, 'typography.html'),
+      }
+    }
   },
   server: {
     fs: {
