@@ -1,13 +1,12 @@
-// jarvis/design-showroom/vite.config.js
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // This allows Vite to see your CSS in the ../ds/ folder
+  // Tell Vite your images/assets are in the sibling folder
+  publicDir: '../ds/public', 
   server: {
     fs: {
-      allow: ['..']
+      // Allow Vite to grab CSS/files from the sibling 'ds' folder
+      allow: ['..'] 
     }
-  },
-  // This tells Vite where your shared images/assets are
-  publicDir: '../ds/public'
+  }
 })
