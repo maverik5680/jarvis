@@ -3,11 +3,11 @@
      BRAND COLORS (The Power Duo)
      ============================================================ */
    --color-brand-black: #000000;
-   --color-brand-black-hover: #333333;
+   --color-brand-black-hover: #1d1c1c;
    /* Structural Power */
-   --color-brand-blue: #0046FF;
+   --color-brand-orange: #FF5F00;
    /* Action Power (Electric) */
-   --color-brand-blue-hover: #0036C7;
+   --color-brand-orange-hover: #cf4e04;
 
    /* ============================================================
      NEUTRALS (The Canvas)
@@ -25,8 +25,8 @@
    /* Muted text for less important info */
    --color-gray-600: #4B5563;
    --color-gray-700: #374151;
-   --color-gray-800: #1F2937;
-   --color-gray-900: #111827;
+   --color-gray-800: #111;
+   --color-gray-900: #0a0a0b;
    /* Muted text for less important info */
 
    /* ============================================================

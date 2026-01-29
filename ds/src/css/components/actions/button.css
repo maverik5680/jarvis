@@ -1,6 +1,8 @@
 /* ============================================================
    BASE BUTTON 
    ============================================================ */
+
+   
 :root {
   --btn-base-font-size: 16px;
 }
@@ -29,21 +31,26 @@
   /* Precision Corners (Default) */
   border-radius: 2px;
   border: 1px solid transparent;
-  /* Balanced 1px edge for premium feel */
 
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   user-select: none;
   white-space: nowrap;
-  color: inherit;
   box-sizing: border-box;
+
+  /* Give a predictable default color instead of inherit */
+  color: var(--color-brand-black);
 }
 
 /* Response effect / Visual feedback */
 .btn:active:not(.btn--disabled) {
   transform: scale(0.98);
-  filter: brightness(0.9);
+  filter: brightness(0.95);
 }
 
 .btn:visited {
@@ -51,45 +58,14 @@
 }
 
 /* ============================================================
-   SIZES (Specification based)
+   PILL STYLE
    ============================================================ */
 
-/* Small (Default/Explicit) - 16px base */
-.btn--sm {
-  --btn-font-size: 16px;
-  padding: 8px 16px;
-  min-height: 40px;
-}
 
-/* Medium - 18px base */
-.btn--md {
-  --btn-font-size: 18px;
-  padding: 12px 24px;
-  min-height: 48px;
-}
-
-/* Large - 20px base */
-.btn--lg {
-  --btn-font-size: 20px;
-  padding: 16px 32px;
-  min-height: 56px;
-}
-
-/* Responsive adjustment for small viewports */
-@media (max-width: 600px) {
-  .btn {
-    padding-left: 16px;
-    padding-right: 16px;
-    min-width: 0;
-    /* Allow buttons to shrink on mobile if needed */
-  }
-}
-
-/* ============================================================
-   SHAPE MODIFIERS
-   ============================================================ */
 .btn--pill {
   border-radius: 999px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .btn--block {
@@ -98,14 +74,68 @@
 }
 
 /* ============================================================
-   BRAND VARIANTS
+   OUTLINE STYLE (Generic & White)
    ============================================================ */
+/* Generic outline uses brand black by default */
+
+
+.btn--outline {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: var(--color-brand-black);
+}
+
+.btn--outline:hover:not(.btn--disabled) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* White outline explicitly uses white */
+.btn--outline-white {
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.btn--outline-white:hover:not(.btn--disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   SIZES
+   ============================================================ */
+
+
+.btn--sm {
+  --btn-font-size: 16px;
+  padding: 8px 16px;
+  min-height: 40px;
+}
+
+.btn--md {
+  --btn-font-size: 18px;
+  padding: 12px 24px;
+  min-height: 48px;
+}
+
+.btn--lg {
+  --btn-font-size: 20px;
+  padding: 16px 32px;
+  min-height: 56px;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    padding-left: 16px;
+    padding-right: 16px;
+    min-width: 0;
+  }
+}
 
 /* ============================================================
    BRAND VARIANTS (Core Specification)
    ============================================================ */
 
-/* PRIMARY (The Most Important) */
+/* PRIMARY BLACK */
 .btn--primary-black {
   background-color: var(--color-brand-black);
   color: var(--color-white);
@@ -113,10 +143,23 @@
 }
 
 .btn--primary-black:hover:not(.btn--disabled) {
-  background-color: #333;
-  border-color: #333;
+  background-color: var(--color-brand-black-hover);
+  border-color: var(--color-brand-black-hover);
 }
 
+/* PRIMARY ORANGE */
+.btn--primary-orange {
+  background-color: var(--color-brand-orange);
+  color: var(--color-white);
+  border-color: var(--color-brand-orange);
+}
+
+.btn--primary-orange:hover:not(.btn--disabled) {
+  background-color: var(--color-brand-orange-hover);
+  border-color: var(--color-brand-orange-hover);
+}
+
+/* PRIMARY WHITE */
 .btn--primary-white {
   background-color: var(--color-white);
   color: var(--color-brand-black);
@@ -124,11 +167,11 @@
 }
 
 .btn--primary-white:hover:not(.btn--disabled) {
-  background-color: var(--color-gray-100);
-  border-color: var(--color-gray-100);
+  background-color: var(--color-gray-300);
+  border-color: var(--color-gray-300);
 }
 
-/* SECONDARY (Subordinate Actions) */
+/* SECONDARY BLACK */
 .btn--secondary-black {
   background-color: transparent;
   color: var(--color-brand-black);
@@ -139,6 +182,18 @@
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* SECONDARY ORANGE */
+.btn--secondary-orange {
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  border-color: var(--color-brand-orange);
+}
+
+.btn--secondary-orange:hover:not(.btn--disabled) {
+  background-color: rgba(255, 95, 0, 0.05);
+}
+
+/* SECONDARY WHITE */
 .btn--secondary-white {
   background-color: transparent;
   color: var(--color-white);
@@ -149,7 +204,61 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* TEXT BUTTON (Subtle Call to Action) */
+/* ORANGE OUTLINE (Intentional Accent) */
+.btn--brand-outline {
+  background-color: transparent;
+  border-color: var(--color-brand-orange);
+  color: var(--color-brand-orange);
+  border-width: 2px;
+}
+
+.btn--brand-outline:hover:not(.btn--disabled) {
+  background-color: var(--color-brand-orange);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   GHOST VARIANTS (Low Emphasis / Text Only)
+   ============================================================ */
+
+/* GHOST BLACK */
+.btn--ghost-black {
+  background-color: transparent;
+  color: var(--color-brand-black);
+  border-color: transparent;
+}
+
+.btn--ghost-black:hover:not(.btn--disabled) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* GHOST ORANGE */
+.btn--ghost-orange {
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  border-color: transparent;
+}
+
+.btn--ghost-orange:hover:not(.btn--disabled) {
+  background-color: rgba(255, 95, 0, 0.08); /* Subtle orange tint */
+}
+
+/* GHOST WHITE */
+.btn--ghost-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.btn--ghost-white:hover:not(.btn--disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ============================================================
+   UI & UTILITY VARIANTS
+   ============================================================ */
+
 .btn--text {
   background-color: transparent;
   padding-left: 0;
@@ -169,12 +278,11 @@
   transform: translateX(4px);
 }
 
-/* SYSTEM ICON BUTTON (Classic interactions) */
 .btn--system-icon {
   background-color: transparent;
   color: var(--color-brand-black);
   border: none;
-  min-width: unset;
+  min-width: auto;
   padding: 8px;
   border-radius: 4px;
 }
@@ -183,19 +291,19 @@
   background-color: var(--color-gray-100);
 }
 
-/* FLOATING BUTTON (Highlighted in a level above) */
 .btn--floating {
   position: fixed;
-  z-index: var(--z-index-sticky, 100);
-  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.15));
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border-radius: 999px;
   min-width: auto;
   padding: 16px;
   bottom: 32px;
   right: 32px;
+  background-color: var(--color-brand-orange);
+  color: var(--color-white);
 }
 
-/* STRETCHED AND STICKY PRIMARY (Breakpoint S) */
 @media (max-width: 767px) {
   .btn--sticky-bottom {
     position: fixed;
@@ -204,34 +312,22 @@
     width: 100%;
     margin: 0;
     border-radius: 0;
-    z-index: var(--z-index-fixed, 200);
+    z-index: 200;
     min-height: 60px;
     display: flex;
   }
 }
 
-/* Brand variants for intentional accent usage */
-.btn--brand-blue {
-  background-color: var(--color-brand-blue);
-  color: var(--color-white);
-}
 
-.btn--brand-blue:hover:not(.btn--disabled) {
-  background-color: var(--color-brand-blue-hover);
-}
-
-.btn--brand-outline {
-  background-color: transparent;
-  border-color: var(--color-brand-blue);
-  color: var(--color-brand-blue);
-}
-
-.btn--brand-outline:hover:not(.btn--disabled) {
-  background-color: rgba(0, 70, 255, 0.05);
-}
-
-.btn--disabled {
+/* ============================================================
+   DISABLED STATE
+   ============================================================ */
+.btn--disabled,
+.btn--disabled:hover,
+.btn--disabled:active {
   opacity: 0.4;
   cursor: not-allowed;
   pointer-events: none;
+  transform: none;
+  filter: none;
 }

@@ -1,9 +1,47 @@
-import './css/main.css'; // This connects your entire system to Vite
+import './css/main.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
-// ... the rest of your code ...
+/* ------------------------------------------
+   LOAD SIDEBAR INTO ALL PAGES
+------------------------------------------- */
+fetch("/asidebar.html")
+  .then(res => res.text())
+  .then(html => {
+    const container = document.getElementById("sidebar")
+    if (!container) return
+
+    container.innerHTML = html
+
+    // Highlight active link
+    const current = window.location.pathname.split("/").pop()
+    const links = container.querySelectorAll("a")
+
+    links.forEach(link => {
+      const href = link.getAttribute("href")
+      if (href === current) {
+        link.classList.add("active")
+      }
+    })
+
+    // Auto-open the correct <details> section
+    const allDetails = container.querySelectorAll("details")
+
+    allDetails.forEach(details => {
+      const sectionLinks = details.querySelectorAll("a")
+
+      sectionLinks.forEach(link => {
+        if (link.getAttribute("href") === current) {
+          details.setAttribute("open", "")
+        }
+      })
+    })
+  })
+
+/* ------------------------------------------
+   VITE DEMO CODE (you can delete this later)
+------------------------------------------- */
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">

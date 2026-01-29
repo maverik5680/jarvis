@@ -3,12 +3,46 @@
 
 <head>
     <link rel="stylesheet" href="../ds/src/css/main.css">
+    <link rel="stylesheet" href="../ds/src/css/border-utility.css">
     <style>
-        /* Emergency debug styles if main.css fails */
+        /* Emergency debug styles */
         body {
             background: #000;
             color: #fff;
             margin: 0;
+            font-family: sans-serif;
+        }
+
+        /* Bridge for empty variable.css: Ensuring Orange is used over Blue fallback */
+        :root {
+            --color-brand-blue: #FF5F00; /* Maps your brand utility to Orange */
+            --color-gray-200: #333;      /* Dark mode border visibility */
+        }
+
+        .demo-box {
+            width: 120px;
+            height: 120px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 11px;
+            color: #888;
+        }
+
+        .u-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        code {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ccc;
         }
     </style>
 </head>
@@ -17,14 +51,14 @@
 
     <div class="u-backdrop" id="backdrop"></div>
 
-    <aside class="u-sidebar">
+      <aside class="u-sidebar">
         <div style="padding: 20px;">
             <h2><a href="index.html" style="color: inherit; text-decoration: none;">JARVIS</a></h2>
             <nav>
-                <details>
+                <details open="">
                     <summary>Tokens</summary>
                     <ul>
-                        <li><a href="borderUtility.html">Border</a></li>
+                        <li><a href="borderUtility.html"class="active">Border</a></li>
                         <li><a href="breakpoint.html">Breakpoint</a></li>
                         <li><a href="colors.html">Colors</a></li>
                         <li><a href="elevations.html">Elevations</a></li>
@@ -62,7 +96,7 @@
                     <ul>
                         <li><a href="avatars.html">Avatars</a></li>
                         <li><a href="badges.html">Badges</a></li>
-                        <li><a href="cards.html">Cards</a></li>
+                        <li><a href="cards.html" >Cards</a></li>
                         <li><a href="lists.html">Lists</a></li>
                         <li><a href="skeletons.html">Skeletons</a></li>
                         <li><a href="tables.html">Tables</a></li>
@@ -124,13 +158,13 @@
                     </ul>
                 </details>
 
-                <details open>
+                <details>
                     <summary>Navigation</summary>
                     <ul>
                         <li><a href="backdrops.html">Backdrops</a></li>
                         <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
                         <li><a href="flyover.html">Flyover</a></li>
-                        <li><a href="links.html" class="active">Links</a></li>
+                        <li><a href="links.html">Links</a></li>
                         <li><a href="list-navigation.html">List Navigation</a></li>
                         <li><a href="navbars.html">Navbars</a></li>
                         <li><a href="navmenus.html">Navmenus</a></li>
@@ -150,46 +184,95 @@
                         <li><a href="stats.html">Stats</a></li>
                     </ul>
                 </details>
+
             </nav>
         </div>
     </aside>
 
     <div class="u-main-area">
         <header class="u-header" style="padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
-            <span>Links</span>
+            <span>Token / Border Utility</span>
             <button class="u-menu-btn" id="menuBtn">Menu</button>
         </header>
 
         <main style="padding: 40px;">
+            
             <section style="margin-bottom: 60px;">
-                <h1 style="margin-bottom: 30px;">Links</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">Hyperlinks with various states and animations.</p>
-                
-                <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px;">
-                    <div style="background-color: var(--color-gray-800); padding: 40px; border-radius: 8px;">
-                        <div style="margin-bottom: 16px;">
-                            <a href="#" class="link">Standard Link</a>
-                        </div>
-                        <div style="margin-bottom: 16px;">
-                            <a href="#" class="link link--subtle">Subtle Link</a>
-                        </div>
-                        <div>
-                            <a href="#" class="link link--animated">Animated Underline Link</a>
-                        </div>
-                    </div>   
-                </div>
-
-                <div style="background: #111; padding: 20px; border-radius: 8px;">
-                    <pre><code style="color: #bbb;">&lt;a href="#" class="link"&gt;Default&lt;/a&gt;
-&lt;a href="#" class="link link--subtle"&gt;Subtle&lt;/a&gt;
-&lt;a href="#" class="link link--animated"&gt;Animated&lt;/a&gt;</code></pre>
+                <h1 style="margin-bottom: 30px;">Border Radius (Corners)</h1>
+                <div class="u-grid">
+                    <div>
+                        <div class="demo-box border-1-utility radius-none-utility">None</div>
+                        <code>.radius-none-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-1-utility radius-sm-utility">Small (2px)</div>
+                        <code>.radius-sm-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-1-utility radius-md-utility">Med (4px)</div>
+                        <code>.radius-md-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-1-utility radius-full-utility" style="border-radius: 999px;">Full</div>
+                        <code>.radius-full-utility</code>
+                    </div>
                 </div>
             </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Border Width (Stroke)</h1>
+                <div class="u-grid">
+                    <div>
+                        <div class="demo-box border-1-utility">1px Utility</div>
+                        <code>.border-1-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-2-utility">2px Utility</div>
+                        <code>.border-2-utility</code>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Individual Sides</h1>
+                <div class="u-grid">
+                    <div>
+                        <div class="demo-box border-t-1-utility">Top Only</div>
+                        <code>.border-t-1-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-b-1-utility">Bottom Only</div>
+                        <code>.border-b-1-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-l-1-utility">Left Only</div>
+                        <code>.border-l-1-utility</code>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Themed Colors</h1>
+                <div class="u-grid">
+                    <div>
+                        <div class="demo-box border-2-utility border-brand-utility">Brand Orange</div>
+                        <code>.border-brand-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-2-utility border-error-utility">Error Red</div>
+                        <code>.border-error-utility</code>
+                    </div>
+                    <div>
+                        <div class="demo-box border-2-utility border-white-utility">White</div>
+                        <code>.border-white-utility</code>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
 
     <script>
-        // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.querySelector('.u-sidebar');
         const backdrop = document.getElementById('backdrop');
@@ -197,7 +280,7 @@
         function toggleMenu() {
             sidebar.classList.toggle('is-open');
             backdrop.classList.toggle('is-active');
-            menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
+            if(menuBtn) menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
         }
 
         if (menuBtn && backdrop) {
@@ -206,5 +289,4 @@
         }
     </script>
 </body>
-
 </html>

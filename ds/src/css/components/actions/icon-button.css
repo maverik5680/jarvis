@@ -14,7 +14,8 @@
   background-color: transparent;
   transition: all var(--ms-base) var(--ease-standard);
   border-radius: var(--radius-sm);
-  /* Audi-style sharp precision */
+  
+  /*style sharp precision */
   color: var(--color-gray-700);
 }
 

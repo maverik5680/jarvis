@@ -15,7 +15,7 @@
   font-size: var(--fs-tiny);
   font-weight: var(--fw-bold);
   color: var(--color-gray-600);
-  text-transform: uppercase;
+  text-transform: lower;
   letter-spacing: 0.05em;
   transition: all var(--ms-fast) var(--ease-standard);
   cursor: default;

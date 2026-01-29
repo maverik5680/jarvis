@@ -10,22 +10,39 @@
             color: #fff;
             margin: 0;
         }
+
+        .u-preview-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Helper for showing white variants on dark background */
+        .u-dark-patch {
+            background: #333;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
     </style>
 </head>
 
 <body class="u-page-layout">
 
-    <!-- Backdrop -->
     <div class="u-backdrop" id="backdrop"></div>
 
-    <aside class="u-sidebar">
+   <aside class="u-sidebar">
         <div style="padding: 20px;">
-            <h2><a href="showroom.html" style="color: inherit; text-decoration: none;">JARVIS</a></h2>
+            <h2><a href="index.html" style="color: inherit; text-decoration: none;">JARVIS</a></h2>
             <nav>
                 <details>
                     <summary>Tokens</summary>
                     <ul>
-                        <li><a href="border.html">Border</a></li>
+                        <li><a href="borderUtility.html">Border</a></li>
                         <li><a href="breakpoint.html">Breakpoint</a></li>
                         <li><a href="colors.html">Colors</a></li>
                         <li><a href="elevations.html">Elevations</a></li>
@@ -63,7 +80,7 @@
                     <ul>
                         <li><a href="avatars.html">Avatars</a></li>
                         <li><a href="badges.html">Badges</a></li>
-                        <li><a href="cards.html">Cards</a></li>
+                        <li><a href="cards.html" >Cards</a></li>
                         <li><a href="lists.html">Lists</a></li>
                         <li><a href="skeletons.html">Skeletons</a></li>
                         <li><a href="tables.html">Tables</a></li>
@@ -155,7 +172,6 @@
             </nav>
         </div>
     </aside>
-
     <div class="u-main-area">
         <header class="u-header"
             style="padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
@@ -165,213 +181,115 @@
 
         <main style="padding: 40px;">
             <section style="margin-bottom: 60px;">
-                <h1 style="margin-bottom: 30px;">Primary Buttons</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">The filled-out primary button is used for the most
-                    important action on a page.</p>
+                <h1 style="margin-bottom: 30px;">Primary Buttons </h1>
+                <p style="margin-bottom: 20px; color: #ccc;">The high-impact  primary actions.</p>
 
-                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                <div class="u-preview-row">
+                    <div class="u-dark-patch">
                     <button class="btn btn--primary-black">Primary Black</button>
-                    <div style="background: #333; padding: 20px; border-radius: 4px;">
+                    <button class="btn btn--primary-orange">Primary Orange</button>
+                    <div class="u-dark-patch">
                         <button class="btn btn--primary-white">Primary White</button>
                     </div>
                 </div>
 
                 <div style="background: #111; padding: 15px; border-radius: 4px;">
                     <pre><code style="color: #bbb;">&lt;button class="btn btn--primary-black"&gt;Primary Black&lt;/button&gt;
+&lt;button class="btn btn--primary-orange"&gt;Primary Orange&lt;/button&gt;
 &lt;button class="btn btn--primary-white"&gt;Primary White&lt;/button&gt;</code></pre>
                 </div>
             </section>
 
             <section style="margin-bottom: 60px;">
                 <h1 style="margin-bottom: 30px;">Secondary Buttons</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">The transparent secondary button with a thin frame is used
-                    for subordinate actions.</p>
+                <p style="margin-bottom: 20px; color: #ccc;">Subordinate actions using colored text labels.</p>
 
-                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                <div class="u-preview-row">
+                    <div class="u-dark-patch">
                     <button class="btn btn--secondary-black">Secondary Black</button>
-                    <div style="background: #333; padding: 20px; border-radius: 4px;">
+                    <button class="btn btn--secondary-orange">Secondary Orange</button>
+                    <div class="u-dark-patch">
                         <button class="btn btn--secondary-white">Secondary White</button>
                     </div>
                 </div>
-
                 <div style="background: #111; padding: 15px; border-radius: 4px;">
-                    <pre><code style="color: #bbb;">&lt;button class="btn btn--secondary-black"&gt;Secondary Black&lt;/button&gt;
-&lt;button class="btn btn--secondary-white"&gt;Secondary White&lt;/button&gt;</code></pre>
+                    <pre><code style="color: #bbb;">&lt;button class="btn btn--secondary-black"&gt;Primary Black&lt;/button&gt;
+&lt;button class="btn btn--secondary-orange"&gt;Primary Orange&lt;/button&gt;
+&lt;button class="btn btn--secondary-white"&gt;Primary White&lt;/button&gt;</code></pre>
                 </div>
             </section>
 
-            <section style="margin-bottom: 60px;">
-                <h1 style="margin-bottom: 30px;">Text Buttons</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">Subtle call to action, typically combined with an arrow.
-                </p>
+<section style="margin-bottom: 60px;">
+        <h1 style="margin-bottom: 20px;">Ghost</h1>
+        <div class="u-preview-row">
+            <div class="u-dark-patch">
+            <button class="btn btn--ghost-black">Ghost Black</button>
+            <button class="btn btn--ghost-orange">Ghost Orange</button>
+            <div class="u-dark-patch">
+                <button class="btn btn--ghost-white">Ghost White</button>
+        </div>
+        </div>
+            <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">
+&lt;button class="btn btn--ghost-black"&gt;Primary Black&lt;/button&gt;
+&lt;button class="btn btn--ghost-orange"&gt;Primary Orange&lt;/button&gt;
+&lt;button class="btn btn--ghost-white"&gt;Primary White&lt;/button&gt;</code></pre>
+                </div>
+    </section>
 
-                <div style="display: flex; gap: 40px; align-items: center; margin-bottom: 20px;">
-                    <button class="btn btn--text">
-                        Standard Variant
-                        <span class="btn__arrow">→</span>
-                    </button>
-                    <button class="btn btn--text">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 16v-4m0-4h.01" />
-                        </svg>
-                        Icon Variant
-                    </button>
-                    <button class="btn btn--text">Plain Variant</button>
+            
+            <section style="margin-bottom: 60px;">
+                <h1 style="margin-bottom: 30px;">Pills</h1>
+                <div class="u-preview-row">
+                    <div class="u-dark-patch">
+                    <button class="btn btn--primary-black btn--pill">Black Pill</button>
+                    <button class="btn btn--primary-orange btn--pill">Orange Pill</button>
+                    <button class="btn btn--outline-black btn--pill">Outline Pill</button>
+                </div>
+                <div style="background: #111; padding: 15px; border-radius: 4px;">
+                    <pre><code style="color: #bbb;">&lt;button class="btn btn--pill-black"&gt;Primary Black&lt;/button&gt;
+&lt;button class="btn btn--pill-orange"&gt;Primary Orange&lt;/button&gt;
+&lt;button class="btn btn--pill-white"&gt;Primary White&lt;/button&gt;</code></pre>
                 </div>
             </section>
 
             <section style="margin-bottom: 60px;">
                 <h1 style="margin-bottom: 30px;">Size Specification</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">Buttons are scaled based on font size with a minimum width
-                    of <strong>9x</strong> the base font size.</p>
-
-                <div style="display: flex; flex-direction: column; gap: 30px; margin-bottom: 40px;">
-                    <!-- Small -->
+                <div style="display: flex; flex-direction: column; gap: 30px;">
                     <div>
-                        <span
-                            style="display: block; margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase;">Small
-                            (Base 16px, Min-width 144px)</span>
-                        <div style="display: flex; gap: 20px; align-items: center;">
-                            <button class="btn btn--primary btn--sm">Small Button</button>
-                            <button class="btn btn--black btn--sm">Action</button>
-                        </div>
+                        <span style="display: block; margin-bottom: 10px; font-size: 14px; color: #888;">SMALL</span>
+                        <button class="btn btn--primary-orange btn--sm">Small Orange</button>
                     </div>
-
-                    <!-- Medium -->
                     <div>
-                        <span
-                            style="display: block; margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase;">Medium
-                            (Base 18px, Min-width 162px)</span>
-                        <div style="display: flex; gap: 20px; align-items: center;">
-                            <button class="btn btn--primary btn--md">Medium Button</button>
-                            <button class="btn btn--black btn--md">Processing</button>
-                        </div>
+                        <span style="display: block; margin-bottom: 10px; font-size: 14px; color: #888;">MEDIUM</span>
+                        <button class="btn btn--primary-orange btn--md">Medium Orange</button>
                     </div>
-
-                    <!-- Large -->
                     <div>
-                        <span
-                            style="display: block; margin-bottom: 15px; font-size: 14px; color: #888; text-transform: uppercase;">Large
-                            (Base 20px, Min-width 180px)</span>
-                        <div style="display: flex; gap: 20px; align-items: center;">
-                            <button class="btn btn--primary btn--lg">Large Button</button>
-                            <button class="btn btn--black btn--lg">Get Started</button>
-                        </div>
+                        <span style="display: block; margin-bottom: 10px; font-size: 14px; color: #888;">LARGE</span>
+                        <button class="btn btn--primary-orange btn--lg">Large Orange</button>
                     </div>
-                </div>
-
-                <div style="background: #111; padding: 15px; border-radius: 4px;">
-                    <pre><code style="color: #bbb;">&lt;!-- Small: 16px / 144px min-width --&gt;
-&lt;button class="btn btn--sm"&gt;...&lt;/button&gt;
-
-&lt;!-- Medium: 18px / 162px min-width --&gt;
-&lt;button class="btn btn--md"&gt;...&lt;/button&gt;
-
-&lt;!-- Large: 20px / 180px min-width --&gt;
-&lt;button class="btn btn--lg"&gt;...&lt;/button&gt;</code></pre>
-                </div>
-            </section>
-
-            <section style="margin-bottom: 60px;">
-                <h1 style="margin-bottom: 30px;">System Icon Buttons</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">Transparent buttons for classic interactions (save, print,
-                    download).</p>
-
-                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-                    <button class="btn btn--system-icon btn--sm">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
-                            <polyline points="17 21 17 13 7 13 7 21" />
-                            <polyline points="7 3 7 8 15 8" />
-                        </svg>
-                    </button>
-                    <button class="btn btn--system-icon btn--md">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                        </svg>
-                    </button>
-                </div>
-            </section>
-
-            <section style="margin-bottom: 60px;">
-                <h1 style="margin-bottom: 30px;">Button Groups</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">Grouped actions with a specification gap of 0.25rem (4px).
-                </p>
-
-                <div style="margin-bottom: 30px;">
-                    <h3 style="margin-bottom: 10px; font-size: 14px; color: #888;">Primary & Secondary Group</h3>
-                    <div class="btn-group">
-                        <button class="btn btn--primary-black">Save Changes</button>
-                        <button class="btn btn--secondary-black">Cancel</button>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 30px;">
-                    <h3 style="margin-bottom: 10px; font-size: 14px; color: #888;">Secondary Group</h3>
-                    <div class="btn-group">
-                        <button class="btn btn--secondary-black">Filter</button>
-                        <button class="btn btn--secondary-black">Sort</button>
-                        <button class="btn btn--secondary-black">Export</button>
-                    </div>
-                </div>
-
-                <div style="background: #111; padding: 15px; border-radius: 4px;">
-                    <pre><code style="color: #bbb;">&lt;div class="btn-group"&gt;
-  &lt;button class="btn btn--primary-black"&gt;Action 1&lt;/button&gt;
-  &lt;button class="btn btn--secondary-black"&gt;Action 2&lt;/button&gt;
-&lt;/div&gt;</code></pre>
                 </div>
             </section>
 
             <section style="margin-bottom: 60px;">
                 <h1 style="margin-bottom: 30px;">Floating & Sticky</h1>
-                <p style="margin-bottom: 20px; color: #ccc;">Highlight actions in a level above the layout or stick them
-                    to the bottom on mobile.</p>
-
-                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 40px;">
-                    <button class="btn btn--primary-black btn--floating"
-                        style="position: static; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
+                <div class="u-preview-row">
+                    <button class="btn btn--primary-orange btn--floating" style="position: static; box-shadow: 0 4px 12px rgba(255, 95, 0, 0.3);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
                         </svg>
                     </button>
-                    <span style="font-size: 14px; color: #888;">&larr; Floating Action (Shadow + Elevation)</span>
-                </div>
-
-                <div style="border: 1px solid #333; border-radius: 8px; overflow: hidden; max-width: 375px;">
-                    <div style="background: #222; padding: 10px; text-align: center; font-size: 12px; color: #888;">
-                        Smartphone Preview (Breakpoint S)</div>
-                    <div style="height: 200px; padding: 20px; position: relative;">
-                        <p style="font-size: 13px; color: #aaa;">Scrollable content area...</p>
-                        <button class="btn btn--primary-black btn--sticky-bottom" style="position: absolute;">Sticky
-                            Primary Button</button>
-                    </div>
                 </div>
             </section>
 
-
             <section style="margin-bottom: 60px;">
                 <h1 style="margin-bottom: 30px;">Full Width</h1>
-                <div style="margin-bottom: 20px;">
-                    <a href="#" class="btn btn--primary btn--block">Block Level Button</a>
-                </div>
-
-                <div style="background: #111; padding: 15px; border-radius: 4px;">
-                    <pre><code style="color: #bbb;">&lt;a href="#" class="btn btn--primary btn--block"&gt;Block Level Button&lt;/a&gt;</code></pre>
-                </div>
+                <button class="btn btn--primary-orange btn--block">Block Level Orange Button</button>
             </section>
         </main>
     </div>
 
-
     <script>
-        // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.querySelector('.u-sidebar');
         const backdrop = document.getElementById('backdrop');
@@ -379,7 +297,7 @@
         function toggleMenu() {
             sidebar.classList.toggle('is-open');
             backdrop.classList.toggle('is-active');
-            menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
+            if(menuBtn) menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
         }
 
         if (menuBtn && backdrop) {
@@ -388,5 +306,4 @@
         }
     </script>
 </body>
-
 </html>

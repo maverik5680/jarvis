@@ -94,7 +94,7 @@
 }
 
 .u-sidebar a.active {
-  color: var(--color-brand-blue, #3B82F6);
+  color: var(--color-brand-orange);
   font-weight: 500;
 }
 

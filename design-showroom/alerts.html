@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - Alerts</title>
     <link rel="stylesheet" href="../ds/src/css/main.css">
-    <style>
+     <style>
         /* Emergency debug styles if main.css fails */
         body {
             background: #000;
@@ -15,17 +17,16 @@
 
 <body class="u-page-layout">
 
-    <!-- Backdrop -->
     <div class="u-backdrop" id="backdrop"></div>
 
     <aside class="u-sidebar">
         <div style="padding: 20px;">
-            <h2><a href="showroom.html" style="color: inherit; text-decoration: none;">JARVIS</a></h2>
+            <h2><a href="index.html" style="color: var(--color-brand-orange);">JARVIS</a></h2>
             <nav>
                 <details>
                     <summary>Tokens</summary>
                     <ul>
-                        <li><a href="border.html">Border</a></li>
+                        <li><a href="borderUtility.html">Border</a></li>
                         <li><a href="breakpoint.html">Breakpoint</a></li>
                         <li><a href="colors.html">Colors</a></li>
                         <li><a href="elevations.html">Elevations</a></li>
@@ -151,14 +152,12 @@
                         <li><a href="stats.html">Stats</a></li>
                     </ul>
                 </details>
-
             </nav>
         </div>
     </aside>
 
     <div class="u-main-area">
-        <header class="u-header"
-            style="padding: 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
+        <header class="u-header">
             <span>Alerts</span>
             <button class="u-menu-btn" id="menuBtn">Menu</button>
         </header>
@@ -167,91 +166,27 @@
             <section style="margin-bottom: 60px;">
                 <h1 style="margin-bottom: 30px;">Alerts</h1>
                 <p style="margin-bottom: 30px; font-size: 1.1rem; color: #ccc;">
-                    Notifications draw the user’s attention to warnings or important information. Wide-area
-                    notifications use only brand colors and gray shades.
+                    Notifications draw the user’s attention to warnings or important information.
                 </p>
 
-                <!-- Global Alerts -->
                 <h2 style="margin-bottom: 20px;">Global Alerts</h2>
-                <p style="margin-bottom: 20px; color: #aaa;">Extend across the entire viewport width. Statically at the
-                    top or fixed.</p>
-
-                <div
-                    style="background: #f0f0f0; padding: 40px; border: 1px solid #ddd; margin-bottom: 40px; position: relative; overflow: hidden;">
-                    <p style="margin-bottom: 40px;">Viewport Simulation Area</p>
-
-                    <!-- Global Blue Alert -->
+                <div style="background: #f0f0f0; padding: 40px; border: 1px solid #ddd; margin-bottom: 40px; border-radius: 4px; color: #000;">
                     <div class="alert alert--global alert--blue" style="margin-bottom: 10px;">
                         <div class="alert__content">
-                            <svg class="alert__icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="12" y1="16" x2="12" y2="12" />
-                                <line x1="12" y1="8" x2="12.01" y2="8" />
-                            </svg>
                             <span>The charging station is now available for use.</span>
                         </div>
-                        <div class="alert__actions">
-                            <button class="btn btn--white">View Station</button>
-                            <button class="u-icon-btn" style="color: white; border: none; background: transparent;"><svg
-                                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <line x1="18" y1="6" x2="6" y2="18" />
-                                    <line x1="6" y1="6" x2="18" y2="18" />
-                                </svg></button>
-                        </div>
                     </div>
-
-                    <!-- Global Black Alert -->
                     <div class="alert alert--global alert--black">
                         <div class="alert__content">
-                            <span>Your subscription will expire in 3 days. Please renew to continue service.</span>
-                        </div>
-                        <div class="alert__actions">
-                            <button class="btn btn--white">Renew Now</button>
+                            <span>Subscription expires in 3 days.</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Container Alerts -->
-                <h2 style="margin-bottom: 20px;">Container Alerts</h2>
-                <p style="margin-bottom: 20px; color: #aaa;">Positioned within a section or card for local significance.
-                </p>
-
-                <div
-                    style="background: #fff; padding: 20px; border: 1px solid #ddd; margin-bottom: 40px; max-width: 500px;">
-                    <h3 style="margin-bottom: 15px;">Payment Details</h3>
-                    <div class="alert alert--container alert--gray">
-                        <div class="alert__content">
-                            <span>Your primary credit card is about to expire.</span>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.9rem; color: #666;">Please update your payment method to avoid interruption.
-                    </p>
-                </div>
-
-                <!-- Code Snippet -->
-                <div style="background: #111; padding: 20px; border-radius: 8px;">
-                    <pre><code style="color: #bbb;">&lt;!-- Global Fixed Alert --&gt;
-&lt;div class="alert alert--global alert--blue alert--fixed-top"&gt;
-    &lt;div class="alert__content"&gt;...&lt;/div&gt;
-    &lt;div class="alert__actions"&gt;
-        &lt;button class="btn btn--white"&gt;Action&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Container Alert --&gt;
-&lt;div class="alert alert--container alert--gray"&gt;
-    &lt;div class="alert__content"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
                 </div>
             </section>
         </main>
     </div>
 
-
     <script>
-        // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
         const sidebar = document.querySelector('.u-sidebar');
         const backdrop = document.getElementById('backdrop');
@@ -262,11 +197,8 @@
             menuBtn.textContent = sidebar.classList.contains('is-open') ? 'Close' : 'Menu';
         }
 
-        if (menuBtn && backdrop) {
-            menuBtn.addEventListener('click', toggleMenu);
-            backdrop.addEventListener('click', toggleMenu);
-        }
+        menuBtn.addEventListener('click', toggleMenu);
+        backdrop.addEventListener('click', toggleMenu);
     </script>
 </body>
-
 </html>

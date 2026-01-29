@@ -37,7 +37,7 @@
 }
 
 .l-subdivision--blue {
-    background-color: var(--color-brand-blue, #001E50);
+    background-color: var(--color-brand-orange);
     color: #fff;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .l-tile--blue {
-    background-color: var(--color-brand-blue, #001E50);
+    background-color: var(--color-brand-orange);
     color: #fff;
 }
 

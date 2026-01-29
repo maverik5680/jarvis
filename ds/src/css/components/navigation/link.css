@@ -15,7 +15,7 @@
 }
 
 .link:hover {
-  color: var(--color-brand-blue);
+  color: var(--color-brand-orange);
   text-decoration: none;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .link--subtle:hover {
-  color: var(--color-brand-blue);
+  color: var(--color-brand-orange);
 }
 
 /* Underline Animation: Premium "White-Label" feel */
@@ -42,7 +42,7 @@
   height: 1px;
   bottom: -2px;
   left: 0;
-  background-color: var(--color-brand-blue);
+  background-color: var(--color-brand-orange);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;

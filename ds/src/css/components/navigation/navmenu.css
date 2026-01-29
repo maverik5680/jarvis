@@ -54,8 +54,7 @@
 
 .navmenu__link:hover,
 .navmenu__link--active {
-  color: var(--color-brand-black);
-}
+color: var(--color-brand-orange) !important;}
 
 /* Mobile Footer inside Menu */
 .navmenu__footer {
