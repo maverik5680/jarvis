@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="../ds/src/css/main.css">
+    <link rel="stylesheet" href="./tailwind.css">
+
     <style>
         /* Emergency debug styles if main.css fails */
         body {
@@ -163,9 +165,14 @@
         </header>
 
         <main style="padding: 0;">
+            <!-- Tailwind Test -->
+            <div class="bg-blue-600 text-white p-4 text-center font-bold">
+                Tailwind CSS is active!
+            </div>
+
             <div class="l-subdivision-container l-subdivision-container--h" style="height: 60vh; min-height: 500px;">
-                <div class="l-subdivision l-subdivision--2-3" 
-                     style="justify-content: center; background-color: var(--color-brand-orange); color: #fff;">
+                <div class="l-subdivision l-subdivision--2-3"
+                    style="justify-content: center; background-color: var(--color-brand-orange); color: #fff;">
                     <h1
                         style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; font-weight: 700;">
                         Varied solutions.<br>One balanced experience.
