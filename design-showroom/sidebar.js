@@ -1,67 +1,91 @@
 // sidebar.js
 
-async function initSidebar() {
+async function initLayout() {
     const sidebarElement = document.querySelector('.u-sidebar');
-    const menuBtn = document.getElementById('menuBtn');
+    const headerElement = document.querySelector('.u-header');
     const backdrop = document.getElementById('backdrop');
 
-    if (!sidebarElement) return;
+    // 1. Fetch and Inject Header
+    if (headerElement) {
+        try {
+            const response = await fetch('./aheader.html');
+            if (response.ok) {
+                const html = await response.text();
+                headerElement.innerHTML = html;
 
-    // 1. Fetch and Inject Sidebar HTML
-    try {
-        const response = await fetch('./asidebar.html');
-        if (!response.ok) throw new Error('Failed to load asidebar.html');
-        const html = await response.text();
-
-        // Extract content inside <aside> or use the whole thing if it's just the aside
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const incomingSidebar = doc.querySelector('.u-sidebar');
-
-        if (incomingSidebar) {
-            sidebarElement.innerHTML = incomingSidebar.innerHTML;
-        } else {
-            // Fallback if the file just contains the inner content
-            sidebarElement.innerHTML = html;
+                // Set page title in header if possible
+                const headerTitle = headerElement.querySelector('#headerTitle');
+                if (headerTitle) {
+                    const pageTitle = document.title.replace('Design System - ', '').replace('Showroom - ', '');
+                    headerTitle.textContent = pageTitle;
+                }
+            }
+        } catch (error) {
+            console.error('Header load failed:', error);
         }
-    } catch (error) {
-        console.error('Sidebar load failed:', error);
     }
 
-    // 2. Mobile Toggle Logic
+    // 2. Fetch and Inject Sidebar
+    if (sidebarElement) {
+        try {
+            const response = await fetch('./asidebar.html');
+            if (response.ok) {
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const incomingSidebar = doc.querySelector('.u-sidebar');
+
+                if (incomingSidebar) {
+                    sidebarElement.innerHTML = incomingSidebar.innerHTML;
+                } else {
+                    sidebarElement.innerHTML = html;
+                }
+            }
+        } catch (error) {
+            console.error('Sidebar load failed:', error);
+        }
+    }
+
+    // 3. Set up Toggles (after header/sidebar are injected)
+    const menuBtn = document.getElementById('menuBtn');
+
     function toggleMenu() {
-        sidebarElement.classList.toggle('is-open');
+        if (!sidebarElement) return;
+
+        const isOpen = sidebarElement.classList.toggle('is-open');
         if (backdrop) backdrop.classList.toggle('is-active');
+
         if (menuBtn) {
-            menuBtn.textContent = sidebarElement.classList.contains('is-open') ? 'Close' : 'Menu';
+            menuBtn.textContent = isOpen ? 'Close' : 'Menu';
         }
     }
 
     if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
     if (backdrop) backdrop.addEventListener('click', toggleMenu);
 
-    // 3. Highlight active link & Auto-open category
-    const currentFile = window.location.pathname.split("/").pop() || "index.html";
-    const links = sidebarElement.querySelectorAll('a');
+    // 4. Highlight active link & Auto-open category
+    if (sidebarElement) {
+        const currentFile = window.location.pathname.split("/").pop() || "index.html";
+        const links = sidebarElement.querySelectorAll('a');
 
-    links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentFile) {
-            link.classList.add('active');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentFile) {
+                link.classList.add('active');
 
-            // Auto-open correct <details>
-            const parentDetails = link.closest('details');
-            if (parentDetails) {
-                parentDetails.setAttribute('open', '');
+                const parentDetails = link.closest('details');
+                if (parentDetails) {
+                    parentDetails.setAttribute('open', '');
+                }
             }
-        }
-    });
+        });
+    }
 }
 
 // Initialize on DOM load
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSidebar);
+    document.addEventListener('DOMContentLoaded', initLayout);
 } else {
-    initSidebar();
+    initLayout();
 }
 
