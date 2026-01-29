@@ -1,12 +1,10 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Tell Vite your images/assets are in the sibling folder
-  publicDir: '../ds/public', 
+  publicDir: '../ds/public', // Points to your shared assets
   server: {
     fs: {
-      // Allow Vite to grab CSS/files from the sibling 'ds' folder
-      allow: ['..'] 
+      allow: ['..'] // Required for monorepos to access sibling folders
     }
   }
 })
