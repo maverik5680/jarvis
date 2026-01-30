@@ -63,35 +63,40 @@ async function initLayout() {
     if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
     if (backdrop) backdrop.addEventListener('click', toggleMenu);
 
-    // 4. Highlight active link & Auto-open category
-    if (sidebarElement) {
-        // Use current window URL for comparison
-        const currentUrl = new URL(window.location.href);
-        const links = sidebarElement.querySelectorAll('a');
+    // 4. Hydrate active link state (run after sidebar is injected)
+    hydrateSidebarActiveState();
+}
 
-        links.forEach(link => {
-            // Create URL object for the link to normalize it
-            // Use link.href directly as it returns the absolute URL
-            const linkUrl = new URL(link.href, window.location.origin);
+// Dedicated hydration function for sidebar active state
+function hydrateSidebarActiveState() {
+    const sidebarElement = document.querySelector('.u-sidebar');
+    if (!sidebarElement) return;
 
-            // Compare pathnames to avoid hash/query mismatches if those vary
-            // Also matching trailing slash cases if necessary
-            // We strip leading slash to ensure consistency if needed, but pathname comparison is usually safe
-            const isMatch = linkUrl.pathname === currentUrl.pathname;
+    // Get current page path
+    const currentPath = window.location.pathname;
 
-            if (isMatch) {
-                // Apply active styles: Brand Orange + Bold + Border Color
-                link.classList.add('text-brand-orange', 'font-bold', 'border-brand-orange');
-                link.classList.remove('border-transparent');
+    // Find all links in the sidebar
+    const links = sidebarElement.querySelectorAll('a');
 
-                // Expand parent accordion
-                const parentDetails = link.closest('details');
-                if (parentDetails) {
-                    parentDetails.setAttribute('open', 'true');
-                }
+    links.forEach(link => {
+        // Get the absolute URL of the link
+        const linkUrl = new URL(link.href, window.location.origin);
+
+        // Check if this link matches the current page
+        if (linkUrl.pathname === currentPath) {
+            // Apply active styles: orange text, bold, and orange left border
+            link.classList.add('text-brand-orange', 'font-bold', 'border-brand-orange');
+            link.classList.remove('border-transparent');
+
+            // Find and open the parent accordion (details element)
+            const parentDetails = link.closest('details');
+            if (parentDetails) {
+                // Force the accordion to stay open
+                parentDetails.setAttribute('open', '');
+                parentDetails.open = true;
             }
-        });
-    }
+        }
+    });
 }
 
 // Initialize on DOM load
