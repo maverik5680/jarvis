@@ -1,138 +1,283 @@
-<aside class="u-sidebar">
-    <div style="padding: 20px;">
-        <h2><a href="index.html" style="color: var(--color-brand-orange); text-decoration: none;">JARVIS</a></h2>
-        <nav>
-            <details>
-                <summary>Tokens</summary>
-                <ul>
-                    <li><a href="borderUtility.html">Border</a></li>
-                    <li><a href="breakpoint.html">Breakpoint</a></li>
-                    <li><a href="colors.html">Colors</a></li>
-                    <li><a href="elevations.html">Elevations</a></li>
-                    <li><a href="motion.html">Motion</a></li>
-                    <li><a href="opacity.html">Opacity</a></li>
-                    <li><a href="radius.html">Radius</a></li>
-                    <li><a href="ratios.html">Ratios</a></li>
-                    <li><a href="shadow.html">Shadow</a></li>
-                    <li><a href="sizing.html">Sizing</a></li>
-                    <li><a href="spacing.html">Spacing</a></li>
-                    <li><a href="variables.html">Variables</a></li>
-                    <li><a href="z-index.html">Z-Index</a></li>
+<aside class="u-sidebar p-5 border-r border-gray-200 h-screen overflow-y-auto">
+    <div class="space-y-6">
+        <h2 class="text-xl font-bold tracking-wide">
+            <a href="index.html"
+                class="text-brand-orange no-underline hover:text-brand-orange-hover transition-colors">JARVIS</a>
+        </h2>
+        <nav class="space-y-2">
+            <!-- Tokens -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Tokens
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="borderUtility.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Border</a></li>
+                    <li><a href="breakpoint.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Breakpoint</a></li>
+                    <li><a href="colors.html" class="block py-1 hover:text-brand-orange transition-colors">Colors</a>
+                    </li>
+                    <li><a href="elevations.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Elevations</a></li>
+                    <li><a href="motion.html" class="block py-1 hover:text-brand-orange transition-colors">Motion</a>
+                    </li>
+                    <li><a href="opacity.html" class="block py-1 hover:text-brand-orange transition-colors">Opacity</a>
+                    </li>
+                    <li><a href="radius.html" class="block py-1 hover:text-brand-orange transition-colors">Radius</a>
+                    </li>
+                    <li><a href="ratios.html" class="block py-1 hover:text-brand-orange transition-colors">Ratios</a>
+                    </li>
+                    <li><a href="shadow.html" class="block py-1 hover:text-brand-orange transition-colors">Shadow</a>
+                    </li>
+                    <li><a href="sizing.html" class="block py-1 hover:text-brand-orange transition-colors">Sizing</a>
+                    </li>
+                    <li><a href="spacing.html" class="block py-1 hover:text-brand-orange transition-colors">Spacing</a>
+                    </li>
+                    <li><a href="variables.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Variables</a></li>
+                    <li><a href="z-index.html" class="block py-1 hover:text-brand-orange transition-colors">Z-Index</a>
+                    </li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Base</summary>
-                <ul>
-                    <li><a href="typography.html">Typography</a></li>
+            <!-- Base -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Base
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="typography.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Typography</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Actions</summary>
-                <ul>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="dropdowns.html">Dropdowns</a></li>
-                    <li><a href="icon-buttons.html">Icon Buttons</a></li>
-                    <li><a href="menus.html">Menus</a></li>
+            <!-- Actions -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Actions
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="buttons.html" class="block py-1 hover:text-brand-orange transition-colors">Buttons</a>
+                    </li>
+                    <li><a href="dropdowns.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Dropdowns</a></li>
+                    <li><a href="icon-buttons.html" class="block py-1 hover:text-brand-orange transition-colors">Icon
+                            Buttons</a></li>
+                    <li><a href="menus.html" class="block py-1 hover:text-brand-orange transition-colors">Menus</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Data Display</summary>
-                <ul>
-                    <li><a href="avatars.html">Avatars</a></li>
-                    <li><a href="badges.html">Badges</a></li>
-                    <li><a href="cards.html">Cards</a></li>
-                    <li><a href="lists.html">Lists</a></li>
-                    <li><a href="skeletons.html">Skeletons</a></li>
-                    <li><a href="tables.html">Tables</a></li>
-                    <li><a href="tags.html">Tags</a></li>
+            <!-- Data Display -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Data Display
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="avatars.html" class="block py-1 hover:text-brand-orange transition-colors">Avatars</a>
+                    </li>
+                    <li><a href="badges.html" class="block py-1 hover:text-brand-orange transition-colors">Badges</a>
+                    </li>
+                    <li><a href="cards.html" class="block py-1 hover:text-brand-orange transition-colors">Cards</a></li>
+                    <li><a href="lists.html" class="block py-1 hover:text-brand-orange transition-colors">Lists</a></li>
+                    <li><a href="skeletons.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Skeletons</a></li>
+                    <li><a href="tables.html" class="block py-1 hover:text-brand-orange transition-colors">Tables</a>
+                    </li>
+                    <li><a href="tags.html" class="block py-1 hover:text-brand-orange transition-colors">Tags</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Feedback</summary>
-                <ul>
-                    <li><a href="alerts.html">Alerts</a></li>
-                    <li><a href="popovers.html">Popovers</a></li>
-                    <li><a href="progress.html">Progress</a></li>
-                    <li><a href="spinners.html">Spinners</a></li>
-                    <li><a href="toasts.html">Toasts</a></li>
-                    <li><a href="tooltips.html">Tooltips</a></li>
+            <!-- Feedback -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Feedback
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="alerts.html" class="block py-1 hover:text-brand-orange transition-colors">Alerts</a>
+                    </li>
+                    <li><a href="popovers.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Popovers</a></li>
+                    <li><a href="progress.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Progress</a></li>
+                    <li><a href="spinners.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Spinners</a></li>
+                    <li><a href="toasts.html" class="block py-1 hover:text-brand-orange transition-colors">Toasts</a>
+                    </li>
+                    <li><a href="tooltips.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Tooltips</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Forms</summary>
-                <ul>
-                    <li><a href="form-groups.html">Form Groups</a></li>
-                    <li><a href="form-layouts.html">Form Layouts</a></li>
+            <!-- Forms -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Forms
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="form-groups.html" class="block py-1 hover:text-brand-orange transition-colors">Form
+                            Groups</a></li>
+                    <li><a href="form-layouts.html" class="block py-1 hover:text-brand-orange transition-colors">Form
+                            Layouts</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Inputs</summary>
-                <ul>
-                    <li><a href="inputs.html">Inputs</a></li>
-                    <li><a href="select-menus.html">Select Menus</a></li>
-                    <li><a href="selections.html">Selections</a></li>
-                    <li><a href="textfields.html">Textfields</a></li>
-                    <li><a href="toggles.html">Toggles</a></li>
-                    <li><a href="validation.html">Validation</a></li>
+            <!-- Inputs -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Inputs
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="inputs.html" class="block py-1 hover:text-brand-orange transition-colors">Inputs</a>
+                    </li>
+                    <li><a href="select-menus.html" class="block py-1 hover:text-brand-orange transition-colors">Select
+                            Menus</a></li>
+                    <li><a href="selections.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Selections</a></li>
+                    <li><a href="textfields.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Textfields</a></li>
+                    <li><a href="toggles.html" class="block py-1 hover:text-brand-orange transition-colors">Toggles</a>
+                    </li>
+                    <li><a href="validation.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Validation</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Interaction</summary>
-                <ul>
-                    <li><a href="accordions.html">Accordions</a></li>
-                    <li><a href="modals.html">Modals</a></li>
-                    <li><a href="sliders.html">Sliders</a></li>
+            <!-- Interaction -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Interaction
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="accordions.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Accordions</a></li>
+                    <li><a href="modals.html" class="block py-1 hover:text-brand-orange transition-colors">Modals</a>
+                    </li>
+                    <li><a href="sliders.html" class="block py-1 hover:text-brand-orange transition-colors">Sliders</a>
+                    </li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Layout Shell</summary>
-                <ul>
-                    <li><a href="footers.html">Footers</a></li>
-                    <li><a href="grids.html">Grids</a></li>
-                    <li><a href="headers.html">Headers</a></li>
-                    <li><a href="layout-structure.html">Layout Structure</a></li>
-                    <li><a href="page-layouts.html">Page Layouts</a></li>
-                    <li><a href="page-margins.html">Page Margins</a></li>
-                    <li><a href="sidebars.html">Sidebars</a></li>
+            <!-- Layout Shell -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Layout Shell
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="footers.html" class="block py-1 hover:text-brand-orange transition-colors">Footers</a>
+                    </li>
+                    <li><a href="grids.html" class="block py-1 hover:text-brand-orange transition-colors">Grids</a></li>
+                    <li><a href="headers.html" class="block py-1 hover:text-brand-orange transition-colors">Headers</a>
+                    </li>
+                    <li><a href="layout-structure.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Layout Structure</a></li>
+                    <li><a href="page-layouts.html" class="block py-1 hover:text-brand-orange transition-colors">Page
+                            Layouts</a></li>
+                    <li><a href="page-margins.html" class="block py-1 hover:text-brand-orange transition-colors">Page
+                            Margins</a></li>
+                    <li><a href="sidebars.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Sidebars</a></li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Navigation</summary>
-                <ul>
-                    <li><a href="backdrops.html">Backdrops</a></li>
-                    <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
-                    <li><a href="flyover.html">Flyover</a></li>
-                    <li><a href="links.html">Links</a></li>
-                    <li><a href="list-navigation.html">List Navigation</a></li>
-                    <li><a href="navbars.html">Navbars</a></li>
-                    <li><a href="navmenus.html">Navmenus</a></li>
-                    <li><a href="pagination.html">Pagination</a></li>
-                    <li><a href="tabs.html">Tabs</a></li>
-                    <li><a href="tab-bar.html">Tab Bar</a></li>
+            <!-- Navigation -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Navigation
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="backdrops.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Backdrops</a></li>
+                    <li><a href="breadcrumbs.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Breadcrumbs</a></li>
+                    <li><a href="flyover.html" class="block py-1 hover:text-brand-orange transition-colors">Flyover</a>
+                    </li>
+                    <li><a href="links.html" class="block py-1 hover:text-brand-orange transition-colors">Links</a></li>
+                    <li><a href="list-navigation.html" class="block py-1 hover:text-brand-orange transition-colors">List
+                            Navigation</a></li>
+                    <li><a href="navbars.html" class="block py-1 hover:text-brand-orange transition-colors">Navbars</a>
+                    </li>
+                    <li><a href="navmenus.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Navmenus</a></li>
+                    <li><a href="pagination.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Pagination</a></li>
+                    <li><a href="tabs.html" class="block py-1 hover:text-brand-orange transition-colors">Tabs</a></li>
+                    <li><a href="tab-bar.html" class="block py-1 hover:text-brand-orange transition-colors">Tab Bar</a>
+                    </li>
                 </ul>
             </details>
 
-            <details>
-                <summary>Sections</summary>
-                <ul>
-                    <li><a href="ctas.html">CTAs</a></li>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="heroes.html">Heroes</a></li>
-                    <li><a href="sections.html">Sections</a></li>
-                    <li><a href="stats.html">Stats</a></li>
+            <!-- Sections -->
+            <details class="group">
+                <summary
+                    class="list-none flex justify-between items-center cursor-pointer text-gray-700 font-medium py-2 hover:text-brand-black transition-colors">
+                    Sections
+                    <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-180"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <ul class="pl-4 mt-1 space-y-1 text-sm border-l border-gray-100">
+                    <li><a href="ctas.html" class="block py-1 hover:text-brand-orange transition-colors">CTAs</a></li>
+                    <li><a href="features.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Features</a></li>
+                    <li><a href="heroes.html" class="block py-1 hover:text-brand-orange transition-colors">Heroes</a>
+                    </li>
+                    <li><a href="sections.html"
+                            class="block py-1 hover:text-brand-orange transition-colors">Sections</a></li>
+                    <li><a href="stats.html" class="block py-1 hover:text-brand-orange transition-colors">Stats</a></li>
                 </ul>
             </details>
 
         </nav>
     </div>
 </aside>
-

@@ -71,8 +71,10 @@ async function initLayout() {
         links.forEach(link => {
             const href = link.getAttribute('href');
             if (href === currentFile) {
-                link.classList.add('active');
+                // Apply active styles: Brand Orange + Bold
+                link.classList.add('text-brand-orange', 'font-bold');
 
+                // Expand parent accordion
                 const parentDetails = link.closest('details');
                 if (parentDetails) {
                     parentDetails.setAttribute('open', '');
