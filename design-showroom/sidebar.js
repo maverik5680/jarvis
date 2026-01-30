@@ -28,7 +28,7 @@ async function initLayout() {
     // 2. Fetch and Inject Sidebar
     if (sidebarElement) {
         try {
-            const response = await fetch('./asidebar.html');
+            const response = await fetch('/asidebar.html');
             if (response.ok) {
                 const html = await response.text();
                 const parser = new DOMParser();
