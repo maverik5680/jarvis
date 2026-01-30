@@ -72,8 +72,9 @@ function hydrateSidebarActiveState() {
     const sidebarElement = document.querySelector('.u-sidebar');
     if (!sidebarElement) return;
 
-    // Get current page path
+    // Get current page path and normalize it (remove .html extension if present)
     const currentPath = window.location.pathname;
+    const normalizedCurrentPath = currentPath.replace(/\.html$/, '');
 
     // Find all links in the sidebar
     const links = sidebarElement.querySelectorAll('a');
@@ -82,8 +83,13 @@ function hydrateSidebarActiveState() {
         // Get the absolute URL of the link
         const linkUrl = new URL(link.href, window.location.origin);
 
-        // Check if this link matches the current page
-        if (linkUrl.pathname === currentPath) {
+        // Normalize the link pathname (remove .html extension if present) 
+        const normalizedLinkPath = linkUrl.pathname.replace(/\.html$/, '');
+
+        // Check if this link matches the current page (comparing normalized paths)
+        const isMatch = normalizedLinkPath === normalizedCurrentPath;
+
+        if (isMatch) {
             // Apply active styles: orange text, bold, and orange left border
             link.classList.add('text-brand-orange', 'font-bold', 'border-brand-orange');
             link.classList.remove('border-transparent');
