@@ -2,78 +2,128 @@
    NAVIGATION: NAVMENU (Mobile/Drawer)
    ============================================================ */
 
+:root {
+  --nav-bg: #000000;
+  --nav-text: #FFFFFF;
+  --nav-text-dim: rgba(255, 255, 255, 0.7);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-orange: #FF6600;
+  /* Your Brand Orange */
+}
+
 .navmenu {
   position: fixed;
   top: 0;
-  /* FIX 1: Set left to -100% to hide it off-screen to the left */
   left: -100%;
+  /* Hidden by default */
   width: 100%;
   max-width: 320px;
   height: 100vh;
-  /* FIX 2: Black background as requested */
-  background-color: var(--color-brand-black, #000000);
+  background-color: var(--nav-bg);
   z-index: 1100;
-  padding: 40px;
+  padding: 40px 24px;
   display: flex;
   flex-direction: column;
-  /* FIX 3: Transition 'left' (not right) for smooth sliding */
   transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  /* FIX 4: Shadow on the right side */
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
 }
 
-/* Open State */
 .navmenu.is-open {
-  /* FIX 5: Slides to position 0 on the left */
   left: 0;
 }
 
-.navmenu__header {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 64px;
-}
-
-/* Ensure the Close (X) button is visible on black */
-.navmenu__header button,
-.navmenu__header .close-icon {
-  color: #FFFFFF;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.navmenu__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
+/* --- VARIANT 1: SIMPLE LINK --- */
 .navmenu__link {
-  font-family: var(--font-family-main);
-  font-size: var(--fs-h4);
-  font-weight: var(--fw-bold);
-  /* FIX 6: White text so it doesn't disappear on the black background */
-  color: #FFFFFF;
+  display: block;
+  padding: 16px 0;
+  font-family: var(--font-family-main, sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nav-text);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: color 0.2s ease;
 }
 
-/* FIX 7: Active and Hover states in Brand Orange */
 .navmenu__link:hover,
 .navmenu__link--active {
-  color: var(--color-brand-orange, #FF6600) !important;
+  color: var(--nav-orange);
 }
 
-/* Mobile Footer inside Menu */
+/* --- VARIANT 2: COLLAPSIBLE (ACCORDION) --- */
+.navmenu__item--collapsible {
+  width: 100%;
+}
+
+.navmenu__trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 16px 0;
+  text-align: left;
+  font-family: var(--font-family-main, sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--nav-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.navmenu__trigger:hover {
+  color: var(--nav-orange);
+}
+
+/* The Sub-menu Dropdown */
+.navmenu__dropdown {
+  max-height: 0;
+  /* Hidden state */
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+/* Active State to Open Dropdown */
+.navmenu__item--active .navmenu__dropdown {
+  max-height: 500px;
+  /* Adjust based on content */
+  margin-bottom: 16px;
+}
+
+/* Sub-links with the bottom border */
+.navmenu__sub-link {
+  display: block;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  color: var(--nav-text-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--nav-border);
+  transition: all 0.2s ease;
+}
+
+.navmenu__sub-link:last-child {
+  border-bottom: none;
+}
+
+.navmenu__sub-link:hover,
+.navmenu__sub-link--active {
+  color: var(--nav-orange) !important;
+  padding-left: 8px;
+  /* Smooth slide-in effect */
+}
+
+/* Footer Section */
 .navmenu__footer {
   margin-top: auto;
-  padding-top: 40px;
-  /* FIX 8: Border adjusted to be visible against black */
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 32px;
+  border-top: 1px solid var(--nav-border);
 }

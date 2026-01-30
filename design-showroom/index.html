@@ -2,83 +2,191 @@
 <html lang="en">
 
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Design System -->
     <link rel="stylesheet" href="../ds/src/css/main.css">
+
+    <!-- Tailwind (Token-Synced) -->
     <link rel="stylesheet" href="./tailwind.css">
+
+    <!-- Sidebar Script -->
     <script src="./sidebar.js" type="module" defer></script>
 
+    <!-- Debug fallback -->
     <style>
-        /* Emergency debug styles if main.css fails */
-        body {
-            background: #000;
-            color: #fff;
-            margin: 0;
-        }
+        body { background: #000; color: #fff; margin: 0; }
     </style>
 </head>
 
 <body class="u-page-layout">
 
+    <!-- Backdrop -->
     <div class="u-backdrop" id="backdrop"></div>
 
-    <aside class="u-sidebar"></aside>
+    <!-- SIDEBAR: Component Explorer -->
+    <aside class="u-sidebar">
+        <nav class="navmenu" id="navmenu">
 
+            <!-- TOKENS -->
+            <div class="navmenu__item navmenu__item--collapsible">
+                <button class="navmenu__trigger">Tokens</button>
+                <ul class="navmenu__dropdown">
+                    <li><a href="colors.html" class="navmenu__sub-link link">Colors</a></li>
+                    <li><a href="spacing.html" class="navmenu__sub-link link">Spacing</a></li>
+                    <li><a href="typography.html" class="navmenu__sub-link link">Typography</a></li>
+                    <li><a href="radius.html" class="navmenu__sub-link link">Radius</a></li>
+                    <li><a href="shadows.html" class="navmenu__sub-link link">Shadows</a></li>
+                </ul>
+            </div>
+
+            <!-- COMPONENTS -->
+            <div class="navmenu__item navmenu__item--collapsible">
+                <button class="navmenu__trigger">Components</button>
+                <ul class="navmenu__dropdown">
+                    <li><a href="buttons.html" class="navmenu__sub-link link">Buttons</a></li>
+                    <li><a href="inputs.html" class="navmenu__sub-link link">Inputs</a></li>
+                    <li><a href="cards.html" class="navmenu__sub-link link">Cards</a></li>
+                    <li><a href="alerts.html" class="navmenu__sub-link link">Alerts</a></li>
+                    <li><a href="tables.html" class="navmenu__sub-link link">Tables</a></li>
+                </ul>
+            </div>
+
+            <!-- LAYOUT -->
+            <div class="navmenu__item navmenu__item--collapsible">
+                <button class="navmenu__trigger">Layout</button>
+                <ul class="navmenu__dropdown">
+                    <li><a href="grid.html" class="navmenu__sub-link link">Grid</a></li>
+                    <li><a href="subdivisions.html" class="navmenu__sub-link link">Subdivisions</a></li>
+                    <li><a href="page-layout.html" class="navmenu__sub-link link">Page Layout</a></li>
+                </ul>
+            </div>
+
+            <!-- SECTIONS -->
+            <div class="navmenu__item navmenu__item--collapsible">
+                <button class="navmenu__trigger">Sections</button>
+                <ul class="navmenu__dropdown">
+                    <li><a href="hero.html" class="navmenu__sub-link link">Hero</a></li>
+                    <li><a href="feature.html" class="navmenu__sub-link link">Feature</a></li>
+                    <li><a href="cta.html" class="navmenu__sub-link link">CTA</a></li>
+                </ul>
+            </div>
+
+            <!-- UTILITIES -->
+            <div class="navmenu__item navmenu__item--collapsible">
+                <button class="navmenu__trigger">Utilities</button>
+                <ul class="navmenu__dropdown">
+                    <li><a href="flex.html" class="navmenu__sub-link link">Flex</a></li>
+                    <li><a href="grid-utility.html" class="navmenu__sub-link link">Grid Utilities</a></li>
+                    <li><a href="spacing-utility.html" class="navmenu__sub-link link">Spacing</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </aside>
+
+    <!-- MAIN AREA -->
     <div class="u-main-area">
-        <header class="u-header"></header>
 
-        <main style="padding: 0;">
-            <!-- Tailwind Test -->
+        <!-- NAVBAR (Option C) -->
+        <header class="u-header">
+            <nav class="navbar">
+
+                <!-- Sidebar Toggle -->
+                <button class="icon-button" id="sidebarToggle">☰</button>
+
+                <!-- Brand -->
+                <a href="index.html" class="navbar__link navbar__link--active">
+                    Design System
+                </a>
+
+                <!-- Search -->
+                <div class="navbar__search">
+                    <input type="text" class="textfield" placeholder="Search components…">
+                </div>
+
+                <!-- Actions -->
+                <div class="navbar__actions">
+                    <button class="icon-button">🌙</button>
+                    <a href="https://github.com" class="icon-button">GH</a>
+                    <button class="icon-button">👤</button>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="l-main">
+
             <!-- Tailwind Token Test -->
-            <div class="bg-brand-orange text-white p-l text-center font-bold rounded-lg shadow-lg mb-m">
-                Tailwind is now synced with Design Tokens! (Brand Orange + Large Padding)
+            <div class="bg-brand-orange text-white p-l text-center font-bold rounded-lg shadow-lg mb-l">
+                Tailwind is now synced with Design Tokens!
             </div>
 
-            <div class="l-subdivision-container l-subdivision-container--h" style="height: 60vh; min-height: 500px;">
-                <div class="l-subdivision l-subdivision--2-3"
-                    style="justify-content: center; background-color: var(--color-brand-orange); color: #fff;">
-                    <h1
-                        style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 24px; font-weight: 700;">
-                        Varied solutions.<br>One balanced experience.
-                    </h1>
-                    <p style="font-size: 1.25rem; max-width: 600px; color: rgba(255,255,255,0.9); line-height: 1.6;">
-                        From the digital application to the vehicle – our design system provides the joint set of
-                        components, modules and animations for a system-wide user experience.
-                    </p>
-                </div>
-                <div class="l-subdivision l-subdivision--1-3 l-subdivision--image"
-                    style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1000');">
-                </div>
-            </div>
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero__container">
 
-            <div style="padding: 80px 40px; max-width: 1200px; margin: 0 auto;">
-                <div class="grid grid--2" style="gap: 60px; align-items: start;">
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            Varied solutions.<br>
+                            <span>One balanced experience.</span>
+                        </h1>
+
+                        <p class="hero__subtitle">
+                            From the digital application to the vehicle – our design system provides the joint set of
+                            components, modules and animations for a system-wide user experience.
+                        </p>
+
+                        <div class="hero__actions">
+                            <a href="colors.html" class="btn btn--primary-orange link">Explore Tokens</a>
+                            <a href="buttons.html" class="btn btn--outline-white link">View Components</a>
+                        </div>
+                    </div>
+
+                    <div class="hero__media">
+                        <img
+                            class="hero__image"
+                            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1000"
+                            alt="Hero Image">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- MISSION SECTION -->
+            <section class="section section--padded">
+                <div class="grid grid--2 section__grid">
+
                     <div>
-                        <h2 style="font-size: 2rem; margin-bottom: 24px;">Our Mission</h2>
-                        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--color-gray-400);">
+                        <h2 class="section__title">Our Mission</h2>
+                        <p class="section__text">
                             The user is our benchmark. It is the user’s activities and needs that provide the key focus.
                             User interfaces are as varied as their uses – ranging from inspiring websites to
-                            applications for a particular service. The aim is to create varied solutions and a
-                            well-balanced, system-wide user experience.
+                            applications for a particular service.
                         </p>
                     </div>
+
                     <div>
-                        <h2 style="font-size: 2rem; margin-bottom: 24px;">The Basis</h2>
-                        <p style="font-size: 1.1rem; line-height: 1.7; color: var(--color-gray-400);">
+                        <h2 class="section__title">The Basis</h2>
+                        <p class="section__text">
                             Consistency across all touchpoints is achieved through our shared foundations. This showroom
                             demonstrates the tokens, components, and layout structures that form the basis of our design
                             language.
                         </p>
-                        <div style="margin-top: 32px; display: flex; gap: 16px;">
-                            <a href="colors.html" class="btn btn--primary-orange">Explore Tokens</a>
-                            <a href="buttons.html" class="btn btn--outline-white">View Components</a>
+
+                        <div class="section__actions">
+                            <a href="colors.html" class="btn btn--primary-orange link">Explore Tokens</a>
+                            <a href="buttons.html" class="btn btn--outline-white link">View Components</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </main>
-    </div>
 
+                </div>
+            </section>
+
+        </main>
+
+    </div>
 
 </body>
 
