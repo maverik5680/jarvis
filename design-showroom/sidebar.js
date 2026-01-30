@@ -65,12 +65,19 @@ async function initLayout() {
 
     // 4. Highlight active link & Auto-open category
     if (sidebarElement) {
-        const currentFile = window.location.pathname.split("/").pop() || "index.html";
+        // Normalizing path to handle cases like /index.html vs /
+        let currentFile = window.location.pathname.split("/").pop();
+        if (currentFile === "" || currentFile === undefined) {
+            currentFile = "index.html";
+        }
+
         const links = sidebarElement.querySelectorAll('a');
 
         links.forEach(link => {
             const href = link.getAttribute('href');
-            if (href === currentFile) {
+            // Check if href matches currentFile exactly or if it's part of the path
+            // This handles simple cases like 'buttons.html'
+            if (href === currentFile || (href === './' && currentFile === 'index.html')) {
                 // Apply active styles: Brand Orange + Bold + Border Color
                 link.classList.add('text-brand-orange', 'font-bold', 'border-brand-orange');
                 link.classList.remove('border-transparent');
