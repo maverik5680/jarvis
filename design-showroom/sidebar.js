@@ -25,7 +25,7 @@ async function initLayout() {
         }
     }
 
-    // 2. Fetch and Inject Sidebar
+    // 2. Fetch and Inject Sidebar WITH PRE-RENDERED ACTIVE STATE
     if (sidebarElement) {
         try {
             const response = await fetch('/asidebar.html');
@@ -36,6 +36,9 @@ async function initLayout() {
                 const incomingSidebar = doc.querySelector('.u-sidebar');
 
                 if (incomingSidebar) {
+                    // PRE-RENDER: Apply active state BEFORE injecting into DOM
+                    applyActiveStateToSidebar(incomingSidebar);
+                    // Inject the pre-configured sidebar
                     sidebarElement.innerHTML = incomingSidebar.innerHTML;
                 } else {
                     sidebarElement.innerHTML = html;
@@ -62,17 +65,11 @@ async function initLayout() {
 
     if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
     if (backdrop) backdrop.addEventListener('click', toggleMenu);
-
-    // 4. Hydrate active link state (run after sidebar is injected)
-    hydrateSidebarActiveState();
 }
 
-// Dedicated hydration function for sidebar active state
-function hydrateSidebarActiveState() {
-    const sidebarElement = document.querySelector('.u-sidebar');
-    if (!sidebarElement) return;
-
-    // Get current page path and normalize it (remove .html extension if present)
+// Pre-render active state into sidebar HTML BEFORE DOM injection
+function applyActiveStateToSidebar(sidebarElement) {
+    // Get current page path and normalize it
     const currentPath = window.location.pathname;
     const normalizedCurrentPath = currentPath.replace(/\.html$/, '');
 
@@ -83,21 +80,25 @@ function hydrateSidebarActiveState() {
         // Get the absolute URL of the link
         const linkUrl = new URL(link.href, window.location.origin);
 
-        // Normalize the link pathname (remove .html extension if present) 
+        // Normalize the link pathname
         const normalizedLinkPath = linkUrl.pathname.replace(/\.html$/, '');
 
-        // Check if this link matches the current page (comparing normalized paths)
+        // Check if this link matches the current page
         const isMatch = normalizedLinkPath === normalizedCurrentPath;
 
         if (isMatch) {
-            // Apply active styles: orange text, bold, and orange left border
+            // Apply active classes
             link.classList.add('text-brand-orange', 'font-bold', 'border-l-2', 'border-brand-orange');
             link.classList.remove('border-transparent');
 
-            // Find and open the parent accordion (details element)
+            // CRITICAL: Add inline styles to override CSS specificity
+            link.style.color = 'var(--color-brand-orange)';
+            link.style.fontWeight = '700';
+            link.style.borderLeft = '2px solid var(--color-brand-orange)';
+
+            // Open the parent accordion BEFORE injection
             const parentDetails = link.closest('details');
             if (parentDetails) {
-                // Force the accordion to stay open
                 parentDetails.setAttribute('open', '');
                 parentDetails.open = true;
             }
