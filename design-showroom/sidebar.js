@@ -185,8 +185,8 @@ function applyActiveStateToSidebar(sidebarElement) {
 
         if (isMatch) {
             // Apply active classes
-            link.classList.add('text-brand-orange', 'font-bold', 'border-l-2', 'border-brand-orange');
-            link.classList.remove('border-transparent');
+            link.classList.add('active');
+            link.classList.remove('');
 
             // CRITICAL: Add inline styles to override CSS specificity
             link.style.color = 'var(--color-brand-orange)';
@@ -201,8 +201,8 @@ function applyActiveStateToSidebar(sidebarElement) {
             }
         } else {
             // Remove active classes and inline styles from non-matching links
-            link.classList.remove('text-brand-orange', 'font-bold', 'border-l-2', 'border-brand-orange');
-            link.classList.add('border-transparent');
+            link.classList.remove('active');
+            link.classList.add('');
 
             // Clear inline styles
             link.style.color = '';

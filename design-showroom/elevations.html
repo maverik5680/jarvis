@@ -79,21 +79,21 @@
                 </div>
 
                 <div class="elevation-demo">
-                    <div class="elevation-box shadow-elevation-1">
+                    <div class="elevation-box">
                         <strong>Level 1</strong>
                         <code>.u-elevation-1</code>
                         <p style="margin-top: 20px; color: var(--color-text); opacity: 0.6;">
                             Subtle separation. Used for small components like inputs on hover or secondary cards.
                         </p>
                     </div>
-                    <div class="elevation-box shadow-elevation-2">
+                    <div class="elevation-box">
                         <strong>Level 2</strong>
                         <code>.u-elevation-2</code>
                         <p style="margin-top: 20px; color: var(--color-text); opacity: 0.6;">
                             Focused attention. Used for active navigation elements, dropdowns, and main feature cards.
                         </p>
                     </div>
-                    <div class="elevation-box shadow-elevation-3">
+                    <div class="elevation-box">
                         <strong>Level 3</strong>
                         <code>.u-elevation-3</code>
                         <p style="margin-top: 20px; color: var(--color-text); opacity: 0.6;">
@@ -105,12 +105,12 @@
 
             <section style="margin-bottom: 80px;">
                 <h2 style="margin-bottom: 30px;">Theme Adaptation</h2>
-                <div class="grid grid--2" style="gap: 40px;">
+                <div  style="gap: 40px;">
                     <div style="background: #fff; color: #000; padding: 40px; border: 1px solid #ddd;">
                         <h3 style="color: #000; margin-bottom: 16px;">Light Theme</h3>
                         <p>In the light theme, elevations use soft shadows to create depth against white and light gray
                             surfaces.</p>
-                        <div class="shadow-elevation-2"
+                        <div 
                             style="background: #f8f9fa; padding: 20px; margin-top: 20px; border: 1px solid #eee; border-radius: 4px;">
                             Example Shadow Depth
                         </div>
@@ -119,7 +119,7 @@
                         <h3 style="color: #fff; margin-bottom: 16px;">Dark Theme</h3>
                         <p>In the dark theme, elevations are primarily defined by high-contrast hairlines and slight
                             surface variations to maintain a premium monolithic look.</p>
-                        <div class="shadow-elevation-2"
+                        <div 
                             style="background: #111; padding: 20px; margin-top: 20px; border: 1px solid #222; border-radius: 4px;">
                             Example Border/Surface Depth
                         </div>
@@ -130,11 +130,11 @@
             <section>
                 <h2 style="margin-bottom: 30px;">Usage</h2>
                 <div style="background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;">
-                    <pre><code style="color: #bbb;">&lt;div class="card shadow-elevation-2"&gt;
+                    <pre><code style="color: #bbb;">&lt;div class="card"&gt;
   &lt;!-- Elevated content --&gt;
 &lt;/div&gt;
 
-&lt;button class="btn shadow-elevation-1"&gt;
+&lt;button class="btn"&gt;
   Interactive Trigger
 &lt;/button&gt;</code></pre>
                 </div>
