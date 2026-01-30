@@ -91,7 +91,7 @@ function hydrateSidebarActiveState() {
 
         if (isMatch) {
             // Apply active styles: orange text, bold, and orange left border
-            link.classList.add('text-brand-orange', 'font-bold', 'border-brand-orange');
+            link.classList.add('text-brand-orange', 'font-bold', 'border-l-2', 'border-brand-orange');
             link.classList.remove('border-transparent');
 
             // Find and open the parent accordion (details element)
