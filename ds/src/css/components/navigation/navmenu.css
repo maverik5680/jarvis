@@ -5,30 +5,42 @@
 .navmenu {
   position: fixed;
   top: 0;
+  /* FIX 1: Set left to -100% to hide it off-screen to the left */
   left: -100%;
-  /* Hidden by default */
   width: 100%;
   max-width: 320px;
   height: 100vh;
-  background-color: var(--color-brand-black);
+  /* FIX 2: Black background as requested */
+  background-color: var(--color-brand-black, #000000);
   z-index: 1100;
-  /* Above backdrop */
   padding: 40px;
   display: flex;
   flex-direction: column;
-  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  /* FIX 3: Transition 'left' (not right) for smooth sliding */
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* FIX 4: Shadow on the right side */
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Open State */
 .navmenu.is-open {
-  right: 0;
+  /* FIX 5: Slides to position 0 on the left */
+  left: 0;
 }
 
 .navmenu__header {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 64px;
+}
+
+/* Ensure the Close (X) button is visible on black */
+.navmenu__header button,
+.navmenu__header .close-icon {
+  color: #FFFFFF;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .navmenu__list {
@@ -43,23 +55,25 @@
 .navmenu__link {
   font-family: var(--font-family-main);
   font-size: var(--fs-h4);
-  /* Larger on mobile for touch */
   font-weight: var(--fw-bold);
-  color: var(--color-brand-black);
+  /* FIX 6: White text so it doesn't disappear on the black background */
+  color: #FFFFFF;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: color 0.2s ease;
 }
 
+/* FIX 7: Active and Hover states in Brand Orange */
 .navmenu__link:hover,
 .navmenu__link--active {
-  color: var(--color-brand-orange) !important;
+  color: var(--color-brand-orange, #FF6600) !important;
 }
 
 /* Mobile Footer inside Menu */
 .navmenu__footer {
   margin-top: auto;
   padding-top: 40px;
-  border-top: 1px solid var(--color-gray-100);
+  /* FIX 8: Border adjusted to be visible against black */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
