@@ -65,19 +65,21 @@ async function initLayout() {
 
     // 4. Highlight active link & Auto-open category
     if (sidebarElement) {
-        // Normalizing path to handle cases like /index.html vs /
-        let currentFile = window.location.pathname.split("/").pop();
-        if (currentFile === "" || currentFile === undefined) {
-            currentFile = "index.html";
-        }
-
+        // Use current window URL for comparison
+        const currentUrl = new URL(window.location.href);
         const links = sidebarElement.querySelectorAll('a');
 
         links.forEach(link => {
-            const href = link.getAttribute('href');
-            // Check if href matches currentFile exactly or if it's part of the path
-            // This handles simple cases like 'buttons.html'
-            if (href === currentFile || (href === './' && currentFile === 'index.html')) {
+            // Create URL object for the link to normalize it
+            // Use link.href directly as it returns the absolute URL
+            const linkUrl = new URL(link.href, window.location.origin);
+
+            // Compare pathnames to avoid hash/query mismatches if those vary
+            // Also matching trailing slash cases if necessary
+            // We strip leading slash to ensure consistency if needed, but pathname comparison is usually safe
+            const isMatch = linkUrl.pathname === currentUrl.pathname;
+
+            if (isMatch) {
                 // Apply active styles: Brand Orange + Bold + Border Color
                 link.classList.add('text-brand-orange', 'font-bold', 'border-brand-orange');
                 link.classList.remove('border-transparent');
@@ -85,7 +87,7 @@ async function initLayout() {
                 // Expand parent accordion
                 const parentDetails = link.closest('details');
                 if (parentDetails) {
-                    parentDetails.setAttribute('open', '');
+                    parentDetails.setAttribute('open', 'true');
                 }
             }
         });
