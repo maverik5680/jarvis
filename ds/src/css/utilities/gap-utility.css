@@ -1,24 +1,41 @@
 /* ============================================================
-   GAP-UTILITY.CSS
+   GAP UTILITIES
    Controls spacing between flex and grid items
    ============================================================ */
 
-/* Uniform Gap (All sides) */
-.gap-none-utility { gap: 0 !important; }
-.gap-xxs-utility  { gap: var(--space-xxs) !important; }
-.gap-xs-utility   { gap: var(--space-xs) !important; }
-.gap-s-utility    { gap: var(--space-s) !important; }
-.gap-m-utility    { gap: var(--space-m) !important; }
-.gap-l-utility    { gap: var(--space-l) !important; }
-.gap-xl-utility   { gap: var(--space-xl) !important; }
-.gap-xxl-utility  { gap: var(--space-xxl) !important; }
+/* ------------------------------------------------------------
+   UNIFORM GAP (Flex + Grid)
+   ------------------------------------------------------------ */
+.gap-0    { gap: 0; }
+.gap-xxs  { gap: var(--space-xxs); }
+.gap-xs   { gap: var(--space-xs); }
+.gap-s    { gap: var(--space-s); }
+.gap-m    { gap: var(--space-m); }
+.gap-l    { gap: var(--space-l); }
+.gap-xl   { gap: var(--space-xl); }
+.gap-xxl  { gap: var(--space-xxl); }
+.gap-xxxl { gap: var(--space-xxxl); }
 
-/* Row Gap (Vertical spacing only) */
-.gap-row-s-utility { row-gap: var(--space-s) !important; }
-.gap-row-m-utility { row-gap: var(--space-m) !important; }
-.gap-row-l-utility { row-gap: var(--space-l) !important; }
+/* ------------------------------------------------------------
+   ROW GAP (Vertical spacing only)
+   ------------------------------------------------------------ */
+.row-gap-xxs { row-gap: var(--space-xxs); }
+.row-gap-xs  { row-gap: var(--space-xs); }
+.row-gap-s   { row-gap: var(--space-s); }
+.row-gap-m   { row-gap: var(--space-m); }
+.row-gap-l   { row-gap: var(--space-l); }
+.row-gap-xl  { row-gap: var(--space-xl); }
+.row-gap-xxl { row-gap: var(--space-xxl); }
+.row-gap-xxxl { row-gap: var(--space-xxxl); }
 
-/* Column Gap (Horizontal spacing only) */
-.gap-col-s-utility { column-gap: var(--space-s) !important; }
-.gap-col-m-utility { column-gap: var(--space-m) !important; }
-.gap-col-l-utility { column-gap: var(--space-l) !important; }
+/* ------------------------------------------------------------
+   COLUMN GAP (Horizontal spacing only)
+   ------------------------------------------------------------ */
+.col-gap-xxs { column-gap: var(--space-xxs); }
+.col-gap-xs  { column-gap: var(--space-xs); }
+.col-gap-s   { column-gap: var(--space-s); }
+.col-gap-m   { column-gap: var(--space-m); }
+.col-gap-l   { column-gap: var(--space-l); }
+.col-gap-xl  { column-gap: var(--space-xl); }
+.col-gap-xxl { column-gap: var(--space-xxl); }
+.col-gap-xxxl { column-gap: var(--space-xxxl); }

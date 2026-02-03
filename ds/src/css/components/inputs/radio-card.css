@@ -1,0 +1,87 @@
+/* ============================================================
+   RADIO CARD
+   Selectable card-style radio buttons
+   ============================================================ */
+
+.radio-card-group {
+  display: grid;
+  gap: var(--space-m);
+}
+
+/* Inline / horizontal layout */
+.radio-card-group-inline {
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: var(--space-l);
+}
+
+/* ------------------------------------------------------------
+   CARD WRAPPER
+   ------------------------------------------------------------ */
+.radio-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+
+  padding: var(--space-l);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-surface);
+
+  cursor: pointer;
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
+}
+
+/* Hover */
+.radio-card:hover {
+  border-color: var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   HIDDEN RADIO INPUT
+   ------------------------------------------------------------ */
+.radio-card-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   SELECTED STATE
+   ------------------------------------------------------------ */
+.radio-card-input:checked + .radio-card {
+  border-color: var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   CONTENT
+   ------------------------------------------------------------ */
+.radio-card-title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-body);
+}
+
+.radio-card-description {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+.radio-card-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.radio-card-disabled:hover {
+  border-color: var(--color-border);
+}

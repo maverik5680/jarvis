@@ -1,9 +1,10 @@
-/* ============================
+/* ============================================================
    SHADOW TOKENS
-   ============================ */
+   Visual primitives for depth and elevation.
+   ============================================================ */
 
 :root {
-  /* Subtle UI shadows */
+  /* Micro elements (chips, small UI) */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
 
   /* Small components (inputs, small cards) */
@@ -24,12 +25,7 @@
     0 20px 25px rgba(0, 0, 0, 0.15),
     0 10px 10px rgba(0, 0, 0, 0.12);
 
-  /* Maximum depth (drawers, modals, toasts) */
+  /* Maximum depth (drawers, toasts, flyovers) */
   --shadow-xxl:
     0 25px 50px rgba(0, 0, 0, 0.25);
-
-  /* Elevation Hierarchies (Brand Principle) */
-  --elevation-1: var(--shadow-sm);
-  --elevation-2: var(--shadow-md);
-  --elevation-3: var(--shadow-lg);
 }

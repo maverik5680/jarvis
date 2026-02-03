@@ -1,75 +1,148 @@
 /* ============================================================
-   TAB BAR (Native Applications)
+   TAB BAR (Native App Navigation)
+   Token-driven, Audi-sharp
    ============================================================ */
 
+/* ------------------------------------------------------------
+   BASE TAB BAR
+   ------------------------------------------------------------ */
 .tab-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 64px;
-    background-color: var(--color-white);
-    border-top: 1px solid var(--color-gray-200);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: var(--tab-bar-height, 64px);
+
+  background-color: var(--color-bg-surface);
+  border-top: var(--border-width-thin) solid var(--color-border-light);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: var(--z-nav);
 }
 
-.tab-bar--black {
-    background-color: var(--color-brand-black);
-    border-top-color: #333;
+/* ------------------------------------------------------------
+   TAB ITEM
+   ------------------------------------------------------------ */
+.tab-bar-item {
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-xxs);
+
+  color: var(--color-text-muted);
+  text-decoration: none;
+
+  font-family: var(--font-family-extended);
+  font-size: var(--fs-tiny);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+
+  position: relative;
+
+  transition:
+    color var(--ms-fast) var(--ease-standard),
+    opacity var(--ms-fast) var(--ease-standard);
 }
 
-.tab-bar__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    color: var(--color-gray-500);
-    text-decoration: none;
-    font-family: var(--font-family-extended, sans-serif);
-    font-size: 10px;
-    /* Small label */
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-    position: relative;
-    height: 100%;
-    flex: 1;
+/* Icon wrapper */
+.tab-bar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xs) 0;
 }
 
-.tab-bar__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 0;
+/* Icon */
+.tab-bar-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.tab-bar__icon {
-    width: 24px;
-    height: 24px;
+/* ------------------------------------------------------------
+   ACTIVE STATE
+   ------------------------------------------------------------ */
+.tab-bar-item-active {
+  color: var(--color-accent);
 }
 
-.tab-bar__item--active {
-    color: var(--color-brand-blue);
+/* Active indicator line */
+.tab-bar-item-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-accent);
 }
 
-/* Active Indicator Line */
-.tab-bar__item--active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-brand-blue);
+/* ============================================================
+   VARIANT: DARK / BLACK TAB BAR
+   ------------------------------------------------------------ */
+.tab-bar-black {
+  background-color: var(--color-brand-black);
+  border-top-color: color-mix(in srgb, var(--color-white) 20%, transparent);
 }
 
-.tab-bar--black .tab-bar__item {
-    color: rgba(255, 255, 255, 0.6);
+.tab-bar-black .tab-bar-item {
+  color: color-mix(in srgb, var(--color-white) 60%, transparent);
 }
 
-.tab-bar--black .tab-bar__item--active {
-    color: #fff;
+.tab-bar-black .tab-bar-item-active {
+  color: var(--color-white);
+}
+
+.tab-bar-black .tab-bar-item-active::after {
+  background-color: var(--color-white);
+}
+
+/* ============================================================
+   VARIANT: ELEVATED TAB BAR (Floating)
+   ------------------------------------------------------------ */
+.tab-bar-elevated {
+  bottom: var(--space-l);
+  width: calc(100% - var(--space-xl) * 2);
+
+  margin-inline: var(--space-xl);
+
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ============================================================
+   VARIANT: COMPACT TAB BAR
+   ------------------------------------------------------------ */
+.tab-bar-compact {
+  --tab-bar-height: 52px;
+}
+
+.tab-bar-compact .tab-bar-inner {
+  padding: var(--space-xxs) 0;
+}
+
+.tab-bar-compact .tab-bar-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   VARIANT: LABEL-HIDDEN (Icons only)
+   ------------------------------------------------------------ */
+.tab-bar-label-hidden .tab-bar-item {
+  font-size: 0;
+}
+
+.tab-bar-label-hidden .tab-bar-icon {
+  margin-bottom: 0;
 }

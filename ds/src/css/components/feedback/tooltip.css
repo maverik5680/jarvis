@@ -1,105 +1,142 @@
+/* ============================================================
+   TOOLTIP COMPONENT
+   Token-driven, Audi-sharp micro interaction
+   ============================================================ */
+
 .tooltip {
   position: relative;
   display: inline-block;
 }
 
-.tooltip__content {
+/* ------------------------------------------------------------
+   CONTENT PANEL
+   ------------------------------------------------------------ */
+.tooltip-content {
   position: absolute;
-  background: var(--color-brand-black);
+
+  background-color: var(--color-brand-black);
   color: var(--color-white);
-  padding: 8px 12px;
-  font-size: 13px;
+
+  padding: var(--space-xs) var(--space-s);
+  font-size: var(--fs-small);
   line-height: 1.4;
-  border-radius: 2px;
+
+  border-radius: var(--radius-xs);
   white-space: nowrap;
-  z-index: 100;
+
+  z-index: var(--z-tooltip);
 
   visibility: hidden;
   opacity: 0;
-  transition:
-    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+
+  transition:
+    opacity var(--ms-fast) var(--ease-standard),
+    transform var(--ms-fast) var(--ease-standard);
 }
 
-/* Arrow Base */
-.tooltip__content::after {
+/* ------------------------------------------------------------
+   ARROW
+   ------------------------------------------------------------ */
+.tooltip-content::after {
   content: "";
   position: absolute;
+
   width: 0;
   height: 0;
+
   border-style: solid;
+  border-width: var(--tooltip-arrow-size, 6px);
 }
 
-/* Directions */
-.tooltip--top .tooltip__content {
+/* ============================================================
+   PLACEMENTS
+   ============================================================ */
+
+/* TOP */
+.tooltip-top .tooltip-content {
   bottom: 100%;
   left: 50%;
-  transform: translate(-50%, -10px);
-  margin-bottom: 8px;
+  transform: translate(-50%, -6px);
+  margin-bottom: var(--space-s);
 }
 
-.tooltip--top .tooltip__content::after {
-  border-width: 6px 6px 0 6px;
+.tooltip-top .tooltip-content::after {
+  border-width: var(--tooltip-arrow-size) var(--tooltip-arrow-size) 0 var(--tooltip-arrow-size);
   border-color: var(--color-brand-black) transparent transparent transparent;
-  bottom: -6px;
+
+  bottom: calc(var(--tooltip-arrow-size) * -1);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.tooltip--bottom .tooltip__content {
+/* BOTTOM */
+.tooltip-bottom .tooltip-content {
   top: 100%;
   left: 50%;
-  transform: translate(-50%, 10px);
-  margin-top: 8px;
+  transform: translate(-50%, 6px);
+  margin-top: var(--space-s);
 }
 
-.tooltip--bottom .tooltip__content::after {
-  border-width: 0 6px 6px 6px;
+.tooltip-bottom .tooltip-content::after {
+  border-width: 0 var(--tooltip-arrow-size) var(--tooltip-arrow-size) var(--tooltip-arrow-size);
   border-color: transparent transparent var(--color-brand-black) transparent;
-  top: -6px;
+
+  top: calc(var(--tooltip-arrow-size) * -1);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.tooltip--left .tooltip__content {
+/* LEFT */
+.tooltip-left .tooltip-content {
   right: 100%;
   top: 50%;
-  transform: translate(-10px, -50%);
-  margin-right: 8px;
+  transform: translate(-6px, -50%);
+  margin-right: var(--space-s);
 }
 
-.tooltip--left .tooltip__content::after {
-  border-width: 6px 0 6px 6px;
+.tooltip-left .tooltip-content::after {
+  border-width: var(--tooltip-arrow-size) 0 var(--tooltip-arrow-size) var(--tooltip-arrow-size);
   border-color: transparent transparent transparent var(--color-brand-black);
-  right: -6px;
+
+  right: calc(var(--tooltip-arrow-size) * -1);
   top: 50%;
   transform: translateY(-50%);
 }
 
-.tooltip--right .tooltip__content {
+/* RIGHT */
+.tooltip-right .tooltip-content {
   left: 100%;
   top: 50%;
-  transform: translate(10px, -50%);
-  margin-left: 8px;
+  transform: translate(6px, -50%);
+  margin-left: var(--space-s);
 }
 
-.tooltip--right .tooltip__content::after {
-  border-width: 6px 6px 6px 0;
+.tooltip-right .tooltip-content::after {
+  border-width: var(--tooltip-arrow-size) var(--tooltip-arrow-size) var(--tooltip-arrow-size) 0;
   border-color: transparent var(--color-brand-black) transparent transparent;
-  left: -6px;
+
+  left: calc(var(--tooltip-arrow-size) * -1);
   top: 50%;
   transform: translateY(-50%);
 }
 
-.tooltip:hover .tooltip__content {
+/* ============================================================
+   INTERACTION
+   ============================================================ */
+
+.tooltip:hover .tooltip-content {
   visibility: visible;
   opacity: 1;
-  transform: translate(-50%, 0);
-  /* Transition to neutral position */
 }
 
-.tooltip--left:hover .tooltip__content,
-.tooltip--right:hover .tooltip__content {
+/* Reset transforms for each placement */
+.tooltip-top:hover .tooltip-content,
+.tooltip-bottom:hover .tooltip-content {
+  transform: translate(-50%, 0);
+}
+
+.tooltip-left:hover .tooltip-content,
+.tooltip-right:hover .tooltip-content {
   transform: translate(0, -50%);
 }

@@ -1,46 +1,63 @@
 /* ============================================================
-   INTERACTION: MODAL
+   MODAL
+   Token-driven, Audi-sharp interaction component
    ============================================================ */
 
+/* ------------------------------------------------------------
+   OVERLAY
+   ------------------------------------------------------------ */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Spec: 90% black */
+
+  background-color: color-mix(in srgb, var(--color-brand-black) 90%, transparent);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+
+  z-index: var(--z-modal);
   padding: 0;
-  /* Removing default padding to allow variants to handle it */
-  animation: fade-in 0.3s ease-out;
+
+  animation: modal-fade-in var(--ms-medium) var(--ease-standard);
 }
 
+/* ------------------------------------------------------------
+   BASE MODAL
+   ------------------------------------------------------------ */
 .modal {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
   width: 100%;
   max-width: 600px;
-  border-radius: 2px;
+
+  border-radius: var(--radius-sm);
   position: relative;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
-  animation: modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  box-shadow: var(--shadow-xl);
+
   display: flex;
   flex-direction: column;
+
+  animation: modal-slide-up var(--ms-medium) var(--ease-decelerate);
 }
 
-/* 1. Dialogue Box (Centered Tile) */
-.modal--dialogue {
+/* ------------------------------------------------------------
+   VARIANT: DIALOGUE (Centered Tile)
+   ------------------------------------------------------------ */
+.modal-dialogue {
   max-width: 400px;
-  margin: 20px;
+  margin: var(--space-l);
   text-align: center;
 }
 
-.modal--dialogue .modal__footer {
+.modal-dialogue .modal-footer {
   justify-content: center;
 }
 
-/* 2. Scrollable Modal (Fills height) */
-.modal--scrollable {
+/* ------------------------------------------------------------
+   VARIANT: SCROLLABLE
+   ------------------------------------------------------------ */
+.modal-scrollable {
   height: 100%;
   max-height: 100%;
   border-radius: 0;
@@ -48,22 +65,23 @@
 }
 
 @media (min-width: 801px) {
-  .modal--scrollable {
-    height: calc(100% - 80px);
-    margin: 40px;
-    border-radius: 2px;
+  .modal-scrollable {
+    height: calc(100% - var(--space-xxl));
+    margin: var(--space-xl);
+    border-radius: var(--radius-sm);
   }
 }
 
-.modal--scrollable .modal__body {
+.modal-scrollable .modal-body {
   flex: 1;
   overflow-y: auto;
   max-height: none;
-  /* Let flexbox handle it */
 }
 
-/* 3. Full-screen Modal (Typically for narrow viewports) */
-.modal--full-screen {
+/* ------------------------------------------------------------
+   VARIANT: FULL SCREEN
+   ------------------------------------------------------------ */
+.modal-fullscreen {
   width: 100vw;
   height: 100vh;
   max-width: 100vw;
@@ -72,45 +90,45 @@
   margin: 0;
 }
 
-.modal__header {
-  padding: 24px 32px;
-  border-bottom: 1px solid var(--color-gray-100);
+/* ------------------------------------------------------------
+   STRUCTURE
+   ------------------------------------------------------------ */
+.modal-header {
+  padding: var(--space-l) var(--space-xl);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
 }
 
-.modal__body {
-  padding: 32px;
+.modal-body {
+  padding: var(--space-xl);
   overflow-y: auto;
 }
 
-.modal__footer {
-  padding: 24px 32px;
-  border-top: 1px solid var(--color-gray-100);
+.modal-footer {
+  padding: var(--space-l) var(--space-xl);
+  border-top: var(--border-width-thin) solid var(--color-border);
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+  gap: var(--space-m);
   flex-shrink: 0;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+/* ------------------------------------------------------------
+   ANIMATIONS
+   ------------------------------------------------------------ */
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes modal-slide-up {
   from {
     opacity: 0;
-    transform: translateY(40px) scale(0.98);
+    transform: translateY(var(--space-xl)) scale(0.98);
   }
-
   to {
     opacity: 1;
     transform: translateY(0) scale(1);

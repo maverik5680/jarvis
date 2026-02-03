@@ -1,7 +1,14 @@
+/* ============================================================
+   TABS SYSTEM
+   Token-driven, Audi-sharp tab navigation
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   TABS WRAPPER
+   ------------------------------------------------------------ */
 .tabs {
   display: flex;
-  gap: 8px;
-  /* Narrower gaps according to brand */
+  gap: var(--space-s);
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -10,25 +17,74 @@
   display: none;
 }
 
-.tabs__trigger {
-  padding: 12px 24px;
+/* ------------------------------------------------------------
+   TAB TRIGGER
+   ------------------------------------------------------------ */
+.tab-trigger {
+  padding: var(--space-s) var(--space-l);
   border: none;
   background: transparent;
-  font-family: var(--font-family-extended, 'Prompt', sans-serif);
+
+  font-family: var(--font-family-extended);
   font-weight: var(--fw-bold);
   font-size: var(--fs-small);
   text-transform: uppercase;
-  color: var(--color-gray-600);
+
+  color: var(--color-text-muted);
   cursor: pointer;
-  transition: all 0.2s ease;
   white-space: nowrap;
+
+  transition:
+    color var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard);
 }
 
-/* Rectangular Block active state */
-.tabs__trigger--active {
-  color: var(--color-brand-black);
-  background-color: var(--color-white);
-  /* Or content section background */
-  box-shadow: inset 0 0 0 1px var(--color-gray-200);
-  /* Defines the "block" more clearly */
+/* ------------------------------------------------------------
+   BLOCK VARIANT (Rectangular tab)
+   ------------------------------------------------------------ */
+.tab-trigger-active {
+  color: var(--color-text-body);
+  background-color: var(--color-bg-surface);
+  box-shadow: inset 0 0 0 1px var(--color-border-light);
+}
+
+/* ============================================================
+   UNDERLINE VARIANT
+   (Use with .tabs-underline)
+   ============================================================ */
+.tabs-underline .tab-trigger {
+  padding: var(--space-s) var(--space-xs);
+  background: transparent;
+  box-shadow: none;
+  position: relative;
+}
+
+.tabs-underline .tab-trigger-active {
+  color: var(--color-text-body);
+}
+
+.tabs-underline .tab-trigger-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+/* ============================================================
+   PILL VARIANT
+   (Use with .tabs-pill)
+   ============================================================ */
+.tabs-pill .tab-trigger {
+  border-radius: var(--radius-pill);
+}
+
+.tabs-pill .tab-trigger-active {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: none;
 }

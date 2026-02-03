@@ -1,21 +1,33 @@
 /* ============================================================
    FORM LAYOUT SYSTEM
+   Token-driven responsive grid for form fields
    ============================================================ */
 
 .form-layout {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px 24px;
+  gap: var(--space-m) var(--space-l);
 }
 
-/* Utility classes for field widths */
-.form-col-12 { grid-column: span 12; } /* Full width */
-.form-col-6  { grid-column: span 6; }  /* Half width */
-.form-col-4  { grid-column: span 4; }  /* One-third width */
+/* ------------------------------------------------------------
+   COLUMN SPANS
+   ------------------------------------------------------------ */
 
-/* Mobile fallback */
-@media (max-width: 600px) {
-  .form-col-6, .form-col-4 {
+.form-col-12 { grid-column: span 12; }
+.form-col-6  { grid-column: span 6; }
+.form-col-4  { grid-column: span 4; }
+.form-col-3  { grid-column: span 3; }
+.form-col-2  { grid-column: span 2; }
+
+/* ------------------------------------------------------------
+   MOBILE FALLBACK
+   ------------------------------------------------------------ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .form-col-6,
+  .form-col-4,
+  .form-col-3,
+  .form-col-2 {
     grid-column: span 12;
   }
 }

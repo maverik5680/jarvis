@@ -1,5 +1,5 @@
 /* ============================================================
-   SPACING TOKENS — MOBILE FIRST (XS 320–374)
+   SPACING TOKENS — MOBILE FIRST
    These values apply by default unless overridden at breakpoints
    ============================================================ */
 
@@ -13,19 +13,14 @@
   --space-xl: 28px;
   --space-xxl: 36px;
   --space-xxxl: 40px;
-
-  /* Button padding — mobile first */
-  --btn-padding-y: 0.6rem;
-  --btn-padding-x: 1.2rem;
 }
 
-
 /* ============================================================
-   BREAKPOINT: S (375–767)
-   Spacing values remain the same as XS
+   BREAKPOINT: S (≥ 375px)
+   Minor adjustments (optional)
    ============================================================ */
 
-@media (min-width: 375px) {
+@media (min-width: var(--breakpoint-s)) {
   :root {
     --space-xl: 28px;
     --space-xxl: 36px;
@@ -34,11 +29,11 @@
 }
 
 /* ============================================================
-   BREAKPOINT: M (768–1023)
-   Only responsive spacers change
+   BREAKPOINT: M (≥ 768px)
+   Moderate spacing increase
    ============================================================ */
 
-@media (min-width: 768px) {
+@media (min-width: var(--breakpoint-m)) {
   :root {
     --space-xl: 28px;
     --space-xxl: 36px;
@@ -47,11 +42,11 @@
 }
 
 /* ============================================================
-   BREAKPOINT: L (1024–1339)
+   BREAKPOINT: L (≥ 1024px)
    Larger screens → more breathing room
    ============================================================ */
 
-@media (min-width: 1024px) {
+@media (min-width: var(--breakpoint-l)) {
   :root {
     --space-xl: 28px;
     --space-xxl: 40px;
@@ -60,11 +55,11 @@
 }
 
 /* ============================================================
-   BREAKPOINT: XL (1440–1919)
+   BREAKPOINT: XL (≥ 1440px)
    Significant spacing expansion
    ============================================================ */
 
-@media (min-width: 1440px) {
+@media (min-width: var(--breakpoint-xl)) {
   :root {
     --space-xl: 32px;
     --space-xxl: 52px;
@@ -73,15 +68,14 @@
 }
 
 /* ============================================================
-   BREAKPOINT: XXL (1920+)
+   BREAKPOINT: XXL (≥ 1920px)
    Maximum spacing for ultra-wide layouts
    ============================================================ */
 
-@media (min-width: 1920px) {
+@media (min-width: var(--breakpoint-xxl)) {
   :root {
     --space-xl: 44px;
     --space-xxl: 68px;
     --space-xxxl: 100px;
   }
 }
-

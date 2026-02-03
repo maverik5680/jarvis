@@ -1,6 +1,6 @@
-/* ============================
-   RADIUS TOKENS
-   ============================ */
+/* ============================================================
+   RADIUS TOKENS (Raw values that never change)
+   ============================================================ */
 
 :root {
   --radius-none: 0;
@@ -9,6 +9,7 @@
   --radius-md: 6px;
   --radius-lg: 10px;
   --radius-xl: 16px;
-  --radius-round: 9999px; /* for pills / circles */
-}
 
+  /* Fully rounded for pills, chips, badges, circular elements */
+  --radius-round: 9999px;
+}

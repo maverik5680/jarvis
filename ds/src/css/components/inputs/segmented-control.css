@@ -1,0 +1,77 @@
+/* ============================================================
+   SEGMENTED CONTROL
+   Horizontal pill-style selector (radio-based)
+   ============================================================ */
+
+.segmented-control {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------
+   HIDDEN RADIO INPUT
+   ------------------------------------------------------------ */
+.segmented-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   SEGMENT BUTTON
+   ------------------------------------------------------------ */
+.segmented-option {
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--fs-body);
+  font-family: var(--font-family-main);
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    color var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
+}
+
+/* Hover */
+.segmented-option:hover {
+  background-color: var(--color-gray-100);
+}
+
+/* ------------------------------------------------------------
+   SELECTED STATE
+   ------------------------------------------------------------ */
+.segmented-input:checked + .segmented-option {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+.segmented-control-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.segmented-control-disabled .segmented-option {
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   SIZE VARIANTS
+   ------------------------------------------------------------ */
+.segmented-control-sm .segmented-option {
+  padding: var(--space-xs) var(--space-m);
+  font-size: var(--fs-small);
+}
+
+.segmented-control-lg .segmented-option {
+  padding: var(--space-m) var(--space-xl);
+  font-size: var(--fs-body);
+}

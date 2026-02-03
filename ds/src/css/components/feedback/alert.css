@@ -1,84 +1,119 @@
+/* ============================================================
+   ALERT COMPONENT
+   Token-driven, brand-aligned notification banners
+   ============================================================ */
+
 .alert {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 24px;
-  font-family: var(--font-family-main, inherit);
-  font-size: var(--fs-base, 1rem);
+  gap: var(--space-m);
+
+  padding: var(--space-m) var(--space-l);
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-body);
   line-height: 1.5;
+
+  border-radius: var(--radius-xs);
+  border: var(--border-width-thin) solid transparent;
+
   position: relative;
+
+  transition:
+    background-color var(--ms-base) var(--ease-standard),
+    border-color var(--ms-base) var(--ease-standard),
+    color var(--ms-base) var(--ease-standard);
 }
 
-/* Global Alert: Viewport-wide */
-.alert--global {
+/* ============================================================
+   GLOBAL / FIXED VARIANTS
+   ============================================================ */
+
+.alert-global {
   width: 100%;
   border: none;
 }
 
-.alert--fixed-top {
+.alert-fixed-top {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 4000;
+  width: 100%;
+  z-index: var(--z-overlay);
 }
 
-.alert--fixed-bottom {
+.alert-fixed-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 4000;
+  width: 100%;
+  z-index: var(--z-overlay);
 }
 
-/* Container Alert: Within a section or card */
-.alert--container {
-  border-radius: 2px;
-  margin: 16px 0;
+/* Container alert (inside cards/sections) */
+.alert-container {
+  margin: var(--space-m) 0;
 }
 
-/* Color Variants: Brand Palette Only (No Signal Colors for wide areas) */
-.alert--black {
+/* ============================================================
+   COLOR VARIANTS (Brand palette only)
+   ============================================================ */
+
+/* Black */
+.alert-black {
   background-color: var(--color-brand-black);
   color: var(--color-white);
 }
 
-.alert--blue {
-  background-color: var(--color-brand-blue);
+/* Accent (Orange) */
+.alert-accent {
+  background-color: var(--color-accent);
   color: var(--color-white);
 }
 
-.alert--white {
+/* White */
+.alert-white {
   background-color: var(--color-white);
   color: var(--color-brand-black);
-  border: 1px solid var(--color-gray-200);
+  border-color: var(--color-gray-200);
 }
 
-.alert--gray {
+/* Gray */
+.alert-gray {
   background-color: var(--color-gray-100);
   color: var(--color-brand-black);
 }
+
+/* ============================================================
+   STRUCTURE
+   ============================================================ */
 
 .alert__content {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-s);
   flex-wrap: wrap;
 }
 
 .alert__icon {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: inherit;
 }
 
 .alert__actions {
   margin-left: auto;
   display: flex;
-  gap: 8px;
+  gap: var(--space-s);
 }
 
-/* Adaptation for slim buttons in alerts */
+/* Slim buttons inside alerts */
+.alert .button,
 .alert .btn {
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: var(--space-xxs);
+  padding-bottom: var(--space-xxs);
   height: auto;
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
 }

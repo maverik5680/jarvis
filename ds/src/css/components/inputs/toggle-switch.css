@@ -1,56 +1,92 @@
-.switch {
+/* ============================================================
+   TOGGLE SWITCH
+   Token-driven, Audi-sharp, accessible
+   ============================================================ */
+
+.toggle {
   position: relative;
   display: inline-block;
-  width: 44px;
-  height: 24px;
+  width: var(--toggle-width, 44px);
+  height: var(--toggle-height, 24px);
 }
 
-/* Hide default checkbox */
-.switch input {
+/* ------------------------------------------------------------
+   HIDE NATIVE INPUT
+   ------------------------------------------------------------ */
+.toggle-input {
+  position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
+  pointer-events: none;
 }
 
-/* The Slider Track */
-.slider {
+/* ------------------------------------------------------------
+   TRACK
+   ------------------------------------------------------------ */
+.toggle-track {
   position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+
   background-color: var(--color-gray-300);
-  transition: .3s;
-  border-radius: 24px;
-  /* Fully rounded for the Audi look */
+  border-radius: var(--toggle-height, 24px);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard);
 }
 
-/* The White Circle (The "Knob") */
-.slider:before {
-  position: absolute;
+/* ------------------------------------------------------------
+   KNOB
+   ------------------------------------------------------------ */
+.toggle-track::before {
   content: "";
-  height: 18px;
-  width: 18px;
+  position: absolute;
+
+  width: calc(var(--toggle-height, 24px) - 6px);
+  height: calc(var(--toggle-height, 24px) - 6px);
+
   left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .3s;
+  top: 3px;
+
+  background-color: var(--color-white);
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
 }
 
-/* Checked State: Electric Blue Track */
-input:checked+.slider {
-  background-color: var(--color-brand-black);
+/* ------------------------------------------------------------
+   CHECKED STATE
+   ------------------------------------------------------------ */
+.toggle-input:checked + .toggle-track {
+  background-color: var(--color-accent);
 }
 
-/* Checked State: Move the Knob */
-input:checked+.slider:before {
-  transform: translateX(20px);
+.toggle-input:checked + .toggle-track::before {
+  transform: translateX(calc(var(--toggle-width, 44px) - var(--toggle-height, 24px)));
 }
 
-/* Focus Glow */
-input:focus+.slider {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+/* ------------------------------------------------------------
+   FOCUS RING
+   ------------------------------------------------------------ */
+.toggle-input:focus + .toggle-track {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+.toggle-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toggle-disabled .toggle-track {
+  cursor: not-allowed;
 }

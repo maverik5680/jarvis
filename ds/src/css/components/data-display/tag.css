@@ -1,55 +1,101 @@
 /* ============================================================
-   DATA: TAG (Categorization Atom)
+   TAG COMPONENT
+   Categorization / metadata label atom
    ============================================================ */
 
 .tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 12px;
+  gap: var(--space-xs);
+
+  padding: var(--space-xxs) var(--space-s);
+
   background-color: var(--color-gray-100);
-  border: 1px solid var(--color-gray-200);
-  border-radius: 2px; /* Precision edge */
-  
+  border: var(--border-width-thin) solid var(--color-gray-200);
+  border-radius: var(--radius-xs); /* Sharp precision */
+
   font-family: var(--font-family-main);
   font-size: var(--fs-tiny);
   font-weight: var(--fw-bold);
   color: var(--color-gray-600);
-  text-transform: lower;
+
+  text-transform: lowercase;
   letter-spacing: 0.05em;
-  transition: all var(--ms-fast) var(--ease-standard);
+
   cursor: default;
+
+  transition:
+    background-color var(--ms-fast) var(--ease-standard),
+    border-color var(--ms-fast) var(--ease-standard),
+    color var(--ms-fast) var(--ease-standard);
 }
 
-/* Interactive Variant (For Filtering) */
-.tag--interactive {
+/* ============================================================
+   INTERACTIVE TAG (Filter / Selectable)
+   ============================================================ */
+
+.tag-interactive {
   cursor: pointer;
 }
 
-.tag--interactive:hover {
-  border-color: var(--color-brand-blue);
-  color: var(--color-brand-blue);
-  background-color: rgba(0, 70, 255, 0.05);
+.tag-interactive:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
 }
 
-/* Dismissible Tag (with "X" button) */
-.tag__remove {
+/* ============================================================
+   DISMISS BUTTON
+   ============================================================ */
+
+.tag-remove {
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: none;
   background: none;
   padding: 0;
+
   cursor: pointer;
   color: inherit;
+
   opacity: 0.6;
-  transition: opacity var(--ms-fast);
+  transition: opacity var(--ms-fast) var(--ease-standard);
 }
 
-.tag__remove:hover {
+.tag-remove:hover {
   opacity: 1;
 }
 
-/* Color Variants for different Industries */
-.tag--blue  { background-color: #E3F2FD; border-color: #BBDEFB; color: #1976D2; }
-.tag--green { background-color: #E8F5E9; border-color: #C8E6C9; color: #2E7D32; }
+/* ============================================================
+   COLOR VARIANTS (Token-driven)
+   ============================================================ */
+
+/* Accent (Brand Orange) */
+.tag-accent {
+  background-color: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Success */
+.tag-success {
+  background-color: color-mix(in srgb, var(--color-success) 15%, transparent);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+/* Warning */
+.tag-warning {
+  background-color: color-mix(in srgb, var(--color-warning) 15%, transparent);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+/* Error */
+.tag-error {
+  background-color: color-mix(in srgb, var(--color-error) 15%, transparent);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}

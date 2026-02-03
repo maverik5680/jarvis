@@ -1,56 +1,70 @@
 /* ============================================================
    INPUT ATOM
+   Token-driven, Audi-sharp form field styling
    ============================================================ */
+
 input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="password"],
+input[type="search"],
 textarea,
 select {
-  /* Layout & Sizing */
   width: 100%;
-  padding: 12px 16px;
-  min-height: 48px;
-  /* Field-ready touch target */
+  padding: var(--space-s) var(--space-m);
+  min-height: 48px; /* iOS zoom-safe */
 
-  /* Typography (Prompt) */
   font-family: var(--font-family-main);
-  font-size: 16px;
-  /* 16px is mandatory to prevent iOS auto-zoom */
-  color: var(--color-brand-black);
+  font-size: 16px; /* Required to prevent iOS zoom */
+  color: var(--color-text-body);
 
-  /* Styling (The Audi Aesthetic) */
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: 2px;
-  /* Precision sharp corners */
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xs);
 
-  /* Interaction */
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   appearance: none;
-  /* Removes default browser styling */
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
 }
 
-/* THE FOCUS STATE (Electric Blue) */
+/* ------------------------------------------------------------
+   FOCUS STATE
+   ------------------------------------------------------------ */
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--color-brand-black);
-  /* A subtle "glow" using black at low opacity */
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
-/* THE PLACEHOLDER */
+/* ------------------------------------------------------------
+   PLACEHOLDER
+   ------------------------------------------------------------ */
 ::placeholder {
-  color: var(--color-gray-400);
-  font-weight: 300;
-  /* Prompt Light for placeholders */
+  color: var(--color-text-muted);
+  font-weight: var(--fw-light);
 }
 
-/* DISABLED STATE */
-input:disabled {
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+input:disabled,
+textarea:disabled,
+select:disabled {
   background-color: var(--color-gray-100);
-  cursor: not-allowed;
   color: var(--color-gray-500);
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   READONLY STATE
+   ------------------------------------------------------------ */
+input[readonly],
+textarea[readonly],
+select[readonly] {
+  background-color: var(--color-gray-50);
+  color: var(--color-text-muted);
 }

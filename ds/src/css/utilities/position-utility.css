@@ -1,13 +1,50 @@
 /* ============================================================
-   Z-INDEX UTILITIES
+   POSITION UTILITIES
+   Controls element placement and layout behavior
    ============================================================ */
 
-.z-below    { z-index: var(--z-below); }
-.z-base     { z-index: var(--z-base); }
-.z-above    { z-index: var(--z-above); }
+/* ------------------------------------------------------------
+   POSITION TYPES
+   ------------------------------------------------------------ */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed    { position: fixed; }
+.sticky   { position: sticky; }
+.static   { position: static; }
 
-.z-dropdown { z-index: var(--z-dropdown); }
-.z-sticky   { z-index: var(--z-sticky); }
-.z-modal    { z-index: var(--z-modal); }
-.z-tooltip  { z-index: var(--z-tooltip); }
-.z-max      { z-index: var(--z-max); }
+/* ------------------------------------------------------------
+   INSET HELPERS
+   ------------------------------------------------------------ */
+.top-0    { top: 0; }
+.bottom-0 { bottom: 0; }
+.left-0   { left: 0; }
+.right-0  { right: 0; }
+
+/* ------------------------------------------------------------
+   CENTER OVERLAY (Modals, loaders, popovers)
+   ------------------------------------------------------------ */
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ------------------------------------------------------------
+   STICKY TOP (Navbars, table headers)
+   ------------------------------------------------------------ */
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+/* ------------------------------------------------------------
+   FULL FILL (Absolute child fills parent)
+   ------------------------------------------------------------ */
+.fill-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

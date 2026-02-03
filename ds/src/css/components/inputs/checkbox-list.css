@@ -1,0 +1,70 @@
+/* ============================================================
+   CHECKBOX LIST
+   Structured lists of selection controls
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   LIST WRAPPER
+   ------------------------------------------------------------ */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 100%;
+}
+
+/* Dense variant */
+.checkbox-list-dense {
+  gap: var(--space-s);
+}
+
+/* Inline variant */
+.checkbox-list-inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+}
+
+/* ------------------------------------------------------------
+   LIST ITEM
+   ------------------------------------------------------------ */
+.checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-s);
+  cursor: pointer;
+}
+
+/* Ensures the label aligns with the custom control */
+.checkbox-item .selection-control {
+  margin-top: 2px;
+}
+
+/* ------------------------------------------------------------
+   LABEL
+   ------------------------------------------------------------ */
+.checkbox-label {
+  font-size: var(--fs-body);
+  color: var(--color-text-body);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Muted helper text under label */
+.checkbox-helper {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xxs);
+}
+
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+.checkbox-item-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.checkbox-item-disabled .checkbox-label {
+  cursor: not-allowed;
+}

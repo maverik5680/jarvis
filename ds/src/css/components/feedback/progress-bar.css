@@ -1,0 +1,120 @@
+/* ============================================================
+   PROGRESS BAR COMPONENT
+   Token-driven, precise, Audi-sharp progress indicator
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE WRAPPER
+   ------------------------------------------------------------ */
+.progress {
+  width: 100%;
+  height: var(--progress-height, 8px);
+
+  background-color: var(--color-gray-200);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* ------------------------------------------------------------
+   FILL ELEMENT
+   ------------------------------------------------------------ */
+.progress__bar {
+  height: 100%;
+  width: 0%;
+
+  background-color: var(--color-accent);
+  transition:
+    width var(--ms-base) var(--ease-standard),
+    background-color var(--ms-base) var(--ease-standard);
+}
+
+/* ------------------------------------------------------------
+   VALUE LABEL (Optional)
+   ------------------------------------------------------------ */
+.progress__label {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   COLOR VARIANTS
+   ============================================================ */
+
+/* Accent (Orange) */
+.progress-accent .progress__bar {
+  background-color: var(--color-accent);
+}
+
+/* Black */
+.progress-black .progress__bar {
+  background-color: var(--color-brand-black);
+}
+
+/* Success */
+.progress-success .progress__bar {
+  background-color: var(--color-success);
+}
+
+/* Warning */
+.progress-warning .progress__bar {
+  background-color: var(--color-warning);
+}
+
+/* Error */
+.progress-error .progress__bar {
+  background-color: var(--color-error);
+}
+
+/* Gray (Neutral) */
+.progress-gray .progress__bar {
+  background-color: var(--color-gray-600);
+}
+
+/* ============================================================
+   SIZE VARIANTS
+   ============================================================ */
+
+.progress-sm {
+  height: 4px;
+}
+
+.progress-md {
+  height: 8px;
+}
+
+.progress-lg {
+  height: 12px;
+}
+
+.progress-xl {
+  height: 16px;
+}
+
+/* ============================================================
+   STRIPED / ANIMATED VARIANTS
+   ============================================================ */
+
+/* Subtle diagonal stripes */
+.progress-striped .progress__bar {
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--color-accent) 90%, transparent) 0,
+    color-mix(in srgb, var(--color-accent) 90%, transparent) 10px,
+    color-mix(in srgb, var(--color-accent) 70%, transparent) 10px,
+    color-mix(in srgb, var(--color-accent) 70%, transparent) 20px
+  );
+}
+
+/* Animated stripes */
+.progress-animated .progress__bar {
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  from { background-position: 0 0; }
+  to   { background-position: 40px 0; }
+}

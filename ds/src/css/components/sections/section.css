@@ -1,24 +1,92 @@
 /* ============================================================
-   SECTION BASE (The Universal Spacer)
+   SECTION SYSTEM
+   Token-driven, Audi-sharp layout sections
    ============================================================ */
 
+/* ------------------------------------------------------------
+   BASE SECTION
+   ------------------------------------------------------------ */
 .section {
-  padding: 80px 0; /* Consistent vertical breathing room */
-  position: relative;
   width: 100%;
+  padding-block: var(--section-padding, var(--space-3xl));
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-body);
 }
 
-/* Background Utility Classes for any client */
-.section--white { background-color: var(--color-white); }
-.section--light { background-color: var(--color-gray-100); }
-.section--dark  { background-color: var(--color-brand-black); color: var(--color-white); }
-.section--brand { background-color: var(--color-brand-blue); color: var(--color-white); }
+/* Optional inner container */
+.section-content {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
+}
 
-/* Padding variants for different content types */
-.section--compact { padding: 40px 0; }
-.section--hero    { padding: 120px 0 80px; }
+/* ------------------------------------------------------------
+   SPACING VARIANTS
+   ------------------------------------------------------------ */
+.section-tight  { --section-padding: var(--space-xl); }
+.section-loose  { --section-padding: var(--space-4xl); }
+.section-hero   { --section-padding: var(--space-5xl); }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .section { padding: 60px 0; }
+/* ------------------------------------------------------------
+   COLOR VARIANTS
+   ------------------------------------------------------------ */
+.section-dark {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+}
+
+.section-light {
+  background-color: var(--color-white);
+  color: var(--color-text-body);
+}
+
+.section-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ------------------------------------------------------------
+   DIVIDER VARIANTS
+   ------------------------------------------------------------ */
+.section-divider-top {
+  border-top: var(--border-width-thin) solid var(--color-border);
+}
+
+.section-divider-bottom {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+/* ------------------------------------------------------------
+   ALIGNMENT VARIANTS (RTL-safe)
+   ------------------------------------------------------------ */
+.section-center { text-align: center; }
+.section-left   { text-align: start; }
+.section-right  { text-align: end; }
+
+/* ------------------------------------------------------------
+   LAYOUT VARIANTS
+   ------------------------------------------------------------ */
+.section-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+}
+
+@media (max-width: var(--breakpoint-l)) {
+  .section-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------
+   FULL-BLEED VARIANT
+   ------------------------------------------------------------ */
+.section-bleed {
+  padding-inline: 0;
+}
+
+.section-bleed .section-content {
+  max-width: none;
+  padding-inline: 0;
 }

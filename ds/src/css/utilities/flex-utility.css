@@ -1,37 +1,63 @@
 /* ============================================================
-   FLEX-UTILITY.CSS
+   FLEX UTILITIES
    Precision alignment and distribution for flex containers
    ============================================================ */
 
-/* 1. FLEX DIRECTION */
-.flex-row-utility            { flex-direction: row !important; }
-.flex-column-utility         { flex-direction: column !important; }
-.flex-row-reverse-utility    { flex-direction: row-reverse !important; }
-.flex-column-reverse-utility { flex-direction: column-reverse !important; }
+/* ------------------------------------------------------------
+   FLEX DIRECTION
+   ------------------------------------------------------------ */
+.flex-row            { flex-direction: row; }
+.flex-column         { flex-direction: column; }
+.flex-row-reverse    { flex-direction: row-reverse; }
+.flex-column-reverse { flex-direction: column-reverse; }
 
-/* 2. WRAPPING */
-.flex-wrap-utility           { flex-wrap: wrap !important; }
-.flex-nowrap-utility         { flex-wrap: nowrap !important; }
+/* ------------------------------------------------------------
+   FLEX WRAP
+   ------------------------------------------------------------ */
+.flex-wrap           { flex-wrap: wrap; }
+.flex-nowrap         { flex-wrap: nowrap; }
+.flex-wrap-reverse   { flex-wrap: wrap-reverse; }
 
-/* 3. JUSTIFY CONTENT (Main Axis) */
-.justify-start-utility       { justify-content: flex-start !important; }
-.justify-end-utility         { justify-content: flex-end !important; }
-.justify-center-utility      { justify-content: center !important; }
-.justify-between-utility     { justify-content: space-between !important; }
-.justify-around-utility      { justify-content: space-around !important; }
+/* ------------------------------------------------------------
+   JUSTIFY CONTENT (Main Axis)
+   ------------------------------------------------------------ */
+.justify-start       { justify-content: flex-start; }
+.justify-end         { justify-content: flex-end; }
+.justify-center      { justify-content: center; }
+.justify-between     { justify-content: space-between; }
+.justify-around      { justify-content: space-around; }
+.justify-evenly      { justify-content: space-evenly; }
 
-/* 4. ALIGN ITEMS (Cross Axis) */
-.align-start-utility         { align-items: flex-start !important; }
-.align-end-utility           { align-items: flex-end !important; }
-.align-center-utility        { align-items: center !important; }
-.align-stretch-utility       { align-items: stretch !important; }
+/* ------------------------------------------------------------
+   ALIGN ITEMS (Cross Axis)
+   ------------------------------------------------------------ */
+.items-start         { align-items: flex-start; }
+.items-end           { align-items: flex-end; }
+.items-center        { align-items: center; }
+.items-stretch       { align-items: stretch; }
+.items-baseline      { align-items: baseline; }
 
-/* 5. FLEX GROW / SHRINK / FILL */
-.flex-grow-1-utility         { flex-grow: 1 !important; }
-.flex-shrink-0-utility       { flex-shrink: 0 !important; }
-.flex-1-utility              { flex: 1 1 0% !important; } /* Fill remaining space */
+/* ------------------------------------------------------------
+   FLEX GROW / SHRINK / FILL
+   ------------------------------------------------------------ */
+.flex-grow           { flex-grow: 1; }
+.flex-grow-0         { flex-grow: 0; }
 
-/* 6. GAP (Using your spacing tokens) */
-.gap-xs-utility              { gap: var(--space-xs) !important; }
-.gap-m-utility               { gap: var(--space-m) !important; }
-.gap-l-utility               { gap: var(--space-l) !important; }
+.flex-shrink         { flex-shrink: 1; }
+.flex-shrink-0       { flex-shrink: 0; }
+
+.flex-1              { flex: 1 1 0%; } /* Fill remaining space */
+.flex-auto           { flex: 1 1 auto; }
+.flex-none           { flex: none; }
+
+/* ------------------------------------------------------------
+   GAP (Token-driven)
+   ------------------------------------------------------------ */
+.gap-xxs  { gap: var(--space-xxs); }
+.gap-xs   { gap: var(--space-xs); }
+.gap-s    { gap: var(--space-s); }
+.gap-m    { gap: var(--space-m); }
+.gap-l    { gap: var(--space-l); }
+.gap-xl   { gap: var(--space-xl); }
+.gap-xxl  { gap: var(--space-xxl); }
+.gap-xxxl { gap: var(--space-xxxl); }

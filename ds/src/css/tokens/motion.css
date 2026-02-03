@@ -1,47 +1,21 @@
+/* ============================================================
+   MOTION TOKENS
+   Durations and easings used across the system.
+   ============================================================ */
+
 :root {
-  /* DURATIONS */
-  /* Fast: UI feedback (button hover, checkbox) */
-  --ms-fast: 150ms; 
-  /* Base: Standard movements (dropdowns, accordions) */
-  --ms-base: 300ms; 
-  /* Slow: Large transitions (modals, page transitions) */
-  --ms-slow: 500ms; 
+  /* ------------------------------------------------------------
+     Durations
+     ------------------------------------------------------------ */
+  --ms-fast: 150ms;    /* UI feedback (hover, toggles) */
+  --ms-base: 300ms;    /* Standard transitions */
+  --ms-slow: 500ms;    /* Modals, large movements */
 
-  /* EASINGS (The "Engineered" Feel) */
-  /* Linear: Strictly for opacity/blur */
-  --ease-linear: cubic-bezier(0, 0, 1, 1);
-  /* Out: Natural entry (use for things entering the screen) */
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  /* In-Out: Standard smooth transition */
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  /* Sharp: Use for things leaving the screen quickly */
-  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);
-}
-
-/* GLOBAL ANIMATIONS */
-/* A simple fade-in used across many sections */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* A subtle slide-up for premium entry */
-@keyframes slideUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-}
-
-/* Utility classes to apply to any component */
-.animate-fade {
-  animation: fadeIn var(--ms-base) var(--ease-standard);
-}
-
-.animate-entrance {
-  animation: slideUp var(--ms-slow) var(--ease-out);
+  /* ------------------------------------------------------------
+     Easings
+     ------------------------------------------------------------ */
+  --ease-linear: cubic-bezier(0, 0, 1, 1);        /* Opacity/blur */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);         /* Entering */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);  /* Default */
+  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);     /* Exiting */
 }

@@ -1,5 +1,6 @@
 /* ============================================================
    SELECT MENU ATOM
+   Token-driven, Audi-sharp dropdown field
    ============================================================ */
 
 .select-wrapper {
@@ -7,65 +8,77 @@
   width: 100%;
 }
 
+/* ------------------------------------------------------------
+   BASE SELECT
+   ------------------------------------------------------------ */
 .form-select {
   width: 100%;
-  padding: 12px 40px 12px 16px;
-  /* Extra right padding for the arrow */
-  min-height: 48px;
+  padding: var(--space-s) var(--space-xl) var(--space-s) var(--space-m);
+  min-height: 48px; /* iOS zoom-safe */
 
-  /* Typography */
   font-family: var(--font-family-main);
-  font-size: 16px;
-  color: var(--color-brand-black);
+  font-size: 16px; /* Required for iOS */
+  color: var(--color-text-body);
 
-  /* Styling */
-  background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: 2px;
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xs);
 
-  /* Reset Default Arrow */
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
   cursor: pointer;
-  transition: all 0.2s ease;
+
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
 }
 
-/* THE CUSTOM CHEVRON (Audi-style minimalist arrow) */
+/* ------------------------------------------------------------
+   CUSTOM CHEVRON (Token-driven icon)
+   ------------------------------------------------------------ */
 .select-wrapper::after {
   content: "";
   position: absolute;
-  right: 16px;
+  right: var(--space-m);
   top: 50%;
   transform: translateY(-50%);
-  width: 10px;
-  height: 6px;
-  background-color: var(--color-brand-black);
-  /* This creates a clean triangle/chevron */
-  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+
+  width: 12px;
+  height: 12px;
+
+  background-image: var(--icon-select-chevron);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+
   pointer-events: none;
-  /* Allows clicking through to the select */
 }
 
-/* STATES */
+/* ------------------------------------------------------------
+   FOCUS STATE
+   ------------------------------------------------------------ */
 .form-select:focus {
   outline: none;
-  border-color: var(--color-brand-black);
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
 .form-select:disabled {
   background-color: var(--color-gray-100);
-  color: var(--color-gray-400);
+  color: var(--color-gray-500);
   cursor: not-allowed;
 }
 
-/* MULTI-SELECT DISPLAY */
+/* ============================================================
+   MULTI-SELECT DISPLAY (For custom UI wrappers)
+   ============================================================ */
+
 .select-display--multi {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xxs);
   flex-wrap: nowrap;
   overflow: hidden;
 }
@@ -78,11 +91,7 @@
   content: "";
 }
 
-.select-display__overflow::before {
-  content: "' ";
-}
-
 .select-display__overflow {
-  font-weight: bold;
-  color: var(--color-brand-blue);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent);
 }

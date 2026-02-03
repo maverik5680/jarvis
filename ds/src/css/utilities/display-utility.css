@@ -1,40 +1,60 @@
 /* ============================================================
-   DISPLAY-UTILITY.CSS
+   DISPLAY UTILITIES
    Controls box type and visibility across breakpoints
    ============================================================ */
 
-/* ------------------------------
+/* ------------------------------------------------------------
    STANDARD DISPLAY TYPES
-   ------------------------------ */
-.block-utility           { display: block !important; }
-.inline-block-utility    { display: inline-block !important; }
-.inline-utility          { display: inline !important; }
-.flex-utility            { display: flex !important; }
-.inline-flex-utility     { display: inline-flex !important; }
-.grid-utility            { display: grid !important; }
-.none-utility            { display: none !important; }
+   ------------------------------------------------------------ */
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.inline       { display: inline; }
+.flex         { display: flex; }
+.inline-flex  { display: inline-flex; }
+.grid         { display: grid; }
+.hidden       { display: none; }
 
-/* ------------------------------
+/* ------------------------------------------------------------
    RESPONSIVE DISPLAY (Mobile First)
-   ------------------------------ */
+   Uses breakpoint tokens from breakpoints.css
+   ------------------------------------------------------------ */
 
-/* Hide on mobile, show block on desktop */
-@media (min-width: 769px) {
-  .block-desktop-utility { display: block !important; }
-  .flex-desktop-utility  { display: flex !important; }
+/* ≥ Small (S) */
+@media (min-width: var(--breakpoint-s)) {
+  .s\:block { display: block; }
+  .s\:flex  { display: flex; }
+  .s\:grid  { display: grid; }
+  .s\:hidden { display: none; }
 }
 
-/* Hide on desktop, show block on mobile */
-@media (max-width: 768px) {
-  .block-mobile-utility  { display: block !important; }
-  .flex-mobile-utility   { display: flex !important; }
+/* ≥ Medium (M) */
+@media (min-width: var(--breakpoint-m)) {
+  .m\:block { display: block; }
+  .m\:flex  { display: flex; }
+  .m\:grid  { display: grid; }
+  .m\:hidden { display: none; }
 }
 
-/* ------------------------------
+/* ≥ Large (L) */
+@media (min-width: var(--breakpoint-l)) {
+  .l\:block { display: block; }
+  .l\:flex  { display: flex; }
+  .l\:grid  { display: grid; }
+  .l\:hidden { display: none; }
+}
+
+/* ≥ Extra Large (XL) */
+@media (min-width: var(--breakpoint-xl)) {
+  .xl\:block { display: block; }
+  .xl\:flex  { display: flex; }
+  .xl\:grid  { display: grid; }
+  .xl\:hidden { display: none; }
+}
+
+/* ------------------------------------------------------------
    PRINT DISPLAY
-   ------------------------------ */
-/* Essential for medical/construction reports: hide nav/buttons when printing */
+   ------------------------------------------------------------ */
 @media print {
-  .hide-print-utility    { display: none !important; }
-  .block-print-utility   { display: block !important; }
+  .print\:hidden { display: none; }
+  .print\:block  { display: block; }
 }

@@ -1,5 +1,6 @@
 /* ============================================================
-   DATA: AVATAR
+   AVATAR COMPONENT
+   Token-driven user identity element
    ============================================================ */
 
 .avatar {
@@ -8,26 +9,48 @@
   justify-content: center;
   vertical-align: middle;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 2px; /* Keeping the sharp Audi-style edge */
+
+  width: var(--avatar-md);
+  height: var(--avatar-md);
+
+  border-radius: var(--radius-xs); /* Sharp, consistent with your system */
   background-color: var(--color-gray-200);
+
   overflow: hidden;
+
   font-family: var(--font-family-main);
   font-weight: var(--fw-bold);
   font-size: var(--fs-small);
   color: var(--color-gray-600);
 }
 
+/* Image inside avatar */
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Size Variants */
-.avatar--sm { width: 32px; height: 32px; font-size: var(--fs-tiny); }
-.avatar--lg { width: 64px; height: 64px; font-size: var(--fs-h4); }
+/* ------------------------------------------------------------
+   SIZE VARIANTS
+   ------------------------------------------------------------ */
 
-/* Circular variant (Some clients prefer round) */
-.avatar--circle { border-radius: 50%; }
+.avatar-sm {
+  width: var(--avatar-sm);
+  height: var(--avatar-sm);
+  font-size: var(--fs-tiny);
+}
+
+.avatar-lg {
+  width: var(--avatar-lg);
+  height: var(--avatar-lg);
+  font-size: var(--fs-h4);
+}
+
+/* ------------------------------------------------------------
+   SHAPE VARIANT
+   ------------------------------------------------------------ */
+
+.avatar-circle {
+  border-radius: 50%;
+}

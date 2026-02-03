@@ -1,56 +1,73 @@
 /* ============================================================
-   INTERACTION: ACCORDION
+   ACCORDION
+   Token-driven, Audi-sharp interaction component
    ============================================================ */
 
 .accordion {
-  border-top: 1px solid var(--color-gray-200);
   width: 100%;
+  border-top: var(--border-width-thin) solid var(--color-border);
 }
 
-.accordion__item {
-  border-bottom: 1px solid var(--color-gray-200);
+/* ------------------------------------------------------------
+   ITEM
+   ------------------------------------------------------------ */
+.accordion-item {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
 }
 
-.accordion__trigger {
+/* ------------------------------------------------------------
+   TRIGGER
+   ------------------------------------------------------------ */
+.accordion-trigger {
   width: 100%;
-  padding: 24px 0;
+  padding: var(--space-l) 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: color 0.2s ease;
+
+  transition: color var(--ms-fast) var(--ease-standard);
 }
 
-.accordion__title {
+.accordion-title {
   font-family: var(--font-family-main);
   font-weight: var(--fw-bold);
   font-size: var(--fs-body);
-  color: var(--color-brand-black);
+  color: var(--color-text-body);
 }
 
-.accordion__icon {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.accordion-icon {
+  transition: transform var(--ms-fast) var(--ease-standard);
 }
 
-/* Open State */
-.accordion__item[data-state="open"] .accordion__icon {
+/* Open state: rotate icon */
+.accordion-item[data-state="open"] .accordion-icon {
   transform: rotate(180deg);
-  color: var(--color-brand-black);
+  color: var(--color-text-body);
 }
 
-.accordion__content {
+/* ------------------------------------------------------------
+   CONTENT
+   ------------------------------------------------------------ */
+.accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease;
-  color: var(--color-gray-500);
+
+  color: var(--color-text-muted);
   line-height: var(--lh-base);
+
+  transition:
+    max-height var(--ms-medium) var(--ease-standard),
+    padding var(--ms-medium) var(--ease-standard);
 }
 
-.accordion__item[data-state="open"] .accordion__content {
-  max-height: 500px;
-  /* Adjust based on content */
-  padding-bottom: 24px;
+/* Expanded */
+.accordion-item[data-state="open"] .accordion-content {
+  max-height: 600px; /* Safe default for most content */
+  padding-bottom: var(--space-l);
 }

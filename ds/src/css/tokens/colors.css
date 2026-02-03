@@ -1,40 +1,68 @@
+/* ============================================================
+   BASE COLOR TOKENS (Raw values that never change)
+   ============================================================ */
+
 :root {
-   /* ============================================================
-     BRAND COLORS (The Power Duo)
-     ============================================================ */
-   --color-brand-black: #000000;
-   --color-brand-black-hover: #1d1c1c;
-   /* Structural Power */
-   --color-brand-orange: #FF5F00;
-   /* Action Power (Electric) */
-   --color-brand-orange-hover: #cf4e04;
+  /* Brand */
+  --color-brand-black: #000000;
+  --color-brand-black-hover: #1d1c1c;
 
-   /* ============================================================
-     NEUTRALS (The Canvas)
-     ============================================================ */
-   --color-white: #FFFFFF;
-   --color-gray-100: #F3F4F6;
-   /* Light surface for contrast */
-   --color-gray-200: #E5E7EB;
-   /* Subtle dividers for your List Item */
-   --color-gray-300: #D1D5DB;
-   /* Distinct gray for secondary backgrounds */
-   --color-gray-400: #9CA3AF;
-   /* Interaction state for gray-300 */
-   --color-gray-500: #6B7280;
-   /* Muted text for less important info */
-   --color-gray-600: #4B5563;
-   --color-gray-700: #374151;
-   --color-gray-800: #111;
-   --color-gray-900: #0a0a0b;
-   /* Muted text for less important info */
+  --color-brand-orange: #FF5F00;
+  --color-brand-orange-hover: #cf4e04;
 
-   /* ============================================================
-     UI MAPPING (How the brand hits the screen)
+  /* Neutrals */
+  --color-white: #FFFFFF;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #111111;
+  --color-gray-900: #0a0a0b;
+
+  /* ============================================================
+     SEMANTIC UI TOKENS — DARK THEME (Default)
      ============================================================ */
-   --color-text-header: var(--color-brand-black);
-   --color-text-body: #1A1A1B;
-   /* Slightly off-black for long reading (Prompt) */
-   --color-bg-sidebar: var(--color-brand-black);
-   --color-btn-primary: var(--color-brand-black);
+
+  /* Text */
+  --color-text-body: var(--color-gray-100);
+  --color-text-header: var(--color-white);
+  --color-text-muted: var(--color-gray-400);
+  --color-text-inverse: var(--color-brand-black);
+
+  /* Backgrounds */
+  --color-bg-surface: var(--color-gray-900);
+  --color-bg-elevated: var(--color-gray-800);
+  --color-bg-sidebar: var(--color-brand-black);
+
+  /* Borders */
+  --color-border: var(--color-gray-700);
+
+  /* Accent */
+  --color-accent: var(--color-brand-orange);
+}
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   ============================================================ */
+
+[data-theme="light"] {
+  /* Text */
+  --color-text-body: var(--color-gray-900);
+  --color-text-header: var(--color-brand-black);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-inverse: var(--color-white);
+
+  /* Backgrounds */
+  --color-bg-surface: var(--color-white);
+  --color-bg-elevated: var(--color-gray-100);
+  --color-bg-sidebar: var(--color-gray-200);
+
+  /* Borders */
+  --color-border: var(--color-gray-300);
+
+  /* Accent */
+  --color-accent: var(--color-brand-orange);
 }

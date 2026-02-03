@@ -1,61 +1,78 @@
 /* ============================================================
-   FORM GROUP MOLECULE
+   FORM GROUP
+   Label + input + helper text wrapper
    ============================================================ */
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  /* Space between label and input */
-  margin-bottom: 24px;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
   width: 100%;
 }
 
+/* ------------------------------------------------------------
+   LABEL
+   ------------------------------------------------------------ */
 .form-label {
   font-family: var(--font-family-main);
   font-size: var(--fs-small);
   font-weight: var(--fw-bold);
-  color: var(--color-brand-black);
+  color: var(--color-text-body);
+
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* Helper & Validation Text */
+/* Optional marker */
+.form-label-optional::after {
+  content: " (optional)";
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-muted);
+}
+
+/* ------------------------------------------------------------
+   HELPER / MESSAGE TEXT
+   ------------------------------------------------------------ */
 .form-message {
   font-size: var(--fs-tiny);
-  margin-top: 4px;
-  color: var(--color-gray-500);
+  margin-top: var(--space-xxs);
+  color: var(--color-text-muted);
 }
 
-/* VALIDATION STATES */
-.form-group--error .form-label {
-  color: #cc0000;
+/* ============================================================
+   VALIDATION STATES
+   ============================================================ */
+
+/* ERROR */
+.form-group-error .form-label {
+  color: var(--color-error);
 }
 
-/* Brand optimized signal red */
-.form-group--error .input-text,
-.form-group--error .input-line,
-.form-group--error .input-textarea--frame {
-  border-color: #cc0000;
+.form-group-error .input-text,
+.form-group-error .input-line,
+.form-group-error .input-textarea,
+.form-group-error .input-textarea-frame {
+  border-color: var(--color-error);
 }
 
-.form-group--error .form-message {
-  color: #cc0000;
+.form-group-error .form-message {
+  color: var(--color-error);
 }
 
-.form-group--success .form-label {
-  color: var(--color-brand-blue);
+/* SUCCESS */
+.form-group-success .form-label {
+  color: var(--color-success);
 }
 
-.form-group--success .input-text,
-.form-group--success .input-line {
-  border-color: var(--color-brand-blue);
+.form-group-success .input-text,
+.form-group-success .input-line,
+.form-group-success .input-textarea,
+.form-group-success .input-textarea-frame {
+  border-color: var(--color-success);
 }
 
-/* Optional Marking */
-.form-label--optional::after {
-  content: " (optional)";
-  font-weight: normal;
-  font-size: 0.9em;
-  color: var(--color-gray-500);
+.form-group-success .form-message {
+  color: var(--color-success);
 }

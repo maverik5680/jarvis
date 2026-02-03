@@ -1,33 +1,63 @@
 /* ============================================================
    VALIDATION STATES (Global)
+   Token-driven semantic feedback for form fields
    ============================================================ */
 
-/* 1. Error State - Urgent/Critical */
-.is-invalid {
-  --state-color: #D32F2F;
-  --state-bg: rgba(211, 47, 47, 0.05);
-  border-color: var(--state-color) !important;
+/* ------------------------------------------------------------
+   ERROR (Critical)
+   ------------------------------------------------------------ */
+.is-error {
+  --state-color: var(--color-error);
+  --state-bg: color-mix(in srgb, var(--color-error) 10%, transparent);
+
+  border-color: var(--state-color);
+  background-color: var(--state-bg);
 }
 
-/* 2. Success State - Completed/Verified */
-.is-valid {
-  --state-color: var(--color-brand-blue);
-  --state-bg: rgba(0, 70, 255, 0.05);
-  border-color: var(--state-color) !important;
+/* ------------------------------------------------------------
+   SUCCESS (Verified)
+   ------------------------------------------------------------ */
+.is-success {
+  --state-color: var(--color-success);
+  --state-bg: color-mix(in srgb, var(--color-success) 10%, transparent);
+
+  border-color: var(--state-color);
+  background-color: var(--state-bg);
 }
 
-/* 3. Warning State - Caution (e.g., Low Stock or Site Delay) */
+/* ------------------------------------------------------------
+   WARNING (Caution)
+   ------------------------------------------------------------ */
 .is-warning {
-  --state-color: #ED6C02;
-  --state-bg: rgba(237, 108, 2, 0.05);
-  border-color: var(--state-color) !important;
+  --state-color: var(--color-warning);
+  --state-bg: color-mix(in srgb, var(--color-warning) 10%, transparent);
+
+  border-color: var(--state-color);
+  background-color: var(--state-bg);
 }
 
-/* 4. Feedback Icons (Optional) */
-/* This adds an icon inside the input automatically when valid/invalid */
-.is-invalid-icon {
-  background-image: url('../../assets/icons/alert-circle.svg');
+/* ============================================================
+   OPTIONAL FEEDBACK ICONS
+   Works with any input or textfield
+   ============================================================ */
+
+.validation-icon {
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 40px;
+  background-position: right var(--space-m) center;
+  padding-right: calc(var(--space-xl) + var(--space-xs));
+}
+
+/* Error icon */
+.is-error.validation-icon {
+  background-image: var(--icon-error);
+}
+
+/* Success icon */
+.is-success.validation-icon {
+  background-image: var(--icon-success);
+}
+
+/* Warning icon */
+.is-warning.validation-icon {
+  background-image: var(--icon-warning);
 }

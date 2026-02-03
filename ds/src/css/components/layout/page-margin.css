@@ -1,0 +1,75 @@
+/* ============================================================
+   PAGE MARGINS — TOKEN DRIVEN
+   Mobile-first, fluid, Audi-sharp
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   DEFAULT (Mobile XS)
+   ------------------------------------------------------------ */
+:root {
+  --page-margin: var(--space-l);
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINT: S
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-s)) {
+  :root {
+    --page-margin: var(--space-xl);
+  }
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINT: M
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-m)) {
+  :root {
+    --page-margin: var(--space-xxl);
+  }
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINT: L
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-l)) {
+  :root {
+    --page-margin: var(--space-3xl);
+  }
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINT: XL
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-xl)) {
+  :root {
+    --page-margin: var(--space-4xl);
+  }
+}
+
+/* ------------------------------------------------------------
+   BREAKPOINT: XXL
+   Same as XL — max comfortable reading width
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-xxl)) {
+  :root {
+    --page-margin: var(--space-4xl);
+  }
+}
+
+/* ============================================================
+   PAGE MARGIN APPLICATION
+   Applies horizontal breathing room to content wrappers
+   ============================================================ */
+
+.page-content,
+.page-section,
+.page .container {
+  padding-inline: var(--page-margin);
+}
+
+/* Optional: full-width but centered container */
+.page-max {
+  max-width: var(--layout-max-width-xxl);
+  margin-inline: auto;
+  width: 100%;
+}

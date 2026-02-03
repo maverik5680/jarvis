@@ -1,103 +1,137 @@
-/* Base Input Styles */
-.input-text,
-.input-line {
+/* ============================================================
+   TEXTFIELD ATOM
+   Underline inputs + floating label + framed textarea
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE UNDERLINE INPUT
+   ------------------------------------------------------------ */
+.textfield,
+.textfield-line {
   width: 100%;
   font-family: var(--font-family-main);
-  font-size: 16px;
-  color: var(--color-brand-black);
+  font-size: 16px; /* iOS zoom-safe */
+  color: var(--color-text-body);
+
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid var(--color-gray-300);
-  padding: 24px 0 8px 0;
-  transition: border-color 0.2s ease;
+  border-bottom: var(--border-width-thin) solid var(--color-border);
   border-radius: 0;
+
+  padding: var(--space-xl) 0 var(--space-xs) 0;
+
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard);
 }
 
-.input-text:focus,
-.input-line:focus {
+/* Focus */
+.textfield:focus,
+.textfield-line:focus {
   outline: none;
-  border-bottom-color: var(--color-brand-blue);
+  border-bottom-color: var(--color-accent);
+  box-shadow: 0 2px 0 0 var(--color-accent);
 }
 
-/* Floating Label Logic */
-.input-container {
+/* ------------------------------------------------------------
+   FLOATING LABEL CONTAINER
+   ------------------------------------------------------------ */
+.textfield-container {
   position: relative;
   width: 100%;
-  margin-top: 20px;
+  margin-top: var(--space-l);
 }
 
-.input-container label {
+.textfield-container label {
   position: absolute;
   left: 0;
-  top: 24px;
-  color: var(--color-gray-500);
+  top: var(--space-xl);
+
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+
   pointer-events: none;
-  transition: all 0.2s ease;
-  font-size: 16px;
+  transition:
+    color var(--ms-fast) var(--ease-standard),
+    transform var(--ms-fast) var(--ease-standard),
+    font-size var(--ms-fast) var(--ease-standard);
 }
 
-.input-container input:focus~label,
-.input-container input:not(:placeholder-shown)~label {
+/* Floating label trigger */
+.textfield-container input:focus ~ label,
+.textfield-container input:not(:placeholder-shown) ~ label {
   top: 0;
-  font-size: 12px;
-  color: var(--color-brand-blue);
-  font-weight: bold;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent);
 }
 
-/* Textarea Frame Style */
-.input-textarea--frame {
+/* ------------------------------------------------------------
+   FRAMED TEXTAREA
+   ------------------------------------------------------------ */
+.textarea-frame {
   width: 100%;
   min-height: 120px;
-  padding: 16px;
+
+  padding: var(--space-m);
   font-family: var(--font-family-main);
   font-size: 16px;
-  color: var(--color-brand-black);
-  background-color: transparent;
-  border: 1px solid var(--color-gray-200);
-  /* Finely drawn frame */
-  border-radius: 2px;
+  color: var(--color-text-body);
+
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xs);
+
   resize: vertical;
-  transition: border-color 0.2s ease;
+
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard);
 }
 
-.input-textarea--frame:focus {
+.textarea-frame:focus {
   outline: none;
-  border-color: var(--color-brand-blue);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
-/* Search Field Variant */
-.input-search-container {
+/* ------------------------------------------------------------
+   SEARCH FIELD VARIANT
+   ------------------------------------------------------------ */
+.textfield-search-container {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.input-search-container .search-icon {
+.textfield-search-container .search-icon {
   position: absolute;
   left: 0;
   width: 18px;
   height: 18px;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 
-.input-search {
-  padding-left: 28px !important;
+.textfield-search {
+  padding-left: var(--space-xl) !important;
 }
 
-/* White/Black Themes */
-.input--white {
-  color: #fff;
-  border-bottom-color: rgba(255, 255, 255, 0.3);
+/* ------------------------------------------------------------
+   WHITE THEME VARIANT
+   ------------------------------------------------------------ */
+.textfield-white {
+  color: var(--color-white);
+  border-bottom-color: color-mix(in srgb, var(--color-white) 30%, transparent);
 }
 
-.input--white:focus {
-  border-bottom-color: #fff;
+.textfield-white:focus {
+  border-bottom-color: var(--color-white);
 }
 
-.input--white~label {
-  color: rgba(255, 255, 255, 0.6);
+.textfield-white ~ label {
+  color: color-mix(in srgb, var(--color-white) 60%, transparent);
 }
 
-.input--white:focus~label {
-  color: #fff;
+.textfield-white:focus ~ label {
+  color: var(--color-white);
 }

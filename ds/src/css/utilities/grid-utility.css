@@ -1,45 +1,81 @@
 /* ============================================================
    GRID UTILITIES
-   Location: ds/src/css/utilities/grid-utility.css
+   Token-driven layout helpers for grid systems
    ============================================================ */
 
-/* 1. Display */
-.u-grid {
-    display: grid !important;
-}
+/* ------------------------------------------------------------
+   DISPLAY
+   ------------------------------------------------------------ */
+.grid        { display: grid; }
+.inline-grid { display: inline-grid; }
 
-.u-inline-grid {
-    display: inline-grid !important;
-}
+/* ------------------------------------------------------------
+   GRID TEMPLATE COLUMNS (12-column system)
+   ------------------------------------------------------------ */
+.grid-cols-1  { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2  { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3  { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4  { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-cols-6  { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
 
-/* 2. Columns (Standard 12-column system) */
-.u-grid-cols-1  { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
-.u-grid-cols-2  { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-.u-grid-cols-3  { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
-.u-grid-cols-4  { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
-.u-grid-cols-6  { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
-.u-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+/* Auto-fit / Auto-fill helpers */
+.grid-auto-fit  { grid-template-columns: repeat(auto-fit, minmax(var(--grid-min, 200px), 1fr)); }
+.grid-auto-fill { grid-template-columns: repeat(auto-fill, minmax(var(--grid-min, 200px), 1fr)); }
 
-/* 3. Column Spanning */
-.u-col-span-full { grid-column: 1 / -1 !important; }
-.u-col-span-1   { grid-column: span 1 / span 1 !important; }
-.u-col-span-2   { grid-column: span 2 / span 2 !important; }
+/* ------------------------------------------------------------
+   COLUMN SPAN
+   ------------------------------------------------------------ */
+.col-span-full { grid-column: 1 / -1; }
+.col-span-1    { grid-column: span 1 / span 1; }
+.col-span-2    { grid-column: span 2 / span 2; }
+.col-span-3    { grid-column: span 3 / span 3; }
+.col-span-4    { grid-column: span 4 / span 4; }
+.col-span-6    { grid-column: span 6 / span 6; }
+.col-span-12   { grid-column: span 12 / span 12; }
 
-/* 4. Gaps (Uses tokens with 1rem fallback) */
-.u-gap-0  { gap: 0 !important; }
-.u-gap-xs { gap: var(--spacing-xs, 0.25rem) !important; }
-.u-gap-sm { gap: var(--spacing-sm, 0.5rem) !important; }
-.u-gap-md { gap: var(--spacing-md, 1rem) !important; }
-.u-gap-lg { gap: var(--spacing-lg, 1.5rem) !important; }
-.u-gap-xl { gap: var(--spacing-xl, 2rem) !important; }
+/* ------------------------------------------------------------
+   GAP (Token-driven)
+   ------------------------------------------------------------ */
+.gap-0    { gap: 0; }
+.gap-xxs  { gap: var(--space-xxs); }
+.gap-xs   { gap: var(--space-xs); }
+.gap-s    { gap: var(--space-s); }
+.gap-m    { gap: var(--space-m); }
+.gap-l    { gap: var(--space-l); }
+.gap-xl   { gap: var(--space-xl); }
+.gap-xxl  { gap: var(--space-xxl); }
+.gap-xxxl { gap: var(--space-xxxl); }
 
-/* 5. Alignment Utilities */
-.u-items-start   { align-items: start !important; }
-.u-items-center  { align-items: center !important; }
-.u-items-end     { align-items: end !important; }
-.u-items-stretch { align-items: stretch !important; }
+/* Row-only gap */
+.row-gap-xxs { row-gap: var(--space-xxs); }
+.row-gap-xs  { row-gap: var(--space-xs); }
+.row-gap-s   { row-gap: var(--space-s); }
+.row-gap-m   { row-gap: var(--space-m); }
+.row-gap-l   { row-gap: var(--space-l); }
+.row-gap-xl  { row-gap: var(--space-xl); }
+.row-gap-xxl { row-gap: var(--space-xxl); }
+.row-gap-xxxl { row-gap: var(--space-xxxl); }
 
-.u-justify-start  { justify-content: start !important; }
-.u-justify-center { justify-content: center !important; }
-.u-justify-end    { justify-content: end !important; }
-.u-justify-between { justify-content: space-between !important; }
+/* Column-only gap */
+.col-gap-xxs { column-gap: var(--space-xxs); }
+.col-gap-xs  { column-gap: var(--space-xs); }
+.col-gap-s   { column-gap: var(--space-s); }
+.col-gap-m   { column-gap: var(--space-m); }
+.col-gap-l   { column-gap: var(--space-l); }
+.col-gap-xl  { column-gap: var(--space-xl); }
+.col-gap-xxl { column-gap: var(--space-xxl); }
+.col-gap-xxxl { column-gap: var(--space-xxxl); }
+
+/* ------------------------------------------------------------
+   ALIGNMENT
+   ------------------------------------------------------------ */
+.items-start   { align-items: start; }
+.items-center  { align-items: center; }
+.items-end     { align-items: end; }
+.items-stretch { align-items: stretch; }
+
+.justify-start   { justify-content: start; }
+.justify-center  { justify-content: center; }
+.justify-end     { justify-content: end; }
+.justify-between { justify-content: space-between; }

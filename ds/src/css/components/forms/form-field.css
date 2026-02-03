@@ -1,0 +1,149 @@
+/* ============================================================
+   FORM FIELD ATOMS
+   Inputs, textareas, selects — Audi-sharp, token-driven
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE FIELD
+   ------------------------------------------------------------ */
+.form-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------------------------------------
+   INPUT / TEXTAREA / SELECT
+   ------------------------------------------------------------ */
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--space-s) var(--space-m);
+  min-height: 48px; /* iOS zoom-safe */
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-body);
+  color: var(--color-text-body);
+
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xs);
+
+  appearance: none;
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
+}
+
+/* Textarea sizing */
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Select arrow */
+.form-select {
+  background-image: var(--icon-select-chevron);
+  background-repeat: no-repeat;
+  background-position: right var(--space-m) center;
+  background-size: 16px;
+}
+
+/* ------------------------------------------------------------
+   PLACEHOLDER
+   ------------------------------------------------------------ */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+  font-weight: var(--fw-light);
+}
+
+/* ------------------------------------------------------------
+   FOCUS STATE
+   ------------------------------------------------------------ */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+.form-input:disabled,
+.form-textarea:disabled,
+.form-select:disabled {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-500);
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   READONLY STATE
+   ------------------------------------------------------------ */
+.form-input[readonly],
+.form-textarea[readonly],
+.form-select[readonly] {
+  background-color: var(--color-gray-50);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   VALIDATION STATES
+   (Works with .form-group-error / .form-group-success)
+   ============================================================ */
+
+.form-group-error .form-input,
+.form-group-error .form-textarea,
+.form-group-error .form-select {
+  border-color: var(--color-error);
+}
+
+.form-group-success .form-input,
+.form-group-success .form-textarea,
+.form-group-success .form-select {
+  border-color: var(--color-success);
+}
+
+/* ------------------------------------------------------------
+   INLINE ICON SUPPORT
+   ------------------------------------------------------------ */
+.form-field-icon {
+  position: relative;
+}
+
+.form-field-icon .form-input {
+  padding-left: var(--space-xl);
+}
+
+.form-field-icon__icon {
+  position: absolute;
+  left: var(--space-m);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-500);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   SMALL + LARGE VARIANTS
+   ------------------------------------------------------------ */
+.form-input-sm,
+.form-textarea-sm,
+.form-select-sm {
+  padding: var(--space-xs) var(--space-s);
+  min-height: 40px;
+  font-size: var(--fs-small);
+}
+
+.form-input-lg,
+.form-textarea-lg,
+.form-select-lg {
+  padding: var(--space-m) var(--space-l);
+  min-height: 56px;
+  font-size: var(--fs-body);
+}

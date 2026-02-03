@@ -1,5 +1,6 @@
 /* ============================================================
-   INTERACTION: SLIDER
+   SLIDER
+   Token-driven, Audi-sharp carousel component
    ============================================================ */
 
 .slider {
@@ -8,37 +9,52 @@
   width: 100%;
 }
 
-.slider__track {
+/* ------------------------------------------------------------
+   TRACK
+   ------------------------------------------------------------ */
+.slider-track {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform var(--ms-medium) var(--ease-standard);
 }
 
-.slider__slide {
+/* ------------------------------------------------------------
+   SLIDE
+   ------------------------------------------------------------ */
+.slider-slide {
   min-width: 100%;
   flex-shrink: 0;
 }
 
-/* Navigation Dots */
-.slider__dots {
+/* ============================================================
+   NAVIGATION DOTS
+   ============================================================ */
+
+.slider-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-top: 24px;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
 }
 
-.slider__dot {
-  width: 8px;
-  height: 8px;
+.slider-dot {
+  width: var(--slider-dot-size, 8px);
+  height: var(--slider-dot-size, 8px);
+
   border-radius: 50%;
-  background-color: var(--color-gray-300);
+  background-color: var(--color-border);
+
   cursor: pointer;
   border: none;
-  transition: background-color 0.2s;
+
+  transition:
+    background-color var(--ms-fast) var(--ease-standard),
+    width var(--ms-fast) var(--ease-standard),
+    border-radius var(--ms-fast) var(--ease-standard);
 }
 
-.slider__dot--active {
-  background-color: var(--color-brand-black);
-  width: 24px;
-  /* Pill shape for active dot */
-  border-radius: 4px;
+/* Active dot becomes a pill */
+.slider-dot-active {
+  background-color: var(--color-accent);
+  width: var(--slider-dot-active-width, 24px);
+  border-radius: var(--radius-sm);
 }

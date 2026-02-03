@@ -1,64 +1,99 @@
 /* ============================================================
    FLYOVER NAVIGATION
+   Token-driven, Audi-sharp floating action menu
    ============================================================ */
 
+/* ------------------------------------------------------------
+   CONTAINER
+   ------------------------------------------------------------ */
 .flyover {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 1100;
+  position: fixed;
+  right: var(--space-xl);
+  bottom: var(--space-xl);
+  z-index: var(--z-flyover);
 }
 
-.flyover__trigger {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: var(--color-brand-black);
-    color: #fff;
-    border: none;
-    box-shadow: var(--shadow-md);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
+/* ------------------------------------------------------------
+   TRIGGER BUTTON
+   ------------------------------------------------------------ */
+.flyover-trigger {
+  width: var(--flyover-trigger-size, 56px);
+  height: var(--flyover-trigger-size, 56px);
+
+  border-radius: var(--radius-round);
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: var(--shadow-m);
+
+  transition:
+    transform var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
 }
 
-.flyover__trigger:hover {
-    transform: scale(1.1);
+.flyover-trigger:hover {
+  transform: scale(1.08);
 }
 
-.flyover__menu {
-    position: absolute;
-    bottom: 72px;
-    right: 0;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-gray-200);
-    box-shadow: var(--shadow-lg);
-    border-radius: 4px;
-    padding: 16px;
-    min-width: 200px;
-    display: none;
-    /* Toggle with JS */
+/* ------------------------------------------------------------
+   MENU PANEL
+   ------------------------------------------------------------ */
+.flyover-menu {
+  position: absolute;
+  bottom: calc(var(--flyover-trigger-size, 56px) + var(--space-m));
+  right: 0;
+
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  box-shadow: var(--shadow-l);
+  border-radius: var(--radius-sm);
+
+  padding: var(--space-m);
+  min-width: 200px;
+
+  display: none;
+  opacity: 0;
+  transform: translateY(8px);
+
+  transition:
+    opacity var(--ms-medium) var(--ease-standard),
+    transform var(--ms-medium) var(--ease-standard);
 }
 
-.flyover__menu.is-active {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+/* Active state */
+.flyover-menu.is-active {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.flyover__link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--color-brand-black);
-    text-decoration: none;
-    font-family: var(--font-family-main);
-    font-size: var(--fs-small);
-    transition: color 0.2s ease;
+/* ------------------------------------------------------------
+   MENU LINKS
+   ------------------------------------------------------------ */
+.flyover-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+
+  color: var(--color-text-body);
+  text-decoration: none;
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-small);
+
+  transition: color var(--ms-fast) var(--ease-standard);
 }
 
-.flyover__link:hover {
-    color: var(--color-brand-black);
+.flyover-link:hover {
+  color: var(--color-accent);
 }

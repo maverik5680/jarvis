@@ -1,69 +1,92 @@
 /* ============================================================
    BADGE COMPONENT
-   Generic and Signal variants with brand-defined shapes
+   Status indicators and label badges
    ============================================================ */
 
+/* ------------------------------------------------------------
+   BADGE GROUP
+   ------------------------------------------------------------ */
 .badge-group {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-family-main, inherit);
-  font-size: var(--fs-small, 0.875rem);
+  gap: var(--space-xs);
+  font-family: var(--font-family-main);
+  font-size: var(--fs-small);
 }
 
+/* ------------------------------------------------------------
+   BASE BADGE
+   ------------------------------------------------------------ */
 .badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   line-height: 1;
   white-space: nowrap;
-  font-weight: var(--fw-bold, 700);
+
+  font-weight: var(--fw-bold);
+  border-radius: var(--radius-pill);
+  padding: var(--space-xxs) var(--space-xs);
+
+  min-height: var(--badge-height, 20px);
+  font-size: var(--fs-tiny);
 }
 
-/* Generic Badge (Signal Red) */
-.badge--generic {
-  background-color: #ff0000;
-  /* Signal Red */
+/* ------------------------------------------------------------
+   LABEL BADGE (Accent)
+   ------------------------------------------------------------ */
+.badge-accent {
+  background-color: var(--color-accent);
   color: var(--color-white);
-  border-radius: 999px;
-  padding: 2px 6px;
-  font-size: 0.75rem;
-  min-width: 20px;
-  height: 20px;
 }
 
-.badge--generic-small {
-  background-color: #ff0000;
+/* ------------------------------------------------------------
+   NEUTRAL BADGE
+   ------------------------------------------------------------ */
+.badge-neutral {
+  background-color: var(--color-gray-300);
+  color: var(--color-brand-black);
+}
+
+/* ------------------------------------------------------------
+   SMALL DOT BADGE
+   ------------------------------------------------------------ */
+.badge-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
   padding: 0;
+  border-radius: 50%;
 }
 
-/* Signal Badges: Unique Shapes */
-.badge--signal {
+/* Accent dot */
+.badge-dot-accent {
+  background-color: var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   SIGNAL BADGES (Status Indicators)
+   ------------------------------------------------------------ */
+.badge-signal {
   width: 12px;
   height: 12px;
   flex-shrink: 0;
 }
 
-/* OK: Circular, Signal Green */
-.badge--signal-ok {
-  background-color: #00aa00;
-  /* Signal Green */
+/* OK — Green Circle */
+.badge-signal-ok {
+  background-color: var(--color-success);
   border-radius: 50%;
 }
 
-/* Warning: Rhombus, Signal Yellow */
-.badge--signal-warning {
-  background-color: #ffcc00;
-  /* Signal Yellow */
+/* Warning — Yellow Diamond */
+.badge-signal-warning {
+  background-color: var(--color-warning);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-/* Error/Critical: Triangular, Signal Red */
-.badge--signal-error {
-  background-color: #ff0000;
-  /* Signal Red */
+/* Error — Red Triangle */
+.badge-signal-error {
+  background-color: var(--color-error);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }

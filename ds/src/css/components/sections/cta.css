@@ -1,68 +1,85 @@
 /* ============================================================
-   SECTION: CTA (Call to Action)
+   CTA SECTION (Call to Action)
+   Token-driven, Audi-sharp
    ============================================================ */
 
+/* ------------------------------------------------------------
+   BASE CTA WRAPPER
+   ------------------------------------------------------------ */
 .cta {
   text-align: center;
-  border-radius: 2px; /* Precision Audi-style edge */
+  border-radius: var(--radius-xs);
+  padding: var(--space-2xl) var(--space-xl);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-body);
 }
 
-/* 1. Layout Structure */
-.cta__content {
+/* ------------------------------------------------------------
+   CONTENT LAYOUT
+   ------------------------------------------------------------ */
+.cta-content {
   max-width: 720px;
-  margin: 0 auto;
+  margin-inline: auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+
+  gap: var(--space-xl);
 }
 
-/* 2. Typography Hierarchy */
-.cta__title {
+/* ------------------------------------------------------------
+   TYPOGRAPHY
+   ------------------------------------------------------------ */
+.cta-title {
   font-family: var(--font-family-main);
   font-weight: var(--fw-bold);
   font-size: var(--fs-h2);
   line-height: var(--lh-tight);
 }
 
-.cta__description {
+.cta-description {
   font-family: var(--font-family-main);
   font-size: var(--fs-body);
-  color: inherit; /* Allows text to adapt to light/dark backgrounds */
+  color: inherit;
   opacity: 0.9;
   max-width: 540px;
 }
 
-/* 3. Style Variants for Different Clients */
+/* ------------------------------------------------------------
+   VARIANTS
+   ------------------------------------------------------------ */
 
-/* The "Bold Brand" Variant (Current Construction Client) */
-.cta--brand {
-  background-color: var(--color-brand-blue);
+/* Bold Brand */
+.cta-brand {
+  background-color: var(--color-accent-strong);
   color: var(--color-white);
 }
 
-/* The "Sophisticated Dark" Variant (Architecture/Finance) */
-.cta--dark {
+/* Sophisticated Dark */
+.cta-dark {
   background-color: var(--color-brand-black);
   color: var(--color-white);
 }
 
-/* The "Minimalist" Variant (Medical/Tech) */
-.cta--outline {
+/* Minimalist Outline */
+.cta-outline {
   background-color: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  color: var(--color-brand-black);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  color: var(--color-text-body);
 }
 
-/* 4. Action Group */
-.cta__actions {
+/* ------------------------------------------------------------
+   ACTION GROUP
+   ------------------------------------------------------------ */
+.cta-actions {
   display: flex;
-  gap: 16px;
+  gap: var(--space-m);
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .cta__actions {
+@media (max-width: var(--breakpoint-m)) {
+  .cta-actions {
     flex-direction: column;
     width: 100%;
   }

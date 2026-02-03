@@ -1,25 +1,37 @@
 /* ============================================================
-   ICON-BUTTONS.CSS
-   Square/Circular action triggers for icons only
+   ICON BUTTONS
+   Square or circular action triggers for icons only
    ============================================================ */
 
+/* ------------------------------------------------------------
+   BASE ICON BUTTON
+   ------------------------------------------------------------ */
 .icon-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 0;
-  /* Reset standard button padding */
   cursor: pointer;
-  border: 1px solid transparent;
-  background-color: transparent;
-  transition: all var(--ms-base) var(--ease-standard);
+
+  width: var(--space-l);
+  height: var(--space-l);
+
+  border: var(--border-width-thin) solid transparent;
   border-radius: var(--radius-sm);
-  
-  /*style sharp precision */
+
+  background-color: transparent;
   color: var(--color-gray-700);
+
+  transition:
+    background-color var(--ms-base) var(--ease-standard),
+    border-color var(--ms-base) var(--ease-standard),
+    color var(--ms-base) var(--ease-standard);
 }
 
-/* 1. SIZING (Linked to your spacing/sizing tokens) */
+/* ------------------------------------------------------------
+   SIZES
+   ------------------------------------------------------------ */
 .icon-button-sm {
   width: var(--space-m);
   height: var(--space-m);
@@ -35,41 +47,46 @@
   height: var(--space-xl);
 }
 
-/* 2. VARIANTS */
+/* ------------------------------------------------------------
+   VARIANTS
+   ------------------------------------------------------------ */
+
+/* GHOST */
 .icon-button-ghost:hover {
   background-color: var(--color-gray-100);
   color: var(--color-brand-black);
 }
 
+/* FILLED (Black) */
 .icon-button-filled {
   background-color: var(--color-brand-black);
   color: var(--color-white);
 }
-
 .icon-button-filled:hover {
   background-color: var(--color-brand-black-hover);
 }
 
+/* OUTLINE */
 .icon-button-outline {
   border-color: var(--color-gray-300);
 }
-
 .icon-button-outline:hover {
   border-color: var(--color-brand-black);
   color: var(--color-brand-black);
 }
 
-/* BRAND ACCENT VARIANTS */
-.icon-button-filled--brand {
-  background-color: var(--color-brand-blue);
+/* BRAND ACCENT (Orange) */
+.icon-button-filled--accent {
+  background-color: var(--color-accent);
   color: var(--color-white);
 }
-
-.icon-button-filled--brand:hover {
-  background-color: var(--color-brand-blue-hover);
+.icon-button-filled--accent:hover {
+  background-color: var(--color-brand-orange-hover);
 }
 
-/* 3. SHAPE OVERRIDE */
+/* ------------------------------------------------------------
+   SHAPE OVERRIDE
+   ------------------------------------------------------------ */
 .icon-button-circle {
-  border-radius: 50% !important;
+  border-radius: 50%;
 }

@@ -1,0 +1,76 @@
+/* ============================================================
+   PAGE LAYOUT SYSTEM
+   Token-driven, Audi-sharp foundation
+   Responsible ONLY for page spacing + rhythm
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   PAGE WRAPPER
+   (Structural wrapper — no spacing here)
+   ------------------------------------------------------------ */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-body);
+}
+
+/* ------------------------------------------------------------
+   MAIN CONTENT AREA
+   (Grows to fill remaining height)
+   ------------------------------------------------------------ */
+.page-content {
+  flex: 1;
+  padding-block: var(--space-xl);
+  padding-inline: var(--page-margin);
+}
+
+/* ------------------------------------------------------------
+   PAGE SECTIONS
+   (Vertical rhythm + horizontal breathing room)
+   ------------------------------------------------------------ */
+.page-section {
+  padding-block: var(--space-xl);
+  padding-inline: var(--page-margin);
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE CONTAINER
+   (Horizontal rhythm + max-width control)
+   ------------------------------------------------------------ */
+.page .container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--page-margin);
+  max-width: var(--layout-max-width);
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   (Container scaling)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-m)) {
+  .page .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: var(--breakpoint-l)) {
+  .page .container {
+    max-width: var(--layout-max-width-wide);
+  }
+}
+
+@media (min-width: var(--breakpoint-xl)) {
+  .page .container {
+    max-width: var(--layout-max-width-xl);
+  }
+}
+
+@media (min-width: var(--breakpoint-xxl)) {
+  .page .container {
+    max-width: var(--layout-max-width-xxl);
+  }
+}

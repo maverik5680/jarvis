@@ -1,0 +1,30 @@
+/* ============================================================
+   LAYOUT SHELL
+   Structural container for sidebar + main content
+   Token-driven, Audi-sharp
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE LAYOUT SHELL
+   ------------------------------------------------------------ */
+.layout-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Main content area */
+.main-area {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-body);
+}
+
+/* Optional: page content wrapper */
+.page-content {
+  width: 100%;
+  padding-inline: var(--page-margin);
+  padding-block: var(--space-xl);
+}

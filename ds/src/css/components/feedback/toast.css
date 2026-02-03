@@ -1,40 +1,54 @@
 /* ============================================================
    TOAST COMPONENT
-   Positioned in the upper or lower corner of the right-hand margin
+   Floating notifications (top or bottom right)
    ============================================================ */
 
+/* ------------------------------------------------------------
+   CONTAINER
+   ------------------------------------------------------------ */
 .toast-container {
   position: fixed;
-  right: 24px;
+  right: var(--space-l);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  z-index: 5000;
+  gap: var(--space-m);
   max-width: 400px;
+  z-index: var(--z-toast);
 }
 
-.toast-container--top {
-  top: 24px;
+.toast-top {
+  top: var(--space-l);
 }
 
-.toast-container--bottom {
-  bottom: 24px;
+.toast-bottom {
+  bottom: var(--space-l);
 }
 
+/* ------------------------------------------------------------
+   TOAST BASE
+   ------------------------------------------------------------ */
 .toast {
-  background: var(--color-brand-black);
-  color: var(--color-white);
-  padding: 16px 20px;
-  box-shadow: var(--shadow-l, 0 10px 15px -3px rgba(0, 0, 0, 0.2));
   display: flex;
-  gap: 16px;
   align-items: center;
-  border-radius: 2px;
-  animation: toast-in 0.3s var(--ease-out, ease-out);
+  gap: var(--space-m);
+
+  padding: var(--space-m) var(--space-l);
+
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-lg);
+
+  animation: toast-in var(--ms-fast) var(--ease-standard);
 }
 
+/* ------------------------------------------------------------
+   STRUCTURE
+   ------------------------------------------------------------ */
 .toast__content {
   flex: 1;
+  font-size: var(--fs-body);
 }
 
 .toast__close {
@@ -42,20 +56,44 @@
   border: none;
   color: inherit;
   cursor: pointer;
-  padding: 4px;
+
+  padding: var(--space-xxs);
   opacity: 0.7;
+
+  transition: opacity var(--ms-fast) var(--ease-standard);
 }
 
 .toast__close:hover {
   opacity: 1;
 }
 
+/* ------------------------------------------------------------
+   COLOR VARIANTS
+   ------------------------------------------------------------ */
+.toast-accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.toast-white {
+  background-color: var(--color-white);
+  color: var(--color-brand-black);
+  border: var(--border-width-thin) solid var(--color-gray-200);
+}
+
+.toast-gray {
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+}
+
+/* ------------------------------------------------------------
+   ANIMATION
+   ------------------------------------------------------------ */
 @keyframes toast-in {
   from {
-    transform: translateX(100%);
+    transform: translateX(40px);
     opacity: 0;
   }
-
   to {
     transform: translateX(0);
     opacity: 1;

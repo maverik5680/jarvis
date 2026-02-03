@@ -1,0 +1,22 @@
+/* ============================================================
+   SIZING TOKENS
+   Defines max-widths, layout dimensions, and common component
+   sizes used across the system.
+   ============================================================ */
+
+:root {
+  /* ------------------------------------------------------------
+     Container Max Widths (Mobile-first)
+     ------------------------------------------------------------ */
+  --size-max-xs: 20rem;  /* ~320px */
+  --size-max-s:  24rem;  /* ~384px */
+  --size-max-m:  28rem;  /* ~448px */
+  --size-max-l:  32rem;  /* ~512px */
+  --size-max-xl: 36rem;  /* ~576px */
+
+  /* ------------------------------------------------------------
+     Layout Dimensions
+     ------------------------------------------------------------ */
+  --size-sidebar: 250px;     /* Standard sidebar width */
+  --size-header-height: 4rem; /* Global header height */
+}

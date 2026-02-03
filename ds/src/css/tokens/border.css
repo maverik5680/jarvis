@@ -1,9 +1,0 @@
-:root {
-  /* Border Widths */
-  --border-width-1: 1px;
-  --border-width-2: 2px;
-
-  /* Semantic Border Colors */
-  --border-color-default: var(--color-light-gray); /* Pointing to your color tokens */
-  --border-color-strong:  var(--color-gray);
-}

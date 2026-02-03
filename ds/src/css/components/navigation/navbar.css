@@ -1,57 +1,70 @@
+/* ============================================================
+   NAVBAR — SIMPLE JARVIS VARIANT
+   Left: Jarvis
+   Right: Menu button
+   Light underline
+   ============================================================ */
+
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 32px;
+
+  padding-block: var(--space-m);
+  padding-inline: var(--page-margin);
+
+  background-color: var(--color-bg-surface);
+  border-bottom: var(--border-width-thin) solid var(--color-border-light);
+
+  flex-shrink: 0;
 }
 
-.navbar__link {
-  font-family: var(--font-family-extended, 'Prompt', sans-serif);
-  /* Proxied Extended */
-  font-size: var(--fs-small);
+/* ------------------------------------------------------------
+   LEFT SIDE — BRAND NAME
+   ------------------------------------------------------------ */
+.navbar__brand {
+  font-family: var(--font-family-extended);
+  font-size: var(--fs-body);
   font-weight: var(--fw-bold);
-  color: var(--color-gray-600);
-  text-decoration: none;
   text-transform: uppercase;
-  position: relative;
-  padding: 8px 0;
-  transition: color 0.2s ease;
+  letter-spacing: 0.04em;
+  color: var(--color-text-body);
 }
 
-.navbar__link:hover,
-.navbar__link--active {
-  color: var(--color-brand-black);
+/* ------------------------------------------------------------
+   RIGHT SIDE — MENU BUTTON
+   ------------------------------------------------------------ */
+.navbar__menu-btn {
+  background: none;
+  border: none;
+
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: var(--color-text-muted);
+  cursor: pointer;
+
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--radius-xs);
+
+  transition:
+    background-color var(--ms-fast) var(--ease-standard),
+    color var(--ms-fast) var(--ease-standard);
 }
 
-/* Precision indicator line */
-.navbar__link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-brand-orange);
-  transition: width 0.3s ease;
+.navbar__menu-btn:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-text-body);
 }
 
-.navbar__link:hover::after,
-.navbar__link--active::after {
-  width: 100%;
-}
-
-/* Mobile Dropdown Breakpoint */
-@media (max-width: 768px) {
+/* ------------------------------------------------------------
+   MOBILE BEHAVIOR
+   (Same layout — no collapse needed)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-m)) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    width: 100%;
-    /* Dropdown transition logic here */
-  }
-
-  .navbar__link {
-    width: 100%;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--color-gray-100);
+    padding-block: var(--space-m);
   }
 }

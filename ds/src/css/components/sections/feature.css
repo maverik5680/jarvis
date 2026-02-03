@@ -1,38 +1,71 @@
 /* ============================================================
-   SECTION: FEATURES (The Grid Organism)
+   FEATURES GRID (Organism)
+   Token-driven, Audi-sharp
    ============================================================ */
 
+/* ------------------------------------------------------------
+   GRID WRAPPER
+   ------------------------------------------------------------ */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+  width: 100%;
 }
 
+/* Responsive collapse */
+@media (max-width: var(--breakpoint-l)) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: var(--breakpoint-m)) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------
+   FEATURE ITEM
+   ------------------------------------------------------------ */
 .feature-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: var(--space-m);
 }
 
-.feature-item__icon-box {
-  width: 48px;
-  height: 48px;
-  background-color: rgba(0, 70, 255, 0.1); /* Brand Blue Tint */
+/* ------------------------------------------------------------
+   ICON BOX
+   ------------------------------------------------------------ */
+.feature-icon-box {
+  width: var(--feature-icon-size, 48px);
+  height: var(--feature-icon-size, 48px);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 2px;
+
+  background-color: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border-radius: var(--radius-xs);
 }
 
-.feature-item__title {
+/* ------------------------------------------------------------
+   TITLE
+   ------------------------------------------------------------ */
+.feature-title {
   font-family: var(--font-family-main);
   font-weight: var(--fw-bold);
   font-size: var(--fs-h4);
-  color: var(--color-brand-black);
+  color: var(--color-text-body);
 }
 
-.feature-item__text {
-  color: var(--color-gray-500);
+/* ------------------------------------------------------------
+   DESCRIPTION
+   ------------------------------------------------------------ */
+.feature-text {
+  color: var(--color-text-muted);
   line-height: var(--lh-base);
+  max-width: 60ch;
 }

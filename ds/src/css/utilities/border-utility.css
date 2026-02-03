@@ -1,36 +1,49 @@
 /* ============================================================
-   BORDER-UTILITY.CSS
-   Controls stroke, radius, and style
+   BORDER UTILITIES
+   Token‑based utilities for width, style, color, and sides.
    ============================================================ */
 
-/* ------------------------------
-   BORDER RADIUS (Corners)
-   ------------------------------ */
-.radius-none-utility   { border-radius: 0 !important; }
-.radius-sm-utility     { border-radius: 2px !important; } /* Precision look */
-.radius-md-utility     { border-radius: 4px !important; }
-.radius-lg-utility     { border-radius: 8px !important; }
-.radius-xl-utility     { border-radius: 16px !important; }
-.radius-full-utility   { border-radius: 9999px !important; } /* Pills/Circles */
+/* ------------------------------------------------------------
+   BORDER WIDTH (uses border-width tokens)
+   ------------------------------------------------------------ */
+.border-none   { border-width: var(--border-width-none); }
+.border-thin   { border-width: var(--border-width-thin); }
+.border-medium { border-width: var(--border-width-medium); }
+.border-thick  { border-width: var(--border-width-thick); }
 
-/* ------------------------------
-   BORDER WIDTH (Stroke)
-   ------------------------------ */
-.border-none-utility   { border-width: 0 !important; }
-.border-1-utility      { border: 1px solid var(--color-gray-200) !important; }
-.border-2-utility      { border: 2px solid var(--color-gray-200) !important; }
+/* ------------------------------------------------------------
+   BORDER STYLE
+   ------------------------------------------------------------ */
+.border-solid  { border-style: solid; }
+.border-dashed { border-style: dashed; }
+.border-dotted { border-style: dotted; }
 
-/* ------------------------------
-   BORDER SIDES
-   ------------------------------ */
-.border-t-1-utility    { border-top: 1px solid var(--color-gray-200) !important; }
-.border-b-1-utility    { border-bottom: 1px solid var(--color-gray-200) !important; }
-.border-l-1-utility    { border-left: 1px solid var(--color-gray-200) !important; }
-.border-r-1-utility    { border-right: 1px solid var(--color-gray-200) !important; }
+/* ------------------------------------------------------------
+   BORDER COLOR (token‑based)
+   ------------------------------------------------------------ */
+.border-default { border-color: var(--color-border); }
+.border-black   { border-color: var(--color-brand-black); }
+.border-orange  { border-color: var(--color-brand-orange); }
+.border-white   { border-color: var(--color-white); }
 
-/* ------------------------------
-   BORDER COLORS (Themed)
-   ------------------------------ */
-.border-brand-utility  { border-color: var(--color-brand-blue) !important; }
-.border-white-utility  { border-color: var(--color-white) !important; }
-.border-error-utility  { border-color: #D32F2F !important; }
+/* Neutral palette */
+.border-gray-100 { border-color: var(--color-gray-100); }
+.border-gray-200 { border-color: var(--color-gray-200); }
+.border-gray-300 { border-color: var(--color-gray-300); }
+.border-gray-400 { border-color: var(--color-gray-400); }
+.border-gray-500 { border-color: var(--color-gray-500); }
+.border-gray-600 { border-color: var(--color-gray-600); }
+.border-gray-700 { border-color: var(--color-gray-700); }
+.border-gray-800 { border-color: var(--color-gray-800); }
+.border-gray-900 { border-color: var(--color-gray-900); }
+
+/* Accent */
+.border-accent { border-color: var(--color-accent); }
+
+/* ------------------------------------------------------------
+   BORDER SIDES (default 1px solid border token)
+   ------------------------------------------------------------ */
+.border-t { border-top: var(--border-width-thin) solid var(--color-border); }
+.border-b { border-bottom: var(--border-width-thin) solid var(--color-border); }
+.border-l { border-left: var(--border-width-thin) solid var(--color-border); }
+.border-r { border-right: var(--border-width-thin) solid var(--color-border); }
