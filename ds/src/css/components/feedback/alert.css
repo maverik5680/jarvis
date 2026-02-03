@@ -1,119 +1,31 @@
-/* ============================================================
-   ALERT COMPONENT
-   Token-driven, brand-aligned notification banners
-   ============================================================ */
-
-.alert {
-  display: flex;
-  align-items: center;
-  gap: var(--space-m);
-
-  padding: var(--space-m) var(--space-l);
-
-  font-family: var(--font-family-main);
-  font-size: var(--fs-body);
-  line-height: 1.5;
-
-  border-radius: var(--radius-xs);
-  border: var(--border-width-thin) solid transparent;
-
-  position: relative;
-
-  transition:
-    background-color var(--ms-base) var(--ease-standard),
-    border-color var(--ms-base) var(--ease-standard),
-    color var(--ms-base) var(--ease-standard);
+.alert--global {
+  /* Styles for global alert */
 }
 
-/* ============================================================
-   GLOBAL / FIXED VARIANTS
-   ============================================================ */
-
-.alert-global {
-  width: 100%;
-  border: none;
+.alert--fixed-top {
+  /* Styles for fixed top alert */
 }
 
-.alert-fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: var(--z-overlay);
+.alert--fixed-bottom {
+  /* Styles for fixed bottom alert */
 }
 
-.alert-fixed-bottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: var(--z-overlay);
+.alert--container {
+  /* Styles for alert container */
 }
 
-/* Container alert (inside cards/sections) */
-.alert-container {
-  margin: var(--space-m) 0;
+.alert--black {
+  /* Styles for black alert */
 }
 
-/* ============================================================
-   COLOR VARIANTS (Brand palette only)
-   ============================================================ */
-
-/* Black */
-.alert-black {
-  background-color: var(--color-brand-black);
-  color: var(--color-white);
+.alert--accent {
+  /* Styles for accent alert */
 }
 
-/* Accent (Orange) */
-.alert-accent {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+.alert--white {
+  /* Styles for white alert */
 }
 
-/* White */
-.alert-white {
-  background-color: var(--color-white);
-  color: var(--color-brand-black);
-  border-color: var(--color-gray-200);
-}
-
-/* Gray */
-.alert-gray {
-  background-color: var(--color-gray-100);
-  color: var(--color-brand-black);
-}
-
-/* ============================================================
-   STRUCTURE
-   ============================================================ */
-
-.alert__content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: var(--space-s);
-  flex-wrap: wrap;
-}
-
-.alert__icon {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  color: inherit;
-}
-
-.alert__actions {
-  margin-left: auto;
-  display: flex;
-  gap: var(--space-s);
-}
-
-/* Slim buttons inside alerts */
-.alert .button,
-.alert .btn {
-  padding-top: var(--space-xxs);
-  padding-bottom: var(--space-xxs);
-  height: auto;
-  font-size: var(--fs-small);
+.alert--gray {
+  /* Styles for gray alert */
 }
