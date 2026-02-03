@@ -40,9 +40,8 @@ body {
   font-family: var(--font-family-main);
   font-size: var(--fs-body);
   line-height: var(--lh-base);
-  /* FIX: Use theme variable instead of hardcoded gray/white */
-  color: var(--color-text, #ffffff);
-  background-color: var(--color-bg, #000000);
+  color: var(--color-text-body);
+  background-color: var(--color-bg-surface);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -54,8 +53,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-family-main);
-  /* FIX: Ensure headings use the theme text color (White) */
-  color: var(--color-text, #ffffff);
+  color: var(--color-text-header);
   margin: 0 0 1rem 0;
   line-height: var(--lh-tight);
 }
@@ -81,7 +79,7 @@ h2 {
 /* ============================================================
    5. RESPONSIVE OVERRIDES
    ============================================================ */
-@media (min-width: 768px) {
+@media (min-width: var(--breakpoint-m)) {
   :root {
     --fs-h1: 3.00rem;
     --fs-h2: 2.25rem;

@@ -37,7 +37,7 @@
 
 /* Ensures the label aligns with the custom control */
 .checkbox-item .selection-control {
-  margin-top: 2px;
+  margin-top: var(--radius-xs);
 }
 
 /* ------------------------------------------------------------

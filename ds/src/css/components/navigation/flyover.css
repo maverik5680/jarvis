@@ -60,7 +60,7 @@
 
   display: none;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(var(--space-xs));
 
   transition:
     opacity var(--ms-medium) var(--ease-standard),

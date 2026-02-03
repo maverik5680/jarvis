@@ -32,7 +32,7 @@
 
   opacity: 0;
   visibility: hidden;
-  transform: translateY(4px);
+  transform: translateY(var(--space-xxs));
 
   transition:
     opacity var(--ms-base) var(--ease-standard),

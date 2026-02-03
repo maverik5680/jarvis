@@ -30,14 +30,14 @@
 /* Bullet List: Adds a bullet before the title */
 .list-group--bullets .list-item__title::before {
   content: "•";
-  margin-right: 8px;
+  margin-right: var(--space-xs);
   color: var(--color-gray-400);
 }
 
 /* Dash List: Adds a dash before the title */
 .list-group--dashes .list-item__title::before {
   content: "—";
-  margin-right: 8px;
+  margin-right: var(--space-xs);
   color: var(--color-gray-400);
 }
 
@@ -48,8 +48,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: var(--space-m);
+  padding: var(--space-m) var(--space-l);
   min-height: 72px;
   /* Extra "breath" for field use */
   border-bottom: var(--border-thin) solid var(--color-gray-200);
@@ -98,7 +98,7 @@
 }
 
 .list-item--selected .list-item__title {
-  color: var(--color-brand-primary, #000);
+  color: var(--color-brand-black);
 }
 
 /* ============================================================

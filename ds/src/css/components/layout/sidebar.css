@@ -64,8 +64,8 @@
 /* Chevron */
 .sidebar summary::after {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: var(--space-m);
+  height: var(--space-m);
 
   background-image: var(--icon-chevron-right);
   background-size: contain;
