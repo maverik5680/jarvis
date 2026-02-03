@@ -1,70 +1,11 @@
-/* ============================================================
-   INPUT ATOM
-   Token-driven, Audi-sharp form field styling
-   ============================================================ */
-
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-textarea,
-select {
-  width: 100%;
-  padding: var(--space-s) var(--space-m);
-  min-height: 48px; /* iOS zoom-safe */
-
-  font-family: var(--font-family-main);
-  font-size: 16px; /* Required to prevent iOS zoom */
-  color: var(--color-text-body);
-
-  background-color: var(--color-bg-surface);
-  border: var(--border-width-thin) solid var(--color-border);
-  border-radius: var(--radius-xs);
-
-  appearance: none;
-  transition:
-    border-color var(--ms-fast) var(--ease-standard),
-    box-shadow var(--ms-fast) var(--ease-standard),
-    background-color var(--ms-fast) var(--ease-standard);
+.is-focused {
+  // styles for focused state
 }
 
-/* ------------------------------------------------------------
-   FOCUS STATE
-   ------------------------------------------------------------ */
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+.is-disabled {
+  // styles for disabled state
 }
 
-/* ------------------------------------------------------------
-   PLACEHOLDER
-   ------------------------------------------------------------ */
-::placeholder {
-  color: var(--color-text-muted);
-  font-weight: var(--fw-light);
-}
-
-/* ------------------------------------------------------------
-   DISABLED STATE
-   ------------------------------------------------------------ */
-input:disabled,
-textarea:disabled,
-select:disabled {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-500);
-  cursor: not-allowed;
-}
-
-/* ------------------------------------------------------------
-   READONLY STATE
-   ------------------------------------------------------------ */
-input[readonly],
-textarea[readonly],
-select[readonly] {
-  background-color: var(--color-gray-50);
-  color: var(--color-text-muted);
+.is-loading {
+  // styles for loading state
 }
