@@ -1,0 +1,12 @@
+/* The content container */
+.u-main-area {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* The "Loading" state */
+.u-main-area.is-loading {
+    opacity: 0;
+    transform: translateY(10px); /* Subtle slide down */
+}
