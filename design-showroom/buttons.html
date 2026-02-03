@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colors.css">
+    <title>Buttons Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button-xs { font-size: 12px; }
+        .button-sm { font-size: 14px; }
+        .button-base { font-size: 16px; }
+        .button-lg { font-size: 18px; }
+        .button-xl { font-size: 20px; }
+        .button-primary {
+            background-color: var(--orange);
+            color: white;
+        }
+        .button-outline--orange {
+            border: 2px solid var(--orange);
+            background-color: transparent;
+            color: var(--orange);
+        }
+        .button-secondary {
+            background-color: gray;
+            color: white;
+        }
+        .button-black {
+            background-color: black;
+            color: white;
+        }
+        .button-outline {
+            border: 2px solid gray;
+            background-color: transparent;
+            color: gray;
+        }
+        .button-ghost {
+            background-color: transparent;
+            color: transparent;
+        }
+        .button:disabled {
+            background-color: lightgray;
+            color: darkgray;
+            cursor: not-allowed;
+        }
+        .is-active {
+            color: var(--orange);
+        }
+        @media (min-width: 600px) {
+            .button-group { display: flex; flex-wrap: wrap; }
+            .button-group { flex-direction: row; justify-content: space-between; }
+        }
+        @media (min-width: 900px) {
+            .button-group { flex-wrap: wrap; }
+            .button { width: calc(33.33% - 10px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Button Showcase</h1>
+    <div class="button-group">
+        <button class="button button-xs button-primary">Primary (XS)</button>
+        <button class="button button-sm button-primary">Primary (SM)</button>
+        <button class="button button-base button-primary">Primary (Base)</button>
+        <button class="button button-lg button-primary">Primary (LG)</button>
+        <button class="button button-xl button-primary">Primary (XL)</button>
+        <button class="button button-xs button-outline--orange">Outline Orange (XS)</button>
+        <button class="button button-sm button-outline--orange">Outline Orange (SM)</button>
+        <button class="button button-base button-outline--orange">Outline Orange (Base)</button>
+        <button class="button button-lg button-outline--orange">Outline Orange (LG)</button>
+        <button class="button button-xl button-outline--orange">Outline Orange (XL)</button>
+        <button class="button button-xs button-secondary">Secondary (XS)</button>
+        <button class="button button-sm button-black">Black (SM)</button>
+        <button class="button button-xs button-ghost">Ghost (XS)</button>
+        <button class="button button-xs button-secondary" disabled>Disabled (XS)</button>
+        <button class="button button-xs button-primary" loading>Loading (XS)</button>
+    </div>
+</body>
+</html>
