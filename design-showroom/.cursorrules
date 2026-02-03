@@ -1,0 +1,17 @@
+# JARVIS Design System Rules
+
+## CSS Guidelines
+- **No Magic Numbers:** Never use hardcoded pixel values (px). Always use tokens from `ds/src/css/tokens/`.
+- **Z-Index:** Never use raw integers for z-index. Only use `var(--z-index-*)` tokens.
+- **Colors:** Do not use hex codes or rgba() directly in components. Use semantic color tokens.
+- **Naming:** Follow the ITCSS architecture already established in the `ds/src/css/` folder.
+
+## Refactoring Protocol
+- When asked to fix a style, check `tokens/` first. 
+- If a required token is missing (e.g., a specific height), ask the user to define it in `layout-sizes.css` instead of hardcoding a value.
+
+## File Structure
+- Tokens: `ds/src/css/tokens/`
+- Base: `ds/src/css/base/`
+- Components: `ds/src/css/components/`
+- Utilities: `ds/src/css/utilities/`
