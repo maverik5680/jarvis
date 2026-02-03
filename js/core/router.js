@@ -63,7 +63,7 @@ async function navigateToPage(url, pushState = true) {
         }
 
         // Update active links in sidebar
-        const sidebar = document.querySelector('.u-sidebar');
+        const sidebar = document.querySelector('.sidebar');
         if (sidebar) {
             updateActiveLinks(sidebar);
         }
