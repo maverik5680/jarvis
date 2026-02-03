@@ -1,0 +1,64 @@
+/* ============================================================
+   BACKGROUND UTILITIES
+   Token-driven background colors, images, and helpers
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BACKGROUND COLORS (Token-driven)
+   ------------------------------------------------------------ */
+.bg-surface   { background-color: var(--color-bg-surface); }
+.bg-elevated  { background-color: var(--color-bg-elevated); }
+.bg-subtle    { background-color: var(--color-bg-subtle); }
+.bg-accent    { background-color: var(--color-accent); }
+
+.bg-white     { background-color: var(--color-white); }
+.bg-black     { background-color: var(--color-brand-black); }
+
+/* Neutral palette */
+.bg-gray-50   { background-color: var(--color-gray-50); }
+.bg-gray-100  { background-color: var(--color-gray-100); }
+.bg-gray-200  { background-color: var(--color-gray-200); }
+.bg-gray-300  { background-color: var(--color-gray-300); }
+.bg-gray-400  { background-color: var(--color-gray-400); }
+.bg-gray-500  { background-color: var(--color-gray-500); }
+.bg-gray-600  { background-color: var(--color-gray-600); }
+.bg-gray-700  { background-color: var(--color-gray-700); }
+.bg-gray-800  { background-color: var(--color-gray-800); }
+.bg-gray-900  { background-color: var(--color-gray-900); }
+
+/* Brand palette */
+.bg-brand-blue   { background-color: var(--color-brand-blue); }
+.bg-brand-orange { background-color: var(--color-brand-orange); }
+
+/* ------------------------------------------------------------
+   BACKGROUND IMAGES
+   ------------------------------------------------------------ */
+.bg-cover   { background-size: cover; }
+.bg-contain { background-size: contain; }
+.bg-auto    { background-size: auto; }
+
+.bg-center  { background-position: center; }
+.bg-top     { background-position: top; }
+.bg-bottom  { background-position: bottom; }
+.bg-left    { background-position: left; }
+.bg-right   { background-position: right; }
+
+/* ------------------------------------------------------------
+   BACKGROUND REPEAT
+   ------------------------------------------------------------ */
+.bg-no-repeat { background-repeat: no-repeat; }
+.bg-repeat    { background-repeat: repeat; }
+.bg-repeat-x  { background-repeat: repeat-x; }
+.bg-repeat-y  { background-repeat: repeat-y; }
+
+/* ------------------------------------------------------------
+   BACKDROP FILTERS (Optional but powerful)
+   ------------------------------------------------------------ */
+.backdrop-blur-s  { backdrop-filter: blur(var(--blur-s)); }
+.backdrop-blur-m  { backdrop-filter: blur(var(--blur-m)); }
+.backdrop-blur-l  { backdrop-filter: blur(var(--blur-l)); }
+
+/* ------------------------------------------------------------
+   BACKGROUND TRANSPARENCY (Token-driven if you support alpha)
+   ------------------------------------------------------------ */
+.bg-transparent { background-color: transparent; }
