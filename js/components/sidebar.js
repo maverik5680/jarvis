@@ -4,7 +4,7 @@
  * Initializes sidebar behaviors: Active States and Accordion logic.
  */
 export function initSidebar() {
-    const sidebar = document.querySelector('.u-sidebar');
+    const sidebar = document.querySelector('.sidebar');
     if (!sidebar) return;
 
     // 1. Set initial active state and open parent details
