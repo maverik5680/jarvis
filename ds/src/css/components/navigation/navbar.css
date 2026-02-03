@@ -1,70 +1,23 @@
-/* ============================================================
-   NAVBAR — SIMPLE JARVIS VARIANT
-   Left: Jarvis
-   Right: Menu button
-   Light underline
-   ============================================================ */
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding-block: var(--space-m);
-  padding-inline: var(--page-margin);
-
-  background-color: var(--color-bg-surface);
-  border-bottom: var(--border-width-thin) solid var(--color-border-light);
-
-  flex-shrink: 0;
+.is-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* ------------------------------------------------------------
-   LEFT SIDE — BRAND NAME
-   ------------------------------------------------------------ */
-.navbar__brand {
-  font-family: var(--font-family-extended);
-  font-size: var(--fs-body);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-text-body);
+.is-loading {
+  cursor: wait;
 }
 
-/* ------------------------------------------------------------
-   RIGHT SIDE — MENU BUTTON
-   ------------------------------------------------------------ */
-.navbar__menu-btn {
-  background: none;
-  border: none;
-
-  font-size: var(--fs-small);
-  font-weight: var(--fw-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-
-  color: var(--color-text-muted);
-  cursor: pointer;
-
-  padding: var(--space-xs) var(--space-s);
-  border-radius: var(--radius-xs);
-
-  transition:
-    background-color var(--ms-fast) var(--ease-standard),
-    color var(--ms-fast) var(--ease-standard);
+.is-expanded {
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
-.navbar__menu-btn:hover {
-  background-color: var(--color-gray-100);
-  color: var(--color-text-body);
+.is-active {
+  background-color: #007bff;
 }
 
-/* ------------------------------------------------------------
-   MOBILE BEHAVIOR
-   (Same layout — no collapse needed)
-   ------------------------------------------------------------ */
-@media (max-width: var(--breakpoint-m)) {
-  .navbar {
-    padding-block: var(--space-m);
-  }
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.6;
 }
