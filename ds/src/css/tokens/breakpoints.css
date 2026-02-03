@@ -1,0 +1,13 @@
+/* ============================================================
+   BREAKPOINT TOKENS
+   Canonical responsive breakpoint tokens used across the design system
+   ============================================================ */
+
+:root {
+  --breakpoint-xs: 320px;
+  --breakpoint-s: 480px;
+  --breakpoint-m: 768px;
+  --breakpoint-l: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1600px;
+}
