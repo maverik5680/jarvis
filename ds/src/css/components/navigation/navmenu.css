@@ -1,129 +1,176 @@
 /* ============================================================
-   NAVIGATION: NAVMENU (Mobile/Drawer)
+   NAVMENU (Mobile Drawer Navigation)
+   Token-driven, Audi-sharp
    ============================================================ */
 
+/* ------------------------------------------------------------
+   ROOT TOKENS (Optional override layer)
+   ------------------------------------------------------------ */
 :root {
-  --nav-bg: #000000;
-  --nav-text: #FFFFFF;
-  --nav-text-dim: rgba(255, 255, 255, 0.7);
-  --nav-border: rgba(255, 255, 255, 0.1);
-  --nav-orange: #FF6600;
-  /* Your Brand Orange */
+  --navmenu-bg: var(--color-brand-black);
+  --navmenu-text: var(--color-white);
+  --navmenu-text-dim: color-mix(in srgb, var(--color-white) 70%, transparent);
+  --navmenu-border: color-mix(in srgb, var(--color-white) 10%, transparent);
+  --navmenu-accent: var(--color-accent);
 }
 
+/* ------------------------------------------------------------
+   BASE NAVMENU
+   ------------------------------------------------------------ */
 .navmenu {
   position: fixed;
   top: 0;
   left: -100%;
-  /* Hidden by default */
+
   width: 100%;
   max-width: 320px;
   height: 100vh;
-  background-color: var(--nav-bg);
-  z-index: 1100;
-  padding: 40px 24px;
+
+  background-color: var(--navmenu-bg);
+  padding-block: var(--space-2xl);
+  padding-inline: var(--space-xl);
+
   display: flex;
   flex-direction: column;
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+
   overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+
+  z-index: var(--z-drawer);
+
+  transition:
+    left var(--ms-medium) var(--ease-standard);
 }
 
 .navmenu.is-open {
   left: 0;
 }
 
-/* --- VARIANT 1: SIMPLE LINK --- */
-.navmenu__link {
+/* ============================================================
+   SIMPLE LINK
+   ------------------------------------------------------------ */
+.navmenu-link {
   display: block;
-  padding: 16px 0;
-  font-family: var(--font-family-main, sans-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--nav-text);
+  padding-block: var(--space-m);
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-bold);
+
+  color: var(--navmenu-text);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: color 0.2s ease;
+
+  transition: color var(--ms-fast) var(--ease-standard);
 }
 
-.navmenu__link:hover,
-.navmenu__link--active {
-  color: var(--nav-orange);
+.navmenu-link:hover,
+.navmenu-link-active {
+  color: var(--navmenu-accent);
 }
 
-/* --- VARIANT 2: COLLAPSIBLE (ACCORDION) --- */
-.navmenu__item--collapsible {
+.navmenu-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--navmenu-accent);
+}
+
+/* ============================================================
+   COLLAPSIBLE SECTIONS (Accordion)
+   ------------------------------------------------------------ */
+.navmenu-item-collapsible {
   width: 100%;
 }
 
-.navmenu__trigger {
+.navmenu-trigger {
   width: 100%;
   background: none;
   border: none;
-  padding: 16px 0;
+
+  padding-block: var(--space-m);
   text-align: left;
-  font-family: var(--font-family-main, sans-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--nav-text);
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-h6);
+  font-weight: var(--fw-bold);
+
+  color: var(--navmenu-text);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+
   cursor: pointer;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color 0.2s ease;
+
+  transition: color var(--ms-fast) var(--ease-standard);
 }
 
-.navmenu__trigger:hover {
-  color: var(--nav-orange);
+.navmenu-trigger:hover {
+  color: var(--navmenu-accent);
 }
 
-/* The Sub-menu Dropdown */
-.navmenu__dropdown {
+.navmenu-trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--navmenu-accent);
+}
+
+/* Dropdown container */
+.navmenu-dropdown {
   max-height: 0;
-  /* Hidden state */
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 0;
+
+  transition: max-height var(--ms-medium) var(--ease-standard);
 }
 
-/* Active State to Open Dropdown */
-.navmenu__item--active .navmenu__dropdown {
+/* Active state */
+.navmenu-item-active .navmenu-dropdown {
   max-height: 500px;
-  /* Adjust based on content */
-  margin-bottom: 16px;
+  margin-bottom: var(--space-m);
 }
 
-/* Sub-links with the bottom border */
-.navmenu__sub-link {
+/* Sub-links */
+.navmenu-sub-link {
   display: block;
-  padding: 14px 0;
-  font-size: 0.95rem;
-  color: var(--nav-text-dim);
+  padding-block: var(--space-s);
+
+  font-size: var(--fs-body);
+  color: var(--navmenu-text-dim);
+
   text-decoration: none;
-  border-bottom: 1px solid var(--nav-border);
-  transition: all 0.2s ease;
+  border-bottom: var(--border-width-thin) solid var(--navmenu-border);
+
+  transition:
+    color var(--ms-fast) var(--ease-standard),
+    padding-inline-start var(--ms-fast) var(--ease-standard);
 }
 
-.navmenu__sub-link:last-child {
+.navmenu-sub-link:last-child {
   border-bottom: none;
 }
 
-.navmenu__sub-link:hover,
-.navmenu__sub-link--active {
-  color: var(--nav-orange) !important;
-  padding-left: 8px;
-  /* Smooth slide-in effect */
+.navmenu-sub-link:hover,
+.navmenu-sub-link-active {
+  color: var(--navmenu-accent);
+  padding-inline-start: var(--space-s);
 }
 
-/* Footer Section */
-.navmenu__footer {
+.navmenu-sub-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--navmenu-accent);
+}
+
+/* ------------------------------------------------------------
+   FOOTER SECTION
+   ------------------------------------------------------------ */
+.navmenu-footer {
   margin-top: auto;
-  padding-top: 32px;
-  border-top: 1px solid var(--nav-border);
+  padding-top: var(--space-xl);
+  border-top: var(--border-width-thin) solid var(--navmenu-border);
 }

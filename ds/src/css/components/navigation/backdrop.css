@@ -1,21 +1,77 @@
+/* ============================================================
+   BACKDROP SYSTEM
+   Token-driven, Audi-sharp overlay layer
+   ============================================================ */
+
 .backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  /* The "Audi" premium touch */
-  z-index: 1000;
+
+  background-color: color-mix(in srgb, var(--color-brand-black) 40%, transparent);
+  backdrop-filter: blur(var(--backdrop-blur, var(--blur-s)));
+
+  z-index: var(--z-backdrop);
+
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  transition:
+    opacity var(--ms-medium) var(--ease-standard),
+    visibility var(--ms-medium) var(--ease-standard);
 }
 
+/* Active state */
 .backdrop.is-active {
   opacity: 1;
   visibility: visible;
 }
 
-.backdrop--modal {
-  background-color: rgba(0, 0, 0, 0.9);
+/* ============================================================
+   VARIANT: MODAL BACKDROP
+   Darker, no blur
+   ============================================================ */
+
+.backdrop-modal {
+  background-color: color-mix(in srgb, var(--color-brand-black) 90%, transparent);
   backdrop-filter: none;
+}
+
+/* ============================================================
+   VARIANT: LIGHT BACKDROP
+   For drawers, menus, subtle overlays
+   ============================================================ */
+
+.backdrop-light {
+  background-color: color-mix(in srgb, var(--color-brand-black) 20%, transparent);
+  backdrop-filter: blur(var(--backdrop-blur, var(--blur-s)));
+}
+
+/* ============================================================
+   VARIANT: HEAVY BLUR
+   Premium glass effect
+   ============================================================ */
+
+.backdrop-blur-heavy {
+  backdrop-filter: blur(12px);
+  background-color: color-mix(in srgb, var(--color-brand-black) 30%, transparent);
+}
+
+/* ============================================================
+   VARIANT: TRANSPARENT INTERACTION LAYER
+   For click-capture without visual dimming
+   ============================================================ */
+
+.backdrop-clear {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+/* ============================================================
+   VARIANT: SIDEBAR BACKDROP
+   Matches your sidebar overlay style
+   ============================================================ */
+
+.backdrop-sidebar {
+  background-color: color-mix(in srgb, var(--color-brand-black) 70%, transparent);
+  backdrop-filter: blur(var(--blur-s));
 }

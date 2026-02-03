@@ -1,333 +1,192 @@
 /* ============================================================
-   BASE BUTTON 
+   BUTTON COMPONENT
+   Token-driven, scalable button variants
    ============================================================ */
 
-   
-:root {
-  --btn-base-font-size: 16px;
-}
-
-.btn {
-  --btn-font-size: var(--btn-base-font-size);
-  --btn-min-width: calc(var(--btn-font-size) * 9);
+/* ------------------------------------------------------------
+   BASE BUTTON
+   ------------------------------------------------------------ */
+.button {
+  appearance: none;
+  -webkit-appearance: none;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--space-xs);
 
-  /* Field-ready touch target */
-  padding: 12px 24px;
-  min-height: 48px;
-  min-width: var(--btn-min-width);
+  padding: var(--space-xs) var(--space-m);
+  border-radius: var(--radius-m);
+  border: var(--border-width-thin) solid transparent;
 
-  /* Typography: Prompt */
-  font-family: 'Prompt', sans-serif;
-  font-size: var(--btn-font-size);
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  line-height: 1;
-
-  /* Precision Corners (Default) */
-  border-radius: 2px;
-  border: 1px solid transparent;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.2;
 
   cursor: pointer;
   transition:
-    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  user-select: none;
-  white-space: nowrap;
-  box-sizing: border-box;
-
-  /* Give a predictable default color instead of inherit */
-  color: var(--color-brand-black);
+    background-color var(--ms-base) var(--ease-standard),
+    color var(--ms-base) var(--ease-standard),
+    border-color var(--ms-base) var(--ease-standard),
+    box-shadow var(--ms-base) var(--ease-standard),
+    filter var(--ms-base) var(--ease-standard);
 }
 
-/* Response effect / Visual feedback */
-.btn:active:not(.btn--disabled) {
-  transform: scale(0.98);
-  filter: brightness(0.95);
+/* ------------------------------------------------------------
+   ACCESSIBILITY: FOCUS VISIBLE
+   ------------------------------------------------------------ */
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
 }
 
-.btn:visited {
-  color: inherit;
-}
-
-/* ============================================================
-   PILL STYLE
-   ============================================================ */
-
-
-.btn--pill {
-  border-radius: 999px;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-.btn--block {
-  display: flex;
-  width: 100%;
-}
-
-/* ============================================================
-   OUTLINE STYLE (Generic & White)
-   ============================================================ */
-/* Generic outline uses brand black by default */
-
-
-.btn--outline {
-  background-color: transparent;
-  border: 1px solid currentColor;
-  color: var(--color-brand-black);
-}
-
-.btn--outline:hover:not(.btn--disabled) {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* White outline explicitly uses white */
-.btn--outline-white {
-  background-color: transparent;
-  border: 2px solid var(--color-white);
-  color: var(--color-white);
-}
-
-.btn--outline-white:hover:not(.btn--disabled) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ============================================================
-   SIZES
-   ============================================================ */
-
-
-.btn--sm {
-  --btn-font-size: 16px;
-  padding: 8px 16px;
-  min-height: 40px;
-}
-
-.btn--md {
-  --btn-font-size: 18px;
-  padding: 12px 24px;
-  min-height: 48px;
-}
-
-.btn--lg {
-  --btn-font-size: 20px;
-  padding: 16px 32px;
-  min-height: 56px;
-}
-
-@media (max-width: 600px) {
-  .btn {
-    padding-left: 16px;
-    padding-right: 16px;
-    min-width: 0;
-  }
-}
-
-/* ============================================================
-   BRAND VARIANTS (Core Specification)
-   ============================================================ */
-
-/* PRIMARY BLACK */
-.btn--primary-black {
-  background-color: var(--color-brand-black);
-  color: var(--color-white);
-  border-color: var(--color-brand-black);
-}
-
-.btn--primary-black:hover:not(.btn--disabled) {
-  background-color: var(--color-brand-black-hover);
-  border-color: var(--color-brand-black-hover);
-}
-
-/* PRIMARY ORANGE */
-.btn--primary-orange {
-  background-color: var(--color-brand-orange);
-  color: var(--color-white);
-  border-color: var(--color-brand-orange);
-}
-
-.btn--primary-orange:hover:not(.btn--disabled) {
-  background-color: var(--color-brand-orange-hover);
-  border-color: var(--color-brand-orange-hover);
-}
-
-/* PRIMARY WHITE */
-.btn--primary-white {
-  background-color: var(--color-white);
-  color: var(--color-brand-black);
-  border-color: var(--color-white);
-}
-
-.btn--primary-white:hover:not(.btn--disabled) {
-  background-color: var(--color-gray-300);
-  border-color: var(--color-gray-300);
-}
-
-/* SECONDARY BLACK */
-.btn--secondary-black {
-  background-color: transparent;
-  color: var(--color-brand-black);
-  border-color: var(--color-brand-black);
-}
-
-.btn--secondary-black:hover:not(.btn--disabled) {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* SECONDARY ORANGE */
-.btn--secondary-orange {
-  background-color: transparent;
-  color: var(--color-brand-orange);
-  border-color: var(--color-brand-orange);
-}
-
-.btn--secondary-orange:hover:not(.btn--disabled) {
-  background-color: rgba(255, 95, 0, 0.05);
-}
-
-/* SECONDARY WHITE */
-.btn--secondary-white {
-  background-color: transparent;
-  color: var(--color-white);
-  border-color: var(--color-white);
-}
-
-.btn--secondary-white:hover:not(.btn--disabled) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ORANGE OUTLINE (Intentional Accent) */
-.btn--brand-outline {
-  background-color: transparent;
-  border-color: var(--color-brand-orange);
-  color: var(--color-brand-orange);
-  border-width: 2px;
-}
-
-.btn--brand-outline:hover:not(.btn--disabled) {
-  background-color: var(--color-brand-orange);
-  color: var(--color-white);
-}
-
-/* ============================================================
-   GHOST VARIANTS (Low Emphasis / Text Only)
-   ============================================================ */
-
-/* GHOST BLACK */
-.btn--ghost-black {
-  background-color: transparent;
-  color: var(--color-brand-black);
-  border-color: transparent;
-}
-
-.btn--ghost-black:hover:not(.btn--disabled) {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* GHOST ORANGE */
-.btn--ghost-orange {
-  background-color: transparent;
-  color: var(--color-brand-orange);
-  border-color: transparent;
-}
-
-.btn--ghost-orange:hover:not(.btn--disabled) {
-  background-color: rgba(255, 95, 0, 0.08); /* Subtle orange tint */
-}
-
-/* GHOST WHITE */
-.btn--ghost-white {
-  background-color: transparent;
-  color: var(--color-white);
-  border-color: transparent;
-}
-
-.btn--ghost-white:hover:not(.btn--disabled) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-/* ============================================================
-   UI & UTILITY VARIANTS
-   ============================================================ */
-
-.btn--text {
-  background-color: transparent;
-  padding-left: 0;
-  padding-right: 0;
-  min-width: 0;
-  border: none;
-  color: var(--color-brand-black);
-  gap: 8px;
-}
-
-.btn--text .btn__arrow {
-  display: inline-flex;
-  transition: transform 0.2s ease;
-}
-
-.btn--text:hover:not(.btn--disabled) .btn__arrow {
-  transform: translateX(4px);
-}
-
-.btn--system-icon {
-  background-color: transparent;
-  color: var(--color-brand-black);
-  border: none;
-  min-width: auto;
-  padding: 8px;
-  border-radius: 4px;
-}
-
-.btn--system-icon:hover:not(.btn--disabled) {
-  background-color: var(--color-gray-100);
-}
-
-.btn--floating {
-  position: fixed;
-  z-index: 100;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 999px;
-  min-width: auto;
-  padding: 16px;
-  bottom: 32px;
-  right: 32px;
-  background-color: var(--color-brand-orange);
-  color: var(--color-white);
-}
-
-@media (max-width: 767px) {
-  .btn--sticky-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    z-index: 200;
-    min-height: 60px;
-    display: flex;
-  }
-}
-
-
-/* ============================================================
+/* ------------------------------------------------------------
    DISABLED STATE
-   ============================================================ */
-.btn--disabled,
-.btn--disabled:hover,
-.btn--disabled:active {
-  opacity: 0.4;
+   ------------------------------------------------------------ */
+.button:disabled,
+.button.is-disabled {
+  opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-  transform: none;
-  filter: none;
+}
+
+/* ------------------------------------------------------------
+   LOADING STATE (optional)
+   ------------------------------------------------------------ */
+.button.is-loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.button.is-loading .button-label {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------
+   SIZE VARIANTS
+   ------------------------------------------------------------ */
+.button-xs {
+  padding: var(--space-xxs) var(--space-s);
+  font-size: var(--fs-small);
+}
+
+.button-sm {
+  padding: var(--space-xs) var(--space-s);
+  font-size: var(--fs-body);
+}
+
+.button-lg {
+  padding: var(--space-s) var(--space-l);
+  font-size: var(--fs-large);
+}
+
+.button-xl {
+  padding: var(--space-m) var(--space-xl);
+  font-size: var(--fs-xl);
+}
+
+/* ------------------------------------------------------------
+   COLOR VARIANTS
+   ------------------------------------------------------------ */
+
+/* PRIMARY — Brand Orange */
+.button-primary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+.button-primary:hover {
+  background-color: var(--color-brand-orange-hover);
+}
+.button-primary:active {
+  filter: brightness(0.9);
+}
+
+/* SECONDARY — Neutral Gray */
+.button-secondary {
+  background-color: var(--color-gray-200);
+  color: var(--color-brand-black);
+}
+.button-secondary:hover {
+  background-color: var(--color-gray-300);
+}
+.button-secondary:active {
+  background-color: var(--color-gray-400);
+}
+
+/* BLACK / INVERSE */
+.button-black {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+}
+.button-black:hover {
+  background-color: var(--color-brand-black-hover);
+}
+.button-black:active {
+  filter: brightness(0.9);
+}
+
+/* OUTLINE */
+.button-outline {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-body);
+}
+.button-outline:hover {
+  background-color: var(--color-gray-800);
+}
+.button-outline:active {
+  background-color: var(--color-gray-700);
+}
+
+/* GHOST */
+.button-ghost {
+  background-color: transparent;
+  color: var(--color-text-body);
+}
+.button-ghost:hover {
+  background-color: var(--color-gray-800);
+}
+.button-ghost:active {
+  background-color: var(--color-gray-700);
+}
+
+/* DANGER */
+.button-danger {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+.button-danger:hover {
+  background-color: var(--color-error-dark);
+}
+.button-danger:active {
+  filter: brightness(0.9);
+}
+
+/* SUCCESS */
+.button-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+.button-success:hover {
+  background-color: var(--color-success-dark);
+}
+.button-success:active {
+  filter: brightness(0.9);
+}
+
+/* ------------------------------------------------------------
+   ICON-ONLY BUTTON
+   ------------------------------------------------------------ */
+.button-icon {
+  padding: var(--space-xs);
+  width: var(--space-xxl);
+  height: var(--space-xxl);
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------
+   FULL WIDTH
+   ------------------------------------------------------------ */
+.button-full {
+  width: 100%;
 }

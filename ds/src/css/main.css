@@ -1,39 +1,60 @@
 /* ============================================================
-   1. TOKENS & THEMES (The DNA)
+   1. SETTINGS & TOKENS (The DNA)
+   Defined first so variables are available to all following files.
    ============================================================ */
-@import "./tokens/variable.css";
 @import "./tokens/colors.css";
 @import "./tokens/spacing.css";
-@import "./tokens/sizing.css";
+@import "./tokens/layout-sizes.css";
 @import "./tokens/radius.css";
-@import "./tokens/border.css";
+@import "./tokens/border-width.css";
+@import "./tokens/blur.css";
 @import "./tokens/shadow.css";
+@import "./tokens/elevation.css";
 @import "./tokens/opacity.css";
 @import "./tokens/ratios.css";
 @import "./tokens/z-index.css";
 @import "./tokens/motion.css";
 @import "./tokens/breakpoint.css";
 
-/* THEME: Brand Themes - Loaded early to set variables */
-@import "./themes/light.css";
-@import "./themes/dark.css";
-
 /* ============================================================
-   2. BASE (Resets & Typography)
+   2. GENERIC (The Baseline)
+   Standardizing the browser environment.
    ============================================================ */
 @import "./base/reset.css";
 @import "./base/global.css";
 @import "./base/typography.css";
 
 /* ============================================================
-   3. COMPONENTS (UI Building Blocks)
+   3. THEMES (The Skin)
    ============================================================ */
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
+/* ============================================================
+   4. OBJECTS (The Skeleton)
+   Class-based patterns for layout without cosmetic styling.
+   ============================================================ */
+@import "./components/layout/layout-shell.css";
+@import "./components/layout/page-layout.css";
+@import "./components/layout/page-margin.css";
+@import "./components/layout/container.css";
+@import "./components/layout/grid.css";
+@import "./components/layout/subdivisions.css";
+
+/* ============================================================
+   5. COMPONENTS (The Molecules)
+   Specific UI elements. Organized by functional groups.
+   ============================================================ */
+
+/* Layout Parts */
+@import "./components/layout/header.css";
+@import "./components/layout/sidebar.css";
+@import "./components/layout/footer.css";
 
 /* Actions */
 @import "./components/actions/button.css";
 @import "./components/actions/button-group.css";
 @import "./components/actions/dropdown.css";
-@import "./components/actions/menu.css";
 @import "./components/actions/icon-button.css";
 
 /* Data Display */
@@ -41,30 +62,27 @@
 @import "./components/data-display/badge.css";
 @import "./components/data-display/card.css";
 @import "./components/data-display/list.css";
-@import "./components/data-display/skeleton.css";
 @import "./components/data-display/table.css";
 @import "./components/data-display/tag.css";
 
 /* Feedback */
 @import "./components/feedback/alert.css";
 @import "./components/feedback/popover.css";
-@import "./components/feedback/progress.css";
+@import "./components/feedback/progress-bar.css";
 @import "./components/feedback/spinner.css";
 @import "./components/feedback/toast.css";
 @import "./components/feedback/tooltip.css";
 
-/* Inputs */
+/* Inputs & Forms */
 @import "./components/inputs/input.css";
+@import "./components/inputs/textfield.css";
 @import "./components/inputs/select-menu.css";
 @import "./components/inputs/selection.css";
 @import "./components/inputs/toggle-switch.css";
-@import "./components/inputs/textfield.css";
-
-/* Forms */
 @import "./components/forms/form-group.css";
 @import "./components/forms/form-layout.css";
 
-/* Interactions */
+/* Interaction */
 @import "./components/interaction/accordion.css";
 @import "./components/interaction/modal.css";
 @import "./components/interaction/slider.css";
@@ -80,23 +98,15 @@
 @import "./components/navigation/pagination.css";
 @import "./components/navigation/tabs.css";
 
-/* Layout Shell (CRITICAL: Fixes Sidebar & Responsiveness) */
-@import "./components/layout-shell/page-layout.css";
-@import "./components/layout-shell/page-margin.css";
-@import "./components/layout-shell/header.css";
-@import "./components/layout-shell/footer.css";
-@import "./components/layout-shell/grid.css";
-@import "./components/layout-shell/subdivisions.css";
-@import "./components/layout-shell/sidebar.css";
-
-/* Sections */
+/* Content Sections */
 @import "./components/sections/section.css";
 @import "./components/sections/hero.css";
 @import "./components/sections/feature.css";
 @import "./components/sections/cta.css";
 
 /* ============================================================
-   4. UTILITIES (Overrides - Load LAST)
+   6. UTILITIES (The "Trumps")
+   Single-purpose classes that override everything above.
    ============================================================ */
 @import "./utilities/display-utility.css";
 @import "./utilities/flex-utility.css";
@@ -104,11 +114,20 @@
 @import "./utilities/gap-utility.css";
 @import "./utilities/position-utility.css";
 @import "./utilities/z-index-utility.css";
+@import "./utilities/elevation-utility.css";
+@import "./utilities/shadow-utility.css";
 @import "./utilities/padding-utility.css";
 @import "./utilities/spacing-utility.css";
 @import "./utilities/sizing-utility.css";
+@import "./utilities/width-utility.css";
+@import "./utilities/height-utility.css";
 @import "./utilities/typography-utility.css";
 @import "./utilities/border-utility.css";
-@import "./utilities/elevation.css";
 @import "./utilities/visibility-utility.css";
 @import "./utilities/aspect-ratio-utility.css";
+@import "./utilities/color-utility.css";
+@import "./utilities/overflow-utility.css";
+@import "./utilities/alignment-utility.css";
+@import "./utilities/order-utility.css";
+@import "./utilities/cursor-utility.css";
+@import "./utilities/opacity-utility.css";

@@ -1,0 +1,256 @@
+/* ============================================================
+   HEADER SYSTEM
+   Canonical, token-driven, Audi-sharp
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CORE HEADER
+   ------------------------------------------------------------ */
+.header {
+  height: var(--header-height, 64px);
+  background-color: var(--color-brand-black);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+
+  transition:
+    background-color var(--ms-medium) var(--ease-standard),
+    height var(--ms-medium) var(--ease-standard);
+}
+
+.header-content {
+  height: 100%;
+  padding-inline: var(--page-margin);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ------------------------------------------------------------
+   LOGO
+   ------------------------------------------------------------ */
+.header-logo {
+  font-family: var(--font-family-main);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h5);
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header-logo:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   RIGHT SIDE (Actions, Nav, Profile)
+   ------------------------------------------------------------ */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-l);
+}
+
+/* ------------------------------------------------------------
+   PAGE TITLE (Optional)
+   ------------------------------------------------------------ */
+.header-page-title {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-l)) {
+  .header {
+    height: var(--header-height-desktop, 72px);
+  }
+
+  .header-logo {
+    font-size: var(--fs-h4);
+  }
+
+  .header-page-title {
+    font-size: var(--fs-body);
+  }
+}
+
+@media (max-width: var(--breakpoint-m)) {
+  .header {
+    height: var(--header-height-mobile, 60px);
+  }
+
+  .header-page-title {
+    display: none;
+  }
+}
+
+/* ============================================================
+   VARIANT 1: NAVIGATION HEADER
+   ============================================================ */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.header-nav a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--fs-small);
+  transition: color var(--ms-fast) var(--ease-standard);
+}
+
+.header-nav a:hover {
+  color: var(--color-white);
+}
+
+.header-nav a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+}
+
+/* ============================================================
+   VARIANT 2: CENTERED HEADER
+   ============================================================ */
+
+.header-centered .header-content {
+  justify-content: center;
+}
+
+.header-centered .header-right {
+  display: none;
+}
+
+/* ============================================================
+   VARIANT 3: SPLIT HEADER
+   ============================================================ */
+
+.header-split .header-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.header-split .header-logo {
+  justify-self: start;
+}
+
+.header-split .header-nav {
+  justify-self: center;
+}
+
+.header-split .header-right {
+  justify-self: end;
+}
+
+/* ============================================================
+   VARIANT 4: COMPACT HEADER
+   ============================================================ */
+
+.header-compact {
+  --header-height: 48px;
+  --header-height-desktop: 56px;
+}
+
+.header-compact .header-content {
+  padding-inline: var(--space-m);
+}
+
+.header-compact .header-logo {
+  font-size: var(--fs-body);
+}
+
+/* ============================================================
+   VARIANT 5: TRANSPARENT HEADER
+   ============================================================ */
+
+.header-transparent {
+  background-color: transparent;
+  border-bottom: none;
+}
+
+.header-transparent.scrolled {
+  background-color: var(--color-brand-black);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+/* ============================================================
+   VARIANT 6: HEADER WITH SEARCH
+   ============================================================ */
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+.header-search input {
+  min-width: 200px;
+}
+
+/* ============================================================
+   VARIANT 7: MOBILE HEADER
+   ============================================================ */
+
+.header-mobile .header-right {
+  display: none;
+}
+
+.header-mobile-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.header-mobile-menu-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+}
+
+@media (min-width: var(--breakpoint-m)) {
+  .header-mobile-menu-button {
+    display: none;
+  }
+}
+
+/* ============================================================
+   VARIANT 8: ECOMMERCE HEADER
+   ============================================================ */
+
+.header-ecom .header-content {
+  gap: var(--space-xl);
+}
+
+.header-ecom-categories {
+  display: flex;
+  gap: var(--space-l);
+}
+
+.header-ecom-cart {
+  position: relative;
+}
+
+.header-ecom-cart-count {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--fs-tiny);
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+}
