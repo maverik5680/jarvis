@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarvis — Dashboard</title>
+  
+  <script>
+    const theme = localStorage.getItem('theme') || 
+                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.classList.add('theme-dark');
+  </script>
+
+  <link rel="stylesheet" href="../ds/src/css/main.css">
+</head>
+
+<body class="page">
+
+  <header class="header u-header"> <div class="header-content">
+      <div class="header-logo">Jarvis</div>
+      <div class="header-right">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle Navigation">
+          Menu
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-shell">
+
+    <aside class="sidebar u-sidebar" id="mainSidebar">
+      <details>
+        <summary>Category 1</summary>
+        <ul>
+          <li><a href="index.html">Link 1</a></li>
+          <li><a href="tasks.html">Link 2</a></li>
+          <li><a href="teams.html">Link 3</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Category 2</summary>
+        <ul>
+          <li><a href="index.html">Link 1</a></li>
+          <li><a href="tasks.html">Link 2</a></li>
+          <li><a href="teams.html">Link 3</a></li>
+        </ul>
+      </details>
+      <details>
+        <summary>Category 3</summary>
+        <ul>
+          <li><a href="index.html">Link 1</a></li>
+          <li><a href="tasks.html">Link 2</a></li>
+          <li><a href="teams.html">Link 3</a></li>
+        </ul>
+      </details>
+      
+    </aside>
+
+    <main class="main-area u-main-area" id="main-content">
+      <div class="page-content">
+        <div class="container">
+          <h1>Dashboard</h1>
+          <p>Welcome to the Jarvis System.</p>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <div class="sidebar-backdrop" id="backdrop"></div> <script src="../js/main.js" type="module" defer></script>
+
+</body>
+</html>
