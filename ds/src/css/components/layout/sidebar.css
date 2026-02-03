@@ -1,0 +1,310 @@
+/* ============================================================
+   SIDEBAR SYSTEM
+   Canonical, token-driven, Audi-sharp
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE SIDEBAR
+   ------------------------------------------------------------ */
+.sidebar {
+  width: var(--sidebar-width, 280px);
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+
+  border-right: var(--border-width-thin) solid var(--color-border);
+
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  transition:
+    transform var(--ms-medium) var(--ease-standard),
+    width var(--ms-medium) var(--ease-standard);
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================================
+   SIDEBAR ACCORDION VARIANT
+   (These DO NOT replace accordion.css — they are scoped overrides)
+   ============================================================ */
+
+.sidebar details {
+  width: 100%;
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+.sidebar summary {
+  padding-block: var(--space-m);
+  padding-inline: var(--page-margin);
+
+  cursor: pointer;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--color-text-muted);
+}
+
+.sidebar summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron */
+.sidebar summary::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+
+  background-image: var(--icon-chevron-right);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.5;
+  transition:
+    transform var(--ms-fast) var(--ease-standard),
+    opacity var(--ms-fast) var(--ease-standard);
+}
+
+.sidebar details[open] summary::after {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.sidebar summary:hover {
+  color: var(--color-white);
+}
+
+.sidebar summary:hover::after {
+  opacity: 1;
+}
+
+/* Accessibility */
+.sidebar summary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   NAVIGATION LINKS
+   ------------------------------------------------------------ */
+.sidebar ul {
+  padding-inline: var(--page-margin);
+  padding-bottom: var(--space-m);
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: var(--space-xs);
+}
+
+.sidebar a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--fs-body);
+  display: block;
+  padding-block: var(--space-xxs);
+
+  transition: color var(--ms-fast) var(--ease-standard);
+}
+
+.sidebar a:hover {
+  color: var(--color-white);
+}
+
+.sidebar a.active {
+  color: var(--color-accent);
+  font-weight: var(--fw-medium);
+}
+
+.sidebar a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+}
+
+/* ============================================================
+   DESKTOP LAYOUT
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-l)) {
+  .layout-shell {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    transform: none;
+  }
+
+  .main-area {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+  }
+
+  .menu-btn,
+  .sidebar-backdrop {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   MOBILE LAYOUT
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-l)) {
+  .layout-shell {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100%;
+
+    z-index: var(--z-sidebar);
+    transform: translateX(-100%);
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  /* Mobile menu button */
+  .menu-btn {
+    display: block;
+    background-color: var(--color-gray-600);
+    color: var(--color-white);
+
+    border: none;
+    padding: var(--space-xs) var(--space-m);
+
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+    border-radius: var(--radius-xs);
+
+    transition: background-color var(--ms-fast) var(--ease-standard);
+  }
+
+  .menu-btn:hover {
+    background-color: var(--color-gray-700);
+  }
+
+  /* Backdrop */
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background-color: color-mix(in srgb, var(--color-brand-black) 70%, transparent);
+    backdrop-filter: blur(var(--blur-s));
+
+    z-index: var(--z-sidebar-backdrop);
+  }
+
+  .sidebar-backdrop.is-active {
+    display: block;
+  }
+}
+
+/* ============================================================
+   VARIANTS
+   ============================================================ */
+
+/* Collapsed */
+.sidebar-collapsed {
+  --sidebar-width: 72px;
+}
+
+.sidebar-collapsed .sidebar summary,
+.sidebar-collapsed .sidebar ul,
+.sidebar-collapsed .sidebar a {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-collapsed .sidebar {
+  width: var(--sidebar-width);
+}
+
+/* Mini */
+.sidebar-mini {
+  --sidebar-width: 88px;
+}
+
+.sidebar-mini .sidebar summary {
+  font-size: var(--fs-tiny);
+}
+
+.sidebar-mini .sidebar a {
+  font-size: var(--fs-small);
+}
+
+/* Rail */
+.sidebar-rail {
+  --sidebar-width: 56px;
+}
+
+.sidebar-rail .sidebar summary,
+.sidebar-rail .sidebar ul,
+.sidebar-rail .sidebar a {
+  display: none;
+}
+
+/* Floating */
+.sidebar-floating .sidebar {
+  position: fixed;
+  top: var(--space-xl);
+  left: var(--space-xl);
+
+  height: calc(100vh - var(--space-2xl));
+  width: var(--sidebar-width);
+
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Elevated */
+.sidebar-elevated .sidebar {
+  border-right: none;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-l);
+  margin: var(--space-l);
+}
+
+/* Overlay */
+.sidebar-overlay .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: var(--sidebar-width);
+
+  background-color: color-mix(in srgb, var(--color-brand-black) 95%, transparent);
+  backdrop-filter: blur(6px);
+
+  box-shadow: var(--shadow-xl);
+}
