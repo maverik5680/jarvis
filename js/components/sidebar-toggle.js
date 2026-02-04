@@ -126,10 +126,3 @@ export function initSidebarToggle() {
   
   console.log('Sidebar toggle initialized');
 }
-
-// Auto-initialize if DOM is already loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initSidebarToggle);
-} else {
-  initSidebarToggle();
-}

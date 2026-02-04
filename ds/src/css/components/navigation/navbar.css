@@ -74,13 +74,6 @@
   transition: all var(--ms-fast) var(--ease-standard);
 }
 
-.menu-btn span {
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-white);
-  border-radius: 2px;
-}
-
 /* Animated hamburger to X transformation */
 .menu-btn.is-active::before {
   transform: translateY(6px) rotate(45deg);

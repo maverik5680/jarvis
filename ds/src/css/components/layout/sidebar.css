@@ -5,6 +5,9 @@
 
 /* ------------------------------------------------------------
    BASE SIDEBAR (Mobile-First)
+   Both .sidebar and .u-sidebar classes supported for flexibility
+   .u-sidebar is a utility class alias that can be used alongside
+   other utility classes in the design system
    ------------------------------------------------------------ */
 .sidebar,
 .u-sidebar {
