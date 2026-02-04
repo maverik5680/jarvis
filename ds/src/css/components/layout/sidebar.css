@@ -1,32 +1,52 @@
 /* ============================================================
    SIDEBAR SYSTEM
-   Canonical, token-driven, Audi-sharp
+   Production-Ready Mobile-First Responsive SaaS Layout
    ============================================================ */
 
 /* ------------------------------------------------------------
-   BASE SIDEBAR
+   BASE SIDEBAR (Mobile-First)
    ------------------------------------------------------------ */
-.sidebar {
+.sidebar,
+.u-sidebar {
+  /* Layout */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: var(--sidebar-width, 280px);
+  height: 100vh;
+  
+  /* Visual */
   display: flex;
   flex-direction: column;
-
-  background-color: var(--color-brand-black);
+  background-color: var(--color-bg-sidebar);
   color: var(--color-white);
-
-  border-right: var(--border-width-thin) solid var(--color-border);
-
+  
+  /* Scrolling */
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-
-  transition:
-    transform var(--ms-medium) var(--ease-standard),
-    width var(--ms-medium) var(--ease-standard);
+  
+  /* Stacking */
+  z-index: var(--z-sidebar);
+  
+  /* Mobile: Hidden by default with transform */
+  transform: translateX(-100%);
+  
+  /* Smooth transitions using design tokens */
+  transition: transform var(--ms-fast) var(--ease-standard);
 }
 
-.sidebar::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar,
+.u-sidebar::-webkit-scrollbar {
   display: none;
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Sidebar is open when .is-open class is added
+   ------------------------------------------------------------ */
+.sidebar.is-open,
+.u-sidebar.is-open {
+  transform: translateX(0);
 }
 
 /* ============================================================
@@ -34,14 +54,16 @@
    (These DO NOT replace accordion.css — they are scoped overrides)
    ============================================================ */
 
-.sidebar details {
+.sidebar details,
+.u-sidebar details {
   width: 100%;
   border-bottom: var(--border-width-thin) solid var(--color-border);
 }
 
-.sidebar summary {
+.sidebar summary,
+.u-sidebar summary {
   padding-block: var(--space-m);
-  padding-inline: var(--page-margin);
+  padding-inline: var(--space-l);
 
   cursor: pointer;
   font-weight: var(--fw-semibold);
@@ -57,61 +79,64 @@
   color: var(--color-text-muted);
 }
 
-.sidebar summary::-webkit-details-marker {
+.sidebar summary::-webkit-details-marker,
+.u-sidebar summary::-webkit-details-marker {
   display: none;
 }
 
 /* Chevron */
-.sidebar summary::after {
-  content: "";
-  width: var(--space-m);
-  height: var(--space-m);
-
-  background-image: var(--icon-chevron-right);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
+.sidebar summary::after,
+.u-sidebar summary::after {
+  content: "›";
+  font-size: var(--space-l);
+  
   opacity: 0.5;
   transition:
     transform var(--ms-fast) var(--ease-standard),
     opacity var(--ms-fast) var(--ease-standard);
 }
 
-.sidebar details[open] summary::after {
+.sidebar details[open] summary::after,
+.u-sidebar details[open] summary::after {
   transform: rotate(90deg);
   opacity: 1;
 }
 
-.sidebar summary:hover {
+.sidebar summary:hover,
+.u-sidebar summary:hover {
   color: var(--color-white);
 }
 
-.sidebar summary:hover::after {
+.sidebar summary:hover::after,
+.u-sidebar summary:hover::after {
   opacity: 1;
 }
 
 /* Accessibility */
-.sidebar summary:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+.sidebar summary:focus-visible,
+.u-sidebar summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
 }
 
 /* ------------------------------------------------------------
    NAVIGATION LINKS
    ------------------------------------------------------------ */
-.sidebar ul {
-  padding-inline: var(--page-margin);
+.sidebar ul,
+.u-sidebar ul {
+  padding-inline: var(--space-l);
   padding-bottom: var(--space-m);
   margin: 0;
   list-style: none;
 }
 
-.sidebar li {
+.sidebar li,
+.u-sidebar li {
   margin-bottom: var(--space-xs);
 }
 
-.sidebar a {
+.sidebar a,
+.u-sidebar a {
   color: var(--color-text-muted);
   text-decoration: none;
   font-size: var(--fs-body);
@@ -121,43 +146,39 @@
   transition: color var(--ms-fast) var(--ease-standard);
 }
 
-.sidebar a:hover {
+.sidebar a:hover,
+.u-sidebar a:hover {
   color: var(--color-white);
 }
 
-.sidebar a.active {
+.sidebar a.active,
+.sidebar a.is-active,
+.u-sidebar a.active,
+.u-sidebar a.is-active {
   color: var(--color-accent);
   font-weight: var(--fw-medium);
 }
 
-.sidebar a:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
+.sidebar a:focus-visible,
+.u-sidebar a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* ============================================================
-   DESKTOP LAYOUT
+   DESKTOP LAYOUT (1024px and up)
    ------------------------------------------------------------ */
 @media (min-width: var(--breakpoint-l)) {
-  .layout-shell {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .sidebar {
-    height: 100vh;
+  /* Sidebar becomes permanent on desktop */
+  .sidebar,
+  .u-sidebar {
     position: sticky;
     top: 0;
     transform: none;
+    border-right: var(--border-width-thin) solid var(--color-border);
   }
-
-  .main-area {
-    flex: 1;
-    min-width: 0;
-    overflow-y: auto;
-  }
-
+  
+  /* No backdrop or menu button needed on desktop */
   .menu-btn,
   .sidebar-backdrop {
     display: none !important;
@@ -167,65 +188,24 @@
 /* ============================================================
    MOBILE LAYOUT
    ------------------------------------------------------------ */
-@media (max-width: var(--breakpoint-l)) {
-  .layout-shell {
-    display: block;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    height: 100vh;
-    width: 100%;
-
-    z-index: var(--z-sidebar);
-    transform: translateX(-100%);
-  }
-
-  .sidebar.is-open {
-    transform: translateX(0);
-  }
-
-  /* Mobile menu button */
-  .menu-btn {
-    display: block;
-    background-color: var(--color-gray-600);
-    color: var(--color-white);
-
-    border: none;
-    padding: var(--space-xs) var(--space-m);
-
-    font-size: var(--fs-small);
-    font-weight: var(--fw-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-
-    cursor: pointer;
-    border-radius: var(--radius-xs);
-
-    transition: background-color var(--ms-fast) var(--ease-standard);
-  }
-
-  .menu-btn:hover {
-    background-color: var(--color-gray-700);
-  }
-
-  /* Backdrop */
+@media (max-width: calc(var(--breakpoint-l) - 1px)) {
+  /* Sidebar backdrop for mobile overlay */
   .sidebar-backdrop {
-    display: none;
     position: fixed;
     inset: 0;
-
-    background-color: color-mix(in srgb, var(--color-brand-black) 70%, transparent);
-    backdrop-filter: blur(var(--blur-s));
-
-    z-index: var(--z-sidebar-backdrop);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: calc(var(--z-sidebar) - 1);
+    
+    /* Hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    
+    transition: opacity var(--ms-fast) var(--ease-standard);
   }
-
+  
   .sidebar-backdrop.is-active {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 

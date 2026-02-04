@@ -1,30 +1,73 @@
 /* ============================================================
    LAYOUT SHELL
-   Structural container for sidebar + main content
-   Token-driven, Audi-sharp
+   Production-Ready Mobile-First Responsive Layout
    ============================================================ */
 
 /* ------------------------------------------------------------
-   BASE LAYOUT SHELL
+   BASE LAYOUT SHELL (Mobile-First)
    ------------------------------------------------------------ */
 .layout-shell {
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
+  /* Mobile: Block layout by default */
+  display: block;
+  min-height: 100vh;
 }
 
 /* Main content area */
-.main-area {
-  flex: 1;
-  min-width: 0;
-  overflow-y: auto;
+.main-area,
+.u-main,
+.u-main-area {
+  /* Layout */
+  min-height: 100vh;
+  width: 100%;
+  
+  /* Visual */
   background-color: var(--color-bg-surface);
   color: var(--color-text-body);
+  
+  /* Scrolling */
+  overflow-y: auto;
+  
+  /* Mobile: No left padding */
+  padding-left: 0;
+  
+  /* Smooth transition for layout changes */
+  transition: padding-left var(--ms-fast) var(--ease-standard);
 }
 
 /* Optional: page content wrapper */
 .page-content {
   width: 100%;
-  padding-inline: var(--page-margin);
+  padding-inline: var(--space-l);
   padding-block: var(--space-xl);
+}
+
+/* ------------------------------------------------------------
+   DESKTOP LAYOUT (1024px and up)
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-l)) {
+  .layout-shell {
+    /* Desktop: Flexbox layout */
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Main content automatically receives left padding equal to sidebar width */
+  .main-area,
+  .u-main,
+  .u-main-area {
+    flex: 1;
+    min-width: 0;
+    height: 100vh;
+    overflow-y: auto;
+    
+    /* Add left padding to prevent content overlap */
+    padding-left: var(--sidebar-width, 280px);
+  }
+  
+  /* Adjust page content padding on larger screens */
+  .page-content {
+    padding-inline: var(--space-xxl);
+    padding-block: var(--space-xxl);
+  }
 }
