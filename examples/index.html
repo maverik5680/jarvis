@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Production-ready responsive SaaS layout example" />
+  <title>Responsive SaaS Layout - Jarvis</title>
+  
+  <!-- Prevent flicker on page load -->
+  <script>
+    // Set theme before render to prevent flash
+    const theme = localStorage.getItem('theme') || 
+                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+
+  <!-- Design system styles - direct imports -->
+  <style>
+    /* Import design tokens */
+    @import url('../ds/src/css/tokens/colors.css');
+    @import url('../ds/src/css/tokens/spacing.css');
+    @import url('../ds/src/css/tokens/breakpoints.css');
+    @import url('../ds/src/css/tokens/z-index.css');
+    @import url('../ds/src/css/tokens/motion.css');
+    @import url('../ds/src/css/tokens/radius.css');
+    @import url('../ds/src/css/tokens/border-width.css');
+    
+    /* Import base styles */
+    @import url('../ds/src/css/base/reset.css');
+    @import url('../ds/src/css/base/global.css');
+    @import url('../ds/src/css/base/typography.css');
+    
+    /* Import layout components */
+    @import url('../ds/src/css/components/layout/layout-shell.css');
+    @import url('../ds/src/css/components/layout/sidebar.css');
+    @import url('../ds/src/css/components/layout/header.css');
+    @import url('../ds/src/css/components/navigation/navbar.css');
+    
+    /* Additional inline styles for demo */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    code {
+      background-color: var(--color-bg-elevated, #1a1a1a);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+  <!-- Header with hamburger menu -->
+  <header class="header" role="banner">
+    <div class="header-content">
+      <div class="header-logo">
+        <a href="/" style="color: inherit; text-decoration: none;">Jarvis</a>
+      </div>
+      
+      <div class="header-right">
+        <!-- Hamburger menu button (mobile only) -->
+        <button 
+          class="menu-btn" 
+          id="menuBtn" 
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mainSidebar"
+          type="button">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main layout shell -->
+  <div class="layout-shell">
+    
+    <!-- Sidebar navigation -->
+    <aside 
+      class="sidebar u-sidebar" 
+      id="mainSidebar"
+      role="navigation"
+      aria-label="Main navigation">
+      
+      <!-- Navigation sections with accordions -->
+      <details open>
+        <summary>Getting Started</summary>
+        <ul role="list">
+          <li><a href="#dashboard" class="is-active">Dashboard</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#quick-start">Quick Start</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Components</summary>
+        <ul role="list">
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#cards">Cards</a></li>
+          <li><a href="#modals">Modals</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Layout</summary>
+        <ul role="list">
+          <li><a href="#grid">Grid System</a></li>
+          <li><a href="#spacing">Spacing</a></li>
+          <li><a href="#responsive">Responsive</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Design Tokens</summary>
+        <ul role="list">
+          <li><a href="#colors">Colors</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#motion">Motion</a></li>
+          <li><a href="#elevation">Elevation</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Resources</summary>
+        <ul role="list">
+          <li><a href="#docs">Documentation</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </details>
+    </aside>
+
+    <!-- Main content area -->
+    <main 
+      class="main-area u-main u-main-area" 
+      id="main-content"
+      role="main">
+      
+      <div class="page-content">
+        <div class="container">
+          <!-- Page heading -->
+          <header>
+            <h1 style="color: var(--color-text-header); margin-bottom: var(--space-m);">
+              Production-Ready Responsive SaaS Layout
+            </h1>
+            <p style="color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: var(--space-xl);">
+              A mobile-first responsive layout system built with design tokens and accessibility in mind.
+            </p>
+          </header>
+
+          <!-- Feature grid -->
+          <section style="margin-bottom: var(--space-xxl);">
+            <h2 style="color: var(--color-text-header); margin-bottom: var(--space-l);">
+              Key Features
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-l);">
+              <!-- Feature 1 -->
+              <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px; border: 1px solid var(--color-border);">
+                <h3 style="color: var(--color-accent); margin-bottom: var(--space-s);">
+                  📱 Mobile-First
+                </h3>
+                <p style="color: var(--color-text-body); line-height: 1.6;">
+                  Sidebar is hidden on mobile using <code>transform: translateX(-100%)</code> with smooth CSS transitions.
+                </p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px; border: 1px solid var(--color-border);">
+                <h3 style="color: var(--color-accent); margin-bottom: var(--space-s);">
+                  🖥️ Desktop Layout
+                </h3>
+                <p style="color: var(--color-text-body); line-height: 1.6;">
+                  At 1024px+, sidebar becomes fixed on the left. Main content receives automatic padding.
+                </p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px; border: 1px solid var(--color-border);">
+                <h3 style="color: var(--color-accent); margin-bottom: var(--space-s);">
+                  🎨 Design Tokens
+                </h3>
+                <p style="color: var(--color-text-body); line-height: 1.6;">
+                  Uses <code>var(--color-*)</code>, <code>var(--space-*)</code>, and motion tokens for consistency.
+                </p>
+              </div>
+
+              <!-- Feature 4 -->
+              <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px; border: 1px solid var(--color-border);">
+                <h3 style="color: var(--color-accent); margin-bottom: var(--space-s);">
+                  ⚡ No Flicker
+                </h3>
+                <p style="color: var(--color-text-body); line-height: 1.6;">
+                  CSS-only solution with no cumulative layout shift (CLS). Smooth page load experience.
+                </p>
+              </div>
+
+              <!-- Feature 5 -->
+              <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px; border: 1px solid var(--color-border);">
+                <h3 style="color: var(--color-accent); margin-bottom: var(--space-s);">
+                  ♿ Accessible
+                </h3>
+                <p style="color: var(--color-text-body); line-height: 1.6;">
+                  Semantic HTML5, proper ARIA labels, keyboard navigation support, and screen reader friendly.
+                </p>
+              </div>
+
+              <!-- Feature 6 -->
+              <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px; border: 1px solid var(--color-border);">
+                <h3 style="color: var(--color-accent); margin-bottom: var(--space-s);">
+                  🚀 Production-Ready
+                </h3>
+                <p style="color: var(--color-text-body); line-height: 1.6;">
+                  Clean, maintainable code with simple vanilla JavaScript and progressive enhancement.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Technical details -->
+          <section style="margin-bottom: var(--space-xxl);">
+            <h2 style="color: var(--color-text-header); margin-bottom: var(--space-l);">
+              Technical Implementation
+            </h2>
+            
+            <div style="padding: var(--space-xl); background-color: var(--color-bg-elevated); border-radius: 4px; border-left: 4px solid var(--color-accent);">
+              <h3 style="color: var(--color-text-header); margin-bottom: var(--space-m);">
+                Design System Integration
+              </h3>
+              <ul style="color: var(--color-text-body); line-height: 1.8; padding-left: var(--space-l);">
+                <li><strong>Colors:</strong> <code>--color-bg-sidebar</code>, <code>--color-accent</code>, <code>--color-bg-surface</code></li>
+                <li><strong>Spacing:</strong> <code>--space-xs</code>, <code>--space-m</code>, <code>--space-l</code>, <code>--space-xl</code></li>
+                <li><strong>Motion:</strong> <code>--ms-fast</code> (150ms), <code>--ease-standard</code></li>
+                <li><strong>Z-index:</strong> <code>--z-sidebar</code> (1000), <code>--z-header</code> (1100)</li>
+                <li><strong>Breakpoint:</strong> <code>--breakpoint-l</code> (1024px)</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Usage instructions -->
+          <section>
+            <h2 style="color: var(--color-text-header); margin-bottom: var(--space-l);">
+              How to Use
+            </h2>
+            
+            <div style="padding: var(--space-l); background-color: var(--color-bg-elevated); border-radius: 4px;">
+              <ol style="color: var(--color-text-body); line-height: 1.8; padding-left: var(--space-l);">
+                <li style="margin-bottom: var(--space-s);">
+                  <strong>Try the mobile view:</strong> Resize your browser to under 1024px and click the hamburger menu to see the sidebar slide in.
+                </li>
+                <li style="margin-bottom: var(--space-s);">
+                  <strong>Test keyboard navigation:</strong> Press Tab to navigate through links, use arrow keys in accordions, press Escape to close the sidebar.
+                </li>
+                <li style="margin-bottom: var(--space-s);">
+                  <strong>Desktop view:</strong> At 1024px and wider, the sidebar becomes fixed and the hamburger menu disappears.
+                </li>
+                <li>
+                  <strong>Customize:</strong> Adjust design tokens in <code>ds/src/css/tokens/</code> to match your brand.
+                </li>
+              </ol>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Backdrop for mobile sidebar overlay -->
+  <div class="sidebar-backdrop" id="backdrop" aria-hidden="true"></div>
+
+  <!-- JavaScript (defer for performance) -->
+  <script type="module">
+    // Inline sidebar toggle for this demo
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('mainSidebar');
+    const backdrop = document.getElementById('backdrop');
+    const body = document.body;
+
+    function toggleSidebar() {
+      const isOpen = sidebar.classList.contains('is-open');
+      
+      if (isOpen) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    function openSidebar() {
+      sidebar.classList.add('is-open');
+      if (backdrop) backdrop.classList.add('is-active');
+      menuBtn.classList.add('is-active');
+      body.classList.add('sidebar-open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('is-open');
+      if (backdrop) backdrop.classList.remove('is-active');
+      menuBtn.classList.remove('is-active');
+      body.classList.remove('sidebar-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    function handleEscapeKey(event) {
+      if (event.key === 'Escape' && sidebar.classList.contains('is-open')) {
+        closeSidebar();
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    if (backdrop) backdrop.addEventListener('click', closeSidebar);
+    document.addEventListener('keydown', handleEscapeKey);
+    
+    // Close sidebar on window resize to desktop size
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth >= 1024 && sidebar.classList.contains('is-open')) {
+          closeSidebar();
+        }
+      }, 250);
+    });
+
+    console.log('Sidebar toggle initialized');
+  </script>
+</body>
+</html>

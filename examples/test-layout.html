@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive SaaS Layout Test</title>
+  
+  <style>
+    /* Design Tokens */
+    :root {
+      /* Colors */
+      --color-brand-black: #000000;
+      --color-brand-orange: #FF5F00;
+      --color-white: #FFFFFF;
+      --color-gray-100: #F3F4F6;
+      --color-gray-400: #9CA3AF;
+      --color-gray-700: #374151;
+      --color-gray-800: #111111;
+      --color-gray-900: #0a0a0b;
+      
+      /* Semantic colors */
+      --color-text-body: var(--color-gray-100);
+      --color-text-header: var(--color-white);
+      --color-text-muted: var(--color-gray-400);
+      --color-bg-surface: var(--color-gray-900);
+      --color-bg-elevated: var(--color-gray-800);
+      --color-bg-sidebar: var(--color-brand-black);
+      --color-border: var(--color-gray-700);
+      --color-accent: var(--color-brand-orange);
+      
+      /* Spacing */
+      --space-xxs: 4px;
+      --space-xs: 8px;
+      --space-s: 12px;
+      --space-m: 16px;
+      --space-l: 24px;
+      --space-xl: 28px;
+      --space-xxl: 36px;
+      
+      /* Motion */
+      --ms-fast: 150ms;
+      --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+      
+      /* Z-index */
+      --z-sidebar: 1000;
+      --z-header: 1100;
+      
+      /* Breakpoints */
+      --breakpoint-l: 1024px;
+      
+      /* Layout */
+      --sidebar-width: 280px;
+    }
+    
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--color-bg-surface);
+      color: var(--color-text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Header */
+    .header {
+      height: 64px;
+      background-color: var(--color-brand-black);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: var(--z-header);
+    }
+    
+    .header-content {
+      height: 100%;
+      padding: 0 var(--space-l);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .header-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    /* Layout Shell */
+    .layout-shell {
+      display: block;
+      min-height: calc(100vh - 64px);
+    }
+    
+    /* Sidebar (Mobile-First) */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-width);
+      height: 100vh;
+      background-color: var(--color-bg-sidebar);
+      color: var(--color-white);
+      overflow-y: auto;
+      z-index: var(--z-sidebar);
+      
+      /* Mobile: Hidden by default */
+      transform: translateX(-100%);
+      transition: transform var(--ms-fast) var(--ease-standard);
+    }
+    
+    .sidebar.is-open {
+      transform: translateX(0);
+    }
+    
+    /* Sidebar Navigation */
+    .sidebar details {
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    .sidebar summary {
+      padding: var(--space-m) var(--space-l);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--color-text-muted);
+    }
+    
+    .sidebar summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .sidebar summary::after {
+      content: "›";
+      font-size: var(--space-l);
+      opacity: 0.5;
+      transition: transform var(--ms-fast) var(--ease-standard), opacity var(--ms-fast) var(--ease-standard);
+    }
+    
+    .sidebar details[open] summary::after {
+      transform: rotate(90deg);
+      opacity: 1;
+    }
+    
+    .sidebar summary:hover {
+      color: var(--color-white);
+    }
+    
+    .sidebar ul {
+      padding: 0 var(--space-l) var(--space-m);
+      list-style: none;
+    }
+    
+    .sidebar li {
+      margin-bottom: var(--space-xs);
+    }
+    
+    .sidebar a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      display: block;
+      padding: var(--space-xxs) 0;
+      transition: color var(--ms-fast) var(--ease-standard);
+    }
+    
+    .sidebar a:hover {
+      color: var(--color-white);
+    }
+    
+    .sidebar a.is-active {
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+    
+    /* Main Content */
+    .main-area {
+      min-height: calc(100vh - 64px);
+      width: 100%;
+      background-color: var(--color-bg-surface);
+      padding-left: 0;
+      transition: padding-left var(--ms-fast) var(--ease-standard);
+    }
+    
+    .page-content {
+      padding: var(--space-xl) var(--space-l);
+    }
+    
+    /* Hamburger Menu Button */
+    .menu-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-xxs);
+      width: 40px;
+      height: 40px;
+      padding: var(--space-xs);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: background-color var(--ms-fast) var(--ease-standard);
+    }
+    
+    .menu-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-btn::before,
+    .menu-btn::after,
+    .menu-btn span {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-white);
+      transition: all var(--ms-fast) var(--ease-standard);
+    }
+    
+    .menu-btn span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-white);
+    }
+    
+    .menu-btn.is-active::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+    
+    .menu-btn.is-active span {
+      opacity: 0;
+      transform: scale(0);
+    }
+    
+    .menu-btn.is-active::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+    
+    /* Backdrop */
+    .sidebar-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: calc(var(--z-sidebar) - 1);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--ms-fast) var(--ease-standard);
+    }
+    
+    .sidebar-backdrop.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    /* Desktop Layout (1024px and up) */
+    @media (min-width: 1024px) {
+      .layout-shell {
+        display: flex;
+      }
+      
+      .sidebar {
+        position: sticky;
+        top: 0;
+        transform: none;
+        border-right: 1px solid var(--color-border);
+      }
+      
+      .main-area {
+        flex: 1;
+        padding-left: var(--sidebar-width);
+      }
+      
+      .menu-btn,
+      .sidebar-backdrop {
+        display: none !important;
+      }
+    }
+    
+    /* Utility classes */
+    h1 {
+      font-size: 2rem;
+      color: var(--color-text-header);
+      margin-bottom: var(--space-m);
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      color: var(--color-text-header);
+      margin-bottom: var(--space-l);
+      margin-top: var(--space-xxl);
+    }
+    
+    p {
+      margin-bottom: var(--space-m);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-l);
+      margin-bottom: var(--space-xxl);
+    }
+    
+    .feature-card {
+      padding: var(--space-l);
+      background-color: var(--color-bg-elevated);
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+    
+    .feature-card h3 {
+      color: var(--color-accent);
+      margin-bottom: var(--space-s);
+      font-size: 1.125rem;
+    }
+    
+    code {
+      background-color: var(--color-bg-elevated);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="header-logo">Jarvis</div>
+      <div class="header-right">
+        <button 
+          class="menu-btn" 
+          id="menuBtn" 
+          aria-label="Toggle navigation menu"
+          type="button">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout Shell -->
+  <div class="layout-shell">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="mainSidebar" role="navigation">
+      <details open>
+        <summary>Getting Started</summary>
+        <ul>
+          <li><a href="#dashboard" class="is-active">Dashboard</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#quick-start">Quick Start</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Components</summary>
+        <ul>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#cards">Cards</a></li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Layout</summary>
+        <ul>
+          <li><a href="#grid">Grid System</a></li>
+          <li><a href="#spacing">Spacing</a></li>
+          <li><a href="#responsive">Responsive</a></li>
+        </ul>
+      </details>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-area" id="main-content">
+      <div class="page-content">
+        <h1>Production-Ready Responsive SaaS Layout</h1>
+        <p style="color: var(--color-text-muted); font-size: 1.125rem;">
+          A mobile-first responsive layout system built with design tokens and accessibility in mind.
+        </p>
+
+        <h2>Key Features</h2>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>📱 Mobile-First</h3>
+            <p>Sidebar is hidden on mobile using <code>transform: translateX(-100%)</code> with smooth transitions.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🖥️ Desktop Layout</h3>
+            <p>At 1024px+, sidebar becomes fixed. Main content receives automatic padding.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🎨 Design Tokens</h3>
+            <p>Uses <code>var(--color-*)</code>, <code>var(--space-*)</code>, and motion tokens for consistency.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>⚡ No Flicker</h3>
+            <p>CSS-only solution with no cumulative layout shift (CLS). Smooth page load.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>♿ Accessible</h3>
+            <p>Semantic HTML5, proper ARIA labels, keyboard navigation, and screen reader support.</p>
+          </div>
+
+          <div class="feature-card">
+            <h3>🚀 Production-Ready</h3>
+            <p>Clean, maintainable code with simple vanilla JavaScript.</p>
+          </div>
+        </div>
+
+        <h2>How to Test</h2>
+        <div class="feature-card">
+          <ol style="padding-left: var(--space-l); line-height: 1.8;">
+            <li><strong>Mobile view:</strong> Resize browser to under 1024px and click hamburger menu</li>
+            <li><strong>Keyboard:</strong> Press Tab to navigate, Escape to close sidebar</li>
+            <li><strong>Desktop:</strong> At 1024px+, sidebar becomes fixed and menu disappears</li>
+          </ol>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Backdrop -->
+  <div class="sidebar-backdrop" id="backdrop"></div>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('mainSidebar');
+    const backdrop = document.getElementById('backdrop');
+    const body = document.body;
+
+    function toggleSidebar() {
+      const isOpen = sidebar.classList.contains('is-open');
+      isOpen ? closeSidebar() : openSidebar();
+    }
+
+    function openSidebar() {
+      sidebar.classList.add('is-open');
+      backdrop.classList.add('is-active');
+      menuBtn.classList.add('is-active');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('is-open');
+      backdrop.classList.remove('is-active');
+      menuBtn.classList.remove('is-active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    menuBtn.addEventListener('click', toggleSidebar);
+    backdrop.addEventListener('click', closeSidebar);
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+        closeSidebar();
+      }
+    });
+    
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && sidebar.classList.contains('is-open')) {
+        closeSidebar();
+      }
+    });
+
+    console.log('Responsive SaaS Layout initialized');
+  </script>
+</body>
+</html>
