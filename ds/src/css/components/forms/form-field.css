@@ -4,12 +4,34 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
-   BASE FIELD
+   BASE FIELD WRAPPER
    ------------------------------------------------------------ */
 .form-field {
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Label */
+.form-label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+}
+
+/* Helper text */
+.form-helper {
+  font-size: var(--fs-tiny);
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* Error message */
+.form-error {
+  font-size: var(--fs-tiny);
+  color: var(--color-error);
+  line-height: 1.3;
 }
 
 /* ------------------------------------------------------------
@@ -94,7 +116,6 @@
 
 /* ============================================================
    VALIDATION STATES
-   (Works with .form-group-error / .form-group-success)
    ============================================================ */
 
 .form-group-error .form-input,
@@ -130,7 +151,7 @@
 }
 
 /* ------------------------------------------------------------
-   SMALL + LARGE VARIANTS
+   SIZE VARIANTS
    ------------------------------------------------------------ */
 .form-input-sm,
 .form-textarea-sm,
@@ -146,4 +167,82 @@
   padding: var(--space-m) var(--space-l);
   min-height: 56px;
   font-size: var(--fs-body);
+}
+
+/* ============================================================
+   FLOATING LABEL (Optional)
+   ============================================================ */
+
+.form-floating {
+  position: relative;
+}
+
+.form-floating .form-input,
+.form-floating .form-textarea {
+  padding-top: var(--space-l);
+}
+
+.form-floating-label {
+  position: absolute;
+  top: var(--space-s);
+  left: var(--space-m);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  transition:
+    transform var(--ms-fast) var(--ease-standard),
+    font-size var(--ms-fast) var(--ease-standard),
+    top var(--ms-fast) var(--ease-standard);
+}
+
+.form-floating .form-input:focus + .form-floating-label,
+.form-floating .form-input:not(:placeholder-shown) + .form-floating-label,
+.form-floating .form-textarea:focus + .form-floating-label,
+.form-floating .form-textarea:not(:placeholder-shown) + .form-floating-label {
+  top: 4px;
+  font-size: var(--fs-tiny);
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: var(--space-xs) var(--space-m);
+    min-height: 44px;
+    font-size: var(--fs-small);
+  }
+
+  .form-input-lg,
+  .form-textarea-lg,
+  .form-select-lg {
+    min-height: 52px;
+  }
+
+  .form-label {
+    font-size: var(--fs-small);
+  }
+
+  .form-helper,
+  .form-error {
+    font-size: var(--fs-tiny);
+  }
+
+  .form-floating-label {
+    font-size: var(--fs-small);
+  }
+}
+
+/* Mobile compact mode (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .form-field--compact .form-input,
+  .form-field--compact .form-textarea,
+  .form-field--compact .form-select {
+    padding: var(--space-xxs) var(--space-s);
+    min-height: 36px;
+  }
 }

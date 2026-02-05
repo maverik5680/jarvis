@@ -1,13 +1,14 @@
 import { updateActiveLinks } from '../components/sidebar.js';
+import { SELECTORS, TIMING } from './constants.js';
 
 export function initRouter() {
     // Listen for all clicks on the document
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
-        
+
         // Only intercept if it's an internal link (not a new tab or external site)
         if (link && link.href.startsWith(window.location.origin)) {
-            e.preventDefault(); 
+            e.preventDefault();
             const url = link.href;
             navigateToPage(url);
         }
@@ -25,9 +26,9 @@ export function initRouter() {
  * @param {boolean} pushState - Whether to push a new state to history (default: true)
  */
 async function navigateToPage(url, pushState = true) {
-    const mainContent = document.getElementById('main-content');
+    const mainContent = document.querySelector(SELECTORS.MAIN_CONTENT);
     if (!mainContent) {
-        console.error('Router: #main-content element not found');
+        console.error('Router: Selector not found:', SELECTORS.MAIN_CONTENT);
         return;
     }
 
@@ -46,13 +47,13 @@ async function navigateToPage(url, pushState = true) {
         const doc = parser.parseFromString(html, 'text/html');
 
         // Extract the main content from the fetched page
-        const newMainContent = doc.getElementById('main-content');
+        const newMainContent = doc.querySelector(SELECTORS.MAIN_CONTENT);
         if (!newMainContent) {
-            throw new Error('Target page does not have #main-content element');
+            throw new Error(`Target page does not have ${SELECTORS.MAIN_CONTENT} element`);
         }
 
         // Wait for animation to complete before updating content
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, TIMING.TRANSITION_DELAY));
 
         // Update the DOM
         mainContent.innerHTML = newMainContent.innerHTML;
@@ -63,7 +64,7 @@ async function navigateToPage(url, pushState = true) {
         }
 
         // Update active links in sidebar
-        const sidebar = document.querySelector('.sidebar');
+        const sidebar = document.querySelector(SELECTORS.SIDEBAR_NAV);
         if (sidebar) {
             updateActiveLinks(sidebar);
         }

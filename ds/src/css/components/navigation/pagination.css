@@ -38,7 +38,9 @@
 
   transition:
     opacity var(--ms-fast) var(--ease-standard),
-    color var(--ms-fast) var(--ease-standard);
+    color var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard),
+    border-color var(--ms-fast) var(--ease-standard);
 }
 
 .pagination-item:hover:not(:disabled) {
@@ -54,7 +56,7 @@
    VARIANT 1: STEP-BASED (Numbered)
    ============================================================ */
 .pagination-steps .pagination-item {
-  min-width: 2rem;
+  min-width: var(--pagination-item-min-width);
   font-weight: var(--fw-regular);
 }
 
@@ -70,7 +72,7 @@
   left: var(--space-xs);
   right: var(--space-xs);
 
-  height: 2px;
+  height: var(--border-width-medium);
   background-color: currentColor;
 }
 
@@ -113,4 +115,87 @@
 
 .pagination-dark {
   color: var(--color-white);
+}
+
+/* ============================================================
+   VARIANT 3: COMPACT
+   ============================================================ */
+.pagination-compact .pagination-item {
+  padding: var(--space-xxs) var(--space-xxs);
+  font-size: var(--fs-small);
+  gap: var(--space-xxs);
+}
+
+/* ============================================================
+   VARIANT 4: WIDE
+   ============================================================ */
+.pagination-wide .pagination-item {
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--fs-h6);
+}
+
+/* ============================================================
+   VARIANT 5: PILL
+   ============================================================ */
+.pagination-pill .pagination-item {
+  border-radius: var(--radius-pill);
+  padding: var(--space-xs) var(--space-m);
+}
+
+.pagination-pill .pagination-item.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   VARIANT 6: BORDERED
+   ============================================================ */
+.pagination-bordered .pagination-item {
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xs);
+}
+
+.pagination-bordered .pagination-item.is-active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   VARIANT 7: FILLED
+   ============================================================ */
+.pagination-filled .pagination-item {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-xs);
+}
+
+.pagination-filled .pagination-item.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   VARIANT 8: MINIMAL
+   ============================================================ */
+.pagination-minimal .pagination-item {
+  padding: 0;
+  opacity: 0.8;
+}
+
+.pagination-minimal .pagination-item.is-active {
+  opacity: 1;
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   VARIANT 9: FLOATING
+   ============================================================ */
+.pagination-floating {
+  padding: var(--space-s) var(--space-m);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-l);
+}
+
+.pagination-floating .pagination-item {
+  padding: var(--space-xs) var(--space-m);
 }

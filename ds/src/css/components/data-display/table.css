@@ -182,3 +182,64 @@
 .table-loose th {
   padding: var(--space-xl) var(--space-m);
 }
+
+/* ============================================================
+   RESPONSIVE ENHANCEMENTS (Global)
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   MOBILE: Reduce padding + improve density
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .table td,
+  .table th {
+    padding: var(--space-s) var(--space-m);
+    font-size: var(--fs-small);
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Scroll hint for wide tables
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .table-responsive {
+    position: relative;
+  }
+
+  .table-responsive::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: var(--space-m);
+    transform: translateY(-50%);
+    font-size: var(--fs-h4);
+    color: var(--color-gray-400);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Improve stacked table label readability
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .table-stacked td::before {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    color: var(--color-gray-500);
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Optional compact stacked table (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .table-stacked--compact tr {
+    padding: var(--space-s);
+    margin-bottom: var(--space-l);
+  }
+
+  .table-stacked--compact td {
+    padding: var(--space-xxs) 0;
+  }
+}

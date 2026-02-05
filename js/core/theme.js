@@ -1,9 +1,9 @@
-// ds/src/js/core/theme.js
+import { SELECTORS } from './constants.js';
 
 export function initTheme() {
-    const themeToggle = document.querySelector('#theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 
-                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const themeToggle = document.querySelector(SELECTORS.THEME_TOGGLE);
+    const currentTheme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
     // 1. Apply theme on load
     applyTheme(currentTheme);
@@ -11,17 +11,14 @@ export function initTheme() {
     // 2. Listen for clicks
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            const newTheme = document.documentElement.classList.contains('theme-dark') ? 'light' : 'dark';
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = current === 'dark' ? 'light' : 'dark';
             applyTheme(newTheme);
         });
     }
 }
 
 function applyTheme(theme) {
-    if (theme === 'dark') {
-        document.documentElement.classList.add('theme-dark');
-    } else {
-        document.documentElement.classList.remove('theme-dark');
-    }
+    document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 }

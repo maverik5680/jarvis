@@ -18,7 +18,7 @@
    CONTENT LAYOUT
    ------------------------------------------------------------ */
 .cta-content {
-  max-width: 720px;
+  max-width: var(--cta-content-max-width);
   margin-inline: auto;
 
   display: flex;
@@ -43,12 +43,28 @@
   font-size: var(--fs-body);
   color: inherit;
   opacity: 0.9;
-  max-width: 540px;
+  max-width: var(--cta-description-max-width);
 }
 
 /* ------------------------------------------------------------
-   VARIANTS
+   ACTION GROUP
    ------------------------------------------------------------ */
+.cta-actions {
+  display: flex;
+  gap: var(--space-m);
+  justify-content: center;
+}
+
+@media (max-width: var(--breakpoint-m)) {
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   BASE VARIANTS
+   ============================================================ */
 
 /* Bold Brand */
 .cta-brand {
@@ -69,18 +85,148 @@
   color: var(--color-text-body);
 }
 
-/* ------------------------------------------------------------
-   ACTION GROUP
-   ------------------------------------------------------------ */
-.cta-actions {
+/* ============================================================
+   HERO CTA
+   Full-width, high-impact
+   ============================================================ */
+.cta-hero {
+  padding-block: var(--space-3xl);
+  padding-inline: var(--space-2xl);
+  border-radius: var(--radius-m);
+  background: radial-gradient(circle at top left,
+      color-mix(in srgb, var(--color-accent) 40%, transparent),
+      var(--color-bg-surface));
+}
+
+.cta-hero .cta-title {
+  font-size: var(--fs-h1);
+}
+
+.cta-hero .cta-content {
+  max-width: var(--cta-hero-content-max-width);
+}
+
+/* ============================================================
+   SPLIT CTA
+   Content + side column
+   ============================================================ */
+.cta-split .cta-content {
+  max-width: var(--cta-split-content-max-width);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-split-main {
   display: flex;
+  flex-direction: column;
   gap: var(--space-m);
-  justify-content: center;
+}
+
+.cta-split-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  align-items: flex-end;
 }
 
 @media (max-width: var(--breakpoint-m)) {
-  .cta-actions {
+  .cta-split .cta-content {
     flex-direction: column;
-    width: 100%;
+    align-items: center;
   }
+
+  .cta-split-side {
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   IMAGE CTA
+   Background image or media block
+   ============================================================ */
+.cta-image {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.cta-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--color-brand-black) 80%, transparent),
+    color-mix(in srgb, var(--color-brand-black) 20%, transparent)
+  );
+}
+
+.cta-image-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-image .cta-content {
+  align-items: flex-start;
+}
+
+@media (max-width: var(--breakpoint-m)) {
+  .cta-image .cta-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   FLOATING CTA
+   Card-like, elevated
+   ============================================================ */
+.cta-floating {
+  max-width: var(--cta-floating-max-width);
+  margin-inline: auto;
+  margin-block: var(--space-2xl);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-m);
+}
+
+/* ============================================================
+   MINIMAL CTA
+   Text-only, no strong background
+   ============================================================ */
+.cta-minimal {
+  background-color: transparent;
+  border-radius: 0;
+  padding-inline: 0;
+  padding-block: var(--space-xl);
+}
+
+.cta-minimal .cta-title {
+  font-size: var(--fs-h3);
+}
+
+.cta-minimal .cta-description {
+  opacity: 1;
+}
+
+/* ============================================================
+   DARK GLASS CTA
+   Premium, glassmorphism
+   ============================================================ */
+.cta-dark-glass {
+  background-color: color-mix(in srgb, var(--color-brand-black) 70%, transparent);
+  backdrop-filter: blur(var(--blur-md));
+  color: var(--color-white);
+  border: var(--border-width-thin) solid color-mix(in srgb, var(--color-white) 15%, transparent);
+}
+
+/* ============================================================
+   SECTION INTEGRATION HELPERS
+   ============================================================ */
+.section-cta {
+  padding-block: var(--space-3xl);
+}
+
+.section-cta .cta {
+  margin-inline: auto;
 }

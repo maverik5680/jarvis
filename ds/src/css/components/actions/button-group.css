@@ -1,28 +1,46 @@
 /* ============================================================
-   BUTTON GROUP
+   RESPONSIVE BUTTON GROUPS
    ============================================================ */
-.btn-group {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    /* Specification: 1/4 of basic type size (16px * 0.25 = 4px) */
-    align-items: center;
-}
 
-/* Vertical stacking for small screens / specific contexts */
-.btn-group--vertical {
+/* ------------------------------------------------------------
+   STACK ON SMALL SCREENS
+   (Horizontal by default → vertical on mobile)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .button-group-responsive {
     flex-direction: column;
-    align-items: stretch;
+    width: 100%;
+  }
+
+  .button-group-responsive .button {
+    width: 100%;
+  }
 }
 
-/* Mixed Groups Hierarchy Rules */
-/* Placeholder for future specific overrides if needed */
+/* ------------------------------------------------------------
+   STACK AT MEDIUM BREAKPOINT
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-m)) {
+  .button-group-responsive-m {
+    flex-direction: column;
+    width: 100%;
+  }
 
-/* Mobile-first full width groups */
-@media (max-width: 600px) {
-    .btn-group--responsive {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+  .button-group-responsive-m .button {
+    width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------
+   STACK AT LARGE BREAKPOINT
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-l)) {
+  .button-group-responsive-l {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group-responsive-l .button {
+    width: 100%;
+  }
 }

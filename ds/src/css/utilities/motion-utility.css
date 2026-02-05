@@ -6,10 +6,10 @@
 /* ------------------------------------------------------------
    TRANSITION PROPERTIES
    ------------------------------------------------------------ */
-.transition-all    { transition-property: all; }
-.transition-opacity { transition-property: opacity; }
+.transition-all       { transition-property: all; }
+.transition-opacity   { transition-property: opacity; }
 .transition-transform { transition-property: transform; }
-.transition-colors { transition-property: color, background-color, border-color; }
+.transition-colors    { transition-property: color, background-color, border-color; }
 
 /* ------------------------------------------------------------
    TRANSITION DURATIONS (Token-driven)
@@ -43,6 +43,6 @@
 }
 
 /* ------------------------------------------------------------
-   ANIMATION UTILITIES (Optional but useful)
+   ANIMATION UTILITIES
    ------------------------------------------------------------ */
 .animate-none { animation: none; }

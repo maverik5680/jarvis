@@ -9,7 +9,7 @@
 .subdivision-container {
   display: flex;
   width: 100%;
-  min-height: var(--subdivision-min-height, 400px);
+  min-height: var(--subdivision-min-height, var(--subdivision-min-height-default));
   overflow: hidden;
 }
 
@@ -93,7 +93,7 @@
   .subdivision {
     padding-inline: var(--space-m);
     padding-block: var(--space-m);
-    min-height: 300px;
+    min-height: var(--subdivision-min-height-mobile);
   }
 }
 
@@ -103,7 +103,10 @@
 
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--tile-min, 280px), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--tile-min, var(--tile-min-default)), 1fr)
+  );
   gap: var(--space-s);
   width: 100%;
 }
@@ -113,7 +116,7 @@
   display: flex;
   flex-direction: column;
 
-  min-height: var(--tile-min-height, 200px);
+  min-height: var(--tile-min-height, var(--tile-min-height-default));
 
   background-color: var(--color-white);
   color: var(--color-brand-black);

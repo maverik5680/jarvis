@@ -7,11 +7,13 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-m) var(--space-l);
+  width: 100%;
+  align-items: start;
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    COLUMN SPANS
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 .form-col-12 { grid-column: span 12; }
 .form-col-6  { grid-column: span 6; }
@@ -19,15 +21,65 @@
 .form-col-3  { grid-column: span 3; }
 .form-col-2  { grid-column: span 2; }
 
-/* ------------------------------------------------------------
-   MOBILE FALLBACK
-   ------------------------------------------------------------ */
+/* Auto-fit (optional) */
+.form-col-auto {
+  grid-column: auto;
+}
 
+/* Full-width section (opt-in) */
+.form-col-full {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* Mobile: collapse to single column */
 @media (max-width: var(--breakpoint-s)) {
+  .form-layout {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-s) var(--space-m);
+  }
+
   .form-col-6,
   .form-col-4,
   .form-col-3,
-  .form-col-2 {
+  .form-col-2,
+  .form-col-auto {
     grid-column: span 12;
+  }
+
+  .form-col-full {
+    grid-column: span 12;
+  }
+}
+
+/* ============================================================
+   COMPACT MODE (Opt-in)
+   ============================================================ */
+
+.form-layout--compact {
+  gap: var(--space-s) var(--space-m);
+}
+
+@media (max-width: var(--breakpoint-s)) {
+  .form-layout--compact {
+    gap: var(--space-xs) var(--space-s);
+  }
+}
+
+/* ============================================================
+   DENSE MODE (Opt-in)
+   For table filters, dashboards, tight forms
+   ============================================================ */
+
+.form-layout--dense {
+  gap: var(--space-xs) var(--space-m);
+}
+
+@media (max-width: var(--breakpoint-s)) {
+  .form-layout--dense {
+    gap: var(--space-xxs) var(--space-xs);
   }
 }

@@ -6,8 +6,7 @@
   flex-direction: column;
   width: 100%;
   background: var(--color-white);
-  border-radius: 4px;
-  /* Slight softening */
+  border-radius: 4px; /* Slight softening */
   overflow: hidden;
   border: var(--border-thin) solid var(--color-gray-200);
 }
@@ -50,10 +49,8 @@
   justify-content: flex-start;
   gap: var(--space-m);
   padding: var(--space-m) var(--space-l);
-  min-height: 72px;
-  /* Extra "breath" for field use */
-  border-bottom: var(--border-thin) solid var(--color-gray-200);
-  /* Thin, precise line */
+  min-height: 72px; /* Extra "breath" for field use */
+  border-bottom: var(--border-thin) solid var(--color-gray-200); /* Thin, precise line */
   transition: background-color 0.2s ease, opacity 0.2s ease;
   cursor: pointer;
   background-color: transparent;
@@ -66,8 +63,7 @@
 }
 
 .list-item:hover:not(.list-item--static):not(.list-item--disabled) {
-  background-color: var(--color-gray-50);
-  /* Subtle Audi hover effect */
+  background-color: var(--color-gray-50); /* Subtle Audi hover effect */
 }
 
 /* ============================================================
@@ -121,7 +117,7 @@
   height: 20px;
 }
 
-/* TEXT HIERARCHY (The "Prompt" Logic) */
+/* TEXT HIERARCHY */
 .list-item__content {
   display: flex;
   flex-direction: column;
@@ -132,8 +128,7 @@
 .list-item__title {
   font-family: 'Prompt', sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  /* High contrast */
+  font-weight: 600; /* High contrast */
   color: var(--color-brand-black);
   line-height: 1.2;
 }
@@ -146,8 +141,7 @@
   font-family: 'Prompt', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: var(--color-gray-600);
-  /* Muted for breath */
+  color: var(--color-gray-600); /* Muted for breath */
 }
 
 .list-group--dense .list-item__subtitle {
@@ -168,4 +162,87 @@
   align-items: center;
   color: var(--color-gray-400);
   margin-left: 4px;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* Mobile: reduce padding and height */
+@media (max-width: var(--breakpoint-s)) {
+  .list-item {
+    padding: var(--space-s) var(--space-m);
+    min-height: 56px;
+    gap: var(--space-s);
+  }
+
+  .list-group--dense .list-item {
+    padding: var(--space-xs) var(--space-m);
+    min-height: 40px;
+  }
+}
+
+/* Mobile: adjust text hierarchy */
+@media (max-width: var(--breakpoint-s)) {
+  .list-item__title {
+    font-size: 14px;
+  }
+
+  .list-item__subtitle {
+    font-size: 12px;
+  }
+
+  .list-group--dense .list-item__title {
+    font-size: 13px;
+  }
+
+  .list-group--dense .list-item__subtitle {
+    font-size: 11px;
+  }
+}
+
+/* Mobile: icon sizing */
+@media (max-width: var(--breakpoint-s)) {
+  .list-item__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .list-group--dense .list-item__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Mobile: actions spacing */
+@media (max-width: var(--breakpoint-s)) {
+  .list-item__actions {
+    gap: var(--space-xs);
+  }
+}
+
+/* Mobile: full-width list (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .list-group--full {
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+/* Mobile: compact list mode (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .list-group--compact .list-item {
+    padding: var(--space-xs) var(--space-m);
+    min-height: 44px;
+  }
+
+  .list-group--compact .list-item__title {
+    font-size: 14px;
+  }
+
+  .list-group--compact .list-item__subtitle {
+    font-size: 12px;
+  }
 }

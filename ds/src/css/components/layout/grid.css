@@ -2,6 +2,11 @@
    GRID SYSTEM (Agnostic, Token-Driven)
    ============================================================ */
 
+/* Default grid minimum (tokenized) */
+:root {
+  --grid-min-default: 240px;
+}
+
 /* ------------------------------------------------------------
    CONTAINER
    ------------------------------------------------------------ */
@@ -34,11 +39,11 @@
    AUTO-FIT / AUTO-FILL
    ------------------------------------------------------------ */
 .grid-auto {
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min, 240px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min, var(--grid-min-default)), 1fr));
 }
 
 .grid-auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min, 240px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-min, var(--grid-min-default)), 1fr));
 }
 
 /* ------------------------------------------------------------

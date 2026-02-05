@@ -6,6 +6,7 @@
 .radio-card-group {
   display: grid;
   gap: var(--space-m);
+  width: 100%;
 }
 
 /* Inline / horizontal layout */
@@ -13,11 +14,13 @@
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   gap: var(--space-l);
+  align-items: stretch;
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    CARD WRAPPER
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .radio-card {
   position: relative;
   display: flex;
@@ -41,47 +44,137 @@
   border-color: var(--color-accent);
 }
 
-/* ------------------------------------------------------------
+/* Keyboard focus */
+.radio-card:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 var(--focus-ring-width) color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+/* ============================================================
    HIDDEN RADIO INPUT
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .radio-card-input {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    SELECTED STATE
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .radio-card-input:checked + .radio-card {
   border-color: var(--color-accent);
-  background-color: color-mix(in srgb, var(--color-accent) 8%, transparent);
-  box-shadow: 0 0 0 2px var(--color-accent);
+  background-color: color-mix(in srgb, var(--color-accent) var(--surface-tint-strength), transparent);
+  box-shadow: 0 0 0 var(--focus-ring-inner) var(--color-accent);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    CONTENT
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .radio-card-title {
   font-size: var(--fs-body);
   font-weight: var(--fw-bold);
   color: var(--color-text-body);
+  line-height: var(--lh-tight);
 }
 
 .radio-card-description {
   font-size: var(--fs-small);
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: var(--lh-relaxed);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    DISABLED STATE
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .radio-card-disabled {
-  opacity: 0.5;
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
 }
 
 .radio-card-disabled:hover {
   border-color: var(--color-border);
+}
+
+/* Selected + disabled */
+.radio-card-input:checked + .radio-card.radio-card-disabled {
+  box-shadow: none;
+  border-color: var(--color-border);
+  background-color: var(--color-bg-disabled);
+}
+
+/* ============================================================
+   COMPACT + DENSE MODES (Opt-in)
+   ============================================================ */
+
+.radio-card--compact {
+  padding: var(--space-m);
+  gap: var(--space-xs);
+}
+
+.radio-card--dense {
+  padding: var(--space-s);
+  gap: var(--space-xxs);
+}
+
+.radio-card-group--compact {
+  gap: var(--space-s);
+}
+
+.radio-card-group--dense {
+  gap: var(--space-xs);
+}
+
+/* ============================================================
+   FULL-WIDTH + CONSTRAINED VARIANTS
+   ============================================================ */
+
+.radio-card--full {
+  width: 100%;
+}
+
+.radio-card--constrained {
+  max-width: var(--size-card-constrained);
+  width: 100%;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .radio-card-group {
+    gap: var(--space-s);
+  }
+
+  .radio-card-group-inline {
+    grid-auto-flow: row;
+    grid-auto-columns: unset;
+    gap: var(--space-m);
+  }
+
+  .radio-card {
+    padding: var(--space-m);
+    border-radius: var(--radius-xs);
+  }
+
+  .radio-card-title {
+    font-size: var(--fs-small);
+  }
+
+  .radio-card-description {
+    font-size: var(--fs-tiny);
+  }
+
+  .radio-card--compact {
+    padding: var(--space-s);
+  }
+
+  .radio-card--dense {
+    padding: var(--space-xs);
+  }
 }

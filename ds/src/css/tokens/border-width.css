@@ -1,5 +1,6 @@
 :root {
   /* The Tokens (The DNA) */
+  --border-none { border: none; }
   --border-thin: 1px;
   --border-medium: 2px;
   --border-thick: 4px;
@@ -11,7 +12,3 @@
   --border-width-thick: var(--border-thick);
 }
 
-/* The Utility Classes (The Application) */
-.border-thin { border-width: var(--border-thin); }
-.border-medium { border-width: var(--border-medium); }
-.border-thick { border-width: var(--border-thick); }

@@ -1,90 +1,58 @@
 /* ============================================================
-   DROPDOWN — BASE STRUCTURE
+   RESPONSIVE BEHAVIOR
    ============================================================ */
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+/* ------------------------------------------------------------
+   MOBILE: Full-width dropdowns
+   Useful for mobile nav, filters, profile menus
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .dropdown-menu {
+    min-width: 100%;
+    left: 0;
+    right: 0;
+  }
 }
 
-/* Trigger (usually a .button) */
-.dropdown-toggle {
-  cursor: pointer;
-  user-select: none;
+/* ------------------------------------------------------------
+   MOBILE: Larger tap targets
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .dropdown-item {
+    padding: var(--space-m) var(--space-l);
+    font-size: var(--fs-body);
+  }
 }
 
-/* ============================================================
-   DROPDOWN MENU PANEL
-   ============================================================ */
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  min-width: 180px;
-  padding: var(--space-xs) 0;
-
-  background: var(--color-bg-elevated);
-  border: var(--border-width-thin) solid var(--color-border);
-  border-radius: var(--radius-m);
-  box-shadow: var(--shadow-md);
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(var(--space-xxs));
-
-  transition:
-    opacity var(--ms-base) var(--ease-standard),
-    transform var(--ms-base) var(--ease-standard),
-    visibility var(--ms-base) var(--ease-standard);
-
-  z-index: var(--z-dropdown);
+/* ------------------------------------------------------------
+   OPTIONAL: Right-aligned dropdowns on medium screens
+   (Useful for profile menus, settings menus)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-m)) {
+  .dropdown-menu-right {
+    left: auto;
+    right: 0;
+  }
 }
 
-/* Open state */
-.dropdown.open .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+/* ------------------------------------------------------------
+   OPTIONAL: Convert dropdown into a bottom sheet on very small screens
+   (Only applied if developer opts in with .dropdown-sheet)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .dropdown-sheet .dropdown-menu {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
 
-/* ============================================================
-   DROPDOWN ITEMS
-   ============================================================ */
+    width: 100%;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
+    transform: translateY(100%);
+  }
 
-.dropdown-item {
-  padding: var(--space-s) var(--space-m);
-  font-size: var(--fs-small);
-  color: var(--color-text-body);
-  cursor: pointer;
-  white-space: nowrap;
-
-  transition:
-    background-color var(--ms-base) var(--ease-standard),
-    color var(--ms-base) var(--ease-standard);
-}
-
-.dropdown-item:hover {
-  background-color: var(--color-gray-800);
-}
-
-.dropdown-item:active {
-  background-color: var(--color-gray-700);
-}
-
-/* Disabled state */
-.dropdown-item.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* ============================================================
-   DROPDOWN DIVIDER
-   ============================================================ */
-
-.dropdown-divider {
-  height: 1px;
-  margin: var(--space-xs) 0;
-  background: var(--color-border);
+  .dropdown-sheet.open .dropdown-menu {
+    transform: translateY(0);
+  }
 }

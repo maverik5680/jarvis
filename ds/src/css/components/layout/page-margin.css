@@ -4,62 +4,9 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
-   DEFAULT (Mobile XS)
-   ------------------------------------------------------------ */
-:root {
-  --page-margin: var(--space-l);
-}
-
-/* ------------------------------------------------------------
-   BREAKPOINT: S
-   ------------------------------------------------------------ */
-@media (min-width: var(--breakpoint-s)) {
-  :root {
-    --page-margin: var(--space-xl);
-  }
-}
-
-/* ------------------------------------------------------------
-   BREAKPOINT: M
-   ------------------------------------------------------------ */
-@media (min-width: var(--breakpoint-m)) {
-  :root {
-    --page-margin: var(--space-xxl);
-  }
-}
-
-/* ------------------------------------------------------------
-   BREAKPOINT: L
-   ------------------------------------------------------------ */
-@media (min-width: var(--breakpoint-l)) {
-  :root {
-    --page-margin: var(--space-3xl);
-  }
-}
-
-/* ------------------------------------------------------------
-   BREAKPOINT: XL
-   ------------------------------------------------------------ */
-@media (min-width: var(--breakpoint-xl)) {
-  :root {
-    --page-margin: var(--space-4xl);
-  }
-}
-
-/* ------------------------------------------------------------
-   BREAKPOINT: XXL
-   Same as XL — max comfortable reading width
-   ------------------------------------------------------------ */
-@media (min-width: var(--breakpoint-xxl)) {
-  :root {
-    --page-margin: var(--space-4xl);
-  }
-}
-
-/* ============================================================
    PAGE MARGIN APPLICATION
-   Applies horizontal breathing room to content wrappers
-   ============================================================ */
+   Applies horizontal breathing room to page-level wrappers
+   ------------------------------------------------------------ */
 
 .page-content,
 .page-section,
@@ -67,9 +14,47 @@
   padding-inline: var(--page-margin);
 }
 
-/* Optional: full-width but centered container */
+/* ------------------------------------------------------------
+   FULL-WIDTH BUT CENTERED CONTAINER
+   ------------------------------------------------------------ */
 .page-max {
   max-width: var(--layout-max-width-xxl);
   margin-inline: auto;
   width: 100%;
+}
+
+/* ============================================================
+   PAGE MARGIN VARIANTS (Optional, Token-Driven)
+   ============================================================ */
+
+/* Tight page margins (denser layouts) */
+.page-tight .page-content,
+.page-tight .page-section,
+.page-tight .container {
+  padding-inline: var(--page-margin-tight);
+}
+
+/* Wide page margins (marketing pages, editorial) */
+.page-wide .page-content,
+.page-wide .page-section,
+.page-wide .container {
+  padding-inline: var(--page-margin-wide);
+}
+
+/* No page margins (full-bleed sections) */
+.page-no-margin .page-content,
+.page-no-margin .page-section,
+.page-no-margin .container {
+  padding-inline: 0;
+}
+
+/* Auto margin scaling (fluid editorial layouts) */
+.page-fluid .page-content,
+.page-fluid .page-section,
+.page-fluid .container {
+  padding-inline: clamp(
+    var(--space-m),
+    5vw,
+    var(--page-margin)
+  );
 }

@@ -4,17 +4,6 @@
    ============================================================ */
 
 /* ------------------------------------------------------------
-   ROOT TOKENS (Optional override layer)
-   ------------------------------------------------------------ */
-:root {
-  --navmenu-bg: var(--color-brand-black);
-  --navmenu-text: var(--color-white);
-  --navmenu-text-dim: color-mix(in srgb, var(--color-white) 70%, transparent);
-  --navmenu-border: color-mix(in srgb, var(--color-white) 10%, transparent);
-  --navmenu-accent: var(--color-accent);
-}
-
-/* ------------------------------------------------------------
    BASE NAVMENU
    ------------------------------------------------------------ */
 .navmenu {
@@ -23,7 +12,7 @@
   left: -100%;
 
   width: 100%;
-  max-width: 320px;
+  max-width: var(--size-navmenu-width);
   height: 100vh;
 
   background-color: var(--navmenu-bg);
@@ -131,7 +120,7 @@
 
 /* Active state */
 .navmenu-item-active .navmenu-dropdown {
-  max-height: 500px;
+  max-height: var(--navmenu-dropdown-max-height);
   margin-bottom: var(--space-m);
 }
 
@@ -173,4 +162,115 @@
   margin-top: auto;
   padding-top: var(--space-xl);
   border-top: var(--border-width-thin) solid var(--navmenu-border);
+}
+
+/* ============================================================
+   VARIANT: COMPACT
+   ============================================================ */
+.navmenu-compact {
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-l);
+}
+
+.navmenu-compact .navmenu-link,
+.navmenu-compact .navmenu-trigger {
+  padding-block: var(--space-s);
+  font-size: var(--fs-body);
+}
+
+.navmenu-compact .navmenu-sub-link {
+  padding-block: var(--space-xs);
+  font-size: var(--fs-small);
+}
+
+/* ============================================================
+   VARIANT: WIDE
+   ============================================================ */
+.navmenu-wide {
+  max-width: var(--size-navmenu-width-wide);
+}
+
+.navmenu-wide .navmenu-link,
+.navmenu-wide .navmenu-trigger {
+  font-size: var(--fs-h5);
+}
+
+/* ============================================================
+   VARIANT: FLOATING
+   ============================================================ */
+.navmenu-floating {
+  left: var(--space-l);
+  top: var(--space-l);
+
+  height: calc(100vh - var(--space-2l));
+  border-radius: var(--radius-l);
+
+  box-shadow: var(--shadow-xxl);
+  border: var(--border-width-thin) solid var(--navmenu-border);
+}
+
+/* ============================================================
+   VARIANT: GLASS
+   ============================================================ */
+.navmenu-glass {
+  background-color: color-mix(in srgb, var(--color-brand-black) 20%, transparent);
+  backdrop-filter: blur(var(--blur-l));
+  border-right: var(--border-width-thin) solid var(--color-border-light);
+}
+
+.navmenu-glass .navmenu-link,
+.navmenu-glass .navmenu-trigger {
+  color: var(--color-white);
+}
+
+.navmenu-glass .navmenu-sub-link {
+  color: var(--color-gray-200);
+  border-color: color-mix(in srgb, var(--color-white) 20%, transparent);
+}
+
+/* ============================================================
+   VARIANT: DARK
+   ============================================================ */
+.navmenu-dark {
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+}
+
+.navmenu-dark .navmenu-link,
+.navmenu-dark .navmenu-trigger {
+  color: var(--color-gray-200);
+}
+
+.navmenu-dark .navmenu-link:hover,
+.navmenu-dark .navmenu-trigger:hover {
+  color: var(--color-accent);
+}
+
+.navmenu-dark .navmenu-sub-link {
+  color: var(--color-gray-400);
+  border-color: var(--color-gray-700);
+}
+
+/* ============================================================
+   VARIANT: MINIMAL
+   ============================================================ */
+.navmenu-minimal {
+  padding-block: var(--space-xl);
+  padding-inline: var(--space-l);
+  background-color: var(--color-bg-surface);
+  border-right: none;
+  box-shadow: var(--shadow-m);
+}
+
+.navmenu-minimal .navmenu-link,
+.navmenu-minimal .navmenu-trigger {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+}
+
+.navmenu-minimal .navmenu-sub-link {
+  border: none;
+  padding-block: var(--space-xs);
 }

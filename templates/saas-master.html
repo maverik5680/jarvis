@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Design System Playground</title>
+
+  <!-- Core CSS (your utilities + tokens + components) -->
+   <link rel="stylesheet" href="../src/css/main.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR (Default)
+       ============================================================ -->
+  <header class="navbar navbar-links">
+    <div class="navbar-left">
+      <a href="#" class="navbar-link navbar-link-active">Home</a>
+      <a href="#" class="navbar-link">Docs</a>
+      <a href="#" class="navbar-link">Components</a>
+    </div>
+
+    <div class="navbar-right">
+      <button class="menu-btn" id="menuBtn">Menu</button>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       SIDEBAR (Default)
+       ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#" class="is-active">Dashboard</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Teams</a></li>
+      <li><a href="#">Reports</a></li>
+    </ul>
+  </aside>
+
+  <!-- Backdrop for mobile -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+
+  <!-- ============================================================
+       MAIN CONTENT AREA
+       ============================================================ -->
+  <main class="main-content" style="padding: var(--space-3xl); margin-left: var(--sidebar-width);">
+
+    <section class="section">
+      <div class="section-content">
+        <h1 class="hero-title">Welcome to the Design System Playground</h1>
+        <p class="hero-subtitle">
+          This page is where we will test components, layouts, and interactions.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       BASIC SIDEBAR TOGGLE JS
+       ============================================================ -->
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebarBackdrop');
+    const menuBtn = document.getElementById('menuBtn');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('is-open');
+      backdrop.classList.toggle('is-active');
+    });
+
+    backdrop.addEventListener('click', () => {
+      sidebar.classList.remove('is-open');
+      backdrop.classList.remove('is-active');
+    });
+  </script>
+
+</body>
+</html>

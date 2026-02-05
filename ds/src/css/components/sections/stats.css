@@ -1,10 +1,11 @@
 /* ============================================================
    SECTION-NAME: STATS
+   Token-driven, Audi-sharp
    ============================================================ */
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--stat-min-width, 200px), 1fr));
   gap: var(--space-xxxl);
   text-align: center;
 }
@@ -18,9 +19,9 @@
 /* The Big Number */
 .stat-item__number {
   font-family: var(--font-family-main);
-  font-size: var(--fs-h2); /* Large and impactful */
+  font-size: var(--fs-h2);
   font-weight: var(--fw-bold);
-  color: var(--color-brand-blue); /* Electric Blue for the win */
+  color: var(--color-brand-blue);
   line-height: 1;
 }
 
@@ -38,6 +39,6 @@
 .stat-item__detail {
   font-size: var(--fs-small);
   color: var(--color-gray-400);
-  max-width: 180px;
+  max-width: var(--stat-detail-max-width, 180px);
   margin: 0 auto;
 }

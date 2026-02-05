@@ -1,4 +1,121 @@
-@import "reset.css";
-@import "layout.css";
-@import "components.css";
-@import "theme.css";
+/* ============================================================
+   JARVIS DESIGN SYSTEM - MAIN BUNDLE
+   ============================================================ */
+
+/* 1. TOKENS */
+@import "tokens/colors.css";
+@import "tokens/spacing.css";
+@import "tokens/blur.css";
+@import "tokens/breakpoints.css";
+@import "tokens/z-index.css";
+@import "tokens/motion.css";
+@import "tokens/radius.css";
+@import "tokens/border-width.css";
+@import "tokens/layout-sizes.css";
+@import "tokens/elevation.css";
+@import "tokens/opacity.css";
+@import "tokens/ratios.css";
+@import "tokens/shadow.css";
+
+/* 2. BASE STYLES */
+@import "base/reset.css";
+@import "base/global.css";
+@import "base/typography.css";
+@import "base/router-transitions.css";
+
+
+/* 3. LAYOUT COMPONENTS */
+@import "components/layout/container.css";
+@import "components/layout/footer.css";
+@import "components/layout/grid.css";
+@import "components/layout/header.css";
+@import "components/layout/layout-shell.css";
+@import "components/layout/page-layout.css";
+@import "components/layout/page-margin.css";
+@import "components/layout/subdivisions.css";
+
+
+/* 4. NAVIGATION */
+@import "components/layout/backdrop.css";
+@import "components/navigation/breadcrumb.css";
+@import "components/navigation/flyover.css";
+@import "components/navigation/navbar.css";
+@import "components/navigation/navmenu.css";
+@import "components/navigation/link.css";
+@import "components/navigation/pagination.css";
+@import "components/navigation/sidebar.css";
+@import "components/navigation/tab-bar.css";
+@import "components/navigation/tab.css";
+
+
+/* 5. ACTIONS */
+@import "components/actions/button.css";
+@import "components/actions/button-group.css";
+@import "components/actions/icon-button.css";
+@import "components/actions/dropdown.css";
+
+
+/* 6. DATA DISPLAY */
+@import "components/data-display/table.css";
+@import "components/data-display/badge.css";
+@import "components/data-display/card.css";
+@import "components/data-display/avatar.css";
+@import "components/data-display/tag.css";
+@import "components/data-display/list.css";
+@import "components/data-display/list-group.css";
+
+
+/* 7. FORMS & INPUTS */
+@import "components/forms/form-group.css";
+@import "components/forms/form-field.css";
+@import "components/forms/form-layout.css";
+@import "components/forms/form-section.css";
+
+@import "components/inputs/checkbox-list.css";
+@import "components/inputs/input.css";
+@import "components/inputs/radio-card.css";
+@import "components/inputs/segmented-control.css";
+@import "components/inputs/textfield.css";
+@import "components/inputs/selection.css";
+@import "components/inputs/select-menu.css";
+@import "components/inputs/toggle-switch.css";
+@import "components/inputs/validation.css";
+
+
+/* 8. SECTIONS */
+@import "components/sections/section.css";
+@import "components/sections/feature.css";
+@import "components/sections/stats.css";
+@import "components/sections/hero.css";
+@import "components/sections/cta.css";
+
+/* 9. UTILITIES */
+@import "utilities/alignment-utility.css";
+@import "utilities/aspect-ratio-utility.css";
+@import "utilities/border-utility.css";
+@import "utilities/color-utility.css";
+@import "utilities/cursor-utility.css";
+@import "utilities/display-utility.css";
+@import "utilities/elevation-utility.css";
+@import "utilities/flex-utility.css";
+@import "utilities/gap-utility.css";
+@import "utilities/grid-utility.css";
+@import "utilities/height-utility.css";
+@import "utilities/motion-utility.css";
+@import "utilities/opacity-utility.css";
+@import "utilities/order-utility.css";
+@import "utilities/overflow-utility.css";
+@import "utilities/padding-utility.css";
+@import "utilities/position-utility.css";
+@import "utilities/shadow-utility.css";
+@import "utilities/sizing-utility.css";
+@import "utilities/spacing-utility.css";
+@import "utilities/state-utility.css";
+@import "utilities/typography-utility.css";
+@import "utilities/visibility-utility.css";
+@import "utilities/width-utility.css";
+@import "utilities/z-index-utility.css";
+
+/* 10. THEMES */
+@import "themes/dark.css";
+@import "themes/light.css";

@@ -6,18 +6,20 @@
 .select-wrapper {
   position: relative;
   width: 100%;
+  display: inline-block;
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    BASE SELECT
-   ------------------------------------------------------------ */
-.form-select {
+   ============================================================ */
+
+.select {
   width: 100%;
   padding: var(--space-s) var(--space-xl) var(--space-s) var(--space-m);
-  min-height: 48px; /* iOS zoom-safe */
+  min-height: var(--size-input-m);
 
   font-family: var(--font-family-main);
-  font-size: 16px; /* Required for iOS */
+  font-size: var(--fs-body);
   color: var(--color-text-body);
 
   background-color: var(--color-bg-surface);
@@ -33,9 +35,10 @@
     background-color var(--ms-fast) var(--ease-standard);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    CUSTOM CHEVRON (Token-driven icon)
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .select-wrapper::after {
   content: "";
   position: absolute;
@@ -43,32 +46,71 @@
   top: 50%;
   transform: translateY(-50%);
 
-  width: 12px;
-  height: 12px;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
 
   background-image: var(--icon-select-chevron);
   background-repeat: no-repeat;
-  background-size: 12px 12px;
+  background-size: var(--size-icon-sm) var(--size-icon-sm);
 
   pointer-events: none;
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    FOCUS STATE
-   ------------------------------------------------------------ */
-.form-select:focus {
+   ============================================================ */
+
+.select:focus {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+  box-shadow: 0 0 0 var(--focus-ring-width) color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    DISABLED STATE
-   ------------------------------------------------------------ */
-.form-select:disabled {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-500);
+   ============================================================ */
+
+.select:disabled {
+  background-color: var(--color-bg-disabled);
+  color: var(--color-text-disabled);
   cursor: not-allowed;
+}
+
+/* ============================================================
+   VALIDATION STATES
+   ============================================================ */
+
+.select-error {
+  border-color: var(--color-error);
+}
+
+.select-success {
+  border-color: var(--color-success);
+}
+
+/* ============================================================
+   SIZE VARIANTS
+   ============================================================ */
+
+.select-sm {
+  padding: var(--space-xs) var(--space-l) var(--space-xs) var(--space-s);
+  min-height: var(--size-input-sm);
+  font-size: var(--fs-small);
+}
+
+.select-lg {
+  padding: var(--space-m) var(--space-xl) var(--space-m) var(--space-l);
+  min-height: var(--size-input-lg);
+  font-size: var(--fs-body);
+}
+
+/* ============================================================
+   FULL-WIDTH + BLOCK MODES
+   ============================================================ */
+
+.select-block {
+  width: 100%;
+  display: block;
 }
 
 /* ============================================================
@@ -94,4 +136,52 @@
 .select-display__overflow {
   font-weight: var(--fw-bold);
   color: var(--color-accent);
+}
+
+/* ============================================================
+   COMPACT + DENSE MODES (Opt-in)
+   ============================================================ */
+
+.select--compact {
+  padding: var(--space-xs) var(--space-l) var(--space-xs) var(--space-s);
+  min-height: var(--size-input-sm);
+  font-size: var(--fs-small);
+}
+
+.select--dense {
+  padding: var(--space-xxs) var(--space-m) var(--space-xxs) var(--space-s);
+  min-height: var(--size-input-xs);
+  font-size: var(--fs-small);
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .select {
+    padding: var(--space-xs) var(--space-xl) var(--space-xs) var(--space-m);
+    min-height: var(--size-input-m);
+    font-size: var(--fs-small);
+  }
+
+  .select-lg {
+    min-height: var(--size-input-lg);
+  }
+
+  .select-sm {
+    min-height: var(--size-input-sm);
+  }
+
+  .select-wrapper::after {
+    right: var(--space-s);
+  }
+
+  .select--compact {
+    padding: var(--space-xxs) var(--space-l) var(--space-xxs) var(--space-s);
+  }
+
+  .select--dense {
+    padding: var(--space-xxs) var(--space-m) var(--space-xxs) var(--space-s);
+  }
 }

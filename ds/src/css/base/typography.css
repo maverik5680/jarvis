@@ -16,14 +16,15 @@
    ============================================================ */
 :root {
   --font-family-main: 'Prompt', sans-serif;
-  --fs-h1: 2.25rem;
-  /* Scaled down for mobile */
-  --fs-h2: 1.75rem;
-  /* Scaled down for mobile */
-  --fs-h3: 1.35rem;
-  /* Scaled down for mobile */
-  --fs-h4: 1.15rem;
-  /* Scaled down for mobile */
+
+  /* Fluid Typography using clamp() 
+     Heuristic: clamp(min, preferred, max)
+  */
+  --fs-h1: clamp(2.25rem, 5vw + 1rem, 3.00rem);
+  --fs-h2: clamp(1.75rem, 4vw + 1rem, 2.25rem);
+  --fs-h3: clamp(1.35rem, 2vw + 1rem, 1.50rem);
+  --fs-h4: clamp(1.15rem, 1vw + 1rem, 1.25rem);
+
   --fs-body: 1.00rem;
   --fw-light: 300;
   --fw-regular: 400;
@@ -78,12 +79,8 @@ h2 {
 
 /* ============================================================
    5. RESPONSIVE OVERRIDES
+   Note: Heading overrides removed in favor of clamp() above.
    ============================================================ */
 @media (min-width: var(--breakpoint-m)) {
-  :root {
-    --fs-h1: 3.00rem;
-    --fs-h2: 2.25rem;
-    --fs-h3: 1.50rem;
-    --fs-h4: 1.25rem;
-  }
+  /* Site-wide desktop adjustments can go here */
 }

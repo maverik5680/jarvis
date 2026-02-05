@@ -1,96 +1,213 @@
-.is-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+/* ============================================================
+   NAVBAR SYSTEM — BASE LAYER
+   Token-driven, Audi-sharp
+   ============================================================ */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-inline: var(--page-margin);
+  height: var(--navbar-height);
+
+  background-color: var(--color-bg-surface);
+  border-bottom: var(--border-width-thin) solid var(--color-border-light);
+
+  position: relative;
+  z-index: var(--z-header);
 }
 
-.is-loading {
-  cursor: wait;
+/* Layout regions */
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-l);
 }
 
-.is-expanded {
-  width: 100%;
-  transition: all 0.3s ease;
+.navbar-center {
+  flex: 1;
+  justify-content: center;
 }
 
-.is-active {
-  background-color: #007bff;
-}
-
-.is-disabled {
-  pointer-events: none;
-  opacity: 0.6;
+.navbar-right {
+  margin-left: auto;
 }
 
 /* ============================================================
-   HAMBURGER MENU BUTTON
-   Mobile-first responsive menu toggle
+   NAVBAR LINKS — SHARED LINK STYLE
    ============================================================ */
 
-.menu-btn {
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-xxs);
-  
-  /* Sizing */
-  width: 40px;
-  height: 40px;
-  padding: var(--space-xs);
-  
-  /* Visual */
-  background-color: transparent;
-  border: none;
-  border-radius: var(--radius-xs);
-  cursor: pointer;
-  
-  /* Accessibility */
+.navbar-link {
+  font-family: var(--font-family-extended);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+
+  color: var(--color-text-muted);
+  text-decoration: none;
+  text-transform: uppercase;
+
   position: relative;
-  
-  transition: background-color var(--ms-fast) var(--ease-standard);
+  padding-block: var(--space-xs);
+
+  transition: color var(--ms-fast) var(--ease-standard);
 }
 
-.menu-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.navbar-link:hover,
+.navbar-link-active {
+  color: var(--color-text-body);
 }
 
-.menu-btn:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+/* Precision underline */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: var(--border-width-medium);
+  background-color: var(--color-accent);
+
+  transition: width var(--ms-medium) var(--ease-standard);
 }
 
-/* Hamburger icon lines */
-.menu-btn::before,
-.menu-btn::after,
-.menu-btn span {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-white);
-  border-radius: 2px;
-  transition: all var(--ms-fast) var(--ease-standard);
+.navbar-link:hover::after,
+.navbar-link-active::after {
+  width: 100%;
 }
 
-/* Animated hamburger to X transformation */
-.menu-btn.is-active::before {
-  transform: translateY(6px) rotate(45deg);
+/* ============================================================
+   VARIANT 1: NAVBAR WITH LINKS (default dashboard)
+   ============================================================ */
+
+.navbar-links .navbar-center {
+  display: none;
 }
 
-.menu-btn.is-active span {
-  opacity: 0;
-  transform: scale(0);
+.navbar-links .navbar-right {
+  gap: var(--space-m);
 }
 
-.menu-btn.is-active::after {
-  transform: translateY(-6px) rotate(-45deg);
+/* ============================================================
+   VARIANT 2: CENTERED TEXT NAVBAR
+   ============================================================ */
+
+.navbar-center-text .navbar-left,
+.navbar-center-text .navbar-right {
+  display: none;
 }
 
-/* Hide menu button on desktop */
+.navbar-center-text .navbar-center {
+  display: flex;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   VARIANT 3: BRAND-ONLY NAVBAR
+   ============================================================ */
+
+.navbar-brand-only .navbar-center,
+.navbar-brand-only .navbar-right {
+  display: none;
+}
+
+.navbar-brand-only .navbar-left {
+  margin-inline: auto;
+}
+
+/* ============================================================
+   VARIANT 4: SPLIT NAVBAR
+   (Brand left, links center, actions right)
+   ============================================================ */
+
+.navbar-split .navbar-center {
+  display: flex;
+}
+
+.navbar-split .navbar-right {
+  display: flex;
+}
+
+/* ============================================================
+   VARIANT 5: UTILITY NAVBAR
+   (Brand left, icons right)
+   ============================================================ */
+
+.navbar-utility .navbar-center {
+  display: none;
+}
+
+.navbar-utility .navbar-right {
+  gap: var(--space-m);
+}
+
+/* ============================================================
+   VARIANT 6: MOBILE-ONLY NAVBAR
+   ============================================================ */
+
+.navbar-mobile-only {
+  display: flex;
+}
+
 @media (min-width: var(--breakpoint-l)) {
-  .menu-btn {
-    display: none !important;
+  .navbar-mobile-only {
+    display: none;
+  }
+}
+
+/* ============================================================
+   VARIANT 7: MINIMAL NAVBAR
+   (Thin, subtle, editorial)
+   ============================================================ */
+
+.navbar-minimal {
+  height: var(--navbar-height-minimal);
+  background-color: transparent;
+  border-bottom: var(--border-width-thin) solid var(--color-border-light);
+}
+
+.navbar-minimal .navbar-link::after {
+  height: var(--border-width-thin);
+}
+
+/* ============================================================
+   VARIANT 8: FLOATING NAVBAR
+   (Premium marketing)
+   ============================================================ */
+
+.navbar-floating {
+  position: fixed;
+  top: var(--space-l);
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - var(--space-2xl));
+  max-width: var(--layout-max-width-xl);
+
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-xl);
+  border: none;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-m)) {
+  .navbar {
+    padding-inline: var(--space-m);
+  }
+
+  .navbar-links .navbar-right {
+    display: none;
+  }
+
+  .navbar-links .navbar-left {
+    flex: 1;
   }
 }

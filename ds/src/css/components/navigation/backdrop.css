@@ -52,7 +52,7 @@
    ============================================================ */
 
 .backdrop-blur-heavy {
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(var(--blur-xl));
   background-color: color-mix(in srgb, var(--color-brand-black) 30%, transparent);
 }
 

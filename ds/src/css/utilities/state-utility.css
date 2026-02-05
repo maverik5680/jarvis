@@ -7,7 +7,7 @@
 .is-loading {
   opacity: 0.6;
   pointer-events: none;
-  transition: opacity var(--ms-medium) var(--ease-standard);
+  transition: opacity var(--ms-base) var(--ease-standard);
 }
 
 /* Active/Selected State - Used by navigation, tabs, lists */

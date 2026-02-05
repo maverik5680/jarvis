@@ -1,34 +1,40 @@
 /* ============================================================
-   SIZING-UTILITY.CSS
-   Controls width and height constraints
+   SIZING UTILITIES
+   Width, height, and constraint helpers
    ============================================================ */
 
-/* 1. WIDTHS (Percentages) */
-.w-25-utility       { width: 25% !important; }
-.w-33-utility       { width: 33.33% !important; }
-.w-50-utility       { width: 50% !important; }
-.w-75-utility       { width: 75% !important; }
-.w-100-utility      { width: 100% !important; }
-.w-auto-utility     { width: auto !important; }
+/* ------------------------------------------------------------
+   WIDTHS (Percentages)
+   ------------------------------------------------------------ */
+.w-25  { width: 25%; }
+.w-33  { width: 33.33%; }
+.w-50  { width: 50%; }
+.w-75  { width: 75%; }
+.w-100 { width: 100%; }
 
-/* 2. HEIGHTS (Percentages & Viewport) */
-.h-50-utility       { height: 50% !important; }
-.h-100-utility      { height: 100% !important; }
-.h-screen-utility   { height: 100vh !important; }
-.h-auto-utility     { height: auto !important; }
+/* ------------------------------------------------------------
+   HEIGHTS (Percentages)
+   ------------------------------------------------------------ */
+.h-50  { height: 50%; }
+.h-100 { height: 100%; }
 
-/* 3. MAX-WIDTHS (Standard UI Constraints) */
-/* Used for keeping text readable or centering content blocks */
-.max-w-xs-utility   { max-width: 320px !important; }
-.max-w-sm-utility   { max-width: 480px !important; }
-.max-w-md-utility   { max-width: 768px !important; }
-.max-w-lg-utility   { max-width: 1024px !important; }
-.max-w-xl-utility   { max-width: 1280px !important; }
-.max-w-full-utility { max-width: 100% !important; }
+/* ------------------------------------------------------------
+   MAX-WIDTHS (Token-driven)
+   ------------------------------------------------------------ */
+.max-w-xs  { max-width: var(--max-w-xs); }
+.max-w-sm  { max-width: var(--max-w-sm); }
+.max-w-md  { max-width: var(--max-w-md); }
+.max-w-lg  { max-width: var(--max-w-lg); }
+.max-w-xl  { max-width: var(--max-w-xl); }
+.max-w-full { max-width: 100%; }
 
-/* 4. MIN-HEIGHTS (Hero sections and Dashboards) */
-.min-h-screen-utility { min-height: 100vh !important; }
-.min-h-0-utility      { min-height: 0 !important; }
+/* ------------------------------------------------------------
+   MIN-HEIGHTS (Token-driven)
+   ------------------------------------------------------------ */
+.min-h-0      { min-height: 0; }
+.min-h-screen { min-height: 100vh; }
 
-/* 5. VIEWPORT WIDTHS */
-.vw-100-utility     { width: 100vw !important; }
+/* ------------------------------------------------------------
+   VIEWPORT WIDTH
+   ------------------------------------------------------------ */
+.vw-100 { width: 100vw; }

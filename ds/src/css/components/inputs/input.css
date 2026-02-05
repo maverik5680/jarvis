@@ -1,11 +1,174 @@
-.is-focused {
-  // styles for focused state
+/* ============================================================
+   INPUT COMPONENT
+   Token-driven, Audi-sharp, accessible
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE INPUT
+   ------------------------------------------------------------ */
+.input {
+  width: 100%;
+  padding: var(--space-s) var(--space-m);
+  min-height: var(--input-height, var(--size-input-m));
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-body);
+  color: var(--color-text-body);
+
+  background-color: var(--color-bg-surface);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-xs);
+
+  appearance: none;
+  transition:
+    border-color var(--ms-fast) var(--ease-standard),
+    box-shadow var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard);
 }
 
-.is-disabled {
-  // styles for disabled state
+/* ------------------------------------------------------------
+   PLACEHOLDER
+   ------------------------------------------------------------ */
+.input::placeholder {
+  color: var(--color-text-muted);
+  font-weight: var(--fw-light);
 }
 
-.is-loading {
-  // styles for loading state
+/* ------------------------------------------------------------
+   FOCUS STATE
+   ------------------------------------------------------------ */
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 var(--focus-ring-width) color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+
+/* ------------------------------------------------------------
+   DISABLED STATE
+   ------------------------------------------------------------ */
+.input:disabled {
+  background-color: var(--color-bg-disabled);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------
+   READONLY STATE
+   ------------------------------------------------------------ */
+.input[readonly] {
+  background-color: var(--color-bg-readonly);
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   INLINE ICON SUPPORT
+   ============================================================ */
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon .input {
+  padding-left: var(--space-xl);
+}
+
+.input-icon__icon {
+  position: absolute;
+  left: var(--space-m);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-icon-muted);
+  pointer-events: none;
+}
+
+/* ============================================================
+   SIZE VARIANTS
+   (Uses your sizing tokens instead of px)
+   ============================================================ */
+
+.input-sm {
+  padding: var(--space-xs) var(--space-s);
+  min-height: var(--size-input-sm);
+  font-size: var(--fs-small);
+}
+
+.input-lg {
+  padding: var(--space-m) var(--space-l);
+  min-height: var(--size-input-lg);
+  font-size: var(--fs-body);
+}
+
+/* ============================================================
+   VALIDATION STATES
+   ============================================================ */
+
+.input-error {
+  border-color: var(--color-error);
+}
+
+.input-success {
+  border-color: var(--color-success);
+}
+
+/* ============================================================
+   LOADING STATE (Token-driven)
+   ============================================================ */
+
+.input-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.input-loading::after {
+  content: "";
+  position: absolute;
+  right: var(--space-m);
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: var(--size-spinner);
+  height: var(--size-spinner);
+
+  border: var(--border-width-thin) solid var(--color-border-muted);
+  border-top-color: var(--color-accent);
+  border-radius: var(--radius-full);
+
+  animation: input-spinner var(--ms-fast) linear infinite;
+}
+
+@keyframes input-spinner {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* ============================================================
+   FULL-WIDTH + BLOCK MODES
+   ============================================================ */
+
+.input-block {
+  width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .input {
+    padding: var(--space-xs) var(--space-m);
+    min-height: var(--size-input-m);
+    font-size: var(--fs-small);
+  }
+
+  .input-lg {
+    min-height: var(--size-input-lg);
+  }
+
+  .input-sm {
+    min-height: var(--size-input-sm);
+  }
+
+  .input-icon__icon {
+    left: var(--space-s);
+  }
 }

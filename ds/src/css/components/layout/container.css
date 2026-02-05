@@ -32,7 +32,7 @@
 /* Responsive adjustments */
 @media (max-width: var(--breakpoint-m)) {
   .container {
-    max-width: 90%;
+    max-width: var(--layout-max-width-mobile); /* token */
   }
 }
 

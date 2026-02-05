@@ -3,12 +3,22 @@
    Token-driven semantic feedback for form fields
    ============================================================ */
 
+/* Shared state variables */
+.is-error,
+.is-success,
+.is-warning {
+  --state-border-width: var(--border-width-thin);
+  --state-radius: var(--radius-xs);
+  --state-padding-right: calc(var(--space-xl) + var(--space-xs));
+  --state-tint-strength: var(--surface-tint-strength, 10%);
+}
+
 /* ------------------------------------------------------------
    ERROR (Critical)
    ------------------------------------------------------------ */
 .is-error {
   --state-color: var(--color-error);
-  --state-bg: color-mix(in srgb, var(--color-error) 10%, transparent);
+  --state-bg: color-mix(in srgb, var(--color-error) var(--state-tint-strength), transparent);
 
   border-color: var(--state-color);
   background-color: var(--state-bg);
@@ -19,7 +29,7 @@
    ------------------------------------------------------------ */
 .is-success {
   --state-color: var(--color-success);
-  --state-bg: color-mix(in srgb, var(--color-success) 10%, transparent);
+  --state-bg: color-mix(in srgb, var(--color-success) var(--state-tint-strength), transparent);
 
   border-color: var(--state-color);
   background-color: var(--state-bg);
@@ -30,7 +40,7 @@
    ------------------------------------------------------------ */
 .is-warning {
   --state-color: var(--color-warning);
-  --state-bg: color-mix(in srgb, var(--color-warning) 10%, transparent);
+  --state-bg: color-mix(in srgb, var(--color-warning) var(--state-tint-strength), transparent);
 
   border-color: var(--state-color);
   background-color: var(--state-bg);
@@ -44,7 +54,8 @@
 .validation-icon {
   background-repeat: no-repeat;
   background-position: right var(--space-m) center;
-  padding-right: calc(var(--space-xl) + var(--space-xs));
+  background-size: var(--size-icon-sm);
+  padding-right: var(--state-padding-right);
 }
 
 /* Error icon */

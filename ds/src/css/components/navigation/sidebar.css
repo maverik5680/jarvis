@@ -1,0 +1,21 @@
+/* Fix 1 — Replace hard-coded outline width */
+.sidebar summary:focus-visible,
+.u-sidebar summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-accent);
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+/* Fix 2 — Replace hard-coded backdrop rgba */
+@media (max-width: calc(var(--breakpoint-l) - 1px)) {
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: color-mix(in srgb, var(--color-brand-black) 60%, transparent);
+    z-index: calc(var(--z-sidebar) - 1);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity var(--ms-fast) var(--ease-standard);
+  }
+}

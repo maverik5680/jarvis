@@ -140,3 +140,56 @@
 .tooltip-right:hover .tooltip-content {
   transform: translate(0, -50%);
 }
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* Mobile: readability + spacing */
+@media (max-width: var(--breakpoint-s)) {
+  .tooltip-content {
+    padding: var(--space-s) var(--space-m);
+    font-size: var(--fs-body);
+    border-radius: var(--radius-sm);
+    max-width: 90vw;
+    white-space: normal;
+  }
+}
+
+/* Mobile: hide arrow to prevent clipping */
+@media (max-width: var(--breakpoint-s)) {
+  .tooltip-content::after {
+    display: none;
+  }
+}
+
+/* Mobile: block / anchored popover (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .tooltip--block .tooltip-content {
+    position: fixed;
+    left: 50%;
+    bottom: calc(var(--space-l) + env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    margin: 0;
+
+    padding: var(--space-m) var(--space-l);
+    border-radius: var(--radius-m);
+    max-width: calc(100% - 2 * var(--space-l));
+    white-space: normal;
+  }
+}
+
+/* Mobile: full-width tooltip (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .tooltip--full .tooltip-content {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--space-l) + env(safe-area-inset-bottom));
+    transform: none;
+
+    width: 100%;
+    max-width: none;
+    border-radius: var(--radius-m);
+  }
+}

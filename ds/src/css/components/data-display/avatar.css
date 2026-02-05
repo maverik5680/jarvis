@@ -1,56 +1,52 @@
 /* ============================================================
-   AVATAR COMPONENT
-   Token-driven user identity element
+   RESPONSIVE BEHAVIOR
    ============================================================ */
 
-.avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  flex-shrink: 0;
+/* ------------------------------------------------------------
+   MOBILE: Increase tap target size
+   Ensures accessibility and usability on touch screens
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .avatar,
+  .avatar-sm,
+  .avatar-lg {
+    width: var(--avatar-lg);
+    height: var(--avatar-lg);
+  }
 
-  width: var(--avatar-md);
-  height: var(--avatar-md);
+  .avatar {
+    font-size: var(--fs-body);
+  }
 
-  border-radius: var(--radius-xs); /* Sharp, consistent with your system */
-  background-color: var(--color-gray-200);
+  .avatar-sm {
+    font-size: var(--fs-small);
+  }
 
-  overflow: hidden;
-
-  font-family: var(--font-family-main);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-small);
-  color: var(--color-gray-600);
-}
-
-/* Image inside avatar */
-.avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  .avatar-lg {
+    font-size: var(--fs-h3);
+  }
 }
 
 /* ------------------------------------------------------------
-   SIZE VARIANTS
+   MOBILE: Optional full-width avatar (profile headers)
+   Developer opts in with .avatar-full
    ------------------------------------------------------------ */
-
-.avatar-sm {
-  width: var(--avatar-sm);
-  height: var(--avatar-sm);
-  font-size: var(--fs-tiny);
-}
-
-.avatar-lg {
-  width: var(--avatar-lg);
-  height: var(--avatar-lg);
-  font-size: var(--fs-h4);
+@media (max-width: var(--breakpoint-s)) {
+  .avatar-full {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
 }
 
 /* ------------------------------------------------------------
-   SHAPE VARIANT
+   MOBILE: Optional compact mode for lists
+   Developer opts in with .avatar-compact
    ------------------------------------------------------------ */
-
-.avatar-circle {
-  border-radius: 50%;
+@media (max-width: var(--breakpoint-s)) {
+  .avatar-compact {
+    width: var(--avatar-sm);
+    height: var(--avatar-sm);
+    font-size: var(--fs-tiny);
+  }
 }

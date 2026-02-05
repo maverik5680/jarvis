@@ -118,3 +118,67 @@
   from { background-position: 0 0; }
   to   { background-position: 40px 0; }
 }
+
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   MOBILE: Adjust height + readability
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .progress {
+    height: var(--progress-height-mobile, 6px);
+    border-radius: var(--radius-sm);
+  }
+
+  .progress__label {
+    font-size: var(--fs-tiny);
+    margin-top: var(--space-xxs);
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Size variants scale down slightly
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .progress-sm {
+    height: 3px;
+  }
+
+  .progress-md {
+    height: 6px;
+  }
+
+  .progress-lg {
+    height: 8px;
+  }
+
+  .progress-xl {
+    height: 10px;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Full-width progress bar (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .progress--full {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Compact mode (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .progress--compact {
+    height: 4px;
+  }
+
+  .progress--compact .progress__label {
+    display: none;
+  }
+}

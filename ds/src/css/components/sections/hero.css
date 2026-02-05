@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
 
-  min-height: 80vh;
+  min-height: var(--hero-min-height, 80vh);
   padding-block: var(--space-5xl);
 
   background-color: var(--color-bg-surface);
@@ -40,7 +40,7 @@
    CONTENT
    ------------------------------------------------------------ */
 .hero-content {
-  max-width: 620px;
+  max-width: var(--hero-content-max-width, 620px);
 }
 
 /* Title */

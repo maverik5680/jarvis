@@ -1,31 +1,189 @@
-.alert--global {
-  /* Styles for global alert */
+/* ============================================================
+   ALERT COMPONENT
+   System-wide messaging for status, warnings, and notifications
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   BASE ALERT
+   ------------------------------------------------------------ */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-m);
+
+  width: 100%;
+  padding: var(--space-m) var(--space-l);
+
+  border-radius: var(--radius-m);
+  border: var(--border-width-thin) solid transparent;
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-body);
+  line-height: 1.4;
+
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-body);
+
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
 }
 
-.alert--fixed-top {
-  /* Styles for fixed top alert */
+/* Icon slot */
+.alert__icon {
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-h4);
+  flex-shrink: 0;
 }
 
-.alert--fixed-bottom {
-  /* Styles for fixed bottom alert */
+/* Content block */
+.alert__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
 }
 
-.alert--container {
-  /* Styles for alert container */
+.alert__title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
 }
 
+.alert__message {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* Dismiss button */
+.alert__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: var(--color-text-muted);
+  opacity: 0.7;
+
+  transition: opacity var(--ms-fast) var(--ease-standard);
+}
+
+.alert__close:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   VARIANTS — COLOR
+   ============================================================ */
+
+/* Black */
 .alert--black {
-  /* Styles for black alert */
+  background-color: var(--color-brand-black);
+  color: var(--color-white);
+  border-color: var(--color-brand-black-hover);
 }
 
+/* Accent (Orange) */
 .alert--accent {
-  /* Styles for accent alert */
+  background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
+/* White */
 .alert--white {
-  /* Styles for white alert */
+  background-color: var(--color-brand-white);
+  border-color: var(--color-gray-200);
+  color: var(--color-brand-black);
 }
 
+/* Gray */
 .alert--gray {
-  /* Styles for gray alert */
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-700);
+}
+
+/* ============================================================
+   VARIANTS — POSITIONING
+   ============================================================ */
+
+/* Global alert (full-width, top of page) */
+.alert--global {
+  border-radius: 0;
+  width: 100%;
+  box-shadow: var(--shadow-md);
+}
+
+/* Fixed top */
+.alert--fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: var(--z-max);
+  border-radius: 0;
+}
+
+/* Fixed bottom */
+.alert--fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: var(--z-max);
+  border-radius: 0;
+}
+
+/* Container alert (inside cards, modals, sections) */
+.alert--container {
+  border-radius: var(--radius-s);
+  box-shadow: none;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* Mobile: tighter spacing, larger tap targets */
+@media (max-width: var(--breakpoint-s)) {
+  .alert {
+    padding: var(--space-s) var(--space-m);
+    gap: var(--space-s);
+  }
+
+  .alert__title {
+    font-size: var(--fs-small);
+  }
+
+  .alert__message {
+    font-size: var(--fs-tiny);
+  }
+
+  .alert__icon {
+    font-size: var(--fs-h5);
+  }
+}
+
+/* Mobile: fixed alerts get safe-area padding */
+@media (max-width: var(--breakpoint-s)) {
+  .alert--fixed-top {
+    padding-top: calc(var(--space-m) + env(safe-area-inset-top));
+  }
+
+  .alert--fixed-bottom {
+    padding-bottom: calc(var(--space-m) + env(safe-area-inset-bottom));
+  }
+}
+
+/* Mobile: full-width container alert (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .alert--full {
+    width: 100%;
+    border-radius: 0;
+  }
 }

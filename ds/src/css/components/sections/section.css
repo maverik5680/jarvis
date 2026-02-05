@@ -79,6 +79,99 @@
   }
 }
 
+/* ============================================================
+   VARIANT: SPLIT-REVERSE
+   (Mirror of section-split)
+   ============================================================ */
+.section-split-reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  direction: rtl;
+}
+
+.section-split-reverse > * {
+  direction: ltr;
+}
+
+@media (max-width: var(--breakpoint-l)) {
+  .section-split-reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}
+
+/* ============================================================
+   VARIANT: GRID-AUTO
+   (Auto-fit responsive grid)
+   ============================================================ */
+.section-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--section-grid-min, 280px), 1fr));
+  gap: var(--space-2xl);
+}
+
+/* ============================================================
+   VARIANT: SIDEBAR-SECTION
+   (Content + sidebar)
+   ============================================================ */
+.section-sidebar {
+  display: grid;
+  grid-template-columns: var(--section-sidebar-width, 320px) 1fr;
+  gap: var(--space-3xl);
+}
+
+@media (max-width: var(--breakpoint-l)) {
+  .section-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   VARIANT: HERO-SECTION
+   (Large, centered, high-impact)
+   ============================================================ */
+.section-hero-section {
+  text-align: center;
+  padding-block: var(--space-6xl);
+  background: radial-gradient(
+    circle at top left,
+    color-mix(in srgb, var(--color-accent) 35%, transparent),
+    var(--color-bg-surface)
+  );
+}
+
+.section-hero-section .section-content {
+  max-width: var(--section-hero-max-width, 880px);
+}
+
+/* ============================================================
+   VARIANT: CARD-SECTION
+   (Card-like container inside section)
+   ============================================================ */
+.section-card {
+  background-color: transparent;
+}
+
+.section-card .section-content {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-3xl);
+}
+
+/* ============================================================
+   VARIANT: ALTERNATING-SECTION
+   (Alternating background for long pages)
+   ============================================================ */
+.section-alt:nth-of-type(even) {
+  background-color: var(--color-bg-alt, var(--color-bg-subtle));
+}
+
+.section-alt:nth-of-type(odd) {
+  background-color: var(--color-bg-surface);
+}
+
 /* ------------------------------------------------------------
    FULL-BLEED VARIANT
    ------------------------------------------------------------ */

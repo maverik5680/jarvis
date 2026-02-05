@@ -1,137 +1,171 @@
 /* ============================================================
-   TEXTFIELD ATOM
-   Underline inputs + floating label + framed textarea
+   SELECTION ATOMS (Checkboxes & Radios)
+   Token-driven, Audi-sharp, accessible
    ============================================================ */
 
 /* ------------------------------------------------------------
-   BASE UNDERLINE INPUT
+   1. HIDE NATIVE INPUT (but keep accessible)
    ------------------------------------------------------------ */
-.textfield,
-.textfield-line {
-  width: 100%;
-  font-family: var(--font-family-main);
-  font-size: 16px; /* iOS zoom-safe */
-  color: var(--color-text-body);
-
-  background-color: transparent;
-  border: none;
-  border-bottom: var(--border-width-thin) solid var(--color-border);
-  border-radius: 0;
-
-  padding: var(--space-xl) 0 var(--space-xs) 0;
-
-  transition:
-    border-color var(--ms-fast) var(--ease-standard),
-    box-shadow var(--ms-fast) var(--ease-standard);
-}
-
-/* Focus */
-.textfield:focus,
-.textfield-line:focus {
-  outline: none;
-  border-bottom-color: var(--color-accent);
-  box-shadow: 0 2px 0 0 var(--color-accent);
-}
-
-/* ------------------------------------------------------------
-   FLOATING LABEL CONTAINER
-   ------------------------------------------------------------ */
-.textfield-container {
-  position: relative;
-  width: 100%;
-  margin-top: var(--space-l);
-}
-
-.textfield-container label {
+.input-selection {
   position: absolute;
-  left: 0;
-  top: var(--space-xl);
-
-  font-size: var(--fs-body);
-  color: var(--color-text-muted);
-
-  pointer-events: none;
-  transition:
-    color var(--ms-fast) var(--ease-standard),
-    transform var(--ms-fast) var(--ease-standard),
-    font-size var(--ms-fast) var(--ease-standard);
-}
-
-/* Floating label trigger */
-.textfield-container input:focus ~ label,
-.textfield-container input:not(:placeholder-shown) ~ label {
-  top: 0;
-  font-size: var(--fs-small);
-  font-weight: var(--fw-bold);
-  color: var(--color-accent);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  cursor: pointer;
 }
 
 /* ------------------------------------------------------------
-   FRAMED TEXTAREA
+   2. CUSTOM CONTROL (Square for checkbox, circle for radio)
    ------------------------------------------------------------ */
-.textarea-frame {
-  width: 100%;
-  min-height: 120px;
-
-  padding: var(--space-m);
-  font-family: var(--font-family-main);
-  font-size: 16px;
-  color: var(--color-text-body);
+.selection-control {
+  display: inline-block;
+  width: var(--selection-size, var(--size-selection-m));
+  height: var(--selection-size, var(--size-selection-m));
 
   background-color: var(--color-bg-surface);
   border: var(--border-width-thin) solid var(--color-border);
   border-radius: var(--radius-xs);
 
-  resize: vertical;
+  position: relative;
+  flex-shrink: 0;
 
   transition:
     border-color var(--ms-fast) var(--ease-standard),
+    background-color var(--ms-fast) var(--ease-standard),
     box-shadow var(--ms-fast) var(--ease-standard);
 }
 
-.textarea-frame:focus {
+/* Checkbox = sharp square */
+.input-selection[type="checkbox"] + .selection-control {
+  border-radius: var(--radius-xs);
+}
+
+/* Radio = perfect circle */
+.input-selection[type="radio"] + .selection-control {
+  border-radius: var(--radius-full);
+}
+
+/* ------------------------------------------------------------
+   3. HOVER & FOCUS
+   ------------------------------------------------------------ */
+.input-selection:hover + .selection-control {
+  border-color: var(--color-accent);
+}
+
+.input-selection:focus-visible + .selection-control {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+  box-shadow: 0 0 0 var(--focus-ring-width) color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
 /* ------------------------------------------------------------
-   SEARCH FIELD VARIANT
+   4. CHECKED STATE
    ------------------------------------------------------------ */
-.textfield-search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
+.input-selection:checked + .selection-control {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
-.textfield-search-container .search-icon {
+/* Base for checkmark/dot */
+.input-selection:checked + .selection-control::after {
+  content: "";
   position: absolute;
-  left: 0;
-  width: 18px;
-  height: 18px;
-  color: var(--color-text-muted);
+  display: block;
 }
 
-.textfield-search {
-  padding-left: var(--space-xl) !important;
+/* Checkbox checkmark */
+.input-selection[type="checkbox"]:checked + .selection-control::after {
+  left: var(--selection-check-left, var(--space-xxs));
+  top: var(--selection-check-top, var(--space-xxs));
+
+  width: var(--selection-check-width, var(--size-checkmark-width));
+  height: var(--selection-check-height, var(--size-checkmark-height));
+
+  border: solid var(--color-white);
+  border-width: 0 var(--border-width-medium) var(--border-width-medium) 0;
+  transform: rotate(45deg);
+}
+
+/* Radio dot */
+.input-selection[type="radio"]:checked + .selection-control::after {
+  width: var(--size-radio-dot);
+  height: var(--size-radio-dot);
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ------------------------------------------------------------
-   WHITE THEME VARIANT
+   5. DISABLED STATE
    ------------------------------------------------------------ */
-.textfield-white {
-  color: var(--color-white);
-  border-bottom-color: color-mix(in srgb, var(--color-white) 30%, transparent);
+.input-selection:disabled + .selection-control {
+  background-color: var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
 }
 
-.textfield-white:focus {
-  border-bottom-color: var(--color-white);
+/* Disabled + checked */
+.input-selection:disabled:checked + .selection-control {
+  background-color: var(--color-bg-disabled-strong);
+  border-color: var(--color-border-disabled-strong);
 }
 
-.textfield-white ~ label {
-  color: color-mix(in srgb, var(--color-white) 60%, transparent);
+/* ------------------------------------------------------------
+   6. SIZE VARIANTS
+   ------------------------------------------------------------ */
+.selection-sm {
+  --selection-size: var(--size-selection-sm);
 }
 
-.textfield-white:focus ~ label {
-  color: var(--color-white);
+.selection-lg {
+  --selection-size: var(--size-selection-lg);
+}
+
+/* ------------------------------------------------------------
+   7. INLINE + BLOCK MODES
+   ------------------------------------------------------------ */
+.selection-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.selection-block {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+/* ------------------------------------------------------------
+   8. COMPACT + DENSE MODES
+   ------------------------------------------------------------ */
+.selection--compact .selection-control {
+  --selection-size: var(--size-selection-sm);
+}
+
+.selection--dense .selection-control {
+  --selection-size: var(--size-selection-xs);
+}
+
+/* ------------------------------------------------------------
+   9. RESPONSIVE BEHAVIOR
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .selection-inline,
+  .selection-block {
+    gap: var(--space-xs);
+  }
+
+  .selection-sm {
+    --selection-size: var(--size-selection-xs);
+  }
+
+  .selection-lg {
+    --selection-size: var(--size-selection-m);
+  }
 }

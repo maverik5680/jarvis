@@ -3,11 +3,15 @@
    Production-Ready Mobile-First Responsive Layout
    ============================================================ */
 
+/* Default sidebar width token */
+:root {
+  --sidebar-width-default: 280px;
+}
+
 /* ------------------------------------------------------------
    BASE LAYOUT SHELL (Mobile-First)
    ------------------------------------------------------------ */
 .layout-shell {
-  /* Mobile: Block layout by default */
   display: block;
   min-height: 100vh;
 }
@@ -16,21 +20,16 @@
 .main-area,
 .u-main,
 .u-main-area {
-  /* Layout */
   min-height: 100vh;
   width: 100%;
-  
-  /* Visual */
+
   background-color: var(--color-bg-surface);
   color: var(--color-text-body);
-  
-  /* Scrolling */
+
   overflow-y: auto;
-  
-  /* Mobile: No left padding */
+
   padding-left: 0;
-  
-  /* Smooth transition for layout changes */
+
   transition: padding-left var(--ms-fast) var(--ease-standard);
 }
 
@@ -46,13 +45,11 @@
    ------------------------------------------------------------ */
 @media (min-width: var(--breakpoint-l)) {
   .layout-shell {
-    /* Desktop: Flexbox layout */
     display: flex;
     height: 100vh;
     overflow: hidden;
   }
-  
-  /* Main content automatically receives left padding equal to sidebar width */
+
   .main-area,
   .u-main,
   .u-main-area {
@@ -60,12 +57,10 @@
     min-width: 0;
     height: 100vh;
     overflow-y: auto;
-    
-    /* Add left padding to prevent content overlap */
-    padding-left: var(--sidebar-width, 280px);
+
+    padding-left: var(--sidebar-width, var(--sidebar-width-default));
   }
-  
-  /* Adjust page content padding on larger screens */
+
   .page-content {
     padding-inline: var(--space-xxl);
     padding-block: var(--space-xxl);

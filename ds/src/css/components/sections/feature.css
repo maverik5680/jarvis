@@ -40,8 +40,8 @@
    ICON BOX
    ------------------------------------------------------------ */
 .feature-icon-box {
-  width: var(--feature-icon-size, 48px);
-  height: var(--feature-icon-size, 48px);
+  width: var(--feature-icon-size, var(--size-feature-icon-default));
+  height: var(--feature-icon-size, var(--size-feature-icon-default));
 
   display: flex;
   align-items: center;

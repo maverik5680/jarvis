@@ -12,7 +12,7 @@
   left: 0;
 
   width: 100%;
-  height: var(--tab-bar-height, 64px);
+  height: var(--tab-bar-height, var(--tab-bar-height-default));
 
   background-color: var(--color-bg-surface);
   border-top: var(--border-width-thin) solid var(--color-border-light);
@@ -63,8 +63,8 @@
 
 /* Icon */
 .tab-bar-icon {
-  width: 24px;
-  height: 24px;
+  width: var(--tab-bar-icon-size);
+  height: var(--tab-bar-icon-size);
 }
 
 /* ------------------------------------------------------------
@@ -74,7 +74,6 @@
   color: var(--color-accent);
 }
 
-/* Active indicator line */
 .tab-bar-item-active::after {
   content: "";
   position: absolute;
@@ -82,7 +81,7 @@
   left: 0;
 
   width: 100%;
-  height: 2px;
+  height: var(--border-width-medium);
 
   background-color: var(--color-accent);
 }
@@ -124,7 +123,7 @@
    VARIANT: COMPACT TAB BAR
    ------------------------------------------------------------ */
 .tab-bar-compact {
-  --tab-bar-height: 52px;
+  --tab-bar-height: var(--tab-bar-height-compact);
 }
 
 .tab-bar-compact .tab-bar-inner {
@@ -132,8 +131,8 @@
 }
 
 .tab-bar-compact .tab-bar-icon {
-  width: 20px;
-  height: 20px;
+  width: var(--tab-bar-icon-size-compact);
+  height: var(--tab-bar-icon-size-compact);
 }
 
 /* ============================================================

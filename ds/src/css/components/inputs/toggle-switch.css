@@ -6,13 +6,16 @@
 .toggle {
   position: relative;
   display: inline-block;
-  width: var(--toggle-width, 44px);
-  height: var(--toggle-height, 24px);
+
+  /* Default sizing tokens */
+  width: var(--toggle-width, var(--size-toggle-m));
+  height: var(--toggle-height, var(--size-toggle-height-m));
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    HIDE NATIVE INPUT
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .toggle-input {
   position: absolute;
   opacity: 0;
@@ -21,15 +24,16 @@
   pointer-events: none;
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    TRACK
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .toggle-track {
   position: absolute;
   inset: 0;
 
-  background-color: var(--color-gray-300);
-  border-radius: var(--toggle-height, 24px);
+  background-color: var(--color-bg-toggle-off);
+  border-radius: var(--radius-pill);
 
   cursor: pointer;
 
@@ -38,55 +42,134 @@
     box-shadow var(--ms-fast) var(--ease-standard);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    KNOB
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .toggle-track::before {
   content: "";
   position: absolute;
 
-  width: calc(var(--toggle-height, 24px) - 6px);
-  height: calc(var(--toggle-height, 24px) - 6px);
+  width: calc(var(--toggle-height, var(--size-toggle-height-m)) - var(--toggle-knob-offset));
+  height: calc(var(--toggle-height, var(--size-toggle-height-m)) - var(--toggle-knob-offset));
 
-  left: 3px;
-  top: 3px;
+  left: var(--toggle-knob-offset);
+  top: var(--toggle-knob-offset);
 
-  background-color: var(--color-white);
-  border-radius: 50%;
+  background-color: var(--color-bg-toggle-knob);
+  border-radius: var(--radius-full);
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-toggle-knob);
 
   transition:
     transform var(--ms-fast) var(--ease-standard),
     background-color var(--ms-fast) var(--ease-standard);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    CHECKED STATE
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .toggle-input:checked + .toggle-track {
   background-color: var(--color-accent);
 }
 
 .toggle-input:checked + .toggle-track::before {
-  transform: translateX(calc(var(--toggle-width, 44px) - var(--toggle-height, 24px)));
+  transform: translateX(
+    calc(var(--toggle-width, var(--size-toggle-m)) - var(--toggle-height, var(--size-toggle-height-m)))
+  );
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    FOCUS RING
-   ------------------------------------------------------------ */
-.toggle-input:focus + .toggle-track {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+   ============================================================ */
+
+.toggle-input:focus-visible + .toggle-track {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width)
+    color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
-/* ------------------------------------------------------------
+/* ============================================================
    DISABLED STATE
-   ------------------------------------------------------------ */
+   ============================================================ */
+
 .toggle-disabled {
-  opacity: 0.5;
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
 }
 
 .toggle-disabled .toggle-track {
   cursor: not-allowed;
+  background-color: var(--color-bg-toggle-disabled);
+}
+
+.toggle-disabled .toggle-track::before {
+  background-color: var(--color-bg-toggle-knob-disabled);
+}
+
+/* Checked + disabled */
+.toggle-disabled .toggle-input:checked + .toggle-track {
+  background-color: var(--color-bg-toggle-disabled-strong);
+}
+
+/* ============================================================
+   SIZE VARIANTS
+   ============================================================ */
+
+.toggle-sm {
+  --toggle-width: var(--size-toggle-sm);
+  --toggle-height: var(--size-toggle-height-sm);
+}
+
+.toggle-lg {
+  --toggle-width: var(--size-toggle-lg);
+  --toggle-height: var(--size-toggle-height-lg);
+}
+
+/* ============================================================
+   COMPACT + DENSE MODES
+   ============================================================ */
+
+.toggle--compact {
+  --toggle-width: var(--size-toggle-sm);
+  --toggle-height: var(--size-toggle-height-sm);
+}
+
+.toggle--dense {
+  --toggle-width: var(--size-toggle-xs);
+  --toggle-height: var(--size-toggle-height-xs);
+}
+
+/* ============================================================
+   INLINE + BLOCK MODES
+   ============================================================ */
+
+.toggle-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+.toggle-block {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .toggle {
+    --toggle-width: var(--size-toggle-m);
+    --toggle-height: var(--size-toggle-height-m);
+  }
+
+  .toggle-inline,
+  .toggle-block {
+    gap: var(--space-xs);
+  }
 }

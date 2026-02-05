@@ -196,7 +196,7 @@
 }
 
 .header-search input {
-  min-width: 200px;
+  min-width: var(--size-20);
 }
 
 /* ============================================================
@@ -211,8 +211,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: var(--size-8);
+  height: var(--size-8);
   cursor: pointer;
 }
 
@@ -253,4 +253,188 @@
   font-size: var(--fs-tiny);
   padding: var(--radius-xs) var(--radius-md);
   border-radius: var(--radius-pill);
+}
+
+/* ============================================================
+   VARIANT 9: HEADER WITH SUBNAV
+   ============================================================ */
+
+.header-subnav .header-content {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  padding-block-end: var(--space-s);
+}
+
+.header-subnav-bar {
+  display: flex;
+  gap: var(--space-l);
+  padding-inline: var(--page-margin);
+  padding-block: var(--space-s);
+  background-color: var(--color-bg-surface);
+  border-bottom: var(--border-width-thin) solid var(--color-border-light);
+}
+
+/* ============================================================
+   VARIANT 10: UNDERLINE NAV HEADER
+   ============================================================ */
+
+.header-underline-nav .header-nav a {
+  padding-block: var(--space-xs);
+  border-bottom: var(--border-width-thin) solid transparent;
+  transition: border-color var(--ms-fast) var(--ease-standard);
+}
+
+.header-underline-nav .header-nav a:hover {
+  border-color: var(--color-accent);
+}
+
+/* ============================================================
+   VARIANT 11: MEGA MENU HEADER
+   ============================================================ */
+
+.header-mega .header-nav-item {
+  position: relative;
+}
+
+.header-mega-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-surface);
+  padding: var(--space-xl);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+  box-shadow: var(--shadow-l);
+  display: none;
+}
+
+.header-mega .header-nav-item:hover .header-mega-panel {
+  display: block;
+}
+
+/* ============================================================
+   VARIANT 12: SECONDARY ACTION BAR
+   ============================================================ */
+
+.header-secondary-bar {
+  background-color: var(--color-bg-surface);
+  padding-block: var(--space-xs);
+  padding-inline: var(--page-margin);
+  border-bottom: var(--border-width-thin) solid var(--color-border-light);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ============================================================
+   VARIANT 13: BREADCRUMB HEADER
+   ============================================================ */
+
+.header-breadcrumbs {
+  padding-inline: var(--page-margin);
+  padding-block: var(--space-xs);
+  background-color: var(--color-bg-surface);
+  border-bottom: var(--border-width-thin) solid var(--color-border-light);
+}
+
+/* ============================================================
+   VARIANT 14: TABS HEADER
+   ============================================================ */
+
+.header-tabs {
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+.header-tabs-nav {
+  display: flex;
+  gap: var(--space-l);
+  padding-inline: var(--page-margin);
+  padding-block: var(--space-s);
+}
+
+/* ============================================================
+   VARIANT 15: AVATAR MENU HEADER
+   ============================================================ */
+
+.header-avatar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  cursor: pointer;
+}
+
+.header-avatar img {
+  width: var(--size-8);
+  height: var(--size-8);
+  border-radius: var(--radius-round);
+}
+
+/* ============================================================
+   VARIANT 16: NOTIFICATION HEADER
+   ============================================================ */
+
+.header-notify {
+  position: relative;
+}
+
+.header-notify-count {
+  position: absolute;
+  top: calc(-1 * var(--space-xxs));
+  right: calc(-1 * var(--space-xxs));
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--fs-tiny);
+  padding: var(--space-xxs) var(--space-xs);
+  border-radius: var(--radius-pill);
+}
+
+/* ============================================================
+   VARIANT 17: ACTION GROUP HEADER
+   ============================================================ */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+.header-actions-group {
+  display: flex;
+  gap: var(--space-s);
+}
+
+/* ============================================================
+   VARIANT 18: FULL-WIDTH SEARCH HEADER
+   ============================================================ */
+
+.header-search-full {
+  padding-block: var(--space-s);
+}
+
+.header-search-full input {
+  width: 100%;
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   VARIANT 19: PROMO BAR HEADER
+   ============================================================ */
+
+.header-promo {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding-block: var(--space-xs);
+  text-align: center;
+  font-size: var(--fs-small);
+}
+
+/* ============================================================
+   VARIANT 20: GLASS HEADER
+   ============================================================ */
+
+.header-glass {
+  backdrop-filter: blur(var(--blur-md));
+  background-color: color-mix(in srgb, var(--color-brand-black) 60%, transparent);
+  border-bottom: var(--border-width-thin) solid color-mix(in srgb, var(--color-white) 10%, transparent);
 }

@@ -1,119 +1,32 @@
 /* ============================================================
-   BUTTON COMPONENT
-   Token-driven, scalable button variants
+   BUTTON COLOR VARIANTS
+   Supports: filled, outline, ghost, soft, pill
    ============================================================ */
 
 /* ------------------------------------------------------------
-   BASE BUTTON
+   PILL SHAPE (modifier)
    ------------------------------------------------------------ */
-.button {
-  appearance: none;
-  -webkit-appearance: none;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-
-  padding: var(--space-xs) var(--space-m);
-  border-radius: var(--radius-m);
-  border: var(--border-width-thin) solid transparent;
-
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-body);
-  line-height: 1.2;
-
-  cursor: pointer;
-  transition:
-    background-color var(--ms-base) var(--ease-standard),
-    color var(--ms-base) var(--ease-standard),
-    border-color var(--ms-base) var(--ease-standard),
-    box-shadow var(--ms-base) var(--ease-standard),
-    filter var(--ms-base) var(--ease-standard);
+.button-pill {
+  border-radius: var(--radius-full);
 }
 
-/* ------------------------------------------------------------
-   ACCESSIBILITY: FOCUS VISIBLE
-   ------------------------------------------------------------ */
-.button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 var(--focus-ring-width) var(--color-accent);
-}
+/* ============================================================
+   FILLED VARIANTS
+   ============================================================ */
 
-/* ------------------------------------------------------------
-   DISABLED STATE
-   ------------------------------------------------------------ */
-.button:disabled,
-.button.is-disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* ------------------------------------------------------------
-   LOADING STATE (optional)
-   ------------------------------------------------------------ */
-.button.is-loading {
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.button.is-loading .button-label {
-  opacity: 0;
-}
-
-/* ------------------------------------------------------------
-   SIZE VARIANTS
-   ------------------------------------------------------------ */
-.button-xs {
-  padding: var(--space-xxs) var(--space-s);
-  font-size: var(--fs-small);
-}
-
-.button-sm {
-  padding: var(--space-xs) var(--space-s);
-  font-size: var(--fs-body);
-}
-
-.button-lg {
-  padding: var(--space-s) var(--space-l);
-  font-size: var(--fs-large);
-}
-
-.button-xl {
-  padding: var(--space-m) var(--space-xl);
-  font-size: var(--fs-xl);
-}
-
-/* ------------------------------------------------------------
-   COLOR VARIANTS
-   ------------------------------------------------------------ */
-
-/* PRIMARY — Brand Orange */
-.button-primary {
-  background-color: var(--color-accent);
+/* ORANGE (Accent) */
+.button-orange {
+  background-color: var(--color-brand-orange);
   color: var(--color-white);
 }
-.button-primary:hover {
+.button-orange:hover {
   background-color: var(--color-brand-orange-hover);
 }
-.button-primary:active {
+.button-orange:active {
   filter: brightness(0.9);
 }
 
-/* SECONDARY — Neutral Gray */
-.button-secondary {
-  background-color: var(--color-gray-200);
-  color: var(--color-brand-black);
-}
-.button-secondary:hover {
-  background-color: var(--color-gray-300);
-}
-.button-secondary:active {
-  background-color: var(--color-gray-400);
-}
-
-/* BLACK / INVERSE */
+/* BLACK */
 .button-black {
   background-color: var(--color-brand-black);
   color: var(--color-white);
@@ -125,68 +38,137 @@
   filter: brightness(0.9);
 }
 
-/* OUTLINE */
-.button-outline {
-  background-color: transparent;
-  border-color: var(--color-border);
-  color: var(--color-text-body);
+/* WHITE */
+.button-white {
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-black);
 }
-.button-outline:hover {
-  background-color: var(--color-gray-800);
+.button-white:hover {
+  background-color: var(--color-brand-white-hover);
 }
-.button-outline:active {
-  background-color: var(--color-gray-700);
-}
-
-/* GHOST */
-.button-ghost {
-  background-color: transparent;
-  color: var(--color-text-body);
-}
-.button-ghost:hover {
-  background-color: var(--color-gray-800);
-}
-.button-ghost:active {
-  background-color: var(--color-gray-700);
-}
-
-/* DANGER */
-.button-danger {
-  background-color: var(--color-error);
-  color: var(--color-white);
-}
-.button-danger:hover {
-  background-color: var(--color-error-dark);
-}
-.button-danger:active {
+.button-white:active {
   filter: brightness(0.9);
 }
 
-/* SUCCESS */
-.button-success {
-  background-color: var(--color-success);
-  color: var(--color-white);
+/* ============================================================
+   OUTLINE VARIANTS
+   ============================================================ */
+
+/* ORANGE OUTLINE */
+.button-orange-outline {
+  background-color: transparent;
+  border-color: var(--color-brand-orange);
+  color: var(--color-brand-orange);
 }
-.button-success:hover {
-  background-color: var(--color-success-dark);
+.button-orange-outline:hover {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 10%, transparent);
 }
-.button-success:active {
-  filter: brightness(0.9);
+.button-orange-outline:active {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 20%, transparent);
 }
 
-/* ------------------------------------------------------------
-   ICON-ONLY BUTTON
-   ------------------------------------------------------------ */
-.button-icon {
-  padding: var(--space-xs);
-  width: var(--space-xxl);
-  height: var(--space-xxl);
-  justify-content: center;
+/* BLACK OUTLINE */
+.button-black-outline {
+  background-color: transparent;
+  border-color: var(--color-brand-black);
+  color: var(--color-brand-black);
+}
+.button-black-outline:hover {
+  background-color: color-mix(in srgb, var(--color-brand-black) 10%, transparent);
+}
+.button-black-outline:active {
+  background-color: color-mix(in srgb, var(--color-brand-black) 20%, transparent);
 }
 
-/* ------------------------------------------------------------
-   FULL WIDTH
-   ------------------------------------------------------------ */
-.button-full {
-  width: 100%;
+/* WHITE OUTLINE */
+.button-white-outline {
+  background-color: transparent;
+  border-color: var(--color-brand-white);
+  color: var(--color-brand-white);
+}
+.button-white-outline:hover {
+  background-color: color-mix(in srgb, var(--color-brand-white) 10%, transparent);
+}
+.button-white-outline:active {
+  background-color: color-mix(in srgb, var(--color-brand-white) 20%, transparent);
+}
+
+/* ============================================================
+   GHOST VARIANTS
+   ============================================================ */
+
+/* ORANGE GHOST */
+.button-orange-ghost {
+  background-color: transparent;
+  color: var(--color-brand-orange);
+}
+.button-orange-ghost:hover {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 10%, transparent);
+}
+.button-orange-ghost:active {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 20%, transparent);
+}
+
+/* BLACK GHOST */
+.button-black-ghost {
+  background-color: transparent;
+  color: var(--color-brand-black);
+}
+.button-black-ghost:hover {
+  background-color: color-mix(in srgb, var(--color-brand-black) 10%, transparent);
+}
+.button-black-ghost:active {
+  background-color: color-mix(in srgb, var(--color-brand-black) 20%, transparent);
+}
+
+/* WHITE GHOST */
+.button-white-ghost {
+  background-color: transparent;
+  color: var(--color-brand-white);
+}
+.button-white-ghost:hover {
+  background-color: color-mix(in srgb, var(--color-brand-white) 10%, transparent);
+}
+.button-white-ghost:active {
+  background-color: color-mix(in srgb, var(--color-brand-white) 20%, transparent);
+}
+
+/* ============================================================
+   SOFT VARIANTS (subtle backgrounds)
+   ============================================================ */
+
+/* ORANGE SOFT */
+.button-orange-soft {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 15%, transparent);
+  color: var(--color-brand-orange);
+}
+.button-orange-soft:hover {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 25%, transparent);
+}
+.button-orange-soft:active {
+  background-color: color-mix(in srgb, var(--color-brand-orange) 35%, transparent);
+}
+
+/* BLACK SOFT */
+.button-black-soft {
+  background-color: color-mix(in srgb, var(--color-brand-black) 15%, transparent);
+  color: var(--color-brand-white);
+}
+.button-black-soft:hover {
+  background-color: color-mix(in srgb, var(--color-brand-black) 25%, transparent);
+}
+.button-black-soft:active {
+  background-color: color-mix(in srgb, var(--color-brand-black) 35%, transparent);
+}
+
+/* WHITE SOFT */
+.button-white-soft {
+  background-color: color-mix(in srgb, var(--color-brand-white) 15%, transparent);
+  color: var(--color-brand-black);
+}
+.button-white-soft:hover {
+  background-color: color-mix(in srgb, var(--color-brand-white) 25%, transparent);
+}
+.button-white-soft:active {
+  background-color: color-mix(in srgb, var(--color-brand-white) 35%, transparent);
 }

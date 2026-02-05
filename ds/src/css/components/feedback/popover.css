@@ -182,3 +182,88 @@
   height: auto;
   font-size: var(--fs-small);
 }
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   MOBILE: Increase padding + readability
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .popover {
+    padding: var(--space-m);
+    font-size: var(--fs-small);
+    border-radius: var(--radius-m);
+    max-width: 100%;
+  }
+
+  .popover-header {
+    font-size: var(--fs-body);
+  }
+
+  .popover-body {
+    font-size: var(--fs-small);
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Hide arrow (prevents clipping)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .popover::after {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Full-width popover (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .popover--full {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    top: auto;
+
+    margin: 0 var(--space-m);
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Bottom-sheet popover (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .popover--sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: none;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
+
+    transform: translateY(100%);
+  }
+
+  .popover--sheet.popover-open {
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Touch target improvements for buttons inside popovers
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .popover .button,
+  .popover .btn {
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+    font-size: var(--fs-body);
+  }
+}
+

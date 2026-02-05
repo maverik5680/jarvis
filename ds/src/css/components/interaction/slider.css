@@ -21,7 +21,7 @@
    SLIDE
    ------------------------------------------------------------ */
 .slider-slide {
-  min-width: 100%;
+  min-width: var(--slider-slide-width, 100%);
   flex-shrink: 0;
 }
 
@@ -37,10 +37,10 @@
 }
 
 .slider-dot {
-  width: var(--slider-dot-size, 8px);
-  height: var(--slider-dot-size, 8px);
+  width: var(--slider-dot-size, var(--size-slider-dot));
+  height: var(--slider-dot-size, var(--size-slider-dot));
 
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background-color: var(--color-border);
 
   cursor: pointer;
@@ -55,6 +55,26 @@
 /* Active dot becomes a pill */
 .slider-dot-active {
   background-color: var(--color-accent);
-  width: var(--slider-dot-active-width, 24px);
-  border-radius: var(--radius-sm);
+  width: var(--slider-dot-active-width, var(--size-slider-dot-active));
+  border-radius: var(--radius-pill);
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+@media (max-width: var(--breakpoint-s)) {
+  .slider-dots {
+    gap: var(--space-xs);
+    margin-top: var(--space-m);
+  }
+
+  .slider-dot {
+    width: var(--size-slider-dot-sm);
+    height: var(--size-slider-dot-sm);
+  }
+
+  .slider-dot-active {
+    width: var(--size-slider-dot-active-sm);
+  }
 }

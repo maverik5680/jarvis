@@ -5,18 +5,55 @@
    ============================================================ */
 
 :root {
-  /* ------------------------------------------------------------
+   /* ------------------------------------------------------------
      Container Max Widths (Mobile-first)
      ------------------------------------------------------------ */
-  --size-max-xs: 20rem;  /* ~320px */
-  --size-max-s:  24rem;  /* ~384px */
-  --size-max-m:  28rem;  /* ~448px */
-  --size-max-l:  32rem;  /* ~512px */
-  --size-max-xl: 36rem;  /* ~576px */
+   --size-max-xs: 20rem;
+   /* ~320px */
+   --size-max-s: 24rem;
+   /* ~384px */
+   --size-max-m: 28rem;
+   /* ~448px */
+   --size-max-l: 32rem;
+   /* ~512px */
+   --size-max-xl: 36rem;
+   /* ~576px */
 
-  /* ------------------------------------------------------------
+   /* ------------------------------------------------------------
      Layout Dimensions
      ------------------------------------------------------------ */
-  --size-sidebar: 250px;     /* Standard sidebar width */
-  --size-header-height: 4rem; /* Global header height */
+   --size-sidebar: 250px;
+   /* Standard sidebar width */
+   --size-navmenu-width: 320px;
+   --size-header-height: 4rem;
+   /* Global header height */
+
+   /* ------------------------------------------------------------
+     Page Margins (Responsive)
+     ------------------------------------------------------------ */
+   --page-margin: var(--space-l);
+}
+
+@media (min-width: 480px) {
+   :root {
+      --page-margin: var(--space-xl);
+   }
+}
+
+@media (min-width: 768px) {
+   :root {
+      --page-margin: var(--space-xxl);
+   }
+}
+
+@media (min-width: 1024px) {
+   :root {
+      --page-margin: var(--space-3xl);
+   }
+}
+
+@media (min-width: 1280px) {
+   :root {
+      --page-margin: var(--space-4xl);
+   }
 }

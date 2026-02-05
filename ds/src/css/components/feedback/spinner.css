@@ -64,3 +64,63 @@
   border-color: var(--color-gray-400);
   border-top-color: var(--color-gray-700);
 }
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   MOBILE: Slightly reduce spinner size for dense layouts
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .spinner {
+    --spinner-size: 18px;
+  }
+
+  .spinner-sm {
+    --spinner-size: 14px;
+  }
+
+  .spinner-md {
+    --spinner-size: 18px;
+  }
+
+  .spinner-lg {
+    --spinner-size: 22px;
+  }
+
+  .spinner-xl {
+    --spinner-size: 28px;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Inline alignment improvements
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .spinner-inline {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-inline-start: var(--space-xs);
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Compact mode (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .spinner--compact {
+    --spinner-size: 12px;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE: Full-width loading bar (opt-in)
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .spinner--full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -52,7 +52,8 @@
   border-color: var(--color-accent);
 }
 
-.input-selection:focus + .selection-control {
+.input-selection:focus-visible + .selection-control {
+  outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
@@ -104,4 +105,66 @@
   border-color: var(--color-gray-300);
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+/* Disabled + checked */
+.input-selection:disabled:checked + .selection-control {
+  background-color: var(--color-gray-300);
+  border-color: var(--color-gray-400);
+}
+
+/* ------------------------------------------------------------
+   6. SIZE VARIANTS
+   ------------------------------------------------------------ */
+.selection-sm {
+  --selection-size: 16px;
+}
+
+.selection-lg {
+  --selection-size: 24px;
+}
+
+/* ------------------------------------------------------------
+   7. INLINE + BLOCK MODES
+   ------------------------------------------------------------ */
+.selection-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.selection-block {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+/* ------------------------------------------------------------
+   8. COMPACT + DENSE MODES
+   ------------------------------------------------------------ */
+.selection--compact .selection-control {
+  --selection-size: 16px;
+}
+
+.selection--dense .selection-control {
+  --selection-size: 14px;
+}
+
+/* ------------------------------------------------------------
+   9. RESPONSIVE BEHAVIOR
+   ------------------------------------------------------------ */
+@media (max-width: var(--breakpoint-s)) {
+  .selection-inline,
+  .selection-block {
+    gap: var(--space-xs);
+  }
+
+  .selection-sm {
+    --selection-size: 14px;
+  }
+
+  .selection-lg {
+    --selection-size: 20px;
+  }
 }

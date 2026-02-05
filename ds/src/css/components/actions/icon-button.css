@@ -1,92 +1,38 @@
 /* ============================================================
-   ICON BUTTONS
-   Square or circular action triggers for icons only
+   RESPONSIVE BEHAVIOR
    ============================================================ */
 
 /* ------------------------------------------------------------
-   BASE ICON BUTTON
+   MOBILE: Increase tap target size
+   Ensures accessibility and usability on touch screens
    ------------------------------------------------------------ */
-.icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-  cursor: pointer;
-
-  width: var(--space-l);
-  height: var(--space-l);
-
-  border: var(--border-width-thin) solid transparent;
-  border-radius: var(--radius-sm);
-
-  background-color: transparent;
-  color: var(--color-gray-700);
-
-  transition:
-    background-color var(--ms-base) var(--ease-standard),
-    border-color var(--ms-base) var(--ease-standard),
-    color var(--ms-base) var(--ease-standard);
+@media (max-width: var(--breakpoint-s)) {
+  .icon-button,
+  .icon-button-sm,
+  .icon-button-md,
+  .icon-button-lg {
+    width: var(--space-xl);
+    height: var(--space-xl);
+  }
 }
 
 /* ------------------------------------------------------------
-   SIZES
+   MOBILE: Optional larger hit area without visual change
+   Developer opts in with .icon-button-hit
    ------------------------------------------------------------ */
-.icon-button-sm {
-  width: var(--space-m);
-  height: var(--space-m);
-}
-
-.icon-button-md {
-  width: var(--space-l);
-  height: var(--space-l);
-}
-
-.icon-button-lg {
-  width: var(--space-xl);
-  height: var(--space-xl);
+@media (max-width: var(--breakpoint-s)) {
+  .icon-button-hit {
+    padding: var(--space-xs);
+  }
 }
 
 /* ------------------------------------------------------------
-   VARIANTS
+   MOBILE: Full-width icon buttons (opt-in)
+   Useful for bottom toolbars or mobile nav
    ------------------------------------------------------------ */
-
-/* GHOST */
-.icon-button-ghost:hover {
-  background-color: var(--color-gray-100);
-  color: var(--color-brand-black);
-}
-
-/* FILLED (Black) */
-.icon-button-filled {
-  background-color: var(--color-brand-black);
-  color: var(--color-white);
-}
-.icon-button-filled:hover {
-  background-color: var(--color-brand-black-hover);
-}
-
-/* OUTLINE */
-.icon-button-outline {
-  border-color: var(--color-gray-300);
-}
-.icon-button-outline:hover {
-  border-color: var(--color-brand-black);
-  color: var(--color-brand-black);
-}
-
-/* BRAND ACCENT (Orange) */
-.icon-button-filled--accent {
-  background-color: var(--color-accent);
-  color: var(--color-white);
-}
-.icon-button-filled--accent:hover {
-  background-color: var(--color-brand-orange-hover);
-}
-
-/* ------------------------------------------------------------
-   SHAPE OVERRIDE
-   ------------------------------------------------------------ */
-.icon-button-circle {
-  border-radius: 50%;
+@media (max-width: var(--breakpoint-s)) {
+  .icon-button-full {
+    width: 100%;
+    justify-content: center;
+  }
 }

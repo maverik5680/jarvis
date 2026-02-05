@@ -78,7 +78,7 @@
 .ml-xxl  { margin-left: var(--space-xxl); }
 .ml-xxxl { margin-left: var(--space-xxxl); }
 
-.pr-0    { margin-right: 0; }
+.mr-0    { margin-right: 0; }
 .mr-xxs  { margin-right: var(--space-xxs); }
 .mr-xs   { margin-right: var(--space-xs); }
 .mr-s    { margin-right: var(--space-s); }
@@ -88,8 +88,3 @@
 .mr-xxl  { margin-right: var(--space-xxl); }
 .mr-xxxl { margin-right: var(--space-xxxl); }
 
-/* ------------------------------------------------------------
-   RESET UTILITIES
-   ------------------------------------------------------------ */
-.no-margin  { margin: 0; }
-.no-spacing { margin: 0; padding: 0; }

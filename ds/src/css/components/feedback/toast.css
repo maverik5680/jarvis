@@ -1,23 +1,164 @@
+/* ============================================================
+   TOAST CONTAINER
+   Holds one or multiple toast messages
+   ============================================================ */
+
 .toast__container {
-    /* styles */
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-max);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+
+  width: auto;
+  max-width: 90%;
+  pointer-events: none;
 }
 
+/* Top placement */
 .toast__container--top {
-    /* styles */
+  top: var(--space-l);
 }
 
+/* Bottom placement */
 .toast__container--bottom {
-    /* styles */
+  bottom: var(--space-l);
 }
+
+/* ============================================================
+   TOAST ATOM
+   ============================================================ */
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+
+  padding: var(--space-m) var(--space-l);
+  border-radius: var(--radius-m);
+
+  background-color: var(--color-bg-elevated);
+  border: var(--border-width-thin) solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+
+  font-family: var(--font-family-main);
+  font-size: var(--fs-small);
+  color: var(--color-text-body);
+
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--ms-base) var(--ease-standard),
+    transform var(--ms-base) var(--ease-standard);
+}
+
+/* Visible state */
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hidden state */
+.is-hidden {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* ============================================================
+   COLOR VARIANTS
+   ============================================================ */
 
 .toast--accent {
-    /* styles */
+  background-color: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
-.is-visible {
-    /* styles for visible state */
+.toast--black {
+  background-color: var(--color-brand-black);
+  border-color: var(--color-brand-black);
+  color: var(--color-white);
 }
 
-.is-hidden {
-    /* styles for hidden state */
+.toast--white {
+  background-color: var(--color-white);
+  border-color: var(--color-gray-200);
+  color: var(--color-brand-black);
+}
+
+.toast--gray {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-700);
+}
+
+/* ============================================================
+   INTERNAL STRUCTURE
+   ============================================================ */
+
+.toast__icon {
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-h4);
+}
+
+.toast__message {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.toast__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity var(--ms-fast) var(--ease-standard);
+}
+
+.toast__close:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   RESPONSIVE BEHAVIOR
+   ============================================================ */
+
+/* Mobile: spacing + safe-area padding */
+@media (max-width: var(--breakpoint-s)) {
+  .toast__container--top {
+    top: calc(var(--space-l) + env(safe-area-inset-top));
+  }
+
+  .toast__container--bottom {
+    bottom: calc(var(--space-l) + env(safe-area-inset-bottom));
+  }
+
+  .toast {
+    padding: var(--space-s) var(--space-m);
+    font-size: var(--fs-body);
+    border-radius: var(--radius-l);
+  }
+
+  .toast__icon {
+    font-size: var(--fs-h5);
+  }
+}
+
+/* Mobile: full-width toast (opt-in) */
+@media (max-width: var(--breakpoint-s)) {
+  .toast--full {
+    width: calc(100% - 2 * var(--space-m));
+    margin: 0 var(--space-m);
+    border-radius: var(--radius-m);
+  }
 }
