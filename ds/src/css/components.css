@@ -1,0 +1,79 @@
+/* ============================================================
+   COMPONENTS.CSS
+   Avatars, Badges, Cards, Lists, Tables, & Tags
+   ============================================================ */
+
+/* --- 1. AVATAR --- */
+.c-avatar {
+  display: inline-block;
+  width: 40px; height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: var(--border-thin) solid var(--color-border-default);
+}
+.c-avatar--sm { width: 24px; height: 24px; }
+.c-avatar--lg { width: 64px; height: 64px; }
+
+/* --- 2. BADGE & TAG --- */
+/* We merge these as they share "Label" DNA */
+.c-badge, .c-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--space-xs);
+  height: 24px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  border-radius: var(--radius-s);
+  background: var(--color-bg-surface);
+  color: var(--color-text-main);
+  border: var(--border-thin) solid var(--color-border-default);
+}
+.c-badge--primary { background: var(--brand-primary); color: var(--brand-white); border: none; }
+
+/* --- 3. CARD --- */
+.c-card {
+  background: var(--color-bg-elevated);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-m);
+  padding: var(--space-m);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast) var(--ease-standard);
+}
+.c-card--interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-active);
+}
+
+/* --- 4. LIST & LIST-GROUP --- */
+.c-list { list-style: none; padding: 0; }
+.c-list-group {
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+}
+.c-list-item {
+  padding: var(--space-s) var(--space-m);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+  background: var(--color-bg-elevated);
+}
+.c-list-item:last-child { border-bottom: none; }
+
+/* --- 5. TABLE --- */
+.c-table-wrapper { overflow-x: auto; } /* Mobile protection */
+.c-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+.c-table th {
+  text-align: left;
+  background: var(--color-bg-surface);
+  padding: var(--space-s) var(--space-m);
+  color: var(--color-text-header);
+  border-bottom: var(--border-thick) solid var(--color-border-default);
+}
+.c-table td {
+  padding: var(--space-s) var(--space-m);
+  border-bottom: var(--border-thin) solid var(--color-border-default);
+}
