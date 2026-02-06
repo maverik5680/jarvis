@@ -1,0 +1,52 @@
+/* ============================================================
+   FORMS.CSS
+   Law I: Pure Component DNA
+   ============================================================ */
+
+/* --- 1. Labels --- */
+.c-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-main);
+  /* Note: No bottom margin here; handled by the container u-gap or u-mb */
+}
+
+/* --- 2. Inputs & Textareas --- */
+.c-input,
+.c-textarea {
+  width: 100%; /* Forms usually fill their container */
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--font-size-base);
+  background-color: var(--brand-white);
+  border: var(--border-thin) solid var(--color-border-default);
+  border-radius: var(--radius-m);
+  color: var(--color-text-main);
+  transition: border-color var(--transition-fast) var(--ease-standard),
+              box-shadow var(--transition-fast) var(--ease-standard);
+}
+
+/* --- 3. Interaction States --- */
+.c-input:focus,
+.c-textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1); /* Subtle orange glow */
+}
+
+.c-input:disabled,
+.c-textarea:disabled {
+  background-color: var(--color-bg-surface);
+  cursor: not-allowed;
+  opacity: var(--opacity-50);
+}
+
+/* --- 4. Validation States --- */
+.c-input--error {
+  border-color: var(--color-danger) !important;
+}
+
+.c-form-help {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
