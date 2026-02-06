@@ -6,7 +6,7 @@
 @import "tokens/colors.css";
 @import "tokens/spacing.css";
 @import "tokens/blur.css";
-@import "tokens/breakpoints.css";
+@import "tokens/breakpoint.css";
 @import "tokens/z-index.css";
 @import "tokens/motion.css";
 @import "tokens/radius.css";
@@ -36,7 +36,7 @@
 
 
 /* 4. NAVIGATION */
-@import "components/layout/backdrop.css";
+@import "components/navigation/backdrop.css";
 @import "components/navigation/breadcrumb.css";
 @import "components/navigation/flyover.css";
 @import "components/navigation/navbar.css";
@@ -45,7 +45,7 @@
 @import "components/navigation/pagination.css";
 @import "components/navigation/sidebar.css";
 @import "components/navigation/tab-bar.css";
-@import "components/navigation/tab.css";
+@import "components/navigation/tabs.css";
 
 
 /* 5. ACTIONS */

@@ -13,6 +13,16 @@
   --space-xl: 28px;
   --space-xxl: 36px;
   --space-xxxl: 40px;
+
+  /* ------------------------------------------------------------
+     EXTENDED SPACING SCALE
+     Required by layout tokens like --page-margin at L/XL sizes
+     ------------------------------------------------------------ */
+  --space-2xl: var(--space-xxl);
+  --space-3xl: calc(var(--space-xxxl) * 1.5);
+  --space-4xl: calc(var(--space-xxxl) * 2);
+  --space-5xl: calc(var(--space-xxxl) * 2.5);
+  --space-6xl: calc(var(--space-xxxl) * 3);
 }
 
 /* ============================================================

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jarvis Design System</title>
+    <!-- CSS is bundled by Vite via js/main.js (see @ds alias in vite.config.js) -->
+    <script type="module" src="/js/main.js"></script>
+  </head>
+  <body class="layout-shell">
+    <a class="sr-only" href="#main-content">Skip to content</a>
+    <header class="navbar navbar-links">
+      <div class="navbar-left">
+        <a href="/" class="navbar-link navbar-link-active" aria-label="Jarvis home">Jarvis</a>
+      </div>
+
+      <div class="navbar-right">
+        <button
+          id="menuBtn"
+          class="button-orange-outline border-thin border-solid px-m py-xs"
+          type="button"
+          aria-label="Open menu"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="mainSidebar" aria-label="Sidebar navigation">
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#" class="is-active">Dashboard</a></li>
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Components</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="sidebar-backdrop" id="backdrop" aria-hidden="true"></div>
+
+    <main id="main-content" class="main-area" tabindex="-1">
+      <div class="page-content">
+        <section class="section">
+          <div class="section-content">
+            <h1 class="hero-title">Jarvis</h1>
+            <p class="hero-subtitle">Design system playground.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

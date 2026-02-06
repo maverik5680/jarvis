@@ -4,6 +4,10 @@ import { initForms } from './components/forms.js';
 import { initRouter } from './core/router.js';
 import { initTheme } from './core/theme.js';
 
+// Bundle the design system CSS with Vite.
+// This avoids relying on a raw <link> path in index.html.
+import '@ds/main.css';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('JARVIS: System Booting...');
 
