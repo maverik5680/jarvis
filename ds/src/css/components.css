@@ -1,57 +1,65 @@
 /* ============================================================
-   JARVIS COMPONENTS.CSS
-   "The Pure Tools" - No External Margins
+   SECTION 1: GLOBAL SHELLS (The Skeleton)
    ============================================================ */
 
-/* --- 1. BUTTONS --- */
-.c-btn {
-  display: inline-flex;
+/* Main Header / Top Bar */
+.c-header {
+  height: 64px;
+  background: var(--navmenu-bg);
+  border-bottom: 1px solid var(--navmenu-border);
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-s) var(--space-l);
-  font-family: var(--font-family-main);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-sm);
-  border-radius: var(--radius-m);
-  cursor: pointer;
-  transition: all var(--transition-fast) var(--ease-standard);
-  border: var(--border-thin) solid transparent;
+  justify-content: space-between;
+  padding: 0 var(--space-m);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-nav);
 }
 
-.c-btn--primary {
-  background: var(--brand-primary);
-  color: var(--brand-white);
+/* Sidebar / Sidemenu Navigation */
+.c-sidebar {
+  width: 280px;
+  height: 100vh;
+  background: var(--color-bg-sidebar);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
 }
-.c-btn--primary:hover { background: var(--brand-primary-hover); }
 
-.c-btn--outline {
-  background: transparent;
-  border-color: var(--color-border-default);
-  color: var(--color-text-main);
-}
-.c-btn--outline:hover { background: var(--color-bg-surface); }
-
-/* --- 2. FORMS & INPUTS --- */
-.c-input, .c-select, .c-textarea {
-  width: 100%;
+.c-sidemenu-link {
   padding: var(--space-s) var(--space-m);
-  border: var(--border-thin) solid var(--color-border-default);
+  color: var(--navmenu-text-dim);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  transition: all var(--transition-fast);
   border-radius: var(--radius-s);
-  background: var(--color-bg-elevated);
-  color: var(--color-text-main);
-  font-family: inherit;
-  transition: border-color var(--transition-fast);
+  margin: 2px var(--space-s);
 }
 
-.c-input:focus {
-  outline: none;
-  border-color: var(--color-border-active);
+.c-sidemenu-link:hover, 
+.c-sidemenu-link.is-active {
+  background: var(--color-accent-soft);
+  color: var(--navmenu-accent);
 }
 
-/* --- 3. CARDS (The Shell & Zones) --- */
+/* Footer */
+.c-footer {
+  padding: var(--space-xl) 0;
+  background: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+/* ============================================================
+   SECTION 2: CONTAINERS & DATA (The Furniture)
+   ============================================================ */
+
+/* Cards */
 .c-card {
-  background: var(--color-bg-elevated);
-  border: var(--border-thin) solid var(--color-border-default);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-m);
   display: flex;
   flex-direction: column;
@@ -59,69 +67,94 @@
   box-shadow: var(--shadow-sm);
 }
 
-.c-card__header { padding: var(--space-m); border-bottom: var(--border-thin) solid var(--color-border-default); }
+.c-card__header { padding: var(--space-m); border-bottom: 1px solid var(--color-border); }
 .c-card__body   { padding: var(--space-m); flex-grow: 1; }
-.c-card__footer { padding: var(--space-s) var(--space-m); background: var(--color-bg-surface); }
+.c-card__footer { padding: var(--space-s) var(--space-m); background: var(--color-bg-elevated); }
 
-/* Background Image Modifier */
-.c-card--image-bg {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  border: none;
+/* Tables */
+.c-table-container { width: 100%; overflow-x: auto; }
+.c-table {
+  width: 100%; border-collapse: collapse; text-align: left;
 }
-.c-card--image-bg::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
-  z-index: 1;
-}
-.c-card--image-bg > * { position: relative; z-index: 2; }
-
-/* --- 4. AVATARS, BADGES & TAGS --- */
-.c-avatar {
-  width: 40px; height: 40px;
-  border-radius: var(--radius-full);
-  object-fit: cover;
-  border: var(--border-thin) solid var(--color-border-default);
-}
-
-.c-badge, .c-tag {
-  display: inline-flex;
-  padding: 0 var(--space-xs);
-  height: 24px;
+.c-table th {
+  padding: var(--space-s) var(--space-m);
+  background: var(--color-bg-elevated);
+  border-bottom: 2px solid var(--color-border);
   font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  border-radius: var(--radius-s);
-  background: var(--color-bg-surface);
-  color: var(--color-text-main);
-  border: var(--border-thin) solid var(--color-border-default);
-  align-items: center;
+  text-transform: uppercase;
 }
+.c-table td { padding: var(--space-m); border-bottom: 1px solid var(--color-border); }
 
-/* --- 5. TABS --- */
-.c-tabs { display: flex; list-style: none; gap: var(--space-m); border-bottom: var(--border-thin) solid var(--color-border-default); }
-.c-tab-item {
-  padding: var(--space-s) 0;
-  cursor: pointer;
-  font-size: var(--fs-sm);
-  color: var(--color-text-muted);
-  border-bottom: var(--border-thick) solid transparent;
-  margin-bottom: -1px;
-}
-.c-tab-item.is-active { color: var(--brand-primary); border-bottom-color: var(--brand-primary); }
-
-/* --- 6. TABLES --- */
-.c-table { width: 100%; border-collapse: collapse; }
-.c-table th { text-align: left; background: var(--color-bg-surface); padding: var(--space-s) var(--space-m); border-bottom: var(--border-thick) solid var(--color-border-default); }
-.c-table td { padding: var(--space-s) var(--space-m); border-bottom: var(--border-thin) solid var(--color-border-default); }
-
-/* --- 7. ACCORDIONS --- */
-.c-accordion { border: var(--border-thin) solid var(--color-border-default); border-radius: var(--radius-m); background: var(--color-bg-elevated); margin-bottom: var(--space-s); }
+/* Accordions */
+.c-accordion { border: 1px solid var(--color-border); border-radius: var(--radius-m); margin-bottom: var(--space-s); }
 .c-accordion__summary { padding: var(--space-m); cursor: pointer; font-weight: var(--fw-bold); list-style: none; display: flex; justify-content: space-between; }
 .c-accordion__summary::after { content: "→"; transition: transform var(--transition-base); }
 .c-accordion[open] .c-accordion__summary::after { transform: rotate(90deg); }
-.c-accordion__content { padding: var(--space-m); border-top: var(--border-thin) solid var(--color-border-default); }
+.c-accordion__content { padding: var(--space-m); border-top: 1px solid var(--color-border); }
 
-/* --- 8. LINKS --- */
-.c-link { color: var(--brand-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: var(--transition-fast); }
-.c-link:hover { border-bottom-color: var(--brand-primary); }
+/* ============================================================
+   SECTION 3: OVERLAYS & INTERACTIVE
+   ============================================================ */
+
+/* Modals */
+.c-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex; align-items: center; justify-content: center;
+  z-index: var(--z-index-modal);
+  padding: var(--space-m);
+}
+.c-modal {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-l);
+  width: 100%; max-width: var(--container-sm);
+  max-height: 90vh; overflow-y: auto;
+}
+
+/* Sliders */
+.c-slider {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  gap: var(--space-m); scroll-behavior: smooth;
+}
+.c-slider::-webkit-scrollbar { display: none; }
+.c-slider__item { flex: 0 0 85%; scroll-snap-align: center; }
+
+/* Tabs */
+.c-tabs { display: flex; list-style: none; gap: var(--space-m); border-bottom: 1px solid var(--color-border); }
+.c-tab-item { padding: var(--space-s) 0; cursor: pointer; color: var(--color-text-muted); border-bottom: 2px solid transparent; }
+.c-tab-item.is-active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+
+/* ============================================================
+   SECTION 4: ELEMENTS (Buttons, Inputs, Badges)
+   ============================================================ */
+
+.c-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: var(--space-s) var(--space-l);
+  border-radius: var(--radius-m);
+  font-weight: var(--fw-bold);
+  cursor: pointer; border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+.c-btn--primary { background: var(--color-accent); color: var(--color-brand-white); }
+.c-btn--outline { background: transparent; border-color: var(--color-border); color: var(--color-text-main); }
+
+.c-input {
+  width: 100%; padding: var(--space-s) var(--space-m);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  color: var(--color-text-main);
+}
+
+.c-badge {
+  padding: 2px 8px; font-size: var(--fs-xs); font-weight: var(--fw-bold);
+  border-radius: var(--radius-s); background: var(--color-gray-700); color: var(--color-white);
+}
+
+.c-avatar { width: 32px; height: 32px; border-radius: var(--radius-full); object-fit: cover; }
+
+/* Status Indicators */
+.c-status { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: var(--fs-xs); }
+.c-status-dot { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--color-gray-500); }
+.c-status-dot--success { background: #10B981; }
