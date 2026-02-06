@@ -1,0 +1,26 @@
+/* ============================================================
+   SPACING-UTILITIES.CSS
+   Margins & Paddings — Law III: Utility Supremacy
+   ============================================================ */
+
+/* --- 1. PADDING --- */
+.u-p-0  { padding: 0 !important; }
+.u-p-xs { padding: var(--space-xs) !important; }
+.u-p-m  { padding: var(--space-m) !important; }
+.u-p-l  { padding: var(--space-l) !important; }
+
+/* Padding Inline (Left/Right) & Block (Top/Bottom) */
+.u-pi-m { padding-inline: var(--space-m) !important; }
+.u-pb-m { padding-block: var(--space-m) !important; }
+
+/* --- 2. MARGIN --- */
+.u-m-0  { margin: 0 !important; }
+.u-m-auto { margin: auto !important; }
+.u-mt-m { margin-top: var(--space-m) !important; }
+.u-mb-xs { margin-bottom: var(--space-xs) !important; }
+.u-mb-m { margin-bottom: var(--space-m) !important; }
+.u-mb-l { margin-bottom: var(--space-l) !important; }
+
+/* --- 3. GAP (For Flex/Grid) --- */
+.u-gap-xs { gap: var(--space-xs) !important; }
+.u-gap-m  { gap: var(--space-m) !important; }
