@@ -1,0 +1,41 @@
+/* ============================================================
+   VISUAL-UTILITIES.CSS
+   High-priority overrides — Law III: Utility Supremacy
+   ============================================================ */
+
+/* --- 1. COLORS --- */
+/* Text */
+.u-color-primary { color: var(--brand-primary) !important; }
+.u-color-text    { color: var(--color-text-main) !important; }
+.u-color-muted   { color: var(--color-text-muted) !important; }
+.u-color-white   { color: var(--brand-white) !important; }
+
+/* Backgrounds */
+.u-bg-surface    { background-color: var(--color-bg-surface) !important; }
+.u-bg-primary    { background-color: var(--brand-primary) !important; }
+.u-bg-black      { background-color: var(--brand-black) !important; }
+
+/* --- 2. BORDERS & RADIUS --- */
+.u-border        { border: var(--border-thin) solid var(--color-border-default) !important; }
+.u-border-orange { border-color: var(--brand-primary) !important; }
+.u-border-none   { border: none !important; }
+
+.u-radius-s      { border-radius: var(--radius-s) !important; }
+.u-radius-m      { border-radius: var(--radius-m) !important; }
+.u-radius-l      { border-radius: var(--radius-l) !important; }
+.u-radius-full   { border-radius: var(--radius-full) !important; }
+
+/* --- 3. DEPTH (Shadows) --- */
+.u-shadow-sm     { box-shadow: var(--shadow-sm) !important; }
+.u-shadow-md     { box-shadow: var(--shadow-md) !important; }
+.u-shadow-none   { box-shadow: none !important; }
+
+/* --- 4. EFFECTS & CURSOR --- */
+.u-opacity-50    { opacity: var(--opacity-50) !important; }
+.u-cursor-pointer { cursor: pointer !important; }
+.u-cursor-default { cursor: default !important; }
+.u-overflow-hidden { overflow: hidden !important; }
+
+/* --- 5. MOTION --- */
+.u-transition    { transition: var(--transition-base) var(--ease-standard) !important; }
+.u-transition-fast { transition: var(--transition-fast) var(--ease-standard) !important; }
