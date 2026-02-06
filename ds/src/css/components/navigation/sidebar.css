@@ -1,11 +1,66 @@
-/* Fix 1 — Replace hard-coded outline width */
-.sidebar summary:focus-visible,
-.u-sidebar summary:focus-visible {
+/* ---------------------------------------------
+   SIDEBAR COMPONENT (NO LAYOUT)
+   Token‑driven, law‑compliant, no hard‑coded values
+---------------------------------------------- */
+
+/* Container */
+.sidebar {
+  background-color: var(--color-bg-sidebar);
+  color: var(--color-text-body);
+  padding: var(--space-3);
+  border-right: var(--border-width) solid var(--color-border);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  grid-area: sidebar;
+}
+
+/* Links */
+.sidebar a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-s);
+  color: var(--color-text-body);
+  text-decoration: none;
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  transition: background-color var(--ms-fast) var(--ease-standard);
+}
+
+.sidebar a:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.sidebar a.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Accordion (<details>) */
+.sidebar details {
+  margin-bottom: var(--space-2);
+}
+
+.sidebar summary {
+  cursor: pointer;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-s);
+  list-style: none;
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--ms-fast) var(--ease-standard);
+}
+
+.sidebar summary:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Focus ring — token driven */
+.sidebar summary:focus-visible {
   outline: var(--focus-ring-width) solid var(--color-accent);
   outline-offset: calc(-1 * var(--focus-ring-width));
 }
 
-/* Fix 2 — Replace hard-coded backdrop rgba */
+/* Backdrop (mobile only) */
 @media (max-width: calc(var(--breakpoint-l) - 1px)) {
   .sidebar-backdrop {
     position: fixed;
@@ -17,5 +72,10 @@
     pointer-events: none;
 
     transition: opacity var(--ms-fast) var(--ease-standard);
+  }
+
+  .sidebar-backdrop.is-active {
+    opacity: 1;
+    pointer-events: auto;
   }
 }

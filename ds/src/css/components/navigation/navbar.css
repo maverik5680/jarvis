@@ -9,13 +9,15 @@
   justify-content: space-between;
 
   padding-inline: var(--page-margin);
-  height: var(--navbar-height);
+  padding-block: var(--navbar-vertical-padding);
+  min-height: var(--navbar-height);
 
   background-color: var(--color-bg-surface);
   border-bottom: var(--border-width-thin) solid var(--color-border-light);
 
   position: relative;
   z-index: var(--z-header);
+  grid-area: navbar;
 }
 
 /* Layout regions */

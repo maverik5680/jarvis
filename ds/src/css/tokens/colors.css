@@ -7,8 +7,9 @@
    --color-brand-black: #000000;
    --color-brand-black-hover: #1d1c1c;
 
-   --color-brand-white: #FFFFFF; 
-   --color-brand-white-hover: #f2f2f2; 
+   --color-brand-white: #FFFFFF;
+   --color-brand-white-hover: #f2f2f2;
+   --color-white: var(--color-brand-white);
 
    --color-brand-orange: #FF5F00;
    --color-brand-orange-hover: #cf4e04;
@@ -56,6 +57,12 @@
    --color-bg: var(--color-bg-surface);
    --color-text: var(--color-text-body);
    --orange: var(--color-accent);
+
+   /* Component specific semantic tokens (Dark) */
+   --color-surface-1: var(--color-bg-elevated);
+   --color-surface-hover: var(--color-gray-700);
+   --color-accent-soft: color-mix(in srgb, var(--color-accent) 20%, transparent);
+   --color-accent-contrast: var(--color-white);
 }
 
 /* ============================================================
@@ -91,4 +98,10 @@
    --color-bg: var(--color-bg-surface);
    --color-text: var(--color-text-body);
    --orange: var(--color-accent);
+
+   /* Component specific semantic tokens (Light) */
+   --color-surface-1: var(--color-gray-100);
+   --color-surface-hover: var(--color-gray-200);
+   --color-accent-soft: color-mix(in srgb, var(--color-accent) 20%, transparent);
+   --color-accent-contrast: var(--color-white);
 }

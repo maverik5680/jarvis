@@ -53,6 +53,9 @@ export function initSidebarToggle() {
     // Prevent body scroll on mobile
     body.classList.add('sidebar-open');
 
+    // Update button text
+    menuBtn.textContent = 'Close';
+
     // Update ARIA attribute
     menuBtn.setAttribute('aria-expanded', 'true');
 
@@ -80,6 +83,9 @@ export function initSidebarToggle() {
 
     // Restore body scroll
     body.classList.remove('sidebar-open');
+
+    // Update button text
+    menuBtn.textContent = 'Menu';
 
     // Update ARIA attribute
     menuBtn.setAttribute('aria-expanded', 'false');

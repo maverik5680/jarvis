@@ -12,7 +12,7 @@ export function initSidebar() {
 
     // 2. Accordion Logic: Close other <details> when one is opened
     const allDetails = sidebar.querySelectorAll('details');
-    
+
     allDetails.forEach((targetDetail) => {
         targetDetail.addEventListener('toggle', () => {
             // If the user just opened this one...
@@ -38,9 +38,10 @@ export function updateActiveLinks(sidebarElement) {
     links.forEach(link => {
         try {
             const linkUrl = new URL(link.href, window.location.origin);
-            const linkPath = linkUrl.pathname.replace(/\.html$/, '');
+            const linkPath = linkUrl.pathname.replace(/\/$/, '') || '/';
+            const normalizedCurrentPath = currentPath.replace(/\/$/, '') || '/';
 
-            const isMatch = linkPath === currentPath;
+            const isMatch = linkPath === normalizedCurrentPath;
             link.classList.toggle('is-active', isMatch);
 
             // Ensure the active link's category is open on load

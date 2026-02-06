@@ -27,6 +27,8 @@
    --size-navmenu-width: 320px;
    --size-header-height: 4rem;
    /* Global header height */
+   --navbar-height: var(--size-header-height);
+   --navbar-vertical-padding: var(--space-s);
 
    /* ------------------------------------------------------------
      Page Margins (Responsive)
