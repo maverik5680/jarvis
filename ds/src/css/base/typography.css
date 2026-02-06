@@ -1,86 +1,16 @@
-/* ============================================================
-   1. FONT DECLARATIONS (Unchanged)
-   ============================================================ */
-@font-face {
-  font-family: 'Prompt';
-  src: url('../../assets/fonts/Prompt-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ... include your other Prompt @font-face weights here ... */
-
-/* ============================================================
-   2. TYPOGRAPHY TOKENS
-   ============================================================ */
-:root {
-  --font-family-main: 'Prompt', sans-serif;
-
-  /* Fluid Typography using clamp() 
-     Heuristic: clamp(min, preferred, max)
-  */
-  --fs-h1: clamp(2.25rem, 5vw + 1rem, 3.00rem);
-  --fs-h2: clamp(1.75rem, 4vw + 1rem, 2.25rem);
-  --fs-h3: clamp(1.35rem, 2vw + 1rem, 1.50rem);
-  --fs-h4: clamp(1.15rem, 1vw + 1rem, 1.25rem);
-
-  --fs-body: 1.00rem;
-  --fw-light: 300;
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 600;
-  --lh-tight: 1.1;
-  --lh-base: 1.6;
-}
-
-/* ============================================================
-   3. THEME-AWARE BASE STYLES
-   ============================================================ */
+/* Keep this in typography.css */
 body {
   font-family: var(--font-family-main);
   font-size: var(--fs-body);
   line-height: var(--lh-base);
-  color: var(--color-text-body);
-  background-color: var(--color-bg-surface);
-  -webkit-font-smoothing: antialiased;
+  color: var(--color-text-main);
 }
 
-/* ============================================================
-   4. HEADINGS (White Text Fix)
-   ============================================================ */
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3 {
   font-family: var(--font-family-main);
   color: var(--color-text-header);
-  margin: 0 0 1rem 0;
-  line-height: var(--lh-tight);
+  margin: 0; /* REMOVED the 1rem margin to follow Law I */
 }
 
-h1 {
-  font-size: var(--fs-h1);
-  font-weight: var(--fw-light);
-  letter-spacing: 0.05em;
-}
-
-h2 {
-  font-size: var(--fs-h2);
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.01em;
-}
-
-/* The element you mentioned: <h2 class="u-text-lg"> */
-.u-text-lg {
-  font-size: var(--fs-h2);
-  /* Or map to your specific LG token */
-}
-
-/* ============================================================
-   5. RESPONSIVE OVERRIDES
-   Note: Heading overrides removed in favor of clamp() above.
-   ============================================================ */
-@media (min-width: var(--breakpoint-m)) {
-  /* Site-wide desktop adjustments can go here */
-}
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-light); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); }
