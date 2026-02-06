@@ -1,14 +1,36 @@
-/* ds/src/css/base/global.css */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: var(--color-bg); /* Brand Black */
-    color: var(--color-text); /* Prompt White */
-    -webkit-font-smoothing: antialiased;
+/* ============================================================
+   GLOBAL.CSS
+   Section 2: Base Styles — The Environment
+   ============================================================ */
+
+/* 1. Box Model Enforcement */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* Ensure boxes calculate size correctly */
-*, *::before, *::after {
-    box-sizing: border-box;
+/* 2. Root Environment */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Global Media Defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto; /* Prevents image stretching */
+}
+
+/* 4. Selection Highlight (Brand Alignment) */
+::selection {
+  background-color: var(--brand-primary);
+  color: var(--brand-white);
+}
+
+/* 5. Horizontal Rule */
+hr {
+  border: 0;
+  border-top: var(--border-thin) solid var(--color-border-default);
+  margin: var(--space-m) 0;
 }
