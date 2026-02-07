@@ -7,294 +7,926 @@
 /* ============================================================
    1. DISPLAY
    ============================================================ */
-.u-flex   { display: flex !important; }
-.u-grid   { display: grid !important; }
-.u-block  { display: block !important; }
-.u-inline { display: inline-block !important; }
-.u-none   { display: none !important; }
+.u-flex {
+   display: flex !important;
+}
+
+.u-grid {
+   display: grid !important;
+}
+
+.u-block {
+   display: block !important;
+}
+
+.u-inline {
+   display: inline-block !important;
+}
+
+.u-none {
+   display: none !important;
+}
 
 
 /* ============================================================
    2. FLEX DIRECTION & WRAP
    ============================================================ */
-.u-flex-row        { flex-direction: row !important; }
-.u-flex-column     { flex-direction: column !important; }
-.u-flex-row-rev    { flex-direction: row-reverse !important; }
-.u-flex-column-rev { flex-direction: column-reverse !important; }
+.u-flex-row {
+   flex-direction: row !important;
+}
 
-.u-flex-wrap       { flex-wrap: wrap !important; }
-.u-flex-nowrap     { flex-wrap: nowrap !important; }
+.u-flex-column {
+   flex-direction: column !important;
+}
+
+.u-flex-row-rev {
+   flex-direction: row-reverse !important;
+}
+
+.u-flex-column-rev {
+   flex-direction: column-reverse !important;
+}
+
+.u-flex-wrap {
+   flex-wrap: wrap !important;
+}
+
+.u-flex-nowrap {
+   flex-wrap: nowrap !important;
+}
 
 
 /* ============================================================
    3. FLEX ALIGNMENT
    ============================================================ */
-.u-items-start    { align-items: flex-start !important; }
-.u-items-center   { align-items: center !important; }
-.u-items-end      { align-items: flex-end !important; }
-.u-items-stretch  { align-items: stretch !important; }
+.u-items-start {
+   align-items: flex-start !important;
+}
 
-.u-justify-start   { justify-content: flex-start !important; }
-.u-justify-center  { justify-content: center !important; }
-.u-justify-end     { justify-content: flex-end !important; }
-.u-justify-between { justify-content: space-between !important; }
-.u-justify-around  { justify-content: space-around !important; }
-.u-justify-evenly  { justify-content: space-evenly !important; }
+.u-items-center {
+   align-items: center !important;
+}
+
+.u-items-end {
+   align-items: flex-end !important;
+}
+
+.u-items-stretch {
+   align-items: stretch !important;
+}
+
+.u-justify-start {
+   justify-content: flex-start !important;
+}
+
+.u-justify-center {
+   justify-content: center !important;
+}
+
+.u-justify-end {
+   justify-content: flex-end !important;
+}
+
+.u-justify-between {
+   justify-content: space-between !important;
+}
+
+.u-justify-around {
+   justify-content: space-around !important;
+}
+
+.u-justify-evenly {
+   justify-content: space-evenly !important;
+}
 
 
 /* ============================================================
    4. FLEX GROW / SHRINK
    ============================================================ */
-.u-flex-1       { flex: 1 1 0% !important; }
-.u-flex-auto    { flex: 1 1 auto !important; }
-.u-flex-none    { flex: none !important; }
+.u-flex-1 {
+   flex: 1 1 0% !important;
+}
 
-.u-grow         { flex-grow: 1 !important; }
-.u-grow-0       { flex-grow: 0 !important; }
+.u-flex-auto {
+   flex: 1 1 auto !important;
+}
 
-.u-shrink       { flex-shrink: 1 !important; }
-.u-shrink-0     { flex-shrink: 0 !important; }
+.u-flex-none {
+   flex: none !important;
+}
+
+.u-grow {
+   flex-grow: 1 !important;
+}
+
+.u-grow-0 {
+   flex-grow: 0 !important;
+}
+
+.u-shrink {
+   flex-shrink: 1 !important;
+}
+
+.u-shrink-0 {
+   flex-shrink: 0 !important;
+}
 
 
 /* ============================================================
    5. GRID UTILITIES
    ============================================================ */
-.u-grid-cols-1  { grid-template-columns: repeat(1, 1fr) !important; }
-.u-grid-cols-2  { grid-template-columns: repeat(2, 1fr) !important; }
-.u-grid-cols-3  { grid-template-columns: repeat(3, 1fr) !important; }
-.u-grid-cols-4  { grid-template-columns: repeat(4, 1fr) !important; }
-.u-grid-cols-6  { grid-template-columns: repeat(6, 1fr) !important; }
-.u-grid-cols-12 { grid-template-columns: repeat(12, 1fr) !important; }
+.u-grid-cols-1 {
+   grid-template-columns: repeat(1, 1fr) !important;
+}
 
-.u-grid-auto-fit  { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important; }
-.u-grid-auto-fill { grid-template-columns: repeat(auto-fill, minmax(0, 1fr)) !important; }
+.u-grid-cols-2 {
+   grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.u-grid-cols-3 {
+   grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.u-grid-cols-4 {
+   grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.u-grid-cols-6 {
+   grid-template-columns: repeat(6, 1fr) !important;
+}
+
+.u-grid-cols-12 {
+   grid-template-columns: repeat(12, 1fr) !important;
+}
+
+.u-grid-auto-fit {
+   grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+}
+
+.u-grid-auto-fill {
+   grid-template-columns: repeat(auto-fill, minmax(0, 1fr)) !important;
+}
 
 
 /* ============================================================
    6. GAP (Unified)
    ============================================================ */
-.u-gap-xxs { gap: var(--space-xxs) !important; }
-.u-gap-xs  { gap: var(--space-xs) !important; }
-.u-gap-s   { gap: var(--space-s) !important; }
-.u-gap-m   { gap: var(--space-m) !important; }
-.u-gap-l   { gap: var(--space-l) !important; }
-.u-gap-xl  { gap: var(--space-xl) !important; }
-.u-gap-xxl { gap: var(--space-xxl) !important; }
+.u-gap-xxs {
+   gap: var(--space-xxs) !important;
+}
+
+.u-gap-xs {
+   gap: var(--space-xs) !important;
+}
+
+.u-gap-s {
+   gap: var(--space-s) !important;
+}
+
+.u-gap-m {
+   gap: var(--space-m) !important;
+}
+
+.u-gap-l {
+   gap: var(--space-l) !important;
+}
+
+.u-gap-xl {
+   gap: var(--space-xl) !important;
+}
+
+.u-gap-xxl {
+   gap: var(--space-xxl) !important;
+}
 
 
 /* ============================================================
    7. POSITION
    ============================================================ */
-.u-relative { position: relative !important; }
-.u-absolute { position: absolute !important; }
-.u-fixed    { position: fixed !important; }
-.u-sticky   { position: sticky !important; }
+.u-relative {
+   position: relative !important;
+}
+
+.u-absolute {
+   position: absolute !important;
+}
+
+.u-fixed {
+   position: fixed !important;
+}
+
+.u-sticky {
+   position: sticky !important;
+}
 
 
 /* ============================================================
    8. Z-INDEX (Token-driven)
    ============================================================ */
-.u-z-nav     { z-index: var(--z-nav) !important; }
-.u-z-modal   { z-index: var(--z-modal) !important; }
-.u-z-popover { z-index: var(--z-popover) !important; }
-.u-z-tooltip { z-index: var(--z-tooltip) !important; }
+.u-z-nav {
+   z-index: var(--z-nav) !important;
+}
+
+.u-z-modal {
+   z-index: var(--z-modal) !important;
+}
+
+.u-z-popover {
+   z-index: var(--z-popover) !important;
+}
+
+.u-z-tooltip {
+   z-index: var(--z-tooltip) !important;
+}
 
 
 /* ============================================================
    9. SIZING
    ============================================================ */
-.u-w-full   { width: 100% !important; }
-.u-h-full   { height: 100% !important; }
+.u-w-full {
+   width: 100% !important;
+}
 
-.u-w-auto   { width: auto !important; }
-.u-h-auto   { height: auto !important; }
+.u-h-full {
+   height: 100% !important;
+}
 
-.u-w-screen { width: 100vw !important; }
-.u-h-screen { height: 100vh !important; }
+.u-w-auto {
+   width: auto !important;
+}
+
+.u-h-auto {
+   height: auto !important;
+}
+
+.u-w-screen {
+   width: 100vw !important;
+}
+
+.u-h-screen {
+   height: 100vh !important;
+}
 
 
 /* ============================================================
    10. FRACTIONAL WIDTHS
    ============================================================ */
-.u-w-1-2 { width: 50% !important; }
-.u-w-1-3 { width: 33.333% !important; }
-.u-w-2-3 { width: 66.666% !important; }
-.u-w-1-4 { width: 25% !important; }
-.u-w-3-4 { width: 75% !important; }
+.u-w-1-2 {
+   width: 50% !important;
+}
+
+.u-w-1-3 {
+   width: 33.333% !important;
+}
+
+.u-w-2-3 {
+   width: 66.666% !important;
+}
+
+.u-w-1-4 {
+   width: 25% !important;
+}
+
+.u-w-3-4 {
+   width: 75% !important;
+}
 
 
 /* ============================================================
    11. OVERFLOW (Unified)
    ============================================================ */
-.u-overflow-hidden { overflow: hidden !important; }
-.u-overflow-auto   { overflow: auto !important; }
-.u-overflow-scroll { overflow: scroll !important; }
+.u-overflow-hidden {
+   overflow: hidden !important;
+}
+
+.u-overflow-auto {
+   overflow: auto !important;
+}
+
+.u-overflow-scroll {
+   overflow: scroll !important;
+}
 
 
 /* ============================================================
    12. PADDING (All Sides)
    ============================================================ */
-.u-p-0    { padding: 0 !important; }
-.u-p-xxs  { padding: var(--space-xxs) !important; }
-.u-p-xs   { padding: var(--space-xs) !important; }
-.u-p-s    { padding: var(--space-s) !important; }
-.u-p-m    { padding: var(--space-m) !important; }
-.u-p-l    { padding: var(--space-l) !important; }
-.u-p-xl   { padding: var(--space-xl) !important; }
-.u-p-xxl  { padding: var(--space-xxl) !important; }
+.u-p-0 {
+   padding: 0 !important;
+}
+
+.u-p-xxs {
+   padding: var(--space-xxs) !important;
+}
+
+.u-p-xs {
+   padding: var(--space-xs) !important;
+}
+
+.u-p-s {
+   padding: var(--space-s) !important;
+}
+
+.u-p-m {
+   padding: var(--space-m) !important;
+}
+
+.u-p-l {
+   padding: var(--space-l) !important;
+}
+
+.u-p-xl {
+   padding: var(--space-xl) !important;
+}
+
+.u-p-xxl {
+   padding: var(--space-xxl) !important;
+}
 
 
 /* ============================================================
    13. PADDING — AXIS (Collision-free)
    ============================================================ */
-.u-pi-xxs { padding-inline: var(--space-xxs) !important; }
-.u-pi-xs  { padding-inline: var(--space-xs) !important; }
-.u-pi-s   { padding-inline: var(--space-s) !important; }
-.u-pi-m   { padding-inline: var(--space-m) !important; }
-.u-pi-l   { padding-inline: var(--space-l) !important; }
-.u-pi-xl  { padding-inline: var(--space-xl) !important; }
+.u-pi-xxs {
+   padding-inline: var(--space-xxs) !important;
+}
 
-.u-pb-axis-xxs { padding-block: var(--space-xxs) !important; }
-.u-pb-axis-xs  { padding-block: var(--space-xs) !important; }
-.u-pb-axis-s   { padding-block: var(--space-s) !important; }
-.u-pb-axis-m   { padding-block: var(--space-m) !important; }
-.u-pb-axis-l   { padding-block: var(--space-l) !important; }
-.u-pb-axis-xl  { padding-block: var(--space-xl) !important; }
+.u-pi-xs {
+   padding-inline: var(--space-xs) !important;
+}
+
+.u-pi-s {
+   padding-inline: var(--space-s) !important;
+}
+
+.u-pi-m {
+   padding-inline: var(--space-m) !important;
+}
+
+.u-pi-l {
+   padding-inline: var(--space-l) !important;
+}
+
+.u-pi-xl {
+   padding-inline: var(--space-xl) !important;
+}
+
+.u-pb-axis-xxs {
+   padding-block: var(--space-xxs) !important;
+}
+
+.u-pb-axis-xs {
+   padding-block: var(--space-xs) !important;
+}
+
+.u-pb-axis-s {
+   padding-block: var(--space-s) !important;
+}
+
+.u-pb-axis-m {
+   padding-block: var(--space-m) !important;
+}
+
+.u-pb-axis-l {
+   padding-block: var(--space-l) !important;
+}
+
+.u-pb-axis-xl {
+   padding-block: var(--space-xl) !important;
+}
 
 
 /* ============================================================
    14. PADDING — INDIVIDUAL SIDES
    ============================================================ */
-.u-pt-s { padding-top: var(--space-s) !important; }
-.u-pt-m { padding-top: var(--space-m) !important; }
-.u-pt-l { padding-top: var(--space-l) !important; }
+.u-pt-s {
+   padding-top: var(--space-s) !important;
+}
 
-.u-pr-s { padding-right: var(--space-s) !important; }
-.u-pr-m { padding-right: var(--space-m) !important; }
-.u-pr-l { padding-right: var(--space-l) !important; }
+.u-pt-m {
+   padding-top: var(--space-m) !important;
+}
 
-.u-pb-s { padding-bottom: var(--space-s) !important; }
-.u-pb-m { padding-bottom: var(--space-m) !important; }
-.u-pb-l { padding-bottom: var(--space-l) !important; }
+.u-pt-l {
+   padding-top: var(--space-l) !important;
+}
 
-.u-pl-s { padding-left: var(--space-s) !important; }
-.u-pl-m { padding-left: var(--space-m) !important; }
-.u-pl-l { padding-left: var(--space-l) !important; }
+.u-pr-s {
+   padding-right: var(--space-s) !important;
+}
+
+.u-pr-m {
+   padding-right: var(--space-m) !important;
+}
+
+.u-pr-l {
+   padding-right: var(--space-l) !important;
+}
+
+.u-pb-s {
+   padding-bottom: var(--space-s) !important;
+}
+
+.u-pb-m {
+   padding-bottom: var(--space-m) !important;
+}
+
+.u-pb-l {
+   padding-bottom: var(--space-l) !important;
+}
+
+.u-pl-s {
+   padding-left: var(--space-s) !important;
+}
+
+.u-pl-m {
+   padding-left: var(--space-m) !important;
+}
+
+.u-pl-l {
+   padding-left: var(--space-l) !important;
+}
 
 
 /* ============================================================
    15. MARGIN (All Sides)
    ============================================================ */
-.u-m-0    { margin: 0 !important; }
-.u-m-auto { margin: auto !important; }
+.u-m-0 {
+   margin: 0 !important;
+}
 
-.u-m-xxs  { margin: var(--space-xxs) !important; }
-.u-m-xs   { margin: var(--space-xs) !important; }
-.u-m-s    { margin: var(--space-s) !important; }
-.u-m-m    { margin: var(--space-m) !important; }
-.u-m-l    { margin: var(--space-l) !important; }
-.u-m-xl   { margin: var(--space-xl) !important; }
-.u-m-xxl  { margin: var(--space-xxl) !important; }
+.u-m-auto {
+   margin: auto !important;
+}
+
+.u-m-xxs {
+   margin: var(--space-xxs) !important;
+}
+
+.u-m-xs {
+   margin: var(--space-xs) !important;
+}
+
+.u-m-s {
+   margin: var(--space-s) !important;
+}
+
+.u-m-m {
+   margin: var(--space-m) !important;
+}
+
+.u-m-l {
+   margin: var(--space-l) !important;
+}
+
+.u-m-xl {
+   margin: var(--space-xl) !important;
+}
+
+.u-m-xxl {
+   margin: var(--space-xxl) !important;
+}
 
 
 /* ============================================================
    16. MARGIN — AXIS (Collision-free)
    ============================================================ */
-.u-mi-s  { margin-inline: var(--space-s) !important; }
-.u-mi-m  { margin-inline: var(--space-m) !important; }
-.u-mi-l  { margin-inline: var(--space-l) !important; }
+.u-mi-s {
+   margin-inline: var(--space-s) !important;
+}
 
-.u-mb-axis-s  { margin-block: var(--space-s) !important; }
-.u-mb-axis-m  { margin-block: var(--space-m) !important; }
-.u-mb-axis-l  { margin-block: var(--space-l) !important; }
+.u-mi-m {
+   margin-inline: var(--space-m) !important;
+}
+
+.u-mi-l {
+   margin-inline: var(--space-l) !important;
+}
+
+.u-mb-axis-s {
+   margin-block: var(--space-s) !important;
+}
+
+.u-mb-axis-m {
+   margin-block: var(--space-m) !important;
+}
+
+.u-mb-axis-l {
+   margin-block: var(--space-l) !important;
+}
 
 
 /* ============================================================
    17. MARGIN — INDIVIDUAL SIDES
    ============================================================ */
-.u-mt-s { margin-top: var(--space-s) !important; }
-.u-mt-m { margin-top: var(--space-m) !important; }
-.u-mt-l { margin-top: var(--space-l) !important; }
+.u-mt-s {
+   margin-top: var(--space-s) !important;
+}
 
-.u-mr-s { margin-right: var(--space-s) !important; }
-.u-mr-m { margin-right: var(--space-m) !important; }
-.u-mr-l { margin-right: var(--space-l) !important; }
+.u-mt-m {
+   margin-top: var(--space-m) !important;
+}
 
-.u-mb-xs { margin-bottom: var(--space-xs) !important; }
-.u-mb-s  { margin-bottom: var(--space-s) !important; }
-.u-mb-m  { margin-bottom: var(--space-m) !important; }
-.u-mb-l  { margin-bottom: var(--space-l) !important; }
+.u-mt-l {
+   margin-top: var(--space-l) !important;
+}
 
-.u-ml-s { margin-left: var(--space-s) !important; }
-.u-ml-m { margin-left: var(--space-m) !important; }
-.u-ml-l { margin-left: var(--space-l) !important; }
+.u-mr-s {
+   margin-right: var(--space-s) !important;
+}
+
+.u-mr-m {
+   margin-right: var(--space-m) !important;
+}
+
+.u-mr-l {
+   margin-right: var(--space-l) !important;
+}
+
+.u-mb-xs {
+   margin-bottom: var(--space-xs) !important;
+}
+
+.u-mb-s {
+   margin-bottom: var(--space-s) !important;
+}
+
+.u-mb-m {
+   margin-bottom: var(--space-m) !important;
+}
+
+.u-mb-l {
+   margin-bottom: var(--space-l) !important;
+}
+
+.u-ml-s {
+   margin-left: var(--space-s) !important;
+}
+
+.u-ml-m {
+   margin-left: var(--space-m) !important;
+}
+
+.u-ml-l {
+   margin-left: var(--space-l) !important;
+}
 
 
 /* ============================================================
    18. TEXT COLORS
    ============================================================ */
-.u-color-primary { color: var(--brand-primary) !important; }
-.u-color-text    { color: var(--color-text-main) !important; }
-.u-color-muted   { color: var(--color-text-muted) !important; }
-.u-color-inverse { color: var(--color-text-inverse) !important; }
-.u-color-white   { color: var(--brand-white) !important; }
+.u-color-primary {
+   color: var(--brand-primary) !important;
+}
+
+.u-color-text {
+   color: var(--color-text-main) !important;
+}
+
+.u-color-muted {
+   color: var(--color-text-muted) !important;
+}
+
+.u-color-inverse {
+   color: var(--color-text-inverse) !important;
+}
+
+.u-color-white {
+   color: var(--brand-white) !important;
+}
 
 
 /* ============================================================
    19. BACKGROUND COLORS
    ============================================================ */
-.u-bg-main       { background-color: var(--color-bg-main) !important; }
-.u-bg-surface    { background-color: var(--color-bg-surface) !important; }
-.u-bg-elevated   { background-color: var(--color-bg-elevated) !important; }
-.u-bg-muted      { background-color: var(--color-bg-muted) !important; }
-.u-bg-inverse    { background-color: var(--color-bg-inverse) !important; }
+.u-bg-main {
+   background-color: var(--color-bg-main) !important;
+}
 
-.u-bg-primary    { background-color: var(--brand-primary) !important; }
-.u-bg-black      { background-color: var(--brand-black) !important; }
+.u-bg-surface {
+   background-color: var(--color-bg-surface) !important;
+}
+
+.u-bg-elevated {
+   background-color: var(--color-bg-elevated) !important;
+}
+
+.u-bg-muted {
+   background-color: var(--color-bg-muted) !important;
+}
+
+.u-bg-inverse {
+   background-color: var(--color-bg-inverse) !important;
+}
+
+.u-bg-primary {
+   background-color: var(--brand-primary) !important;
+}
+
+.u-bg-black {
+   background-color: var(--brand-black) !important;
+}
 
 
 /* ============================================================
    20. BORDERS & RADIUS
    ============================================================ */
-.u-border         { border: var(--border-width) solid var(--color-border-default) !important; }
-.u-border-none    { border: none !important; }
-.u-border-primary { border-color: var(--brand-primary) !important; }
+.u-border {
+   border: var(--border-width) solid var(--color-border-default) !important;
+}
 
-.u-radius-s       { border-radius: var(--radius-s) !important; }
-.u-radius-m       { border-radius: var(--radius-m) !important; }
-.u-radius-l       { border-radius: var(--radius-l) !important; }
-.u-radius-full    { border-radius: var(--radius-full) !important; }
+.u-border-none {
+   border: none !important;
+}
+
+.u-border-primary {
+   border-color: var(--brand-primary) !important;
+}
+
+.u-radius-s {
+   border-radius: var(--radius-s) !important;
+}
+
+.u-radius-m {
+   border-radius: var(--radius-m) !important;
+}
+
+.u-radius-l {
+   border-radius: var(--radius-l) !important;
+}
+
+.u-radius-full {
+   border-radius: var(--radius-full) !important;
+}
 
 
 /* ============================================================
    21. SHADOWS
    ============================================================ */
-.u-shadow-1    { box-shadow: var(--shadow-1) !important; }
-.u-shadow-2    { box-shadow: var(--shadow-2) !important; }
-.u-shadow-3    { box-shadow: var(--shadow-3) !important; }
-.u-shadow-none { box-shadow: none !important; }
+.u-shadow-1 {
+   box-shadow: var(--shadow-1) !important;
+}
+
+.u-shadow-2 {
+   box-shadow: var(--shadow-2) !important;
+}
+
+.u-shadow-3 {
+   box-shadow: var(--shadow-3) !important;
+}
+
+.u-shadow-none {
+   box-shadow: none !important;
+}
 
 
 /* ============================================================
    22. OPACITY
    ============================================================ */
-.u-opacity-0     { opacity: var(--opacity-0) !important; }
-.u-opacity-25    { opacity: var(--opacity-25) !important; }
-.u-opacity-50    { opacity: var(--opacity-50) !important; }
-.u-opacity-75    { opacity: var(--opacity-75) !important; }
-.u-opacity-100   { opacity: var(--opacity-100) !important; }
+.u-opacity-0 {
+   opacity: var(--opacity-0) !important;
+}
+
+.u-opacity-25 {
+   opacity: var(--opacity-25) !important;
+}
+
+.u-opacity-50 {
+   opacity: var(--opacity-50) !important;
+}
+
+.u-opacity-75 {
+   opacity: var(--opacity-75) !important;
+}
+
+.u-opacity-100 {
+   opacity: var(--opacity-100) !important;
+}
 
 
 /* ============================================================
    23. MOTION
    ============================================================ */
-.u-transition       { transition: var(--t-base) var(--ease-in-out) !important; }
-.u-transition-fast  { transition: var(--t-fast) var(--ease-in-out) !important; }
-.u-transition-slow  { transition: var(--t-slow) var(--ease-in-out) !important; }
+.u-transition {
+   transition: var(--t-base) var(--ease-in-out) !important;
+}
+
+.u-transition-fast {
+   transition: var(--t-fast) var(--ease-in-out) !important;
+}
+
+.u-transition-slow {
+   transition: var(--t-slow) var(--ease-in-out) !important;
+}
 
 
 /* ============================================================
    24. CURSOR
    ============================================================ */
-.u-cursor-pointer { cursor: pointer !important; }
-.u-cursor-default { cursor: default !important; }
+.u-cursor-pointer {
+   cursor: pointer !important;
+}
+
+.u-cursor-default {
+   cursor: default !important;
+}
+
+
+/* ============================================================
+   25. TYPOGRAPHY (Token-driven)
+   ============================================================ */
+.u-fs-h1 {
+   font-size: var(--fs-h1) !important;
+}
+
+.u-fs-h2 {
+   font-size: var(--fs-h2) !important;
+}
+
+.u-fs-h3 {
+   font-size: var(--fs-h3) !important;
+}
+
+.u-fs-body {
+   font-size: var(--fs-body) !important;
+}
+
+.u-fs-l {
+   font-size: var(--font-size-l) !important;
+}
+
+.u-fs-xl {
+   font-size: var(--font-size-xl) !important;
+}
+
+.u-fs-2xl {
+   font-size: var(--font-size-2xl) !important;
+}
+
+.u-fs-3xl {
+   font-size: var(--font-size-3xl) !important;
+}
+
+.u-fs-sm {
+   font-size: var(--fs-sm) !important;
+}
+
+.u-fs-xs {
+   font-size: var(--fs-xs) !important;
+}
+
+.u-fw-light {
+   font-weight: var(--fw-light) !important;
+}
+
+.u-fw-regular {
+   font-weight: var(--fw-regular) !important;
+}
+
+.u-fw-medium {
+   font-weight: var(--fw-medium) !important;
+}
+
+.u-fw-bold {
+   font-weight: var(--fw-bold) !important;
+}
+
+.u-lh-tight {
+   line-height: var(--line-height-tight) !important;
+}
+
+.u-lh-normal {
+   line-height: var(--line-height-normal) !important;
+}
+
+.u-lh-relaxed {
+   line-height: var(--line-height-relaxed) !important;
+}
+
+.u-text-center {
+   text-align: center !important;
+}
+
+
+/* ============================================================
+   26. CUSTOM DIMENSIONS (Shell alignment)
+   ============================================================ */
+.u-max-w-3xl {
+   max-width: 48rem !important;
+}
+
+.u-mx-auto {
+   margin-inline: auto !important;
+}
+
+.u-py-xl {
+   padding-block: var(--space-xl) !important;
+}
+
+.u-py-3xl {
+   padding-block: 4rem !important;
+}
+
+/* ============================================================
+   27. LAYOUT SPECIFICS (Shell support)
+   ============================================================ */
+.u-h-header {
+   height: 4rem !important;
+}
+
+.u-w-sidebar {
+   width: 17.5rem !important;
+}
+
+.u-top-0 {
+   top: 0 !important;
+}
+
+.u-inset-0 {
+   inset: 0 !important;
+}
+
+.u-sr-only {
+   position: absolute !important;
+   width: 1px !important;
+   height: 1px !important;
+   padding: 0 !important;
+   margin: -1px !important;
+   overflow: hidden !important;
+   clip: rect(0, 0, 0, 0) !important;
+   white-space: nowrap !important;
+   border: 0 !important;
+}
+
+/* ============================================================
+   29. LAYOUT UTILITIES (Max Widths & Spacing)
+   ============================================================ */
+.u-max-w-3xl {
+   max-width: 48rem !important;
+}
+
+.u-mx-auto {
+   margin-inline: auto !important;
+}
+
+
+/* ============================================================
+   30. RESPONSIVE DISPLAY UTILITIES
+   ============================================================ */
+
+/* Hide */
+.u-hidden {
+   display: none !important;
+}
+
+/* Show on medium+ (≥768px) */
+@media (min-width: 768px) {
+   .u-block-md {
+      display: block !important;
+   }
+
+   .u-flex-md {
+      display: flex !important;
+   }
+
+   .u-grid-md {
+      display: grid !important;
+   }
+
+   .u-inline-md {
+      display: inline-block !important;
+   }
+}
+
+/* Show on large+ (≥1024px) */
+@media (min-width: 1024px) {
+   .u-block-lg {
+      display: block !important;
+   }
+
+   .u-flex-lg {
+      display: flex !important;
+   }
+
+   .u-grid-lg {
+      display: grid !important;
+   }
+
+   .u-inline-lg {
+      display: inline-block !important;
+   }
+}
+
+/* Hide on medium+ (≥768px) */
+@media (min-width: 768px) {
+   .u-hidden-md {
+      display: none !important;
+   }
+}
+
+/* Hide on large+ (≥1024px) */
+@media (min-width: 1024px) {
+   .u-hidden-lg {
+      display: none !important;
+   }
+}

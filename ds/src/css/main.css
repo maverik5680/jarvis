@@ -12,11 +12,11 @@
 /* 3. Tokens */
 @import './tokens.css';
 
-/* 4. Utilities */
-@import './utilities.css';
-
-/* 5. Components */
+/* 4. Components */
 @import './components.css';
+
+/* 5. Utilities */
+@import './utilities.css';
 
 
 /* ============================================================
@@ -32,9 +32,53 @@
   opacity: 0;
 }
 
-/* Optional: app shell layout */
+/* ============================================================
+   APP SHELL LAYOUT (Responsive Logic)
+   ============================================================ */
+
+/* Desktop defaults */
 .app-shell {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.c-sidebar {
+  width: 17.5rem;
+  height: 100%;
+  overflow-y: auto;
+  transition: transform var(--t-base) var(--ease-in-out);
+}
+
+/* Mobile responsive rules */
+@media (max-width: 1023px) {
+  .c-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-nav);
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+
+  .c-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    /* Controlled by display toggle or opacity below */
+  }
+}
+
+/* Backdrop logic (shared) */
+.sidebar-backdrop.is-active {
+  display: block;
 }

@@ -10,39 +10,18 @@
    ============================================================ */
 
 .c-header {
-  height: 4rem;
   background: var(--color-bg-elevated);
-  border-bottom: var(--border-width) solid var(--color-border-default);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding-inline: var(--space-m);
-
-  position: sticky;
-  top: 0;
-  z-index: var(--z-nav);
-
+  border-top: 2px solid var(--color-brand-orange);
+  border-bottom: var(--border-width-thin) solid var(--gray-800);
   box-shadow: var(--shadow-1);
 }
 
 .c-sidebar {
-  width: 17.5rem;
-  height: 100vh;
-
   background: var(--color-bg-surface);
-  border-right: var(--border-width) solid var(--color-border-default);
-
-  display: flex;
-  flex-direction: column;
-
-  position: sticky;
-  top: 0;
+  border-right: var(--border-width-thin) solid var(--gray-800);
 }
 
 .c-footer {
-  padding-block: var(--space-xl);
   background: var(--color-bg-surface);
   border-top: var(--border-width) solid var(--color-border-default);
 }
@@ -53,24 +32,18 @@
    ============================================================ */
 
 .c-sidemenu-link {
-  padding: var(--space-s) var(--space-m);
-  margin-inline: var(--space-s);
-  margin-block: 2px;
-
   color: var(--color-text-muted);
   text-decoration: none;
-  font-size: var(--fs-sm);
+  font-size: var(--font-size-s);
 
   border-radius: var(--radius-s);
 
-  transition: background var(--t-fast) var(--ease-in-out),
-              color var(--t-fast) var(--ease-in-out);
+  transition: color var(--motion-fast) var(--ease-in-out);
 }
 
 .c-sidemenu-link:hover,
 .c-sidemenu-link.is-active {
-  background: var(--color-bg-muted);
-  color: var(--brand-primary);
+  color: var(--color-brand-orange);
 }
 
 .c-breadcrumbs {
@@ -118,7 +91,7 @@
   cursor: pointer;
 
   transition: background var(--t-fast) var(--ease-in-out),
-              color var(--t-fast) var(--ease-in-out);
+    color var(--t-fast) var(--ease-in-out);
 }
 
 .c-pagination__item.is-active {
@@ -141,7 +114,7 @@
   color: var(--color-text-muted);
 
   transition: color var(--t-fast) var(--ease-in-out),
-              border-color var(--t-fast) var(--ease-in-out);
+    border-color var(--t-fast) var(--ease-in-out);
 }
 
 .c-tab-item.is-active {
@@ -159,11 +132,8 @@
   border: var(--border-width) solid var(--color-border-default);
   border-radius: var(--radius-m);
 
-  display: flex;
-  flex-direction: column;
-
   transition: box-shadow var(--t-fast) var(--ease-in-out),
-              transform var(--t-fast) var(--ease-in-out);
+    transform var(--t-fast) var(--ease-in-out);
 }
 
 .c-card:hover {
@@ -258,7 +228,7 @@
   box-shadow: var(--shadow-3);
 
   transition: opacity var(--t-fast) var(--ease-in-out),
-              transform var(--t-fast) var(--ease-in-out);
+    transform var(--t-fast) var(--ease-in-out);
 }
 
 .c-accordion {
@@ -301,15 +271,8 @@
    ------------------------------------------------------------ */
 
 .c-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   appearance: none;
-
-  cursor: pointer;
   border: var(--border-width) solid transparent;
-
-  padding: var(--space-s) var(--space-l);
   border-radius: var(--radius-m);
 
   font-family: var(--font-family-main);
@@ -340,6 +303,18 @@
 .c-button--secondary:hover {
   background-color: var(--color-bg-surface);
   border-color: var(--brand-primary);
+}
+
+.c-button--outline {
+  background-color: transparent;
+  color: var(--color-brand-orange);
+  border: var(--border-width-thin) solid rgba(255, 95, 0, 0.5);
+}
+
+.c-button--outline:hover {
+  background-color: var(--color-brand-orange);
+  color: var(--color-brand-white);
+  border-color: var(--color-brand-orange);
 }
 
 .c-button:disabled {
@@ -437,8 +412,30 @@
     opacity: 0;
     transform: translateY(var(--space-s));
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ============================================================
+   SECTION 7: APP-SPECIFIC SHELLS
+   ============================================================ */
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: calc(var(--z-nav) - 1);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-base) var(--ease-in-out);
+}
+
+.sidebar-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
 }

@@ -2,8 +2,7 @@ import { SELECTORS } from './constants.js';
 
 export function initTheme() {
     const themeToggle = document.querySelector(SELECTORS.THEME_TOGGLE);
-    const currentTheme = localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
 
     // 1. Apply theme on load
     applyTheme(currentTheme);

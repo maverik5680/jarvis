@@ -1,51 +1,63 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jarvis Design System</title>
-    <!-- CSS is bundled by Vite via js/main.js (see @ds alias in vite.config.js) -->
-    <script type="module" src="/js/main.js"></script>
-  </head>
-  <body class="layout-shell">
-    <a class="sr-only" href="#main-content">Skip to content</a>
-    <header class="navbar navbar-links">
-      <div class="navbar-left">
-      </div>
+<html lang="en" data-theme="dark">
 
-      <div class="navbar-right">
-        <button
-          id="menuBtn"
-          class="button-orange-outline border-thin border-solid px-m py-xs"
-          type="button"
-          aria-label="Open menu"
-        >
-          Menu
-        </button>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarvis Design System</title>
 
-    <aside class="sidebar" id="mainSidebar" aria-label="Sidebar navigation">
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#" class="is-active">Dashboard</a></li>
-          <li><a href="#">Docs</a></li>
-          <li><a href="#">Comp</a></li>
-        </ul>
+  <!-- CSS is bundled by Vite via js/main.js -->
+  <script type="module" src="/js/main.js"></script>
+</head>
+
+<body class="u-bg-main u-color-text app-shell">
+  <a class="u-sr-only" href="#main-content">Skip to content</a>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="c-header u-h-header u-flex u-justify-between u-items-center u-pi-m u-sticky u-top-0 u-z-nav">
+    <div class="u-flex u-items-center u-gap-m">
+      <span class="u-fw-bold u-fs-h3">Jarvis DS</span>
+    </div>
+
+    <div>
+      <button id="menuBtn"
+        class="c-button c-button--outline u-pi-s u-pb-axis-xs u-cursor-pointer u-flex u-items-center u-justify-center u-hidden-lg"
+        type="button" aria-label="Open menu">
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <div class="app-content">
+    <!-- SIDEBAR -->
+    <aside class="c-sidebar u-flex u-flex-column" id="mainSidebar" aria-label="Sidebar navigation">
+      <nav aria-label="Primary" class="u-p-m u-flex u-flex-column u-gap-xs">
+        <a href="#" class="c-sidemenu-link is-active u-pi-m u-pb-axis-s u-radius-s">Dashboard</a>
+        <a href="#" class="c-sidemenu-link u-pi-m u-pb-axis-s u-radius-s">Docs</a>
+        <a href="#" class="c-sidemenu-link u-pi-m u-pb-axis-s u-radius-s">Comp</a>
       </nav>
     </aside>
 
     <div class="sidebar-backdrop" id="backdrop" aria-hidden="true"></div>
 
-    <main id="main-content" class="main-area" tabindex="-1">
-      <div class="page-content">
-        <section class="section">
-          <div class="section-content">
-            <h1 class="hero-title">Jarvis</h1>
-            <p class="hero-subtitle">Design system playground.</p>
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="main-area u-flex-1 u-overflow-auto" tabindex="-1">
+      <div class="u-pi-m u-py-xl">
+        <section class="u-py-3xl u-text-center">
+          <div class="u-max-w-3xl u-mx-auto">
+            <h1 class="u-fs-3xl u-fw-bold u-mb-m u-lh-tight">Jarvis Design System</h1>
+            <p class="u-fs-xl u-color-text u-mb-l u-lh-relaxed">
+              A constitutional design system built on strict architectural laws.
+            </p>
+            <p class="u-fs-l u-color-muted u-lh-normal">
+              Dark theme by default. Token-driven. Utility-first. Built for solo developers who demand clarity and
+              maintainability.
+            </p>
           </div>
         </section>
       </div>
     </main>
-  </body>
+  </div>
+</body>
+
 </html>
