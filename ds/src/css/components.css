@@ -10,7 +10,7 @@
    ============================================================ */
 
 .c-header {
-  height: 4rem; /* 64px */
+  height: 4rem;
   background: var(--color-bg-elevated);
   border-bottom: var(--border-width) solid var(--color-border-default);
 
@@ -28,7 +28,7 @@
 }
 
 .c-sidebar {
-  width: 17.5rem; /* 280px */
+  width: 17.5rem;
   height: 100vh;
 
   background: var(--color-bg-surface);
@@ -295,59 +295,115 @@
    SECTION 5: ELEMENTS & INPUTS (Pure Component DNA)
    ============================================================ */
 
-.c-btn {
+
+/* ------------------------------------------------------------
+   5A. BUTTONS — BEIM Architecture
+   ------------------------------------------------------------ */
+
+.c-button {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-s);
+  justify-content: center;
+  appearance: none;
+
+  cursor: pointer;
+  border: var(--border-width) solid transparent;
 
   padding: var(--space-s) var(--space-l);
   border-radius: var(--radius-m);
 
   font-family: var(--font-family-main);
   font-size: var(--fs-body);
-  font-weight: var(--fw-bold);
-
-  cursor: pointer;
-  border: none;
+  font-weight: var(--fw-medium);
 
   background: var(--color-bg-elevated);
   color: var(--color-text-main);
 
-  transition: background var(--t-fast) var(--ease-in-out),
-              box-shadow var(--t-fast) var(--ease-in-out),
-              filter var(--t-fast) var(--ease-in-out);
+  transition: all var(--t-fast) var(--ease-in-out);
 }
 
-.c-btn--primary {
-  background: var(--brand-primary);
+.c-button--primary {
+  background-color: var(--brand-primary);
   color: var(--color-text-inverse);
 }
 
-.c-btn--primary:hover {
-  background: var(--brand-primary-hover);
-  box-shadow: var(--shadow-1);
+.c-button--primary:hover {
+  background-color: var(--brand-primary-hover);
 }
 
-.c-input {
+.c-button--secondary {
+  background-color: transparent;
+  border-color: var(--color-border-default);
+  color: var(--color-text-main);
+}
+
+.c-button--secondary:hover {
+  background-color: var(--color-bg-surface);
+  border-color: var(--brand-primary);
+}
+
+.c-button:disabled {
+  opacity: var(--opacity-50);
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+
+/* ------------------------------------------------------------
+   5B. INPUTS & TEXTAREAS
+   ------------------------------------------------------------ */
+
+.c-input,
+.c-textarea {
   width: 100%;
   padding: var(--space-s) var(--space-m);
 
+  font-size: var(--fs-body);
+  font-family: var(--font-family-main);
+  color: var(--color-text-main);
+
   background: var(--color-bg-elevated);
   border: var(--border-width) solid var(--color-border-default);
-  border-radius: var(--radius-s);
+  border-radius: var(--radius-m);
 
-  color: var(--color-text-main);
-  font-size: var(--fs-body);
-
-  transition: border-color var(--t-fast) var(--ease-in-out),
-              box-shadow var(--t-fast) var(--ease-in-out);
+  transition:
+    border-color var(--t-fast) var(--ease-in-out),
+    box-shadow var(--t-fast) var(--ease-in-out),
+    background var(--t-fast) var(--ease-in-out);
 }
 
-.c-input:focus {
-  border-color: var(--brand-primary);
-  box-shadow: var(--shadow-1);
+.c-textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.c-input:focus,
+.c-textarea:focus {
   outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 var(--space-xxs) rgba(255, 107, 0, 0.15);
 }
+
+.c-input:disabled,
+.c-textarea:disabled {
+  background: var(--color-bg-surface);
+  cursor: not-allowed;
+  opacity: var(--opacity-50);
+}
+
+.c-input--error {
+  border-color: var(--color-danger) !important;
+}
+
+.c-form-help {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+
+/* ------------------------------------------------------------
+   5C. BADGES & AVATARS
+   ------------------------------------------------------------ */
 
 .c-badge {
   display: inline-flex;
