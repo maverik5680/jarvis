@@ -1,96 +1,160 @@
 /* ============================================================
-   TOKENS.CSS - THE COMPLETE JARVIS DNA
+   TOKENS.CSS — THE COMPLETE JARVIS DNA
    ============================================================ */
 
-/* 1. FONT DECLARATIONS */
+/* ------------------------------------------------------------
+   1. FONT DECLARATIONS
+   ------------------------------------------------------------ */
 @font-face {
   font-family: 'Prompt';
   src: url('../../assets/fonts/Prompt-Light.woff2') format('woff2');
-  font-weight: 300; font-style: normal; font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* ------------------------------------------------------------
+   2. ROOT TOKEN REGISTRY (Light Theme Defaults)
+   ------------------------------------------------------------ */
 :root {
-  /* --- 2. BRAND TOKENS (The Master Palette) --- */
-  --brand-primary:       #FF6B00; /* JARVIS ORANGE */
-  --brand-primary-hover: #E56000; 
+
+  /* ----------------------------------------------------------
+     BRAND TOKENS — The Master Palette
+     ---------------------------------------------------------- */
+  --brand-primary:       #FF6B00; /* Jarvis Orange */
+  --brand-primary-hover: #E56000;
   --brand-black:         #1A1A1A;
   --brand-white:         #FFFFFF;
 
-  /* --- 3. BASE FUNCTIONAL TOKENS --- */
+  /* ----------------------------------------------------------
+     FUNCTIONAL TOKENS — Status & System Colors
+     ---------------------------------------------------------- */
   --color-success: #28A745;
   --color-danger:  #DC3545;
   --color-warning: #FFC107;
-  --color-border:  rgba(0, 0, 0, 0.1);
 
-  /* --- 4. SEMANTIC MAPPING (Default: Light Theme) --- */
+  /* Base border color (used for semantic mapping) */
+  --color-border: rgba(0, 0, 0, 0.1);
+
+  /* ----------------------------------------------------------
+     SEMANTIC COLOR TOKENS — Theming Layer
+     ---------------------------------------------------------- */
   --color-bg-main:      var(--brand-white);
   --color-bg-surface:   #F9F9F9;
   --color-bg-elevated:  var(--brand-white);
-  
+  --color-bg-muted:     #F0F0F0;
+  --color-bg-inverse:   var(--brand-black);
+
   --color-text-main:    var(--brand-black);
   --color-text-header:  var(--brand-black);
   --color-text-muted:   rgba(0, 0, 0, 0.6);
   --color-text-inverse: var(--brand-white);
-  
+
   --color-border-default: var(--color-border);
   --color-border-active:  var(--brand-primary);
 
-  /* --- 5. TYPOGRAPHY --- */
+  /* ----------------------------------------------------------
+     TYPOGRAPHY TOKENS — Scale, Weight, Family
+     ---------------------------------------------------------- */
   --font-family-main: 'Prompt', sans-serif;
-  --fs-h1:   clamp(2.25rem, 5vw + 1rem, 3.00rem);
-  --fs-h2:   clamp(1.75rem, 4vw + 1rem, 2.25rem);
-  --fs-h3:   clamp(1.35rem, 2vw + 1rem, 1.50rem);
-  --fs-body: 1.00rem;
+
+  /* Fluid heading scale */
+  --fs-h1: clamp(2.25rem, 5vw + 1rem, 3rem);
+  --fs-h2: clamp(1.75rem, 4vw + 1rem, 2.25rem);
+  --fs-h3: clamp(1.35rem, 2vw + 1rem, 1.5rem);
+
+  /* Static sizes */
+  --fs-body: 1rem;
   --fs-sm:   0.875rem;
   --fs-xs:   0.75rem;
-  --fw-light: 300; --fw-bold: 600;
 
-  /* --- 6. SPACING & GAPS --- */
-  --space-xxs: 0.25rem; 
-  --space-xs:  0.5rem;  
+  /* Weights */
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    600;
+
+  /* Line heights */
+  --lh-tight:   1.1;
+  --lh-normal:  1.4;
+  --lh-relaxed: 1.6;
+
+  /* ----------------------------------------------------------
+     SPACING TOKENS — Margins, Padding, Gaps
+     ---------------------------------------------------------- */
+  --space-xxs: 0.25rem;
+  --space-xs:  0.5rem;
   --space-s:   0.75rem;
-  --space-m:   1rem;    
-  --space-l:   1.5rem;  
+  --space-m:   1rem;
+  --space-l:   1.5rem;
   --space-xl:  2rem;
   --space-xxl: 3rem;
 
-  /* --- 7. ELEVATION & SHADOWS --- */
+  /* ----------------------------------------------------------
+     ELEVATION TOKENS — Shadows & Depth
+     ---------------------------------------------------------- */
   --shadow-1: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
   --shadow-2: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
   --shadow-3: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
 
-  /* --- 8. OPACITY --- */
-  --op-full:     1;
-  --op-high:     0.8;
-  --op-muted:    0.6;
-  --op-low:      0.4;
-  --op-ghost:    0.1;
+  /* ----------------------------------------------------------
+     OPACITY TOKENS — For Visual Utilities
+     ---------------------------------------------------------- */
+  --opacity-0:   0;
+  --opacity-25:  0.25;
+  --opacity-50:  0.5;
+  --opacity-75:  0.75;
+  --opacity-100: 1;
 
-  /* --- 9. MOTION --- */
-  --t-fast:      150ms; 
-  --t-base:      300ms;
-  --t-slow:      500ms;
+  /* ----------------------------------------------------------
+     MOTION TOKENS — Timing & Easing
+     ---------------------------------------------------------- */
+  --t-fast: 150ms;
+  --t-base: 300ms;
+  --t-slow: 500ms;
+
   --ease-in:     cubic-bezier(0.4, 0, 1, 1);
   --ease-out:    cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* --- 10. STRUCTURE & Z-INDEX --- */
-  --radius-s: 4px; --radius-m: 8px; --radius-l: 12px; --radius-full: 9999px;
-  --z-nav: 1000; --z-modal: 1100; --z-popover: 1200; --z-tooltip: 1300;
-  
-  --bp-md: 768px; --bp-lg: 1024px;
+
+  /* ----------------------------------------------------------
+     STRUCTURE TOKENS — Radius, Z-index, Breakpoints
+     ---------------------------------------------------------- */
+  --radius-s:   4px;
+  --radius-m:   8px;
+  --radius-l:   12px;
+  --radius-full: 9999px;
+
+  --border-thin: 1px;
+  --border-thick: 2px;
+  --border-width: var(--border-thin);
+
+  --z-nav:     1000;
+  --z-modal:   1100;
+  --z-popover: 1200;
+  --z-tooltip: 1300;
+
+  --bp-md: 768px;
+  --bp-lg: 1024px;
 }
 
-/* --- DARK THEME OVERRIDES --- */
+/* ------------------------------------------------------------
+   11. DARK THEME OVERRIDES
+   ------------------------------------------------------------ */
 [data-theme="dark"] {
   --color-bg-main:      #121212;
   --color-bg-surface:   #1E1E1E;
   --color-bg-elevated:  #2C2C2C;
+  --color-bg-muted:     #2A2A2A;
+
   --color-text-main:    rgba(255, 255, 255, 0.9);
   --color-text-header:  var(--brand-white);
   --color-text-muted:   rgba(255, 255, 255, 0.5);
+  --color-text-inverse: var(--brand-black);
+
   --color-border-default: rgba(255, 255, 255, 0.1);
-  --color-border-active:  var(--brand-primary); /* Keeps Orange active in Dark Mode */
+  --color-border-active:  var(--brand-primary);
+
   --shadow-1: 0 1px 3px rgba(0,0,0,0.5);
 }
