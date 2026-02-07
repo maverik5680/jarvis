@@ -3,24 +3,113 @@
    Margins & Paddings — Law III: Utility Supremacy
    ============================================================ */
 
-/* --- 1. PADDING --- */
-.u-p-0  { padding: 0 !important; }
-.u-p-xs { padding: var(--space-xs) !important; }
-.u-p-m  { padding: var(--space-m) !important; }
-.u-p-l  { padding: var(--space-l) !important; }
 
-/* Padding Inline (Left/Right) & Block (Top/Bottom) */
-.u-pi-m { padding-inline: var(--space-m) !important; }
-.u-pb-m { padding-block: var(--space-m) !important; }
+/* ------------------------------------------------------------
+   1. PADDING (All Sides)
+   ------------------------------------------------------------ */
+.u-p-0    { padding: 0 !important; }
+.u-p-xxs  { padding: var(--space-xxs) !important; }
+.u-p-xs   { padding: var(--space-xs) !important; }
+.u-p-s    { padding: var(--space-s) !important; }
+.u-p-m    { padding: var(--space-m) !important; }
+.u-p-l    { padding: var(--space-l) !important; }
+.u-p-xl   { padding: var(--space-xl) !important; }
+.u-p-xxl  { padding: var(--space-xxl) !important; }
 
-/* --- 2. MARGIN --- */
-.u-m-0  { margin: 0 !important; }
+
+/* ------------------------------------------------------------
+   2. PADDING — AXIS (Inline / Block)
+   ------------------------------------------------------------ */
+.u-pi-xxs { padding-inline: var(--space-xxs) !important; }
+.u-pi-xs  { padding-inline: var(--space-xs) !important; }
+.u-pi-s   { padding-inline: var(--space-s) !important; }
+.u-pi-m   { padding-inline: var(--space-m) !important; }
+.u-pi-l   { padding-inline: var(--space-l) !important; }
+.u-pi-xl  { padding-inline: var(--space-xl) !important; }
+
+.u-pb-xxs { padding-block: var(--space-xxs) !important; }
+.u-pb-xs  { padding-block: var(--space-xs) !important; }
+.u-pb-s   { padding-block: var(--space-s) !important; }
+.u-pb-m   { padding-block: var(--space-m) !important; }
+.u-pb-l   { padding-block: var(--space-l) !important; }
+.u-pb-xl  { padding-block: var(--space-xl) !important; }
+
+
+/* ------------------------------------------------------------
+   3. PADDING — INDIVIDUAL SIDES
+   ------------------------------------------------------------ */
+.u-pt-s { padding-top: var(--space-s) !important; }
+.u-pt-m { padding-top: var(--space-m) !important; }
+.u-pt-l { padding-top: var(--space-l) !important; }
+
+.u-pr-s { padding-right: var(--space-s) !important; }
+.u-pr-m { padding-right: var(--space-m) !important; }
+.u-pr-l { padding-right: var(--space-l) !important; }
+
+.u-pb-s { padding-bottom: var(--space-s) !important; }
+.u-pb-m { padding-bottom: var(--space-m) !important; }
+.u-pb-l { padding-bottom: var(--space-l) !important; }
+
+.u-pl-s { padding-left: var(--space-s) !important; }
+.u-pl-m { padding-left: var(--space-m) !important; }
+.u-pl-l { padding-left: var(--space-l) !important; }
+
+
+/* ------------------------------------------------------------
+   4. MARGIN (All Sides)
+   ------------------------------------------------------------ */
+.u-m-0    { margin: 0 !important; }
 .u-m-auto { margin: auto !important; }
-.u-mt-m { margin-top: var(--space-m) !important; }
-.u-mb-xs { margin-bottom: var(--space-xs) !important; }
-.u-mb-m { margin-bottom: var(--space-m) !important; }
-.u-mb-l { margin-bottom: var(--space-l) !important; }
 
-/* --- 3. GAP (For Flex/Grid) --- */
-.u-gap-xs { gap: var(--space-xs) !important; }
-.u-gap-m  { gap: var(--space-m) !important; }
+.u-m-xxs  { margin: var(--space-xxs) !important; }
+.u-m-xs   { margin: var(--space-xs) !important; }
+.u-m-s    { margin: var(--space-s) !important; }
+.u-m-m    { margin: var(--space-m) !important; }
+.u-m-l    { margin: var(--space-l) !important; }
+.u-m-xl   { margin: var(--space-xl) !important; }
+.u-m-xxl  { margin: var(--space-xxl) !important; }
+
+
+/* ------------------------------------------------------------
+   5. MARGIN — AXIS (Inline / Block)
+   ------------------------------------------------------------ */
+.u-mi-s  { margin-inline: var(--space-s) !important; }
+.u-mi-m  { margin-inline: var(--space-m) !important; }
+.u-mi-l  { margin-inline: var(--space-l) !important; }
+
+.u-mb-s  { margin-block: var(--space-s) !important; }
+.u-mb-m  { margin-block: var(--space-m) !important; }
+.u-mb-l  { margin-block: var(--space-l) !important; }
+
+
+/* ------------------------------------------------------------
+   6. MARGIN — INDIVIDUAL SIDES
+   ------------------------------------------------------------ */
+.u-mt-s { margin-top: var(--space-s) !important; }
+.u-mt-m { margin-top: var(--space-m) !important; }
+.u-mt-l { margin-top: var(--space-l) !important; }
+
+.u-mr-s { margin-right: var(--space-s) !important; }
+.u-mr-m { margin-right: var(--space-m) !important; }
+.u-mr-l { margin-right: var(--space-l) !important; }
+
+.u-mb-xs { margin-bottom: var(--space-xs) !important; }
+.u-mb-s  { margin-bottom: var(--space-s) !important; }
+.u-mb-m  { margin-bottom: var(--space-m) !important; }
+.u-mb-l  { margin-bottom: var(--space-l) !important; }
+
+.u-ml-s { margin-left: var(--space-s) !important; }
+.u-ml-m { margin-left: var(--space-m) !important; }
+.u-ml-l { margin-left: var(--space-l) !important; }
+
+
+/* ------------------------------------------------------------
+   7. GAP (Flex & Grid)
+   ------------------------------------------------------------ */
+.u-gap-xxs { gap: var(--space-xxs) !important; }
+.u-gap-xs  { gap: var(--space-xs) !important; }
+.u-gap-s   { gap: var(--space-s) !important; }
+.u-gap-m   { gap: var(--space-m) !important; }
+.u-gap-l   { gap: var(--space-l) !important; }
+.u-gap-xl  { gap: var(--space-xl) !important; }
+.u-gap-xxl { gap: var(--space-xxl) !important; }
