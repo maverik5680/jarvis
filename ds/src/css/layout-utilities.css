@@ -1,27 +1,141 @@
 /* ============================================================
    LAYOUT-UTILITIES.CSS
-   Flex, Grid, & Sizing — Law III: Utility Supremacy
+   Flex, Grid, Position, Sizing — Law III: Utility Supremacy
    ============================================================ */
 
-/* --- 1. DISPLAY --- */
-.u-display-flex  { display: flex !important; }
-.u-display-grid  { display: grid !important; }
-.u-display-block { display: block !important; }
-.u-display-none  { display: none !important; }
 
-/* --- 2. FLEX ALIGNMENT --- */
-.u-flex-column   { flex-direction: column !important; }
-.u-flex-wrap     { flex-wrap: wrap !important; }
-.u-items-center  { align-items: center !important; }
+/* ------------------------------------------------------------
+   1. DISPLAY
+   ------------------------------------------------------------ */
+.u-flex   { display: flex !important; }
+.u-grid   { display: grid !important; }
+.u-block  { display: block !important; }
+.u-inline { display: inline-block !important; }
+.u-none   { display: none !important; }
+
+
+/* ------------------------------------------------------------
+   2. FLEX DIRECTION & WRAP
+   ------------------------------------------------------------ */
+.u-flex-row        { flex-direction: row !important; }
+.u-flex-column     { flex-direction: column !important; }
+.u-flex-row-rev    { flex-direction: row-reverse !important; }
+.u-flex-column-rev { flex-direction: column-reverse !important; }
+
+.u-flex-wrap       { flex-wrap: wrap !important; }
+.u-flex-nowrap     { flex-wrap: nowrap !important; }
+
+
+/* ------------------------------------------------------------
+   3. FLEX ALIGNMENT
+   ------------------------------------------------------------ */
+.u-items-start    { align-items: flex-start !important; }
+.u-items-center   { align-items: center !important; }
+.u-items-end      { align-items: flex-end !important; }
+.u-items-stretch  { align-items: stretch !important; }
+
+.u-justify-start   { justify-content: flex-start !important; }
+.u-justify-center  { justify-content: center !important; }
+.u-justify-end     { justify-content: flex-end !important; }
 .u-justify-between { justify-content: space-between !important; }
+.u-justify-around  { justify-content: space-around !important; }
+.u-justify-evenly  { justify-content: space-evenly !important; }
 
-/* --- 3. SIZING --- */
-.u-w-full { width: 100% !important; }
-.u-h-full { height: 100% !important; }
 
-/* --- 4. CONTAINERS (The Shells) --- */
-.u-container-md { 
+/* ------------------------------------------------------------
+   4. FLEX GROW / SHRINK
+   ------------------------------------------------------------ */
+.u-flex-1       { flex: 1 1 0% !important; }
+.u-flex-auto    { flex: 1 1 auto !important; }
+.u-flex-none    { flex: none !important; }
+
+.u-grow         { flex-grow: 1 !important; }
+.u-grow-0       { flex-grow: 0 !important; }
+
+.u-shrink       { flex-shrink: 1 !important; }
+.u-shrink-0     { flex-shrink: 0 !important; }
+
+
+/* ------------------------------------------------------------
+   5. GRID UTILITIES
+   ------------------------------------------------------------ */
+.u-grid-cols-1  { grid-template-columns: repeat(1, 1fr) !important; }
+.u-grid-cols-2  { grid-template-columns: repeat(2, 1fr) !important; }
+.u-grid-cols-3  { grid-template-columns: repeat(3, 1fr) !important; }
+.u-grid-cols-4  { grid-template-columns: repeat(4, 1fr) !important; }
+.u-grid-cols-6  { grid-template-columns: repeat(6, 1fr) !important; }
+.u-grid-cols-12 { grid-template-columns: repeat(12, 1fr) !important; }
+
+.u-grid-auto-fit  { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important; }
+.u-grid-auto-fill { grid-template-columns: repeat(auto-fill, minmax(0, 1fr)) !important; }
+
+
+/* ------------------------------------------------------------
+   6. GAP UTILITIES (Token-driven)
+   ------------------------------------------------------------ */
+.u-gap-xxs { gap: var(--space-xxs) !important; }
+.u-gap-xs  { gap: var(--space-xs) !important; }
+.u-gap-s   { gap: var(--space-s) !important; }
+.u-gap-m   { gap: var(--space-m) !important; }
+.u-gap-l   { gap: var(--space-l) !important; }
+.u-gap-xl  { gap: var(--space-xl) !important; }
+.u-gap-xxl { gap: var(--space-xxl) !important; }
+
+
+/* ------------------------------------------------------------
+   7. POSITION
+   ------------------------------------------------------------ */
+.u-relative { position: relative !important; }
+.u-absolute { position: absolute !important; }
+.u-fixed    { position: fixed !important; }
+.u-sticky   { position: sticky !important; }
+
+
+/* ------------------------------------------------------------
+   8. Z-INDEX (Token-driven)
+   ------------------------------------------------------------ */
+.u-z-nav     { z-index: var(--z-nav) !important; }
+.u-z-modal   { z-index: var(--z-modal) !important; }
+.u-z-popover { z-index: var(--z-popover) !important; }
+.u-z-tooltip { z-index: var(--z-tooltip) !important; }
+
+
+/* ------------------------------------------------------------
+   9. SIZING
+   ------------------------------------------------------------ */
+.u-w-full   { width: 100% !important; }
+.u-h-full   { height: 100% !important; }
+
+.u-w-auto   { width: auto !important; }
+.u-h-auto   { height: auto !important; }
+
+.u-w-screen { width: 100vw !important; }
+.u-h-screen { height: 100vh !important; }
+
+
+/* ------------------------------------------------------------
+   10. FRACTIONAL WIDTHS
+   ------------------------------------------------------------ */
+.u-w-1-2 { width: 50% !important; }
+.u-w-1-3 { width: 33.333% !important; }
+.u-w-2-3 { width: 66.666% !important; }
+.u-w-1-4 { width: 25% !important; }
+.u-w-3-4 { width: 75% !important; }
+
+
+/* ------------------------------------------------------------
+   11. OVERFLOW
+   ------------------------------------------------------------ */
+.u-overflow-hidden { overflow: hidden !important; }
+.u-overflow-auto   { overflow: auto !important; }
+.u-overflow-scroll { overflow: scroll !important; }
+
+
+/* ------------------------------------------------------------
+   12. CONTAINERS (Token-driven)
+   ------------------------------------------------------------ */
+.u-container-md {
   width: 100% !important;
-  max-width: var(--container-md) !important; 
+  max-width: var(--container-md) !important;
   margin-inline: auto !important;
 }
